@@ -151,9 +151,19 @@ neutral          296
 
 ## 06. Split Estratificado
 
-Pendiente de implementar.
+Comando:
 
-Salidas esperadas:
+```bash
+python scripts/06_split/preparar_split_dataset.py
+```
+
+Entrada:
+
+```text
+data/processed/dataset_consumidores_peru_etiquetado_final.csv
+```
+
+Salidas:
 
 ```text
 data/splits/train.csv
@@ -163,6 +173,14 @@ reports/05_split/reporte_split_dataset.csv
 reports/05_split/distribucion_split_train.csv
 reports/05_split/distribucion_split_valid.csv
 reports/05_split/distribucion_split_test.csv
+```
+
+Tamanos actuales:
+
+```text
+train    2653
+valid     568
+test      569
 ```
 
 ## 07. Entrenamiento Y Evaluacion
