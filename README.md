@@ -1,6 +1,18 @@
-# Analisis de Sentimiento Multiclase sobre Resenas de Empresas Peruanas
+# Analisis De Sentimiento Multiclase Sobre Resenas De Empresas Peruanas
 
-Este proyecto inicia con un scraper de Google Maps para construir un primer dataset de resenas de empresas peruanas.
+Proyecto para construir, limpiar, etiquetar y preparar un dataset de resenas de consumidores peruanos para clasificacion de sentimiento multiclase.
+
+El flujo actual no depende solo de estrellas de Google. Usa una estrategia por etapas:
+
+```text
+scraping
+limpieza
+autoetiquetado con pysentimiento
+revision asistida por IA de casos ambiguos
+integracion conservadora de etiquetas
+split estratificado
+entrenamiento y evaluacion
+```
 
 ## Instalacion
 
@@ -8,7 +20,68 @@ Este proyecto inicia con un scraper de Google Maps para construir un primer data
 pip install -r requirements.txt
 ```
 
-## Abrir Chrome para Selenium
+## Estructura Del Proyecto
+
+```text
+data/
+  raw/
+    empresas.csv
+    dataset_consumidores_peru.csv
+  processed/
+    dataset_consumidores_peru_limpio.csv
+    dataset_consumidores_peru_etiquetado.csv
+    dataset_consumidores_peru_etiquetado_final.csv
+  splits/
+
+reports/
+  01_limpieza/
+  02_autoetiquetado/
+  03_revision_ia/
+  04_integracion/
+  05_split/
+
+scripts/
+  01_scraping/
+  02_limpieza/
+  03_autoetiquetado/
+  04_revision_ia/
+  05_integracion/
+  06_split/
+```
+
+## Estado Actual Del Dataset
+
+Archivo final actual:
+
+```text
+data/processed/dataset_consumidores_peru_etiquetado_final.csv
+```
+
+Distribucion actual de `sentimiento_final`:
+
+```text
+muy positivo    1407
+muy negativo    1018
+positivo         647
+negativo         422
+neutral          296
+```
+
+Total con etiqueta final consolidada:
+
+```text
+3790
+```
+
+Casos sin etiqueta final confiable:
+
+```text
+1010
+```
+
+## Pipeline Completo
+
+### 01. Scraping
 
 Antes de ejecutar el scraper, abre Chrome con debugging remoto:
 
@@ -22,81 +95,44 @@ Si Chrome esta instalado en `Program Files (x86)`, usa:
 & "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\chrome-debug"
 ```
 
-Cuando se abra Chrome, puedes elegir `Mantener sesion cerrada`.
-
-## Ejecutar Scraper
-
-```bash
-python scripts/01_scraping/scriptscraping.py
-```
-
-El scraper lee los negocios desde:
-
-```text
-data/raw/empresas.csv
-```
-
-Ese archivo debe mantener estas columnas:
-
-```text
-nombre,sede,rubro,url
-```
-
-Puedes dejar URLs vacias temporalmente:
-
-```csv
-BCP,Miraflores,Banca,""
-```
-
-El scraper omitira esas filas hasta que pegues el link de Google Maps.
-
-Para cambiar la cantidad maxima de resenas por empresa:
+Ejecutar scraping:
 
 ```bash
 python scripts/01_scraping/scriptscraping.py --max-reviews 150
 ```
 
-Para cambiar el archivo de salida:
+Entrada:
 
-```bash
-python scripts/01_scraping/scriptscraping.py --max-reviews 150 --output data/raw/dataset_consumidores_peru.csv
+```text
+data/raw/empresas.csv
 ```
 
-Para usar otro archivo de empresas:
-
-```bash
-python scripts/01_scraping/scriptscraping.py --empresas data/raw/empresas.csv --max-reviews 150
-```
-
-Para probar solo algunas sedes:
-
-```bash
-python scripts/01_scraping/scriptscraping.py --max-reviews 20 --limit-companies 3 --output data/raw/prueba_3_sedes.csv
-```
-
-El archivo generado sera:
+Salida:
 
 ```text
 data/raw/dataset_consumidores_peru.csv
 ```
 
-## Estructura Del Proyecto
+El archivo `empresas.csv` debe tener estas columnas:
 
-- `scripts/`: scripts organizados por fase numerada del pipeline.
-- `data/raw/`: datos originales o extraidos sin transformar.
-- `data/processed/`: datasets limpios o enriquecidos.
-- `data/splits/`: particiones de entrenamiento, validacion y prueba.
-- `reports/`: reportes reproducibles y distribuciones de clases.
-- `PIPELINE.md`: orden completo de ejecucion y salidas por fase.
+```text
+nombre,sede,rubro,url
+```
 
-## Limpieza Y Auditoria
+### 02. Limpieza Y Auditoria
 
 ```bash
 python scripts/02_limpieza/limpiar_dataset.py
 python scripts/02_limpieza/auditar_dataset.py
 ```
 
-La limpieza genera:
+Entrada:
+
+```text
+data/raw/dataset_consumidores_peru.csv
+```
+
+Salidas:
 
 ```text
 data/processed/dataset_consumidores_peru_limpio.csv
@@ -105,70 +141,194 @@ reports/01_limpieza/distribucion_sentimiento.csv
 reports/01_limpieza/distribucion_estrellas.csv
 ```
 
-## Autoetiquetado
+La limpieza conserva el texto original y agrega columnas de auditoria como:
 
-Instala dependencias:
-
-```bash
-pip install -r requirements.txt
+```text
+comentario_limpio
+texto_modelo
+comentario_corto
+sin_contenido_alfabetico
+sentimiento_consistente
+requiere_revision
+motivo_revision
 ```
 
-Ejecuta el autoetiquetado:
+### 03. Autoetiquetado Con Modelo En Espanol
 
 ```bash
 python scripts/03_autoetiquetado/autoetiquetar_sentimiento.py
 ```
 
-El autoetiquetado genera:
+Entrada:
+
+```text
+data/processed/dataset_consumidores_peru_limpio.csv
+```
+
+Salidas:
 
 ```text
 data/processed/dataset_consumidores_peru_etiquetado.csv
 reports/02_autoetiquetado/reporte_autoetiquetado.csv
 reports/02_autoetiquetado/distribucion_sentimiento_final.csv
+reports/02_autoetiquetado/distribucion_sentimiento_provisional.csv
 ```
 
-## Columnas Del Dataset
+Esta fase usa `pysentimiento` sobre `comentario_limpio` y compara el resultado con las estrellas.
 
-- `comentario`
-- `empresa`
-- `sede`
-- `rubro`
-- `estrellas`
-- `sentimiento_estrella`
-- `fecha_resena`
-- `url`
+Columnas principales agregadas:
 
-## Etiquetas Iniciales
+```text
+sentimiento_modelo
+polaridad_modelo
+confianza_modelo
+prob_neg
+prob_neu
+prob_pos
+sentimiento_final
+sentimiento_final_provisional
+confianza_etiqueta
+requiere_revision_etiqueta
+motivo_revision_etiqueta
+```
 
-- 1 estrella: `muy negativo`
-- 2 estrellas: `negativo`
-- 3 estrellas: `neutral`
-- 4 estrellas: `positivo`
-- 5 estrellas: `muy positivo`
+### 04. Revision Asistida Por IA
 
-## Que Hace El Scraper
+Preparar los casos ambiguos prioritarios:
 
-- Lee la lista de lugares desde `data/raw/empresas.csv`.
-- Abre cada URL de Google Maps.
-- Intenta abrir el panel de resenas.
-- Hace scroll hasta cargar resenas.
-- Extrae comentario, estrellas y fecha textual.
-- Guarda resultados acumulados en CSV.
-- Elimina duplicados por comentario, empresa y sede.
+```bash
+python scripts/04_revision_ia/preparar_revision_etiquetas.py --max-filas 500
+python scripts/04_revision_ia/preparar_revision_para_ia.py
+```
 
-## Que Debes Hacer Tu
+Archivos para IA:
 
-- Revisar que cada URL de `data/raw/empresas.csv` apunte al local correcto.
-- Agregar mas filas para tener mas empresas y sedes.
-- Completar las filas que tienen `""` en la columna `url`.
-- Mantener los rubros consistentes, por ejemplo `Banca`, `Retail`, `Farmacia`, `Telecomunicaciones`.
-- Abrir Chrome con debugging remoto antes de ejecutar el scraper.
-- Revisar el CSV generado para detectar negocios que no devolvieron resenas.
+```text
+reports/03_revision_ia/revision_prioritaria_para_ia.csv
+reports/03_revision_ia/prompt_etiquetado_ia.md
+```
 
-## Que Puedo Hacer Yo
+La IA debe devolver:
 
-- Mejorar el codigo del scraper.
-- Agregar validaciones y columnas utiles.
-- Adaptar el scraper si Google Maps cambia algun selector.
-- Crear scripts de limpieza, analisis exploratorio y entrenamiento NLP.
-- Ayudarte a revisar errores despues de una ejecucion.
+```text
+reports/03_revision_ia/revision_prioritaria_etiquetas_ia.csv
+```
+
+Preparar segundo lote enfocado en posibles neutrales:
+
+```bash
+python scripts/04_revision_ia/preparar_revision_neutral_para_ia.py
+```
+
+Archivos para IA:
+
+```text
+reports/03_revision_ia/revision_neutral_para_ia.csv
+reports/03_revision_ia/prompt_etiquetado_ia_neutral.md
+```
+
+La IA debe devolver:
+
+```text
+reports/03_revision_ia/revision_neutral_etiquetas_ia.csv
+```
+
+Revision manual opcional:
+
+```bash
+python scripts/04_revision_ia/revisar_etiquetas_manual.py --limite 50
+```
+
+### 05. Integracion De Etiquetas IA
+
+Integrar etiquetas IA de clases minoritarias:
+
+```bash
+python scripts/05_integracion/integrar_etiquetas_ia.py
+```
+
+Integrar neutrales del segundo lote:
+
+```bash
+python scripts/05_integracion/integrar_etiquetas_ia_neutral.py
+```
+
+Salidas:
+
+```text
+data/processed/dataset_consumidores_peru_etiquetado_final.csv
+reports/04_integracion/reporte_integracion_ia.csv
+reports/04_integracion/reporte_integracion_ia_neutral.csv
+reports/04_integracion/distribucion_sentimiento_final_integrado.csv
+```
+
+Regla usada en integracion:
+
+```text
+usar solo etiquetas IA con usar_etiqueta_ia=si
+usar solo confianza alta o media
+integrar de forma focalizada clases minoritarias
+```
+
+### 06. Split Estratificado
+
+Pendiente de implementar.
+
+Salidas esperadas:
+
+```text
+data/splits/train.csv
+data/splits/valid.csv
+data/splits/test.csv
+reports/05_split/reporte_split_dataset.csv
+reports/05_split/distribucion_split_train.csv
+reports/05_split/distribucion_split_valid.csv
+reports/05_split/distribucion_split_test.csv
+```
+
+### 07. Entrenamiento Y Evaluacion
+
+Pendiente de implementar.
+
+Comparaciones recomendadas:
+
+```text
+modelo base sin balanceo
+modelo con class_weight='balanced'
+modelo con SMOTE solo en train
+```
+
+Metricas principales:
+
+```text
+F1-Macro
+F1 por clase
+matriz de confusion
+accuracy como metrica secundaria
+```
+
+## Criterio De Etiquetado
+
+Las estrellas de Google se tratan como etiquetas debiles iniciales:
+
+```text
+1 estrella  -> muy negativo
+2 estrellas -> negativo
+3 estrellas -> neutral
+4 estrellas -> positivo
+5 estrellas -> muy positivo
+```
+
+La etiqueta final `sentimiento_final` se consolida mediante:
+
+```text
+1. coincidencia entre estrellas y modelo de sentimiento
+2. revision asistida por IA focalizada en clases minoritarias
+3. revision humana opcional de control
+```
+
+Los registros sin etiqueta confiable se mantienen en el dataset, pero no deben usarse para entrenamiento principal.
+
+## Documentacion Extendida
+
+El archivo `PIPELINE.md` mantiene el mismo flujo en formato resumido para consulta rapida.
