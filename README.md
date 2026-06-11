@@ -27,13 +27,13 @@ Cuando se abra Chrome, puedes elegir `Mantener sesion cerrada`.
 ## Ejecutar Scraper
 
 ```bash
-python scriptscraping.py
+python scripts/01_scraping/scriptscraping.py
 ```
 
 El scraper lee los negocios desde:
 
 ```text
-empresas.csv
+data/raw/empresas.csv
 ```
 
 Ese archivo debe mantener estas columnas:
@@ -53,34 +53,79 @@ El scraper omitira esas filas hasta que pegues el link de Google Maps.
 Para cambiar la cantidad maxima de resenas por empresa:
 
 ```bash
-python scriptscraping.py --max-reviews 150
+python scripts/01_scraping/scriptscraping.py --max-reviews 150
 ```
 
 Para cambiar el archivo de salida:
 
 ```bash
-python scriptscraping.py --max-reviews 150 --output dataset_consumidores_peru.csv
+python scripts/01_scraping/scriptscraping.py --max-reviews 150 --output data/raw/dataset_consumidores_peru.csv
 ```
 
 Para usar otro archivo de empresas:
 
 ```bash
-python scriptscraping.py --empresas empresas.csv --max-reviews 150
+python scripts/01_scraping/scriptscraping.py --empresas data/raw/empresas.csv --max-reviews 150
 ```
 
 Para probar solo algunas sedes:
 
 ```bash
-python scriptscraping.py --max-reviews 20 --limit-companies 3 --output prueba_3_sedes.csv
+python scripts/01_scraping/scriptscraping.py --max-reviews 20 --limit-companies 3 --output data/raw/prueba_3_sedes.csv
 ```
 
 El archivo generado sera:
 
 ```text
-dataset_consumidores_peru.csv
+data/raw/dataset_consumidores_peru.csv
 ```
 
-Los archivos CSV generados no se versionan por defecto porque estan incluidos en `.gitignore`.
+## Estructura Del Proyecto
+
+- `scripts/`: scripts organizados por fase numerada del pipeline.
+- `data/raw/`: datos originales o extraidos sin transformar.
+- `data/processed/`: datasets limpios o enriquecidos.
+- `data/splits/`: particiones de entrenamiento, validacion y prueba.
+- `reports/`: reportes reproducibles y distribuciones de clases.
+- `PIPELINE.md`: orden completo de ejecucion y salidas por fase.
+
+## Limpieza Y Auditoria
+
+```bash
+python scripts/02_limpieza/limpiar_dataset.py
+python scripts/02_limpieza/auditar_dataset.py
+```
+
+La limpieza genera:
+
+```text
+data/processed/dataset_consumidores_peru_limpio.csv
+reports/01_limpieza/reporte_limpieza_dataset.csv
+reports/01_limpieza/distribucion_sentimiento.csv
+reports/01_limpieza/distribucion_estrellas.csv
+```
+
+## Autoetiquetado
+
+Instala dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+Ejecuta el autoetiquetado:
+
+```bash
+python scripts/03_autoetiquetado/autoetiquetar_sentimiento.py
+```
+
+El autoetiquetado genera:
+
+```text
+data/processed/dataset_consumidores_peru_etiquetado.csv
+reports/02_autoetiquetado/reporte_autoetiquetado.csv
+reports/02_autoetiquetado/distribucion_sentimiento_final.csv
+```
 
 ## Columnas Del Dataset
 
@@ -103,7 +148,7 @@ Los archivos CSV generados no se versionan por defecto porque estan incluidos en
 
 ## Que Hace El Scraper
 
-- Lee la lista de lugares desde `empresas.csv`.
+- Lee la lista de lugares desde `data/raw/empresas.csv`.
 - Abre cada URL de Google Maps.
 - Intenta abrir el panel de resenas.
 - Hace scroll hasta cargar resenas.
@@ -113,7 +158,7 @@ Los archivos CSV generados no se versionan por defecto porque estan incluidos en
 
 ## Que Debes Hacer Tu
 
-- Revisar que cada URL de `empresas.csv` apunte al local correcto.
+- Revisar que cada URL de `data/raw/empresas.csv` apunte al local correcto.
 - Agregar mas filas para tener mas empresas y sedes.
 - Completar las filas que tienen `""` en la columna `url`.
 - Mantener los rubros consistentes, por ejemplo `Banca`, `Retail`, `Farmacia`, `Telecomunicaciones`.

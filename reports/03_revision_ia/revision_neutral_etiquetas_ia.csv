@@ -1,0 +1,301 @@
+﻿id_revision_neutral,sentimiento_ia,confianza_ia,justificacion_ia,usar_etiqueta_ia
+1,negativo,alta,Crítica clara sobre la experiencia,si
+2,neutral,media,Combina aspectos positivos y negativos,si
+3,neutral,media,Combina aspectos positivos y negativos,si
+4,neutral,media,Combina aspectos positivos y negativos,si
+5,neutral,media,Combina aspectos positivos y negativos,si
+6,neutral,media,Combina aspectos positivos y negativos,si
+7,neutral,media,Combina aspectos positivos y negativos,si
+8,neutral,media,Combina aspectos positivos y negativos,si
+9,neutral,media,Combina aspectos positivos y negativos,si
+10,neutral,media,Combina aspectos positivos y negativos,si
+11,neutral,media,Combina aspectos positivos y negativos,si
+12,neutral,media,Combina aspectos positivos y negativos,si
+13,neutral,media,Combina aspectos positivos y negativos,si
+14,neutral,media,Combina aspectos positivos y negativos,si
+15,neutral,media,Combina aspectos positivos y negativos,si
+16,neutral,media,Combina aspectos positivos y negativos,si
+17,neutral,media,Combina aspectos positivos y negativos,si
+18,neutral,media,Combina aspectos positivos y negativos,si
+19,neutral,media,Combina aspectos positivos y negativos,si
+20,neutral,media,Combina aspectos positivos y negativos,si
+21,neutral,media,Combina aspectos positivos y negativos,si
+22,neutral,media,Combina aspectos positivos y negativos,si
+23,neutral,media,Combina aspectos positivos y negativos,si
+24,neutral,media,Combina aspectos positivos y negativos,si
+25,neutral,media,Combina aspectos positivos y negativos,si
+26,neutral,media,Combina aspectos positivos y negativos,si
+27,neutral,media,Combina aspectos positivos y negativos,si
+28,positivo,alta,Comentario favorable sobre la experiencia,si
+29,neutral,media,Combina aspectos positivos y negativos,si
+30,neutral,media,Combina aspectos positivos y negativos,si
+31,neutral,media,Combina aspectos positivos y negativos,si
+32,positivo,alta,Comentario favorable sobre la experiencia,si
+33,neutral,media,Combina aspectos positivos y negativos,si
+34,neutral,media,Combina aspectos positivos y negativos,si
+35,neutral,media,Combina aspectos positivos y negativos,si
+36,neutral,media,Combina aspectos positivos y negativos,si
+37,neutral,media,Combina aspectos positivos y negativos,si
+38,neutral,media,Combina aspectos positivos y negativos,si
+39,neutral,media,Combina aspectos positivos y negativos,si
+40,neutral,media,Combina aspectos positivos y negativos,si
+41,neutral,media,Combina aspectos positivos y negativos,si
+42,neutral,media,Combina aspectos positivos y negativos,si
+43,neutral,media,Combina aspectos positivos y negativos,si
+44,neutral,media,Combina aspectos positivos y negativos,si
+45,neutral,media,Combina aspectos positivos y negativos,si
+46,negativo,media,Tiene elogios pero predomina la queja,si
+47,neutral,media,Combina aspectos positivos y negativos,si
+48,neutral,media,Combina aspectos positivos y negativos,si
+49,neutral,media,Combina aspectos positivos y negativos,si
+50,positivo,alta,Comentario favorable sobre la experiencia,si
+51,neutral,media,Combina aspectos positivos y negativos,si
+52,neutral,media,Combina aspectos positivos y negativos,si
+53,muy negativo,alta,Queja fuerte o rechazo claro,si
+54,neutral,media,Combina aspectos positivos y negativos,si
+55,neutral,media,Combina aspectos positivos y negativos,si
+56,muy negativo,alta,Queja fuerte o rechazo claro,si
+57,neutral,media,Combina aspectos positivos y negativos,si
+58,neutral,media,Combina aspectos positivos y negativos,si
+59,neutral,media,Combina aspectos positivos y negativos,si
+60,neutral,media,Combina aspectos positivos y negativos,si
+61,neutral,media,Combina aspectos positivos y negativos,si
+62,neutral,media,Combina aspectos positivos y negativos,si
+63,neutral,media,Combina aspectos positivos y negativos,si
+64,neutral,media,Combina aspectos positivos y negativos,si
+65,neutral,media,Combina aspectos positivos y negativos,si
+66,neutral,media,Combina aspectos positivos y negativos,si
+67,neutral,media,Combina aspectos positivos y negativos,si
+68,neutral,media,Combina aspectos positivos y negativos,si
+69,negativo,media,Tiene elogios pero predomina la queja,si
+70,neutral,media,Combina aspectos positivos y negativos,si
+71,neutral,media,Combina aspectos positivos y negativos,si
+72,neutral,media,Combina aspectos positivos y negativos,si
+73,neutral,media,Combina aspectos positivos y negativos,si
+74,negativo,media,Tiene elogios pero predomina la queja,si
+75,neutral,media,Combina aspectos positivos y negativos,si
+76,neutral,media,Combina aspectos positivos y negativos,si
+77,muy negativo,alta,Queja fuerte o rechazo claro,si
+78,neutral,media,Combina aspectos positivos y negativos,si
+79,neutral,media,Combina aspectos positivos y negativos,si
+80,neutral,media,Combina aspectos positivos y negativos,si
+81,neutral,media,Combina aspectos positivos y negativos,si
+82,negativo,media,Tiene elogios pero predomina la queja,si
+83,neutral,media,Combina aspectos positivos y negativos,si
+84,negativo,alta,Crítica clara sobre la experiencia,si
+85,negativo,media,Tiene elogios pero predomina la queja,si
+86,neutral,media,Combina aspectos positivos y negativos,si
+87,muy negativo,alta,Queja fuerte o rechazo claro,si
+88,negativo,media,Tiene elogios pero predomina la queja,si
+89,neutral,media,Combina aspectos positivos y negativos,si
+90,muy negativo,alta,Queja fuerte o rechazo claro,si
+91,neutral,media,Combina aspectos positivos y negativos,si
+92,negativo,media,Tiene elogios pero predomina la queja,si
+93,muy positivo,alta,Elogio fuerte y recomendación clara,si
+94,neutral,media,Combina aspectos positivos y negativos,si
+95,neutral,media,Combina aspectos positivos y negativos,si
+96,neutral,media,Combina aspectos positivos y negativos,si
+97,neutral,media,Combina aspectos positivos y negativos,si
+98,muy positivo,alta,Elogio fuerte y recomendación clara,si
+99,neutral,media,Combina aspectos positivos y negativos,si
+100,neutral,media,Combina aspectos positivos y negativos,si
+101,muy negativo,alta,Queja fuerte o rechazo claro,si
+102,negativo,media,Tiene elogios pero predomina la queja,si
+103,neutral,media,Combina aspectos positivos y negativos,si
+104,neutral,media,Combina aspectos positivos y negativos,si
+105,positivo,alta,Comentario favorable sobre la experiencia,si
+106,positivo,alta,Comentario favorable sobre la experiencia,si
+107,neutral,baja,Texto ambiguo o poco concluyente,no
+108,neutral,media,Combina aspectos positivos y negativos,si
+109,positivo,alta,Comentario favorable sobre la experiencia,si
+110,neutral,media,Combina aspectos positivos y negativos,si
+111,positivo,alta,Comentario favorable sobre la experiencia,si
+112,positivo,alta,Comentario favorable sobre la experiencia,si
+113,neutral,baja,Texto vacío o insuficiente,no
+114,neutral,baja,Texto vacío o insuficiente,no
+115,positivo,alta,Comentario favorable sobre la experiencia,si
+116,positivo,alta,Comentario favorable sobre la experiencia,si
+117,neutral,baja,Texto ambiguo o poco concluyente,no
+118,positivo,alta,Comentario favorable sobre la experiencia,si
+119,neutral,media,Combina aspectos positivos y negativos,si
+120,neutral,baja,Texto vacío o insuficiente,no
+121,neutral,media,Combina aspectos positivos y negativos,si
+122,neutral,media,Combina aspectos positivos y negativos,si
+123,neutral,media,Combina aspectos positivos y negativos,si
+124,negativo,alta,Crítica clara sobre la experiencia,si
+125,neutral,media,Comentario descriptivo sin emoción clara,si
+126,positivo,alta,Comentario favorable sobre la experiencia,si
+127,neutral,media,Combina aspectos positivos y negativos,si
+128,positivo,alta,Comentario favorable sobre la experiencia,si
+129,neutral,media,Combina aspectos positivos y negativos,si
+130,neutral,media,Combina aspectos positivos y negativos,si
+131,neutral,baja,Texto ambiguo o poco concluyente,no
+132,positivo,alta,Comentario favorable sobre la experiencia,si
+133,positivo,alta,Comentario favorable sobre la experiencia,si
+134,positivo,alta,Comentario favorable sobre la experiencia,si
+135,negativo,alta,Crítica clara sobre la experiencia,si
+136,positivo,alta,Comentario favorable sobre la experiencia,si
+137,positivo,alta,Comentario favorable sobre la experiencia,si
+138,neutral,media,Combina aspectos positivos y negativos,si
+139,positivo,alta,Comentario favorable sobre la experiencia,si
+140,neutral,media,Combina aspectos positivos y negativos,si
+141,positivo,alta,Comentario favorable sobre la experiencia,si
+142,positivo,alta,Comentario favorable sobre la experiencia,si
+143,positivo,alta,Comentario favorable sobre la experiencia,si
+144,neutral,baja,Texto ambiguo o poco concluyente,no
+145,neutral,media,Combina aspectos positivos y negativos,si
+146,positivo,alta,Comentario favorable sobre la experiencia,si
+147,negativo,media,Tiene elogios pero predomina la queja,si
+148,muy positivo,alta,Elogio fuerte y recomendación clara,si
+149,positivo,alta,Comentario favorable sobre la experiencia,si
+150,neutral,media,Combina aspectos positivos y negativos,si
+151,negativo,alta,Crítica clara sobre la experiencia,si
+152,positivo,alta,Comentario favorable sobre la experiencia,si
+153,positivo,alta,Comentario favorable sobre la experiencia,si
+154,positivo,alta,Comentario favorable sobre la experiencia,si
+155,neutral,media,Combina aspectos positivos y negativos,si
+156,negativo,alta,Crítica clara sobre la experiencia,si
+157,neutral,baja,Texto ambiguo o poco concluyente,no
+158,positivo,alta,Comentario favorable sobre la experiencia,si
+159,neutral,baja,Texto ambiguo o poco concluyente,no
+160,muy negativo,alta,Queja fuerte o rechazo claro,si
+161,positivo,alta,Comentario favorable sobre la experiencia,si
+162,positivo,alta,Comentario favorable sobre la experiencia,si
+163,neutral,media,Combina aspectos positivos y negativos,si
+164,positivo,alta,Comentario favorable sobre la experiencia,si
+165,positivo,alta,Comentario favorable sobre la experiencia,si
+166,neutral,media,Combina aspectos positivos y negativos,si
+167,neutral,media,Combina aspectos positivos y negativos,si
+168,negativo,alta,Crítica clara sobre la experiencia,si
+169,positivo,alta,Comentario favorable sobre la experiencia,si
+170,negativo,alta,Crítica clara sobre la experiencia,si
+171,positivo,alta,Comentario favorable sobre la experiencia,si
+172,neutral,media,Combina aspectos positivos y negativos,si
+173,positivo,alta,Comentario favorable sobre la experiencia,si
+174,negativo,alta,Crítica clara sobre la experiencia,si
+175,muy negativo,alta,Queja fuerte o rechazo claro,si
+176,negativo,alta,Crítica clara sobre la experiencia,si
+177,neutral,media,Combina aspectos positivos y negativos,si
+178,neutral,media,Combina aspectos positivos y negativos,si
+179,neutral,media,Combina aspectos positivos y negativos,si
+180,negativo,alta,Crítica clara sobre la experiencia,si
+181,negativo,alta,Crítica clara sobre la experiencia,si
+182,positivo,alta,Comentario favorable sobre la experiencia,si
+183,positivo,alta,Comentario favorable sobre la experiencia,si
+184,neutral,baja,Texto vacío o insuficiente,no
+185,positivo,alta,Comentario favorable sobre la experiencia,si
+186,positivo,alta,Comentario favorable sobre la experiencia,si
+187,neutral,media,Combina aspectos positivos y negativos,si
+188,negativo,alta,Crítica clara sobre la experiencia,si
+189,neutral,media,Combina aspectos positivos y negativos,si
+190,muy positivo,alta,Elogio fuerte y recomendación clara,si
+191,negativo,alta,Crítica clara sobre la experiencia,si
+192,neutral,media,Combina aspectos positivos y negativos,si
+193,neutral,baja,Texto ambiguo o poco concluyente,no
+194,neutral,baja,Texto ambiguo o poco concluyente,no
+195,neutral,media,Combina aspectos positivos y negativos,si
+196,negativo,alta,Crítica clara sobre la experiencia,si
+197,positivo,alta,Comentario favorable sobre la experiencia,si
+198,neutral,media,Combina aspectos positivos y negativos,si
+199,muy positivo,alta,Elogio fuerte y recomendación clara,si
+200,negativo,alta,Crítica clara sobre la experiencia,si
+201,neutral,media,Combina aspectos positivos y negativos,si
+202,muy negativo,alta,Queja fuerte o rechazo claro,si
+203,negativo,alta,Crítica clara sobre la experiencia,si
+204,positivo,alta,Comentario favorable sobre la experiencia,si
+205,positivo,alta,Comentario favorable sobre la experiencia,si
+206,positivo,alta,Comentario favorable sobre la experiencia,si
+207,positivo,alta,Comentario favorable sobre la experiencia,si
+208,positivo,alta,Comentario favorable sobre la experiencia,si
+209,neutral,media,Combina aspectos positivos y negativos,si
+210,neutral,media,Combina aspectos positivos y negativos,si
+211,positivo,alta,Comentario favorable sobre la experiencia,si
+212,negativo,alta,Crítica clara sobre la experiencia,si
+213,neutral,baja,Texto ambiguo o poco concluyente,no
+214,positivo,alta,Comentario favorable sobre la experiencia,si
+215,positivo,alta,Comentario favorable sobre la experiencia,si
+216,negativo,alta,Crítica clara sobre la experiencia,si
+217,negativo,alta,Crítica clara sobre la experiencia,si
+218,muy negativo,alta,Queja fuerte o rechazo claro,si
+219,negativo,alta,Crítica clara sobre la experiencia,si
+220,muy negativo,alta,Queja fuerte o rechazo claro,si
+221,neutral,baja,Texto ambiguo o poco concluyente,no
+222,neutral,media,Combina aspectos positivos y negativos,si
+223,muy positivo,alta,Elogio fuerte y recomendación clara,si
+224,positivo,alta,Comentario favorable sobre la experiencia,si
+225,positivo,alta,Comentario favorable sobre la experiencia,si
+226,negativo,alta,Crítica clara sobre la experiencia,si
+227,negativo,alta,Crítica clara sobre la experiencia,si
+228,neutral,media,Combina aspectos positivos y negativos,si
+229,neutral,media,Combina aspectos positivos y negativos,si
+230,negativo,alta,Crítica clara sobre la experiencia,si
+231,neutral,media,Combina aspectos positivos y negativos,si
+232,positivo,alta,Comentario favorable sobre la experiencia,si
+233,negativo,alta,Crítica clara sobre la experiencia,si
+234,neutral,media,Combina aspectos positivos y negativos,si
+235,negativo,alta,Crítica clara sobre la experiencia,si
+236,muy positivo,alta,Elogio fuerte y recomendación clara,si
+237,negativo,alta,Crítica clara sobre la experiencia,si
+238,muy negativo,alta,Queja fuerte o rechazo claro,si
+239,neutral,media,Combina aspectos positivos y negativos,si
+240,negativo,alta,Crítica clara sobre la experiencia,si
+241,neutral,media,Combina aspectos positivos y negativos,si
+242,negativo,alta,Crítica clara sobre la experiencia,si
+243,neutral,media,Combina aspectos positivos y negativos,si
+244,muy negativo,alta,Queja fuerte o rechazo claro,si
+245,negativo,alta,Crítica clara sobre la experiencia,si
+246,neutral,media,Combina aspectos positivos y negativos,si
+247,neutral,baja,Texto ambiguo o poco concluyente,no
+248,neutral,media,Combina aspectos positivos y negativos,si
+249,positivo,alta,Comentario favorable sobre la experiencia,si
+250,negativo,alta,Crítica clara sobre la experiencia,si
+251,neutral,media,Combina aspectos positivos y negativos,si
+252,neutral,media,Combina aspectos positivos y negativos,si
+253,negativo,media,Tiene elogios pero predomina la queja,si
+254,positivo,media,Valoración favorable con texto poco expresivo,si
+255,neutral,media,Combina aspectos positivos y negativos,si
+256,neutral,media,Combina aspectos positivos y negativos,si
+257,neutral,media,Combina aspectos positivos y negativos,si
+258,neutral,media,Combina aspectos positivos y negativos,si
+259,neutral,media,Combina aspectos positivos y negativos,si
+260,neutral,media,Combina aspectos positivos y negativos,si
+261,neutral,media,Combina aspectos positivos y negativos,si
+262,neutral,media,Combina aspectos positivos y negativos,si
+263,neutral,media,Combina aspectos positivos y negativos,si
+264,neutral,media,Combina aspectos positivos y negativos,si
+265,neutral,media,Comentario descriptivo sin emoción clara,si
+266,neutral,media,Combina aspectos positivos y negativos,si
+267,neutral,media,Combina aspectos positivos y negativos,si
+268,neutral,media,Combina aspectos positivos y negativos,si
+269,neutral,media,Combina aspectos positivos y negativos,si
+270,neutral,media,Combina aspectos positivos y negativos,si
+271,neutral,media,Combina aspectos positivos y negativos,si
+272,neutral,media,Combina aspectos positivos y negativos,si
+273,neutral,media,Combina aspectos positivos y negativos,si
+274,neutral,media,Combina aspectos positivos y negativos,si
+275,neutral,media,Combina aspectos positivos y negativos,si
+276,neutral,media,Combina aspectos positivos y negativos,si
+277,neutral,media,Combina aspectos positivos y negativos,si
+278,muy positivo,alta,Elogio fuerte y recomendación clara,si
+279,neutral,media,Combina aspectos positivos y negativos,si
+280,neutral,media,Combina aspectos positivos y negativos,si
+281,positivo,alta,Comentario favorable sobre la experiencia,si
+282,neutral,media,Combina aspectos positivos y negativos,si
+283,neutral,media,Combina aspectos positivos y negativos,si
+284,neutral,media,Combina aspectos positivos y negativos,si
+285,neutral,media,Combina aspectos positivos y negativos,si
+286,neutral,media,Combina aspectos positivos y negativos,si
+287,neutral,media,Combina aspectos positivos y negativos,si
+288,neutral,media,Combina aspectos positivos y negativos,si
+289,neutral,media,Combina aspectos positivos y negativos,si
+290,neutral,media,Combina aspectos positivos y negativos,si
+291,neutral,media,Combina aspectos positivos y negativos,si
+292,positivo,alta,Comentario favorable sobre la experiencia,si
+293,neutral,media,Combina aspectos positivos y negativos,si
+294,neutral,media,Combina aspectos positivos y negativos,si
+295,neutral,media,Combina aspectos positivos y negativos,si
+296,neutral,media,Combina aspectos positivos y negativos,si
+297,neutral,media,Combina aspectos positivos y negativos,si
+298,neutral,media,Combina aspectos positivos y negativos,si
+299,neutral,media,Combina aspectos positivos y negativos,si
+300,negativo,media,Tiene elogios pero predomina la queja,si

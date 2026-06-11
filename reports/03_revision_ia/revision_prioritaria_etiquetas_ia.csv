@@ -1,0 +1,501 @@
+﻿id_revision,sentimiento_ia,confianza_ia,justificacion_ia,usar_etiqueta_ia
+1,negativo,alta,Crítica clara pero no extrema,si
+2,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+3,muy positivo,alta,Elogio claro o recomendación explícita,si
+4,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+5,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+6,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+7,negativo,alta,Crítica clara pero no extrema,si
+8,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+9,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+10,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+11,negativo,alta,Crítica clara pero no extrema,si
+12,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+13,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+14,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+15,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+16,negativo,alta,Crítica clara pero no extrema,si
+17,negativo,media,Predomina la crítica pese a aspectos positivos,si
+18,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+19,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+20,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+21,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+22,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+23,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+24,negativo,alta,Crítica clara pero no extrema,si
+25,positivo,alta,Comentario favorable sin queja relevante,si
+26,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+27,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+28,negativo,alta,Crítica clara pero no extrema,si
+29,muy positivo,alta,Elogio claro o recomendación explícita,si
+30,negativo,alta,Crítica clara pero no extrema,si
+31,negativo,alta,Crítica clara pero no extrema,si
+32,positivo,alta,Comentario favorable sin queja relevante,si
+33,muy positivo,alta,Elogio claro o recomendación explícita,si
+34,negativo,alta,Crítica clara pero no extrema,si
+35,positivo,alta,Comentario favorable sin queja relevante,si
+36,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+37,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+38,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+39,negativo,alta,Crítica clara pero no extrema,si
+40,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+41,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+42,negativo,alta,Crítica clara pero no extrema,si
+43,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+44,negativo,alta,Crítica clara pero no extrema,si
+45,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+46,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+47,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+48,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+49,negativo,alta,Crítica clara pero no extrema,si
+50,negativo,alta,Crítica clara pero no extrema,si
+51,negativo,media,Predomina la crítica pese a aspectos positivos,si
+52,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+53,muy positivo,alta,Elogio claro o recomendación explícita,si
+54,negativo,media,Modelo apoya crítica sin intensidad textual,si
+55,muy positivo,alta,Elogio claro o recomendación explícita,si
+56,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+57,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+58,negativo,alta,Crítica clara pero no extrema,si
+59,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+60,neutral,media,Opinión mixta con valoración equilibrada,si
+61,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+62,muy positivo,alta,Elogio claro o recomendación explícita,si
+63,positivo,alta,Comentario favorable sin queja relevante,si
+64,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+65,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+66,negativo,media,Modelo apoya crítica sin intensidad textual,si
+67,negativo,alta,Crítica clara pero no extrema,si
+68,positivo,alta,Comentario favorable sin queja relevante,si
+69,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+70,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+71,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+72,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+73,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+74,negativo,media,Modelo apoya crítica sin intensidad textual,si
+75,positivo,media,Modelo apoya valoración favorable,si
+76,negativo,alta,Crítica clara pero no extrema,si
+77,muy positivo,alta,Elogio claro o recomendación explícita,si
+78,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+79,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+80,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+81,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+82,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+83,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+84,negativo,alta,Crítica clara pero no extrema,si
+85,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+86,negativo,alta,Crítica clara pero no extrema,si
+87,positivo,alta,Comentario favorable sin queja relevante,si
+88,negativo,media,Predomina la crítica pese a aspectos positivos,si
+89,muy positivo,alta,Elogio claro o recomendación explícita,si
+90,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+91,positivo,media,Predomina valoración favorable con matices,si
+92,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+93,negativo,media,Modelo apoya crítica sin intensidad textual,si
+94,negativo,alta,Crítica clara pero no extrema,si
+95,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+96,negativo,alta,Crítica clara pero no extrema,si
+97,negativo,media,Modelo apoya crítica sin intensidad textual,si
+98,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+99,negativo,alta,Crítica clara pero no extrema,si
+100,negativo,media,Modelo apoya crítica sin intensidad textual,si
+101,negativo,media,Modelo apoya crítica sin intensidad textual,si
+102,negativo,alta,Crítica clara pero no extrema,si
+103,negativo,media,Predomina la crítica pese a aspectos positivos,si
+104,positivo,alta,Comentario favorable sin queja relevante,si
+105,positivo,alta,Comentario favorable sin queja relevante,si
+106,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+107,muy positivo,alta,Elogio claro o recomendación explícita,si
+108,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+109,negativo,alta,Crítica clara pero no extrema,si
+110,negativo,media,Modelo apoya crítica sin intensidad textual,si
+111,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+112,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+113,positivo,alta,Comentario favorable sin queja relevante,si
+114,negativo,media,Modelo apoya crítica sin intensidad textual,si
+115,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+116,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+117,muy positivo,alta,Elogio claro o recomendación explícita,si
+118,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+119,negativo,alta,Crítica clara pero no extrema,si
+120,negativo,alta,Crítica clara pero no extrema,si
+121,negativo,media,Crítica clara pero no extrema,si
+122,neutral,media,Opinión mixta con valoración equilibrada,si
+123,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+124,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+125,muy positivo,alta,Elogio claro o recomendación explícita,si
+126,muy positivo,alta,Elogio claro o recomendación explícita,si
+127,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+128,positivo,alta,Comentario favorable sin queja relevante,si
+129,positivo,media,Modelo apoya valoración favorable,si
+130,negativo,alta,Crítica clara pero no extrema,si
+131,negativo,alta,Crítica clara pero no extrema,si
+132,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+133,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+134,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+135,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+136,positivo,alta,Comentario favorable sin queja relevante,si
+137,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+138,negativo,alta,Crítica clara pero no extrema,si
+139,negativo,media,Predomina la crítica pese a aspectos positivos,si
+140,negativo,media,Modelo apoya crítica sin intensidad textual,si
+141,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+142,positivo,media,Comentario favorable sin queja relevante,si
+143,negativo,media,Modelo apoya crítica sin intensidad textual,si
+144,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+145,negativo,media,Modelo apoya crítica sin intensidad textual,si
+146,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+147,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+148,muy positivo,alta,Elogio claro o recomendación explícita,si
+149,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+150,muy positivo,alta,Elogio claro o recomendación explícita,si
+151,positivo,media,Predomina valoración favorable con matices,si
+152,negativo,alta,Crítica clara pero no extrema,si
+153,muy positivo,alta,Elogio claro o recomendación explícita,si
+154,negativo,media,Modelo apoya crítica sin intensidad textual,si
+155,muy positivo,alta,Elogio claro o recomendación explícita,si
+156,positivo,alta,Comentario favorable sin queja relevante,si
+157,muy positivo,alta,Elogio claro o recomendación explícita,si
+158,muy positivo,alta,Elogio claro o recomendación explícita,si
+159,positivo,alta,Comentario favorable sin queja relevante,si
+160,positivo,media,Comentario favorable sin queja relevante,si
+161,negativo,media,Modelo apoya crítica sin intensidad textual,si
+162,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+163,negativo,alta,Crítica clara pero no extrema,si
+164,negativo,alta,Crítica clara pero no extrema,si
+165,neutral,media,Opinión mixta con valoración equilibrada,si
+166,negativo,alta,Crítica clara pero no extrema,si
+167,muy positivo,alta,Elogio claro o recomendación explícita,si
+168,negativo,media,Modelo apoya crítica sin intensidad textual,si
+169,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+170,positivo,alta,Comentario favorable sin queja relevante,si
+171,muy positivo,alta,Elogio claro o recomendación explícita,si
+172,neutral,baja,Texto demasiado breve o ambiguo,no
+173,muy positivo,alta,Elogio claro o recomendación explícita,si
+174,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+175,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+176,negativo,alta,Crítica clara pero no extrema,si
+177,muy positivo,alta,Elogio claro o recomendación explícita,si
+178,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+179,positivo,media,Predomina valoración favorable con matices,si
+180,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+181,negativo,alta,Crítica clara pero no extrema,si
+182,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+183,negativo,alta,Crítica clara pero no extrema,si
+184,positivo,alta,Comentario favorable sin queja relevante,si
+185,muy positivo,alta,Elogio claro o recomendación explícita,si
+186,positivo,media,Comentario favorable sin queja relevante,si
+187,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+188,muy positivo,alta,Elogio claro o recomendación explícita,si
+189,positivo,alta,Comentario favorable sin queja relevante,si
+190,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+191,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+192,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+193,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+194,negativo,alta,Crítica clara pero no extrema,si
+195,muy positivo,alta,Elogio claro o recomendación explícita,si
+196,negativo,alta,Crítica clara pero no extrema,si
+197,muy positivo,alta,Elogio claro o recomendación explícita,si
+198,neutral,media,Opinión mixta con valoración equilibrada,si
+199,negativo,alta,Crítica clara pero no extrema,si
+200,negativo,alta,Crítica clara pero no extrema,si
+201,negativo,alta,Crítica clara pero no extrema,si
+202,negativo,alta,Crítica clara pero no extrema,si
+203,negativo,alta,Crítica clara pero no extrema,si
+204,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+205,neutral,media,Opinión mixta con valoración equilibrada,si
+206,muy positivo,alta,Elogio claro o recomendación explícita,si
+207,muy positivo,alta,Elogio claro o recomendación explícita,si
+208,negativo,alta,Crítica clara pero no extrema,si
+209,negativo,alta,Crítica clara pero no extrema,si
+210,negativo,alta,Crítica clara pero no extrema,si
+211,negativo,alta,Crítica clara pero no extrema,si
+212,muy positivo,alta,Elogio claro o recomendación explícita,si
+213,muy positivo,alta,Elogio claro o recomendación explícita,si
+214,muy positivo,alta,Elogio claro o recomendación explícita,si
+215,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+216,negativo,alta,Crítica clara pero no extrema,si
+217,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+218,negativo,alta,Crítica clara pero no extrema,si
+219,positivo,media,Modelo apoya valoración favorable,si
+220,muy positivo,alta,Elogio claro o recomendación explícita,si
+221,muy positivo,alta,Elogio claro o recomendación explícita,si
+222,positivo,media,Comentario favorable sin queja relevante,si
+223,muy positivo,alta,Elogio claro o recomendación explícita,si
+224,negativo,alta,Crítica clara pero no extrema,si
+225,negativo,media,Modelo apoya crítica sin intensidad textual,si
+226,positivo,media,Predomina valoración favorable con matices,si
+227,negativo,alta,Crítica clara pero no extrema,si
+228,negativo,alta,Crítica clara pero no extrema,si
+229,negativo,alta,Crítica clara pero no extrema,si
+230,negativo,media,Modelo apoya crítica sin intensidad textual,si
+231,positivo,media,Comentario favorable sin queja relevante,si
+232,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+233,negativo,alta,Crítica clara pero no extrema,si
+234,negativo,alta,Crítica clara pero no extrema,si
+235,muy positivo,alta,Elogio claro o recomendación explícita,si
+236,muy positivo,alta,Elogio claro o recomendación explícita,si
+237,negativo,alta,Crítica clara pero no extrema,si
+238,positivo,alta,Comentario favorable sin queja relevante,si
+239,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+240,negativo,alta,Crítica clara pero no extrema,si
+241,neutral,media,Opinión mixta con valoración equilibrada,si
+242,negativo,alta,Crítica clara pero no extrema,si
+243,negativo,alta,Crítica clara pero no extrema,si
+244,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+245,positivo,media,Comentario favorable sin queja relevante,si
+246,negativo,media,Modelo apoya crítica sin intensidad textual,si
+247,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+248,negativo,media,Crítica clara pero no extrema,si
+249,muy positivo,alta,Elogio claro o recomendación explícita,si
+250,negativo,media,Predomina la crítica pese a aspectos positivos,si
+251,muy positivo,alta,Elogio claro o recomendación explícita,si
+252,neutral,media,Opinión mixta con valoración equilibrada,si
+253,negativo,media,Crítica clara pero no extrema,si
+254,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+255,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+256,muy positivo,alta,Elogio claro o recomendación explícita,si
+257,negativo,media,Crítica clara pero no extrema,si
+258,positivo,media,Modelo apoya valoración favorable,si
+259,neutral,media,Opinión mixta con valoración equilibrada,si
+260,negativo,alta,Crítica clara pero no extrema,si
+261,negativo,alta,Crítica clara pero no extrema,si
+262,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+263,neutral,media,Opinión mixta con valoración equilibrada,si
+264,neutral,media,Opinión mixta con valoración equilibrada,si
+265,negativo,media,Modelo apoya crítica sin intensidad textual,si
+266,positivo,alta,Comentario favorable sin queja relevante,si
+267,negativo,alta,Crítica clara pero no extrema,si
+268,negativo,media,Modelo apoya crítica sin intensidad textual,si
+269,muy positivo,alta,Elogio claro o recomendación explícita,si
+270,negativo,alta,Crítica clara pero no extrema,si
+271,positivo,media,Comentario favorable sin queja relevante,si
+272,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+273,positivo,media,Modelo apoya valoración favorable,si
+274,muy positivo,alta,Elogio claro o recomendación explícita,si
+275,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+276,positivo,alta,Comentario favorable sin queja relevante,si
+277,muy positivo,alta,Elogio claro o recomendación explícita,si
+278,muy positivo,alta,Elogio claro o recomendación explícita,si
+279,muy positivo,alta,Elogio claro o recomendación explícita,si
+280,muy positivo,alta,Elogio claro o recomendación explícita,si
+281,negativo,alta,Crítica clara pero no extrema,si
+282,negativo,alta,Crítica clara pero no extrema,si
+283,positivo,media,Predomina valoración favorable con matices,si
+284,positivo,alta,Comentario favorable sin queja relevante,si
+285,negativo,alta,Crítica clara pero no extrema,si
+286,negativo,alta,Crítica clara pero no extrema,si
+287,negativo,alta,Crítica clara pero no extrema,si
+288,muy positivo,alta,Elogio claro o recomendación explícita,si
+289,positivo,media,Comentario favorable sin queja relevante,si
+290,positivo,alta,Comentario favorable sin queja relevante,si
+291,muy positivo,alta,Elogio claro o recomendación explícita,si
+292,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+293,negativo,alta,Crítica clara pero no extrema,si
+294,negativo,media,Modelo apoya crítica sin intensidad textual,si
+295,positivo,alta,Comentario favorable sin queja relevante,si
+296,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+297,negativo,alta,Crítica clara pero no extrema,si
+298,muy positivo,alta,Elogio claro o recomendación explícita,si
+299,positivo,media,Comentario favorable sin queja relevante,si
+300,positivo,alta,Comentario favorable sin queja relevante,si
+301,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+302,muy positivo,alta,Elogio claro o recomendación explícita,si
+303,positivo,media,Modelo apoya valoración favorable,si
+304,muy positivo,alta,Elogio claro o recomendación explícita,si
+305,negativo,media,Modelo apoya crítica sin intensidad textual,si
+306,muy positivo,alta,Elogio claro o recomendación explícita,si
+307,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+308,positivo,media,Comentario favorable sin queja relevante,si
+309,negativo,alta,Crítica clara pero no extrema,si
+310,muy positivo,alta,Elogio claro o recomendación explícita,si
+311,positivo,media,Comentario favorable sin queja relevante,si
+312,positivo,media,Modelo apoya valoración favorable,si
+313,negativo,alta,Crítica clara pero no extrema,si
+314,muy positivo,alta,Elogio claro o recomendación explícita,si
+315,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+316,negativo,media,Modelo apoya crítica sin intensidad textual,si
+317,muy positivo,alta,Elogio claro o recomendación explícita,si
+318,negativo,media,Modelo apoya crítica sin intensidad textual,si
+319,negativo,alta,Crítica clara pero no extrema,si
+320,negativo,alta,Crítica clara pero no extrema,si
+321,negativo,media,Crítica clara pero no extrema,si
+322,negativo,media,Crítica clara pero no extrema,si
+323,positivo,alta,Comentario favorable sin queja relevante,si
+324,positivo,media,Modelo apoya valoración favorable,si
+325,positivo,alta,Comentario favorable sin queja relevante,si
+326,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+327,negativo,alta,Crítica clara pero no extrema,si
+328,muy positivo,alta,Elogio claro o recomendación explícita,si
+329,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+330,negativo,alta,Crítica clara pero no extrema,si
+331,negativo,alta,Crítica clara pero no extrema,si
+332,negativo,alta,Crítica clara pero no extrema,si
+333,negativo,media,Modelo apoya crítica sin intensidad textual,si
+334,muy positivo,alta,Elogio claro o recomendación explícita,si
+335,negativo,media,Modelo apoya crítica sin intensidad textual,si
+336,neutral,baja,Texto demasiado breve o ambiguo,no
+337,muy positivo,alta,Elogio claro o recomendación explícita,si
+338,muy positivo,alta,Elogio claro o recomendación explícita,si
+339,muy positivo,alta,Elogio claro o recomendación explícita,si
+340,positivo,media,Predomina valoración favorable con matices,si
+341,negativo,alta,Crítica clara pero no extrema,si
+342,negativo,alta,Crítica clara pero no extrema,si
+343,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+344,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+345,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+346,negativo,alta,Crítica clara pero no extrema,si
+347,negativo,alta,Crítica clara pero no extrema,si
+348,negativo,alta,Crítica clara pero no extrema,si
+349,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+350,muy positivo,alta,Elogio claro o recomendación explícita,si
+351,positivo,media,Comentario favorable sin queja relevante,si
+352,positivo,media,Comentario favorable sin queja relevante,si
+353,negativo,media,Modelo apoya crítica sin intensidad textual,si
+354,muy positivo,alta,Elogio claro o recomendación explícita,si
+355,negativo,alta,Crítica clara pero no extrema,si
+356,negativo,media,Modelo apoya crítica sin intensidad textual,si
+357,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+358,negativo,media,Predomina la crítica pese a aspectos positivos,si
+359,negativo,media,Modelo apoya crítica sin intensidad textual,si
+360,positivo,media,Comentario favorable sin queja relevante,si
+361,muy positivo,alta,Elogio claro o recomendación explícita,si
+362,negativo,alta,Crítica clara pero no extrema,si
+363,muy positivo,alta,Elogio claro o recomendación explícita,si
+364,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+365,neutral,baja,Texto demasiado breve o ambiguo,no
+366,muy positivo,alta,Elogio claro o recomendación explícita,si
+367,negativo,alta,Crítica clara pero no extrema,si
+368,positivo,alta,Comentario favorable sin queja relevante,si
+369,neutral,baja,Texto demasiado breve o ambiguo,no
+370,negativo,media,Crítica clara pero no extrema,si
+371,negativo,media,Predomina la crítica pese a aspectos positivos,si
+372,muy positivo,alta,Elogio claro o recomendación explícita,si
+373,positivo,media,Comentario favorable sin queja relevante,si
+374,negativo,media,Modelo apoya crítica sin intensidad textual,si
+375,muy positivo,alta,Elogio claro o recomendación explícita,si
+376,neutral,baja,Texto demasiado breve o ambiguo,no
+377,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+378,neutral,media,Opinión mixta con valoración equilibrada,si
+379,negativo,media,Crítica clara pero no extrema,si
+380,negativo,media,Modelo apoya crítica sin intensidad textual,si
+381,muy positivo,alta,Elogio claro o recomendación explícita,si
+382,positivo,media,Predomina valoración favorable con matices,si
+383,positivo,media,Comentario favorable sin queja relevante,si
+384,negativo,media,Predomina la crítica pese a aspectos positivos,si
+385,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+386,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+387,negativo,media,Modelo apoya crítica sin intensidad textual,si
+388,neutral,media,Opinión mixta con valoración equilibrada,si
+389,neutral,baja,Texto demasiado breve o ambiguo,no
+390,neutral,baja,Comentario ambiguo o sin emoción clara,no
+391,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+392,negativo,media,Predomina la crítica pese a aspectos positivos,si
+393,muy positivo,alta,Elogio claro o recomendación explícita,si
+394,positivo,media,Predomina valoración favorable con matices,si
+395,negativo,media,Crítica clara pero no extrema,si
+396,neutral,media,Opinión mixta con valoración equilibrada,si
+397,positivo,media,Modelo apoya valoración favorable,si
+398,muy positivo,alta,Elogio claro o recomendación explícita,si
+399,positivo,media,Comentario favorable sin queja relevante,si
+400,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+401,positivo,alta,Comentario favorable sin queja relevante,si
+402,neutral,media,Opinión mixta con valoración equilibrada,si
+403,negativo,alta,Crítica clara pero no extrema,si
+404,negativo,media,Modelo apoya crítica sin intensidad textual,si
+405,negativo,alta,Crítica clara pero no extrema,si
+406,muy positivo,alta,Elogio claro o recomendación explícita,si
+407,negativo,media,Modelo apoya crítica sin intensidad textual,si
+408,positivo,media,Predomina valoración favorable con matices,si
+409,negativo,media,Modelo apoya crítica sin intensidad textual,si
+410,neutral,baja,Texto demasiado breve o ambiguo,no
+411,negativo,media,Crítica clara pero no extrema,si
+412,positivo,media,Comentario favorable sin queja relevante,si
+413,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+414,muy positivo,alta,Elogio claro o recomendación explícita,si
+415,muy positivo,alta,Elogio claro o recomendación explícita,si
+416,neutral,baja,Comentario ambiguo o sin emoción clara,no
+417,muy positivo,alta,Elogio claro o recomendación explícita,si
+418,negativo,media,Modelo apoya crítica sin intensidad textual,si
+419,negativo,alta,Crítica clara pero no extrema,si
+420,positivo,media,Comentario favorable sin queja relevante,si
+421,muy positivo,alta,Elogio claro o recomendación explícita,si
+422,neutral,baja,Comentario ambiguo o sin emoción clara,no
+423,positivo,media,Predomina valoración favorable con matices,si
+424,negativo,media,Crítica clara pero no extrema,si
+425,muy positivo,alta,Elogio claro o recomendación explícita,si
+426,neutral,baja,Comentario ambiguo o sin emoción clara,no
+427,neutral,baja,Comentario ambiguo o sin emoción clara,no
+428,neutral,baja,Texto demasiado breve o ambiguo,no
+429,negativo,media,Crítica clara pero no extrema,si
+430,negativo,media,Crítica clara pero no extrema,si
+431,neutral,baja,Comentario ambiguo o sin emoción clara,no
+432,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+433,negativo,alta,Crítica clara pero no extrema,si
+434,negativo,media,Crítica clara pero no extrema,si
+435,positivo,media,Comentario favorable sin queja relevante,si
+436,positivo,media,Predomina valoración favorable con matices,si
+437,neutral,baja,Texto demasiado breve o ambiguo,no
+438,muy positivo,alta,Elogio claro o recomendación explícita,si
+439,positivo,alta,Comentario favorable sin queja relevante,si
+440,positivo,alta,Comentario favorable sin queja relevante,si
+441,negativo,alta,Crítica clara pero no extrema,si
+442,neutral,baja,Texto demasiado breve o ambiguo,no
+443,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+444,muy positivo,alta,Elogio claro o recomendación explícita,si
+445,negativo,media,Valoración baja con texto poco expresivo,si
+446,negativo,media,Valoración baja con texto poco expresivo,si
+447,negativo,media,Valoración baja con texto poco expresivo,si
+448,negativo,media,Valoración baja con texto poco expresivo,si
+449,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+450,muy positivo,alta,Elogio claro o recomendación explícita,si
+451,negativo,media,Valoración baja con texto poco expresivo,si
+452,negativo,media,Valoración baja con texto poco expresivo,si
+453,negativo,media,Crítica clara pero no extrema,si
+454,positivo,alta,Comentario favorable sin queja relevante,si
+455,muy positivo,alta,Elogio claro o recomendación explícita,si
+456,neutral,baja,Texto demasiado breve o ambiguo,no
+457,muy positivo,alta,Elogio claro o recomendación explícita,si
+458,negativo,media,Predomina la crítica pese a aspectos positivos,si
+459,muy positivo,alta,Elogio claro o recomendación explícita,si
+460,positivo,media,Comentario favorable sin queja relevante,si
+461,muy positivo,alta,Elogio claro o recomendación explícita,si
+462,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+463,negativo,media,Valoración baja con texto poco expresivo,si
+464,negativo,alta,Crítica clara pero no extrema,si
+465,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+466,negativo,media,Valoración baja con texto poco expresivo,si
+467,negativo,media,Valoración baja con texto poco expresivo,si
+468,neutral,media,Opinión mixta con valoración equilibrada,si
+469,positivo,alta,Comentario favorable sin queja relevante,si
+470,negativo,alta,Crítica clara pero no extrema,si
+471,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+472,negativo,media,Crítica clara pero no extrema,si
+473,negativo,media,Valoración baja con texto poco expresivo,si
+474,positivo,alta,Comentario favorable sin queja relevante,si
+475,muy positivo,alta,Elogio claro o recomendación explícita,si
+476,positivo,media,Comentario favorable sin queja relevante,si
+477,positivo,alta,Comentario favorable sin queja relevante,si
+478,negativo,media,Valoración baja con texto poco expresivo,si
+479,positivo,alta,Comentario favorable sin queja relevante,si
+480,positivo,media,Comentario favorable sin queja relevante,si
+481,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+482,muy positivo,alta,Elogio claro o recomendación explícita,si
+483,negativo,media,Valoración baja con texto poco expresivo,si
+484,neutral,baja,Texto demasiado breve o ambiguo,no
+485,negativo,media,Crítica clara pero no extrema,si
+486,muy positivo,alta,Elogio claro o recomendación explícita,si
+487,neutral,baja,Texto demasiado breve o ambiguo,no
+488,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+489,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+490,neutral,media,Opinión mixta con valoración equilibrada,si
+491,negativo,alta,Crítica clara pero no extrema,si
+492,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+493,positivo,alta,Comentario favorable sin queja relevante,si
+494,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+495,negativo,alta,Crítica clara pero no extrema,si
+496,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+497,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+498,muy negativo,alta,Queja fuerte y experiencia muy negativa,si
+499,muy positivo,alta,Elogio claro o recomendación explícita,si
+500,positivo,media,Valoración alta con texto poco expresivo,si

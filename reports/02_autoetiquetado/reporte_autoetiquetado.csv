@@ -1,0 +1,9 @@
+﻿metrica,valor
+filas,4800.0
+etiquetas_finales_asignadas,3448.0
+etiquetas_provisionales_asignadas,4800.0
+filas_revision_etiqueta,1589.0
+confianza_alta,2750.0
+confianza_media,461.0
+confianza_baja,1589.0
+umbral_confianza,0.6

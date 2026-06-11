@@ -1,0 +1,7 @@
+﻿metrica,valor
+filas_dataset,4800
+filas_ia,500
+etiquetas_ia_integradas,175
+etiquetas_ia_no_integradas,325
+finales_con_etiqueta,3623
+finales_sin_etiqueta,1177
