@@ -21,6 +21,28 @@ entrenamiento y evaluacion
 pip install -r requirements.txt
 ```
 
+## Ejecucion Con Un Solo Comando
+
+En lugar de correr las etapas una por una, el orquestador `run_pipeline.py` encadena todo
+el procesamiento (limpieza -> autoetiquetado -> integracion -> reglas -> split) con un solo
+comando. Verifica las entradas de cada etapa y salta con un mensaje claro las que no puedan
+correr (falta de archivo o de paquete), mostrando un resumen final.
+
+```bash
+python run_pipeline.py                 # corre el procesamiento 02 -> 06
+python run_pipeline.py --listar        # muestra las etapas y si pueden correr
+python run_pipeline.py --dry-run       # muestra que haria, sin ejecutar nada
+python run_pipeline.py --instalar-deps # instala requirements.txt antes de correr
+python run_pipeline.py --con-scraping  # incluye la etapa 01 (necesita Chrome abierto)
+python run_pipeline.py --desde 05b_reglas           # corre desde una etapa
+python run_pipeline.py --solo 05b_reglas 06_split   # corre solo esas etapas
+```
+
+El scraping (01) esta excluido por defecto porque necesita que abras Chrome con depuracion
+remota a mano (ver mas abajo). El autoetiquetado (03) requiere `pysentimiento` instalado y el
+dataset crudo ya scrapeado; si faltan, esas etapas se saltan y el pipeline continua con las
+demas. Las secciones siguientes documentan cada etapa por separado para ejecucion manual.
+
 ## Estructura Del Proyecto
 
 ```text

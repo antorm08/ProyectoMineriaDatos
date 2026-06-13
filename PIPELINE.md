@@ -2,6 +2,20 @@
 
 Este documento resume el orden de ejecucion del proyecto y los archivos principales de cada fase.
 
+## 00. Comando Unico (orquestador)
+
+Para correr todo el procesamiento de una sola vez, sin ejecutar cada etapa a mano:
+
+```bash
+python run_pipeline.py            # procesamiento 02 -> 06
+python run_pipeline.py --listar   # estado de cada etapa
+python run_pipeline.py --dry-run  # simula sin ejecutar
+```
+
+Banderas: `--con-scraping`, `--instalar-deps`, `--desde`, `--hasta`, `--solo`,
+`--continuar-en-error`. El orquestador salta las etapas cuya entrada o paquete falte y
+muestra un resumen final con OK / SALTADA / FALLO por etapa.
+
 ## 01. Scraping
 
 Comando:
