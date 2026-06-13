@@ -143,42 +143,11 @@ Estado actual de clases finales:
 
 ```text
 muy positivo    1407
-muy negativo    1054
+muy negativo    1018
 positivo         647
-neutral          639
-negativo         433
+negativo         422
+neutral          296
 ```
-
-## 05b. Etiquetado Automatico Por Reglas
-
-Rellena filas sin etiqueta usando solo columnas ya calculadas (sin IA, determinista, solo pandas).
-
-Comandos:
-
-```bash
-python scripts/04_revision_ia/etiquetar_por_reglas.py --dry-run
-python scripts/04_revision_ia/etiquetar_por_reglas.py
-```
-
-Entrada y salida:
-
-```text
-data/processed/dataset_consumidores_peru_etiquetado_final.csv   (actualizado en sitio)
-reports/03b_reglas/reporte_etiquetado_reglas.csv
-reports/03b_reglas/distribucion_final_reglas.csv
-reports/03b_reglas/validacion_reglas.csv
-```
-
-Reglas conservadoras:
-
-```text
-R1: 4/5 estrellas + modelo NEU con prob_neu >= 0.60  -> neutral
-R2: 1 estrella  + modelo NEU + prob_pos < 0.25       -> muy negativo
-    2 estrellas + modelo NEU + prob_pos < 0.25       -> negativo
-```
-
-Recupera 390 etiquetas (343 neutral, 47 negativas) con 93% de acuerdo frente a las etiquetas IA
-existentes. Origen marcado como `regla_voto_ponderado`. Residuo sin etiqueta: 620.
 
 ## 06. Split Estratificado
 
@@ -209,9 +178,9 @@ reports/05_split/distribucion_split_test.csv
 Tamanos actuales:
 
 ```text
-train    2923
-valid     627
-test      627
+train    2653
+valid     568
+test      569
 ```
 
 ## 07. Entrenamiento Y Evaluacion

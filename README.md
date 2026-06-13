@@ -10,7 +10,6 @@ limpieza
 autoetiquetado con pysentimiento
 revision asistida por IA de casos ambiguos
 integracion conservadora de etiquetas
-etiquetado automatico por reglas (sin IA, determinista)
 split estratificado
 entrenamiento y evaluacion
 ```
@@ -62,26 +61,23 @@ Distribucion actual de `sentimiento_final`:
 
 ```text
 muy positivo    1407
-muy negativo    1054
+muy negativo    1018
 positivo         647
-neutral          639
-negativo         433
+negativo         422
+neutral          296
 ```
 
 Total con etiqueta final consolidada:
 
 ```text
-4180
+3790
 ```
 
 Casos sin etiqueta final confiable:
 
 ```text
-620
+1010
 ```
-
-Estas cifras incluyen 390 etiquetas asignadas por el etiquetado automatico por reglas
-(fase 05b), que recupera neutrales y negativos de alta pureza sin usar IA. Ver mas abajo.
 
 ## Pipeline Completo
 
@@ -274,49 +270,6 @@ usar solo confianza alta o media
 integrar de forma focalizada clases minoritarias
 ```
 
-### 05b. Etiquetado Automatico Por Reglas
-
-Esta fase rellena casos que quedaron sin etiqueta usando solo columnas ya calculadas
-(`estrellas`, `sentimiento_modelo`, `prob_neu`, `prob_pos`). No ejecuta ningun modelo de IA:
-es determinista, reproducible y solo depende de `pandas`.
-
-```bash
-python scripts/04_revision_ia/etiquetar_por_reglas.py --dry-run
-python scripts/04_revision_ia/etiquetar_por_reglas.py
-```
-
-Entrada:
-
-```text
-data/processed/dataset_consumidores_peru_etiquetado_final.csv
-```
-
-Salidas:
-
-```text
-data/processed/dataset_consumidores_peru_etiquetado_final.csv   (actualizado en sitio)
-reports/03b_reglas/reporte_etiquetado_reglas.csv
-reports/03b_reglas/distribucion_final_reglas.csv
-reports/03b_reglas/validacion_reglas.csv
-```
-
-Reglas conservadoras (solo sobre filas con `sentimiento_final` vacio):
-
-```text
-R1: 4/5 estrellas + modelo NEU con prob_neu >= 0.60  -> neutral
-R2: 1 estrella  + modelo NEU + prob_pos < 0.25       -> muy negativo
-    2 estrellas + modelo NEU + prob_pos < 0.25       -> negativo
-```
-
-R1 se valido empiricamente: cuando hay muchas estrellas pero el modelo dice NEU con confianza,
-la resena es genuinamente neutral (cliente generoso con la estrella, texto con peros), no positiva.
-El script compara lo que la regla predeciria contra las etiquetas IA ya existentes y reporta el
-porcentaje de acuerdo (actualmente 93%). Las contradicciones duras (estrellas altas + NEG,
-estrellas bajas + POS, y 3 estrellas residual) se dejan sin etiqueta a proposito.
-
-Filas marcadas con `sentimiento_final_origen = regla_voto_ponderado` para trazabilidad. Banderas:
-`--umbral-neu`, `--umbral-pos`, `--dry-run`.
-
 ### 06. Split Estratificado
 
 ```bash
@@ -344,9 +297,9 @@ reports/05_split/distribucion_split_test.csv
 Tamanos actuales:
 
 ```text
-train    2923
-valid     627
-test      627
+train    2653
+valid     568
+test      569
 ```
 
 ### 07. Entrenamiento Y Evaluacion
