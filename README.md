@@ -15,6 +15,51 @@ split estratificado
 entrenamiento y evaluacion
 ```
 
+## Metodologia
+
+El proyecto combina dos metodologias: el marco general del proceso de mineria de datos
+y la metodologia de etiquetado de los datos.
+
+### Marco General: CRISP-DM
+
+El pipeline sigue la estructura de CRISP-DM (Cross-Industry Standard Process for Data Mining):
+
+```text
+Comprension del negocio  -> objetivo: clasificar sentimiento multiclase de resenas peruanas
+Comprension de los datos -> scraping y auditoria (etapas 01 y 02-auditoria)
+Preparacion de los datos -> limpieza, autoetiquetado, revision IA, integracion, reglas, split (02-06, 05b)
+Modelado                 -> pendiente (fase 07)
+Evaluacion               -> pendiente (F1-macro, matriz de confusion)
+Despliegue               -> no contemplado aun
+```
+
+Actualmente el trabajo esta concentrado en la preparacion de datos, que en problemas de NLP
+suele ser la mayor parte del esfuerzo. El modelado (fase 07) es lo que falta para cerrar el ciclo.
+
+### Metodologia De Etiquetado: Supervision Debil Con Consenso
+
+Las etiquetas no se asignan a mano una por una ni confiando ciegamente en una sola fuente.
+Se usa un esquema de supervision debil (weak supervision) que combina varias tecnicas:
+
+```text
+Supervision distante / etiquetas debiles  -> las estrellas de Google como etiqueta inicial
+Pre-etiquetado asistido por modelo         -> pysentimiento aporta una segunda senal
+Etiquetado por consenso                    -> se confia solo cuando estrellas y modelo coinciden
+Revision asistida por IA (human-in-loop)   -> los casos ambiguos se revisan de forma focalizada
+Funciones de etiquetado por reglas         -> reglas deterministas validadas, estilo Snorkel (fase 05b)
+Abstencion conservadora                    -> los casos contradictorios se dejan sin etiqueta
+```
+
+Criterio rector: priorizar la pureza de las etiquetas sobre la cobertura. Ver el detalle de las
+fuentes de etiqueta en la seccion "Criterio De Etiquetado".
+
+### Validacion Y Particion
+
+- Validacion de etiquetas: se mide el acuerdo de las reglas frente a las etiquetas humanas ya
+  existentes antes de confiar en ellas (actualmente 93% de acuerdo, ver fase 05b).
+- Particion estratificada train/valid/test (70/15/15) que preserva la distribucion de clases,
+  metodologia estandar para clasificacion con desbalance.
+
 ## Instalacion
 
 ```bash
