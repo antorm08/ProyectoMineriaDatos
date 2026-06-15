@@ -1,5 +1,6 @@
 import argparse
 import logging
+import random
 import re
 import sys
 import time
@@ -30,12 +31,64 @@ SCROLL_PAUSE_SECONDS = 2
 COLUMNAS_EMPRESAS = ["nombre", "sede", "rubro", "url"]
 SELENIUM_RECUPERABLE_ERRORS = (WebDriverException, ReadTimeoutError, TimeoutError)
 
+# Anti-bloqueo: delays con jitter, pausas humanas entre sedes y backoff ante bloqueos.
+# El jitter evita el patron de intervalos constantes (huella de bot); el backoff frena
+# la ejecucion cuando Google muestra una pagina de verificacion, en vez de seguir insistiendo.
+DELAY_SCROLL_MIN = 1.5
+DELAY_SCROLL_MAX = 3.0
+PAUSA_SEDE_MIN = 4.0
+PAUSA_SEDE_MAX = 10.0
+MAX_BLOQUEOS_CONSECUTIVOS = 3
+BACKOFF_BASE_SEGUNDOS = 30
+BACKOFF_MAX_SEGUNDOS = 300
+SENALES_BLOQUEO = ("unusual traffic", "trafico inusual", "tráfico inusual")
+
 
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(message)s",
     datefmt="%H:%M:%S",
 )
+
+
+def dormir(minimo, maximo):
+    """Pausa una duracion aleatoria (jitter) para imitar el ritmo de un humano."""
+    if maximo < minimo:
+        maximo = minimo
+    time.sleep(random.uniform(minimo, maximo))
+
+
+def pagina_bloqueada(driver):
+    """Detecta si Google esta mostrando una pagina de bloqueo / verificacion."""
+    try:
+        url = (driver.current_url or "").lower()
+        fuente = (driver.page_source or "").lower()
+    except SELENIUM_RECUPERABLE_ERRORS:
+        return False
+
+    if "/sorry/" in url:
+        return True
+    return any(senal in fuente for senal in SENALES_BLOQUEO)
+
+
+def esperar_si_bloqueado(driver, bloqueos_consecutivos):
+    """Si detecta bloqueo, espera con backoff exponencial. Devuelve el contador actualizado.
+
+    Sin bloqueo: devuelve 0 (reinicia el contador). Con bloqueo: incrementa el contador y
+    pausa BACKOFF_BASE * 2^(n-1) segundos (con tope) antes de continuar.
+    """
+    if not pagina_bloqueada(driver):
+        return 0
+
+    bloqueos_consecutivos += 1
+    espera = min(BACKOFF_MAX_SEGUNDOS, BACKOFF_BASE_SEGUNDOS * (2 ** (bloqueos_consecutivos - 1)))
+    logging.warning(
+        "Posible bloqueo de Google detectado (%s consecutivo). Pausando %ss antes de continuar.",
+        bloqueos_consecutivos,
+        int(espera),
+    )
+    time.sleep(espera)
+    return bloqueos_consecutivos
 
 
 def crear_driver():
@@ -291,7 +344,7 @@ def cargar_resenas(driver, panel_scroll, max_reviews):
             "arguments[0].scrollTop = arguments[0].scrollTop + arguments[0].clientHeight;",
             panel_scroll,
         )
-        time.sleep(SCROLL_PAUSE_SECONDS)
+        dormir(DELAY_SCROLL_MIN, DELAY_SCROLL_MAX)
 
         tarjetas_actuales = contar_tarjetas(panel_scroll)
         logging.info("Scroll %s/%s | tarjetas cargadas: %s", intento + 1, SCROLL_ATTEMPTS, tarjetas_actuales)
@@ -433,7 +486,7 @@ def recolectar_resenas_con_scroll(driver, panel_scroll, empresa, max_reviews, ex
             break
 
         panel_scroll = hacer_scroll_resenas(driver, panel_scroll, empresa)
-        time.sleep(SCROLL_PAUSE_SECONDS)
+        dormir(DELAY_SCROLL_MIN, DELAY_SCROLL_MAX)
         cerrar_modal_compartir(driver)
         panel_actual = recuperar_panel_empresa(driver, empresa)
         if panel_actual is not None:
@@ -627,6 +680,24 @@ def obtener_argumentos():
         dest="expand_comments",
         help="No hace click en 'Mas'. Util si Google Maps abre reseñas individuales.",
     )
+    parser.add_argument(
+        "--pausa-sede-min",
+        type=float,
+        default=PAUSA_SEDE_MIN,
+        help="Pausa minima en segundos entre sedes (con jitter). Sube para ir mas lento y seguro.",
+    )
+    parser.add_argument(
+        "--pausa-sede-max",
+        type=float,
+        default=PAUSA_SEDE_MAX,
+        help="Pausa maxima en segundos entre sedes (con jitter).",
+    )
+    parser.add_argument(
+        "--max-bloqueos",
+        type=int,
+        default=MAX_BLOQUEOS_CONSECUTIVOS,
+        help="Detiene el scraping tras este numero de bloqueos consecutivos de Google.",
+    )
     return parser.parse_args()
 
 
@@ -663,6 +734,7 @@ def main():
     if empresas_pendientes:
         driver = crear_driver()
 
+        bloqueos_consecutivos = 0
         try:
             for empresa in empresas_pendientes:
                 logging.info("Scrapeando %s...", empresa["nombre"])
@@ -678,7 +750,17 @@ def main():
                 if not df.empty:
                     logging.info("Total acumulado en CSV: %s", len(df))
 
-                time.sleep(3)
+                # Si Google muestra una pagina de verificacion, se frena con backoff en vez de insistir.
+                bloqueos_consecutivos = esperar_si_bloqueado(driver, bloqueos_consecutivos)
+                if bloqueos_consecutivos >= args.max_bloqueos:
+                    logging.error(
+                        "Demasiados bloqueos consecutivos (%s). Se detiene el scraping y se conserva lo recolectado.",
+                        bloqueos_consecutivos,
+                    )
+                    break
+
+                # Pausa humana (con jitter) entre sedes para no parecer un bot.
+                dormir(args.pausa_sede_min, args.pausa_sede_max)
         except KeyboardInterrupt:
             logging.warning("Scraping interrumpido por el usuario. Se conserva el CSV acumulado.")
         finally:

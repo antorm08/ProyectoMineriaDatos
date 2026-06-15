@@ -207,6 +207,19 @@ El archivo `empresas.csv` debe tener estas columnas:
 nombre,sede,rubro,url
 ```
 
+El scraper incluye medidas anti-bloqueo para corridas largas: delays con jitter (intervalos
+aleatorios en vez de constantes), pausas humanas entre sedes y deteccion de la pagina de
+verificacion de Google con backoff exponencial (se frena en vez de insistir). Para ir mas lento
+y seguro, ajusta las pausas:
+
+```bash
+python scripts/01_scraping/scriptscraping.py --max-reviews 150 --pausa-sede-min 8 --pausa-sede-max 20
+```
+
+Banderas anti-bloqueo: `--pausa-sede-min`, `--pausa-sede-max` (segundos entre sedes) y
+`--max-bloqueos` (detiene el scraping tras N bloqueos consecutivos; el CSV acumulado se conserva
+y el scraper salta las sedes ya completas al reanudar).
+
 ### 02. Limpieza Y Auditoria
 
 ```bash
