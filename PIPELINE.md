@@ -248,20 +248,25 @@ Salidas:
 
 ```text
 reports/06_modelado/comparacion_modelos.csv
-reports/06_modelado/f1_por_clase_<estrategia>_<split>.csv
-reports/06_modelado/matriz_confusion_<estrategia>_<split>.csv / .png
-reports/06_modelado/reporte_clasificacion_<estrategia>_<split>.txt
-models/modelo_<mejor_estrategia>.joblib
+reports/06_modelado/f1_por_clase.csv
+reports/06_modelado/matriz_confusion_<algoritmo>_<estrategia>_test.csv / .png
+reports/06_modelado/reporte_clasificacion_<algoritmo>_<estrategia>_test.txt
+models/mejor_modelo.joblib
 ```
 
-Clasificador: TF-IDF (1-2 gramas) + Regresion Logistica. Compara tres estrategias de balanceo
-(base, class_weight='balanced', SMOTE en train). Metrica principal F1-Macro.
+Clasificadores: TF-IDF (1-2 gramas, con stopwords ES) + comparacion de los cuatro algoritmos
+clasicos del documento (Regresion Logistica, SVM, Naive Bayes, Random Forest) cruzados con tres
+estrategias de balanceo (base, class_weight='balanced', SMOTE en train). Naive Bayes omite
+'balanced'. Metricas: F1-Macro (principal) y exactitud balanceada.
 
-Resultados actuales (F1-Macro):
+Mejores resultados (F1-Macro en test):
 
 ```text
-estrategia   valid    test
-base         0.3834   0.4040
-balanced     0.5048   0.5665   (mejor)
-smote        0.4789   0.5517
+algoritmo            estrategia   valid    test
+regresion_logistica  balanced     0.4993   0.5589   (mejor)
+regresion_logistica  smote        0.4970   0.5447
+naive_bayes          smote        0.4779   0.5207
+svm                  balanced     0.4700   0.5203
 ```
+
+SMOTE rescata a Naive Bayes (F1-Macro 0.31 -> 0.52), coherente con la literatura del documento.

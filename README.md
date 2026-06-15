@@ -28,8 +28,8 @@ El pipeline sigue la estructura de CRISP-DM (Cross-Industry Standard Process for
 Comprension del negocio  -> objetivo: clasificar sentimiento multiclase de resenas peruanas
 Comprension de los datos -> scraping y auditoria (etapas 01 y 02-auditoria)
 Preparacion de los datos -> limpieza, autoetiquetado, revision IA, integracion, reglas, split (02-06, 05b)
-Modelado                 -> TF-IDF + Regresion Logistica con 3 estrategias de balanceo (fase 07)
-Evaluacion               -> F1-macro, F1 por clase, matriz de confusion, accuracy (fase 07)
+Modelado                 -> TF-IDF + 4 clasificadores clasicos (LogReg, SVM, NB, RF) x balanceo (fase 07)
+Evaluacion               -> F1-macro, exactitud balanceada, F1 por clase, matriz de confusion (fase 07)
 Despliegue               -> no contemplado aun
 ```
 
@@ -451,44 +451,50 @@ Salidas:
 
 ```text
 reports/06_modelado/comparacion_modelos.csv
-reports/06_modelado/f1_por_clase_<estrategia>_<split>.csv
-reports/06_modelado/matriz_confusion_<estrategia>_<split>.csv / .png
-reports/06_modelado/reporte_clasificacion_<estrategia>_<split>.txt
-models/modelo_<mejor_estrategia>.joblib
+reports/06_modelado/f1_por_clase.csv
+reports/06_modelado/matriz_confusion_<algoritmo>_<estrategia>_test.csv / .png
+reports/06_modelado/reporte_clasificacion_<algoritmo>_<estrategia>_test.txt
+models/mejor_modelo.joblib
 ```
 
-El clasificador es TF-IDF (1-2 gramas) + Regresion Logistica sobre `texto_modelo`. Se comparan
-tres estrategias frente al desbalance de clases:
+El clasificador usa TF-IDF (1-2 gramas, con eliminacion de stopwords en espanol pero conservando
+las palabras de negacion e intensidad) sobre `texto_modelo`. Se comparan los **cuatro algoritmos
+clasicos** del documento del proyecto, cruzados con tres estrategias frente al desbalance:
 
 ```text
-base       -> sin balanceo
-balanced   -> LogisticRegression(class_weight='balanced')
-smote       -> sobremuestreo SMOTE solo en train
+algoritmos:  Regresion Logistica, SVM (LinearSVC), Naive Bayes, Random Forest
+estrategias: base | balanced (class_weight) | smote (solo en train)
 ```
 
-Metrica principal: F1-Macro (justa con clases minoritarias). Secundarias: F1 por clase,
-matriz de confusion y accuracy. La mejor estrategia se elige por F1-Macro en validacion y se
-guarda el modelo entrenado (vectorizador + clasificador) con joblib.
+(Naive Bayes no soporta class_weight, asi que su combinacion con `balanced` se omite.)
 
-Resultados actuales (F1-Macro):
+Metricas: F1-Macro (principal), exactitud balanceada, F1 por clase, matriz de confusion y accuracy.
+La mejor combinacion se elige por F1-Macro en validacion y se guarda con joblib.
+
+Resultados actuales (F1-Macro en test, ordenado):
 
 ```text
-estrategia   valid    test
-base         0.3834   0.4040
-balanced     0.5048   0.5665   <- mejor
-smote        0.4789   0.5517
+algoritmo            estrategia   valid    test
+regresion_logistica  balanced     0.4993   0.5589   <- mejor
+regresion_logistica  smote        0.4970   0.5447
+naive_bayes          smote        0.4779   0.5207
+svm                  balanced     0.4700   0.5203
+svm                  base         0.4700   0.5066
+naive_bayes          base         0.2953   0.3062
+random_forest        smote        0.3852   0.4393
 ```
 
-El balanceo es decisivo: el modelo base tiene buena accuracy pero F1-Macro pobre (predice bien las
-clases mayoritarias e ignora las minoritarias). `class_weight='balanced'` sube el F1-Macro de 0.40
-a 0.57 en test. F1 por clase de la mejor estrategia (test): muy negativo 0.83, muy positivo 0.69,
-neutral 0.49, negativo 0.48, positivo 0.35. La mayor confusion ocurre entre clases adyacentes
-(positivo vs muy positivo), un patron ordinal esperable.
+Hallazgos: (1) el balanceo es decisivo, el modelo base tiene buena accuracy pero F1-Macro pobre;
+(2) **SMOTE rescata a Naive Bayes** (0.31 -> 0.52 en F1-Macro), coherente con la literatura citada
+en el documento; (3) Random Forest queda por debajo en F1-Macro (favorece las clases mayoritarias);
+(4) la mayor confusion ocurre entre clases adyacentes (positivo vs muy positivo), patron ordinal
+esperable. Quitar stopwords baja levemente el F1 (~0.008) porque parte de la senal vive en palabras
+funcionales; se mantiene por alineacion metodologica y existe la bandera `--sin-stopwords`.
 
-Para reentrenar solo una estrategia:
+Para reentrenar solo algunas combinaciones:
 
 ```bash
-python scripts/07_modelado/entrenar_evaluar.py --estrategias balanced
+python scripts/07_modelado/entrenar_evaluar.py --algoritmos svm regresion_logistica --estrategias balanced
 ```
 
 ## Criterio De Etiquetado
