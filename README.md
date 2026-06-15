@@ -28,13 +28,13 @@ El pipeline sigue la estructura de CRISP-DM (Cross-Industry Standard Process for
 Comprension del negocio  -> objetivo: clasificar sentimiento multiclase de resenas peruanas
 Comprension de los datos -> scraping y auditoria (etapas 01 y 02-auditoria)
 Preparacion de los datos -> limpieza, autoetiquetado, revision IA, integracion, reglas, split (02-06, 05b)
-Modelado                 -> pendiente (fase 07)
-Evaluacion               -> pendiente (F1-macro, matriz de confusion)
+Modelado                 -> TF-IDF + Regresion Logistica con 3 estrategias de balanceo (fase 07)
+Evaluacion               -> F1-macro, F1 por clase, matriz de confusion, accuracy (fase 07)
 Despliegue               -> no contemplado aun
 ```
 
-Actualmente el trabajo esta concentrado en la preparacion de datos, que en problemas de NLP
-suele ser la mayor parte del esfuerzo. El modelado (fase 07) es lo que falta para cerrar el ciclo.
+El ciclo de preparacion -> modelado -> evaluacion ya esta cerrado. La preparacion de datos sigue
+siendo la mayor parte del esfuerzo; el modelado actual es una linea base solida sobre la cual mejorar.
 
 ### Metodologia De Etiquetado: Supervision Debil Con Consenso
 
@@ -418,23 +418,60 @@ test      627
 
 ### 07. Entrenamiento Y Evaluacion
 
-Pendiente de implementar.
-
-Comparaciones recomendadas:
-
-```text
-modelo base sin balanceo
-modelo con class_weight='balanced'
-modelo con SMOTE solo en train
+```bash
+python scripts/07_modelado/entrenar_evaluar.py
 ```
 
-Metricas principales:
+Entrada:
 
 ```text
-F1-Macro
-F1 por clase
-matriz de confusion
-accuracy como metrica secundaria
+data/splits/train.csv
+data/splits/valid.csv
+data/splits/test.csv
+```
+
+Salidas:
+
+```text
+reports/06_modelado/comparacion_modelos.csv
+reports/06_modelado/f1_por_clase_<estrategia>_<split>.csv
+reports/06_modelado/matriz_confusion_<estrategia>_<split>.csv / .png
+reports/06_modelado/reporte_clasificacion_<estrategia>_<split>.txt
+models/modelo_<mejor_estrategia>.joblib
+```
+
+El clasificador es TF-IDF (1-2 gramas) + Regresion Logistica sobre `texto_modelo`. Se comparan
+tres estrategias frente al desbalance de clases:
+
+```text
+base       -> sin balanceo
+balanced   -> LogisticRegression(class_weight='balanced')
+smote       -> sobremuestreo SMOTE solo en train
+```
+
+Metrica principal: F1-Macro (justa con clases minoritarias). Secundarias: F1 por clase,
+matriz de confusion y accuracy. La mejor estrategia se elige por F1-Macro en validacion y se
+guarda el modelo entrenado (vectorizador + clasificador) con joblib.
+
+Resultados actuales (F1-Macro):
+
+```text
+estrategia   valid    test
+base         0.3834   0.4040
+balanced     0.5048   0.5665   <- mejor
+smote        0.4789   0.5517
+```
+
+El balanceo es decisivo: el modelo base tiene buena accuracy pero F1-Macro pobre (predice bien las
+clases mayoritarias e ignora las minoritarias). `class_weight='balanced'` sube el F1-Macro de 0.40
+a 0.57 en test. F1 por clase de la mejor estrategia (test): muy negativo 0.83, muy positivo 0.69,
+neutral 0.49, negativo 0.48, positivo 0.35. La mayor confusion ocurre entre clases adyacentes
+(positivo vs muy positivo), un patron ordinal esperable.
+
+Para reentrenar solo una estrategia:
+
+```bash
+python scripts/07_modelado/entrenar_evaluar.py --estrategias balanced
 ```
 
 ## Criterio De Etiquetado

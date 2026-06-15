@@ -1,0 +1,7 @@
+﻿estrategia,split,f1_macro,f1_weighted,accuracy
+base,valid,0.3834,0.4967,0.5789
+base,test,0.404,0.5125,0.6077
+balanced,valid,0.5048,0.5685,0.5726
+balanced,test,0.5665,0.6197,0.6236
+smote,valid,0.4789,0.5519,0.5614
+smote,test,0.5517,0.6105,0.6188

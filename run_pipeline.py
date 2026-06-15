@@ -41,6 +41,9 @@ REV_PRIO = PROJECT_ROOT / "reports" / "03_revision_ia" / "revision_prioritaria_e
 REV_PRIO_IA = PROJECT_ROOT / "reports" / "03_revision_ia" / "revision_prioritaria_etiquetas_ia.csv"
 REV_NEU = PROJECT_ROOT / "reports" / "03_revision_ia" / "revision_neutral_para_ia.csv"
 REV_NEU_IA = PROJECT_ROOT / "reports" / "03_revision_ia" / "revision_neutral_etiquetas_ia.csv"
+TRAIN = PROJECT_ROOT / "data" / "splits" / "train.csv"
+VALID = PROJECT_ROOT / "data" / "splits" / "valid.csv"
+TEST = PROJECT_ROOT / "data" / "splits" / "test.csv"
 
 
 @dataclass
@@ -113,6 +116,13 @@ ETAPAS = [
         "Split estratificado train/valid/test",
         PROJECT_ROOT / "scripts" / "06_split" / "preparar_split_dataset.py",
         entradas=[FINAL],
+    ),
+    Etapa(
+        "07_modelado",
+        "Entrenamiento y evaluacion del clasificador",
+        PROJECT_ROOT / "scripts" / "07_modelado" / "entrenar_evaluar.py",
+        entradas=[TRAIN, VALID, TEST],
+        requiere_paquete="imblearn",
     ),
 ]
 

@@ -2,3 +2,6 @@ selenium
 pandas
 pysentimiento
 scikit-learn
+imbalanced-learn
+matplotlib
+joblib

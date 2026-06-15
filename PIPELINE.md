@@ -230,21 +230,38 @@ test      627
 
 ## 07. Entrenamiento Y Evaluacion
 
-Pendiente de implementar.
+Comando:
 
-Comparaciones recomendadas:
-
-```text
-modelo base sin balanceo
-modelo con class_weight='balanced'
-modelo con SMOTE solo en train
+```bash
+python scripts/07_modelado/entrenar_evaluar.py
 ```
 
-Metricas principales:
+Entrada:
 
 ```text
-F1-Macro
-F1 por clase
-matriz de confusion
-accuracy como metrica secundaria
+data/splits/train.csv
+data/splits/valid.csv
+data/splits/test.csv
+```
+
+Salidas:
+
+```text
+reports/06_modelado/comparacion_modelos.csv
+reports/06_modelado/f1_por_clase_<estrategia>_<split>.csv
+reports/06_modelado/matriz_confusion_<estrategia>_<split>.csv / .png
+reports/06_modelado/reporte_clasificacion_<estrategia>_<split>.txt
+models/modelo_<mejor_estrategia>.joblib
+```
+
+Clasificador: TF-IDF (1-2 gramas) + Regresion Logistica. Compara tres estrategias de balanceo
+(base, class_weight='balanced', SMOTE en train). Metrica principal F1-Macro.
+
+Resultados actuales (F1-Macro):
+
+```text
+estrategia   valid    test
+base         0.3834   0.4040
+balanced     0.5048   0.5665   (mejor)
+smote        0.4789   0.5517
 ```
