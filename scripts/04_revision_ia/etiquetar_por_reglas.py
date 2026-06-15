@@ -57,8 +57,7 @@ def preparar_columnas(df):
     prob_neg = pd.to_numeric(df["prob_neg"], errors="coerce").fillna(1.0)
     prob_pos = pd.to_numeric(df["prob_pos"], errors="coerce").fillna(1.0)
     modelo = df["sentimiento_modelo"].astype(str).str.strip().str.upper()
-    final = df["sentimiento_final"].astype(str).str.strip()
-    return estrellas, prob_neg, prob_pos, modelo, final
+    return estrellas, prob_neg, prob_pos, modelo
 
 
 def predecir_por_reglas(df, umbral_neu, umbral_pos):
@@ -68,7 +67,7 @@ def predecir_por_reglas(df, umbral_neu, umbral_pos):
     de modo que pueda reutilizarse tanto para asignar como para validar contra
     etiquetas IA existentes.
     """
-    estrellas, _, prob_pos, modelo, _ = preparar_columnas(df)
+    estrellas, _, prob_pos, modelo = preparar_columnas(df)
     prob_neu = pd.to_numeric(df["prob_neu"], errors="coerce").fillna(0.0)
 
     etiqueta = pd.Series("", index=df.index, dtype="object")

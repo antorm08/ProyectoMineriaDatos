@@ -1,6 +1,7 @@
 import argparse
 import logging
 import re
+import sys
 import time
 from pathlib import Path
 
@@ -17,6 +18,10 @@ from urllib3.exceptions import ReadTimeoutError
 
 DEBUGGER_ADDRESS = "127.0.0.1:9222"
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+
+from _comun.texto import colapsar_espacios as normalizar_texto  # noqa: E402
+
 EMPRESAS_FILE = PROJECT_ROOT / "data" / "raw" / "empresas.csv"
 OUTPUT_FILE = PROJECT_ROOT / "data" / "raw" / "dataset_consumidores_peru.csv"
 MAX_REVIEWS_PER_COMPANY = 40
@@ -37,10 +42,6 @@ def crear_driver():
     options = Options()
     options.debugger_address = DEBUGGER_ADDRESS
     return webdriver.Chrome(options=options)
-
-
-def normalizar_texto(texto):
-    return re.sub(r"\s+", " ", texto).strip()
 
 
 def cargar_empresas(empresas_file):

@@ -1,24 +1,21 @@
 import argparse
-import re
-import unicodedata
+import sys
 from pathlib import Path
 
 import pandas as pd
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+
+from _comun.etiquetas import MAPEO_ESTRELLAS  # noqa: E402
+from _comun.texto import contar_palabras, normalizar_texto, texto_para_modelo  # noqa: E402
+
 INPUT_FILE = PROJECT_ROOT / "data" / "raw" / "dataset_consumidores_peru.csv"
 OUTPUT_FILE = PROJECT_ROOT / "data" / "processed" / "dataset_consumidores_peru_limpio.csv"
 REPORT_FILE = PROJECT_ROOT / "reports" / "01_limpieza" / "reporte_limpieza_dataset.csv"
 SENTIMENT_DISTRIBUTION_FILE = PROJECT_ROOT / "reports" / "01_limpieza" / "distribucion_sentimiento.csv"
 STARS_DISTRIBUTION_FILE = PROJECT_ROOT / "reports" / "01_limpieza" / "distribucion_estrellas.csv"
-MAPEO_ESTRELLAS = {
-    1: "muy negativo",
-    2: "negativo",
-    3: "neutral",
-    4: "positivo",
-    5: "muy positivo",
-}
 COLUMNAS_REQUERIDAS = {
     "comentario",
     "empresa",
@@ -29,29 +26,6 @@ COLUMNAS_REQUERIDAS = {
     "fecha_resena",
     "url",
 }
-
-
-def normalizar_texto(texto):
-    # Mantiene tildes, ñ, signos y emojis; solo limpia caracteres invisibles y espacios.
-    texto = "" if pd.isna(texto) else str(texto)
-    texto = unicodedata.normalize("NFC", texto)
-    texto = texto.replace("\u200b", " ").replace("\ufeff", " ")
-    texto = re.sub(r"[\r\n\t]+", " ", texto)
-    texto = re.sub(r"\s+", " ", texto)
-    return texto.strip()
-
-
-def contar_palabras(texto):
-    return len(re.findall(r"\b\w+\b", texto, flags=re.UNICODE))
-
-
-def texto_para_modelo(texto):
-    # Version mas normalizada para TF-IDF/modelos clasicos, sin reemplazar el texto original.
-    texto = normalizar_texto(texto).lower()
-    texto = re.sub(r"http\S+|www\S+", " ", texto)
-    texto = re.sub(r"[^a-záéíóúñü0-9\s]", " ", texto)
-    texto = re.sub(r"\s+", " ", texto)
-    return texto.strip()
 
 
 def construir_motivo_revision(fila):

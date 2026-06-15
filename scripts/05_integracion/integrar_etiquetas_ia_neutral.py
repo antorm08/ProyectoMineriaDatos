@@ -1,26 +1,22 @@
 import argparse
+import sys
 from pathlib import Path
 
 import pandas as pd
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+
+from _comun.dataframes import mapear_ia_a_dataset, validar_columnas  # noqa: E402
+from _comun.texto import normalizar_comparacion as normalizar_texto  # noqa: E402
+
 DATASET_FILE = PROJECT_ROOT / "data" / "processed" / "dataset_consumidores_peru_etiquetado_final.csv"
 NEUTRAL_BASE_FILE = PROJECT_ROOT / "reports" / "03_revision_ia" / "revision_neutral_para_ia.csv"
 NEUTRAL_IA_FILE = PROJECT_ROOT / "reports" / "03_revision_ia" / "revision_neutral_etiquetas_ia.csv"
 OUTPUT_FILE = PROJECT_ROOT / "data" / "processed" / "dataset_consumidores_peru_etiquetado_final.csv"
 REPORT_FILE = PROJECT_ROOT / "reports" / "04_integracion" / "reporte_integracion_ia_neutral.csv"
 DISTRIBUTION_FILE = PROJECT_ROOT / "reports" / "04_integracion" / "distribucion_sentimiento_final_integrado.csv"
-
-
-def normalizar_texto(texto):
-    return "" if pd.isna(texto) else str(texto).strip().lower()
-
-
-def validar_columnas(df, columnas, nombre):
-    faltantes = [columna for columna in columnas if columna not in df.columns]
-    if faltantes:
-        raise ValueError(f"Faltan columnas en {nombre}: {faltantes}")
 
 
 def integrar_neutrales(dataset_file, neutral_base_file, neutral_ia_file, output_file, report_file, distribution_file):
@@ -49,29 +45,15 @@ def integrar_neutrales(dataset_file, neutral_base_file, neutral_ia_file, output_
         "etiquetas IA neutral",
     )
 
-    dataset_mapeo = dataset.reset_index().rename(columns={"index": "dataset_index"})
-    dataset_mapeo["estrellas"] = pd.to_numeric(dataset_mapeo["estrellas"], errors="coerce")
-    neutral_base["estrellas"] = pd.to_numeric(neutral_base["estrellas"], errors="coerce")
-    neutral_base["id_revision_neutral"] = pd.to_numeric(neutral_base["id_revision_neutral"], errors="coerce")
-    neutral_ia["id_revision_neutral"] = pd.to_numeric(neutral_ia["id_revision_neutral"], errors="coerce")
-
-    neutral_base = neutral_base.merge(
-        dataset_mapeo[["dataset_index", *columnas_mapeo]],
-        on=columnas_mapeo,
-        how="left",
+    neutral_ia = mapear_ia_a_dataset(
+        dataset,
+        neutral_base,
+        neutral_ia,
+        columnas_mapeo=columnas_mapeo,
+        columna_id="id_revision_neutral",
+        nombre_base="lote neutral base",
+        nombre_ia="etiquetas IA neutral",
     )
-    if neutral_base["dataset_index"].isna().any():
-        faltantes = neutral_base.loc[neutral_base["dataset_index"].isna(), "id_revision_neutral"].tolist()
-        raise ValueError(f"No se pudo mapear id_revision_neutral al dataset: {faltantes[:10]}")
-
-    neutral_ia = neutral_ia.merge(
-        neutral_base[["id_revision_neutral", "dataset_index"]],
-        on="id_revision_neutral",
-        how="left",
-    )
-    if neutral_ia["dataset_index"].isna().any():
-        faltantes = neutral_ia.loc[neutral_ia["dataset_index"].isna(), "id_revision_neutral"].tolist()
-        raise ValueError(f"Hay id_revision_neutral de IA que no existen en lote base: {faltantes[:10]}")
 
     for columna in ["sentimiento_ia_neutral", "confianza_ia_neutral", "justificacion_ia_neutral", "usar_etiqueta_ia_neutral"]:
         if columna not in dataset.columns:

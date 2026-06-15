@@ -1,10 +1,16 @@
 import argparse
+import sys
 from pathlib import Path
 
 import pandas as pd
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+
+from _comun.dataframes import mapear_ia_a_dataset, validar_columnas  # noqa: E402
+from _comun.texto import normalizar_comparacion as normalizar_texto  # noqa: E402
+
 DATASET_FILE = PROJECT_ROOT / "data" / "processed" / "dataset_consumidores_peru_etiquetado.csv"
 REVISION_FILE = PROJECT_ROOT / "reports" / "03_revision_ia" / "revision_prioritaria_etiquetas.csv"
 IA_FILE = PROJECT_ROOT / "reports" / "03_revision_ia" / "revision_prioritaria_etiquetas_ia.csv"
@@ -14,16 +20,6 @@ DISTRIBUTION_FILE = PROJECT_ROOT / "reports" / "04_integracion" / "distribucion_
 
 CLASES_IA_ACEPTADAS = {"negativo", "neutral"}
 CONFIANZAS_IA_ACEPTADAS = {"alta", "media"}
-
-
-def normalizar_texto(texto):
-    return "" if pd.isna(texto) else str(texto).strip().lower()
-
-
-def validar_columnas(df, columnas, nombre):
-    faltantes = [columna for columna in columnas if columna not in df.columns]
-    if faltantes:
-        raise ValueError(f"Faltan columnas en {nombre}: {faltantes}")
 
 
 def integrar_etiquetas_ia(dataset_file, revision_file, ia_file, output_file, report_file, distribution_file):
@@ -52,27 +48,15 @@ def integrar_etiquetas_ia(dataset_file, revision_file, ia_file, output_file, rep
         "etiquetas IA",
     )
 
-    ia["id_revision"] = pd.to_numeric(ia["id_revision"], errors="coerce")
-    revision["id_revision"] = pd.to_numeric(revision["id_revision"], errors="coerce")
-
-    dataset_mapeo = dataset.reset_index().rename(columns={"index": "dataset_index"})
-    dataset_mapeo["estrellas"] = pd.to_numeric(dataset_mapeo["estrellas"], errors="coerce")
-    revision["estrellas"] = pd.to_numeric(revision["estrellas"], errors="coerce")
-    revision = revision.merge(
-        dataset_mapeo[["dataset_index", *columnas_mapeo]],
-        on=columnas_mapeo,
-        how="left",
+    ia = mapear_ia_a_dataset(
+        dataset,
+        revision,
+        ia,
+        columnas_mapeo=columnas_mapeo,
+        columna_id="id_revision",
+        nombre_base="revision prioritaria",
+        nombre_ia="etiquetas IA",
     )
-
-    if revision["dataset_index"].isna().any():
-        faltantes = revision.loc[revision["dataset_index"].isna(), "id_revision"].tolist()
-        raise ValueError(f"No se pudo mapear id_revision al dataset original: {faltantes[:10]}")
-
-    ia = ia.merge(revision[["id_revision", "dataset_index"]], on="id_revision", how="left")
-
-    if ia["dataset_index"].isna().any():
-        faltantes = ia.loc[ia["dataset_index"].isna(), "id_revision"].tolist()
-        raise ValueError(f"Hay id_revision de IA que no existen en revision prioritaria: {faltantes[:10]}")
 
     dataset["sentimiento_final_original"] = dataset["sentimiento_final"]
     dataset["sentimiento_final_origen"] = dataset["sentimiento_final"].apply(

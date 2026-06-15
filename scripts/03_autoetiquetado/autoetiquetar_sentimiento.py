@@ -1,30 +1,21 @@
 import argparse
+import sys
 from pathlib import Path
 
 import pandas as pd
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+
+from _comun.etiquetas import MAPEO_ESTRELLAS, MAPEO_MODELO  # noqa: E402
+
 INPUT_FILE = PROJECT_ROOT / "data" / "processed" / "dataset_consumidores_peru_limpio.csv"
 OUTPUT_FILE = PROJECT_ROOT / "data" / "processed" / "dataset_consumidores_peru_etiquetado.csv"
 REPORT_FILE = PROJECT_ROOT / "reports" / "02_autoetiquetado" / "reporte_autoetiquetado.csv"
 FINAL_DISTRIBUTION_FILE = PROJECT_ROOT / "reports" / "02_autoetiquetado" / "distribucion_sentimiento_final.csv"
 PROVISIONAL_DISTRIBUTION_FILE = PROJECT_ROOT / "reports" / "02_autoetiquetado" / "distribucion_sentimiento_provisional.csv"
 COLUMNAS_REQUERIDAS = {"comentario_limpio", "estrellas", "sentimiento_estrella"}
-
-MAPEO_ESTRELLAS = {
-    1: "muy negativo",
-    2: "negativo",
-    3: "neutral",
-    4: "positivo",
-    5: "muy positivo",
-}
-
-MAPEO_MODELO = {
-    "NEG": "negativo",
-    "NEU": "neutral",
-    "POS": "positivo",
-}
 
 
 def cargar_analizador():

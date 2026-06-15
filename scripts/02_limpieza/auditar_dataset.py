@@ -1,18 +1,19 @@
 import argparse
 import re
+import sys
 from pathlib import Path
 
 import pandas as pd
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+
+from _comun.texto import colapsar_espacios as normalizar_texto  # noqa: E402
+
 DATASET_FILE = PROJECT_ROOT / "data" / "raw" / "dataset_consumidores_peru.csv"
 EMPRESAS_FILE = PROJECT_ROOT / "data" / "raw" / "empresas.csv"
 COLUMNAS_DATASET = {"comentario", "empresa", "sede", "estrellas", "url"}
-
-
-def normalizar_texto(texto):
-    return re.sub(r"\s+", " ", str(texto)).strip()
 
 
 def cargar_csv(path, nombre):

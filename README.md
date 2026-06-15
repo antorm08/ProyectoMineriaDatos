@@ -66,6 +66,23 @@ fuentes de etiqueta en la seccion "Criterio De Etiquetado".
 pip install -r requirements.txt
 ```
 
+## Pruebas
+
+La logica pura de etiquetado y normalizacion esta cubierta con tests. Para correrlos:
+
+```bash
+pip install -r requirements-dev.txt
+python -m pytest tests/ -q
+```
+
+Codigo compartido reutilizable en `scripts/_comun/`:
+
+```text
+_comun/etiquetas.py    -> MAPEO_ESTRELLAS, MAPEO_MODELO y helpers de estrellas
+_comun/texto.py        -> normalizacion de texto (normalizar_texto, texto_para_modelo, ...)
+_comun/dataframes.py   -> validar_columnas y mapeo de etiquetas IA al dataset
+```
+
 ## Ejecucion Con Un Solo Comando
 
 En lugar de correr las etapas una por una, el orquestador `run_pipeline.py` encadena todo
