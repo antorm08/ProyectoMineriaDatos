@@ -15,7 +15,6 @@ ENV/
 
 # Generated datasets
 dataset_consumidores_peru.csv
-data/raw/dataset_consumidores_peru.csv
 data/raw/prueba_*.csv
 prueba_*.csv
 *.xlsx
