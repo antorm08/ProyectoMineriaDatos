@@ -31,3 +31,12 @@ Thumbs.db
 
 # Selenium / Chrome debug profile if created inside project
 chrome-debug/
+
+# Modelos pesados de deep learning / transformers (se regeneran con las fases 08-09).
+# El clasico models/mejor_modelo.joblib si se versiona (pequeno y lo usa predecir.py).
+models/mejor_modelo_dl.pt
+models/mejor_modelo_transformer/
+*.safetensors
+
+# Cache de modelos descargados de HuggingFace
+.cache/

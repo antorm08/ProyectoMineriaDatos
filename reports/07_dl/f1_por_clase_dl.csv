@@ -1,0 +1,41 @@
+﻿familia,modelo,estrategia,split,clase,f1
+deep_learning,cnn,base,valid,muy negativo,0.7107
+deep_learning,cnn,base,valid,negativo,0.1607
+deep_learning,cnn,base,valid,neutral,0.47
+deep_learning,cnn,base,valid,positivo,0.3575
+deep_learning,cnn,base,valid,muy positivo,0.7011
+deep_learning,cnn,base,test,muy negativo,0.8119
+deep_learning,cnn,base,test,negativo,0.3505
+deep_learning,cnn,base,test,neutral,0.4585
+deep_learning,cnn,base,test,positivo,0.2275
+deep_learning,cnn,base,test,muy positivo,0.7022
+deep_learning,cnn,class_weight,valid,muy negativo,0.7052
+deep_learning,cnn,class_weight,valid,negativo,0.194
+deep_learning,cnn,class_weight,valid,neutral,0.4358
+deep_learning,cnn,class_weight,valid,positivo,0.3144
+deep_learning,cnn,class_weight,valid,muy positivo,0.6214
+deep_learning,cnn,class_weight,test,muy negativo,0.7882
+deep_learning,cnn,class_weight,test,negativo,0.3548
+deep_learning,cnn,class_weight,test,neutral,0.3855
+deep_learning,cnn,class_weight,test,positivo,0.3153
+deep_learning,cnn,class_weight,test,muy positivo,0.6468
+deep_learning,lstm,base,valid,muy negativo,0.6873
+deep_learning,lstm,base,valid,negativo,0.3077
+deep_learning,lstm,base,valid,neutral,0.4271
+deep_learning,lstm,base,valid,positivo,0.1944
+deep_learning,lstm,base,valid,muy positivo,0.6983
+deep_learning,lstm,base,test,muy negativo,0.745
+deep_learning,lstm,base,test,negativo,0.3791
+deep_learning,lstm,base,test,neutral,0.4242
+deep_learning,lstm,base,test,positivo,0.2329
+deep_learning,lstm,base,test,muy positivo,0.7033
+deep_learning,lstm,class_weight,valid,muy negativo,0.7
+deep_learning,lstm,class_weight,valid,negativo,0.2946
+deep_learning,lstm,class_weight,valid,neutral,0.4112
+deep_learning,lstm,class_weight,valid,positivo,0.2743
+deep_learning,lstm,class_weight,valid,muy positivo,0.6886
+deep_learning,lstm,class_weight,test,muy negativo,0.7949
+deep_learning,lstm,class_weight,test,negativo,0.4132
+deep_learning,lstm,class_weight,test,neutral,0.5
+deep_learning,lstm,class_weight,test,positivo,0.2308
+deep_learning,lstm,class_weight,test,muy positivo,0.6846

@@ -1,7 +1,19 @@
+# --- Datos, scraping y modelos clasicos (fases 01-07) ---
 selenium
 pandas
+numpy
 pysentimiento
 scikit-learn
 imbalanced-learn
 matplotlib
 joblib
+
+# --- Deep learning y transformers (fases 08-09) ---
+# torch instala por defecto la build de CPU. Para usar GPU NVIDIA (CUDA) instala la
+# build correspondiente, por ejemplo (CUDA 12.8):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+# El codigo es device-agnostic: usa GPU si esta disponible y si no cae a CPU.
+torch
+transformers
+datasets
+accelerate

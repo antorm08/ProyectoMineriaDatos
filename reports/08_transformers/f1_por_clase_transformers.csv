@@ -1,0 +1,21 @@
+﻿familia,modelo,estrategia,split,clase,f1
+transformer,beto,class_weight,valid,muy negativo,0.8129
+transformer,beto,class_weight,valid,negativo,0.473
+transformer,beto,class_weight,valid,neutral,0.7243
+transformer,beto,class_weight,valid,positivo,0.4356
+transformer,beto,class_weight,valid,muy positivo,0.7237
+transformer,beto,class_weight,test,muy negativo,0.8528
+transformer,beto,class_weight,test,negativo,0.4762
+transformer,beto,class_weight,test,neutral,0.6813
+transformer,beto,class_weight,test,positivo,0.4162
+transformer,beto,class_weight,test,muy positivo,0.7376
+transformer,xlm_roberta,class_weight,valid,muy negativo,0.7603
+transformer,xlm_roberta,class_weight,valid,negativo,0.4645
+transformer,xlm_roberta,class_weight,valid,neutral,0.6444
+transformer,xlm_roberta,class_weight,valid,positivo,0.383
+transformer,xlm_roberta,class_weight,valid,muy positivo,0.7654
+transformer,xlm_roberta,class_weight,test,muy negativo,0.8693
+transformer,xlm_roberta,class_weight,test,negativo,0.5564
+transformer,xlm_roberta,class_weight,test,neutral,0.7179
+transformer,xlm_roberta,class_weight,test,positivo,0.3392
+transformer,xlm_roberta,class_weight,test,muy positivo,0.7661

@@ -1,111 +1,51 @@
-﻿algoritmo,estrategia,split,clase,f1
-regresion_logistica,base,valid,muy negativo,0.7553
-regresion_logistica,base,valid,negativo,0.027
-regresion_logistica,base,valid,neutral,0.4129
-regresion_logistica,base,valid,positivo,0.0833
-regresion_logistica,base,valid,muy positivo,0.6919
-regresion_logistica,base,test,muy negativo,0.7979
-regresion_logistica,base,test,negativo,0.1944
-regresion_logistica,base,test,neutral,0.3841
-regresion_logistica,base,test,positivo,0.0508
-regresion_logistica,base,test,muy positivo,0.7368
-regresion_logistica,balanced,valid,muy negativo,0.7616
-regresion_logistica,balanced,valid,negativo,0.2464
-regresion_logistica,balanced,valid,neutral,0.5285
-regresion_logistica,balanced,valid,positivo,0.3265
-regresion_logistica,balanced,valid,muy positivo,0.6337
-regresion_logistica,balanced,test,muy negativo,0.8278
-regresion_logistica,balanced,test,negativo,0.4034
-regresion_logistica,balanced,test,neutral,0.4896
-regresion_logistica,balanced,test,positivo,0.3636
-regresion_logistica,balanced,test,muy positivo,0.7101
-regresion_logistica,smote,valid,muy negativo,0.7547
-regresion_logistica,smote,valid,negativo,0.25
-regresion_logistica,smote,valid,neutral,0.5185
-regresion_logistica,smote,valid,positivo,0.3141
-regresion_logistica,smote,valid,muy positivo,0.6476
-regresion_logistica,smote,test,muy negativo,0.8218
-regresion_logistica,smote,test,negativo,0.3793
-regresion_logistica,smote,test,neutral,0.5104
-regresion_logistica,smote,test,positivo,0.3158
-regresion_logistica,smote,test,muy positivo,0.6965
-svm,base,valid,muy negativo,0.7688
-svm,base,valid,negativo,0.2136
-svm,base,valid,neutral,0.4497
-svm,base,valid,positivo,0.236
-svm,base,valid,muy positivo,0.6821
-svm,base,test,muy negativo,0.8113
-svm,base,test,negativo,0.2955
-svm,base,test,neutral,0.4235
-svm,base,test,positivo,0.2532
-svm,base,test,muy positivo,0.7495
-svm,balanced,valid,muy negativo,0.747
-svm,balanced,valid,negativo,0.2353
-svm,balanced,valid,neutral,0.4494
-svm,balanced,valid,positivo,0.2486
-svm,balanced,valid,muy positivo,0.6696
-svm,balanced,test,muy negativo,0.8138
-svm,balanced,test,negativo,0.3434
-svm,balanced,test,neutral,0.4358
-svm,balanced,test,positivo,0.2775
-svm,balanced,test,muy positivo,0.7313
-svm,smote,valid,muy negativo,0.7469
-svm,smote,valid,negativo,0.272
-svm,smote,valid,neutral,0.4505
-svm,smote,valid,positivo,0.3125
-svm,smote,valid,muy positivo,0.6543
-svm,smote,test,muy negativo,0.8
-svm,smote,test,negativo,0.3333
-svm,smote,test,neutral,0.4277
-svm,smote,test,positivo,0.2723
-svm,smote,test,muy positivo,0.6968
-naive_bayes,base,valid,muy negativo,0.7461
-naive_bayes,base,valid,negativo,0.0
-naive_bayes,base,valid,neutral,0.0606
-naive_bayes,base,valid,positivo,0.0
-naive_bayes,base,valid,muy positivo,0.67
-naive_bayes,base,test,muy negativo,0.8053
-naive_bayes,base,test,negativo,0.0
-naive_bayes,base,test,neutral,0.0404
-naive_bayes,base,test,positivo,0.0
-naive_bayes,base,test,muy positivo,0.6852
-naive_bayes,smote,valid,muy negativo,0.7586
-naive_bayes,smote,valid,negativo,0.2821
-naive_bayes,smote,valid,neutral,0.4286
-naive_bayes,smote,valid,positivo,0.3203
-naive_bayes,smote,valid,muy positivo,0.6
-naive_bayes,smote,test,muy negativo,0.7914
-naive_bayes,smote,test,negativo,0.4286
-naive_bayes,smote,test,neutral,0.3729
-naive_bayes,smote,test,positivo,0.3509
-naive_bayes,smote,test,muy positivo,0.6599
-random_forest,base,valid,muy negativo,0.7394
-random_forest,base,valid,negativo,0.0
-random_forest,base,valid,neutral,0.2556
-random_forest,base,valid,positivo,0.02
-random_forest,base,valid,muy positivo,0.6794
-random_forest,base,test,muy negativo,0.8097
-random_forest,base,test,negativo,0.1667
-random_forest,base,test,neutral,0.2754
-random_forest,base,test,positivo,0.02
-random_forest,base,test,muy positivo,0.711
-random_forest,balanced,valid,muy negativo,0.7473
-random_forest,balanced,valid,negativo,0.0286
-random_forest,balanced,valid,neutral,0.3212
-random_forest,balanced,valid,positivo,0.0198
-random_forest,balanced,valid,muy positivo,0.6829
-random_forest,balanced,test,muy negativo,0.8152
-random_forest,balanced,test,negativo,0.1408
-random_forest,balanced,test,neutral,0.3056
-random_forest,balanced,test,positivo,0.0577
-random_forest,balanced,test,muy positivo,0.7055
-random_forest,smote,valid,muy negativo,0.7452
-random_forest,smote,valid,negativo,0.0488
-random_forest,smote,valid,neutral,0.3205
-random_forest,smote,valid,positivo,0.1311
-random_forest,smote,valid,muy positivo,0.6805
-random_forest,smote,test,muy negativo,0.8055
-random_forest,smote,test,negativo,0.1975
-random_forest,smote,test,neutral,0.3704
-random_forest,smote,test,positivo,0.1102
-random_forest,smote,test,muy positivo,0.7129
+﻿familia,modelo,estrategia,split,clase,f1
+clasico,svm,base,valid,muy negativo,0.7688
+clasico,svm,base,valid,negativo,0.2136
+clasico,svm,base,valid,neutral,0.4497
+clasico,svm,base,valid,positivo,0.236
+clasico,svm,base,valid,muy positivo,0.6821
+clasico,svm,base,test,muy negativo,0.8113
+clasico,svm,base,test,negativo,0.2955
+clasico,svm,base,test,neutral,0.4235
+clasico,svm,base,test,positivo,0.2532
+clasico,svm,base,test,muy positivo,0.7495
+clasico,svm,balanced,valid,muy negativo,0.747
+clasico,svm,balanced,valid,negativo,0.2353
+clasico,svm,balanced,valid,neutral,0.4494
+clasico,svm,balanced,valid,positivo,0.2486
+clasico,svm,balanced,valid,muy positivo,0.6696
+clasico,svm,balanced,test,muy negativo,0.8138
+clasico,svm,balanced,test,negativo,0.3434
+clasico,svm,balanced,test,neutral,0.4358
+clasico,svm,balanced,test,positivo,0.2775
+clasico,svm,balanced,test,muy positivo,0.7313
+clasico,svm,smote,valid,muy negativo,0.7469
+clasico,svm,smote,valid,negativo,0.272
+clasico,svm,smote,valid,neutral,0.4505
+clasico,svm,smote,valid,positivo,0.3125
+clasico,svm,smote,valid,muy positivo,0.6543
+clasico,svm,smote,test,muy negativo,0.8
+clasico,svm,smote,test,negativo,0.3333
+clasico,svm,smote,test,neutral,0.4277
+clasico,svm,smote,test,positivo,0.2723
+clasico,svm,smote,test,muy positivo,0.6968
+clasico,naive_bayes,base,valid,muy negativo,0.7461
+clasico,naive_bayes,base,valid,negativo,0.0
+clasico,naive_bayes,base,valid,neutral,0.0606
+clasico,naive_bayes,base,valid,positivo,0.0
+clasico,naive_bayes,base,valid,muy positivo,0.67
+clasico,naive_bayes,base,test,muy negativo,0.8053
+clasico,naive_bayes,base,test,negativo,0.0
+clasico,naive_bayes,base,test,neutral,0.0404
+clasico,naive_bayes,base,test,positivo,0.0
+clasico,naive_bayes,base,test,muy positivo,0.6852
+clasico,naive_bayes,smote,valid,muy negativo,0.7586
+clasico,naive_bayes,smote,valid,negativo,0.2821
+clasico,naive_bayes,smote,valid,neutral,0.4286
+clasico,naive_bayes,smote,valid,positivo,0.3203
+clasico,naive_bayes,smote,valid,muy positivo,0.6
+clasico,naive_bayes,smote,test,muy negativo,0.7914
+clasico,naive_bayes,smote,test,negativo,0.4286
+clasico,naive_bayes,smote,test,neutral,0.3729
+clasico,naive_bayes,smote,test,positivo,0.3509
+clasico,naive_bayes,smote,test,muy positivo,0.6599
