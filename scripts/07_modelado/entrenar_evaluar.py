@@ -117,6 +117,15 @@ def aplicar_smote(x_train, y_train, random_state):
     return smote.fit_resample(x_train, y_train)
 
 
+def obtener_scores(clasificador, x):
+    """Devuelve probabilidades si existen; si no, scores de decision para ROC/AUC."""
+    if hasattr(clasificador, "predict_proba"):
+        return clasificador.predict_proba(x), list(clasificador.classes_)
+    if hasattr(clasificador, "decision_function"):
+        return clasificador.decision_function(x), list(clasificador.classes_)
+    return None, None
+
+
 def entrenar_y_evaluar(algoritmos, estrategias, max_features, random_state, usar_stopwords):
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     MODELS_DIR.mkdir(parents=True, exist_ok=True)
@@ -153,9 +162,12 @@ def entrenar_y_evaluar(algoritmos, estrategias, max_features, random_state, usar
                 y_valid, clasificador.predict(x_valid), FAMILIA, algoritmo, estrategia,
                 "valid", REPORT_DIR, filas_comparacion, filas_f1_clase,
             )
+            pred_test = clasificador.predict(x_test)
+            scores_test, score_labels = obtener_scores(clasificador, x_test)
             fila_test = evaluar_split(
-                y_test, clasificador.predict(x_test), FAMILIA, algoritmo, estrategia,
+                y_test, pred_test, FAMILIA, algoritmo, estrategia,
                 "test", REPORT_DIR, filas_comparacion, filas_f1_clase,
+                scores=scores_test, score_labels=score_labels,
             )
             modelos[(algoritmo, estrategia)] = {"clasificador": clasificador, "valid": fila_valid, "test": fila_test}
 

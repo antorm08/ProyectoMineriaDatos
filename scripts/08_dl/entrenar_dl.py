@@ -163,6 +163,16 @@ def predecir_idx(modelo, loader, device):
     return np.concatenate(predicciones)
 
 
+def predecir_scores(modelo, loader, device):
+    modelo.eval()
+    scores = []
+    with torch.no_grad():
+        for (xb,) in loader:
+            logits = modelo(xb.to(device))
+            scores.append(torch.softmax(logits, dim=1).cpu().numpy())
+    return np.concatenate(scores)
+
+
 def f1_macro_rapido(y_true_idx, y_pred_idx, num_classes):
     """F1-macro ligero (sin sklearn) para el early stopping por epoca."""
     f1s = []
@@ -217,7 +227,12 @@ def entrenar_modelo(nombre, estrategia, datos, device, args):
             break
 
     modelo.load_state_dict(mejor_estado)
-    return predecir_idx(modelo, valid_loader, device), predecir_idx(modelo, test_loader, device), modelo
+    return (
+        predecir_idx(modelo, valid_loader, device),
+        predecir_idx(modelo, test_loader, device),
+        predecir_scores(modelo, test_loader, device),
+        modelo,
+    )
 
 
 def entrenar_y_evaluar(args):
@@ -252,14 +267,15 @@ def entrenar_y_evaluar(args):
     for nombre in args.modelos:
         for estrategia in args.estrategias:
             print(f"\n>> Entrenando {nombre} ({estrategia})")
-            pred_valid_idx, pred_test_idx, modelo = entrenar_modelo(nombre, estrategia, datos, device, args)
+            pred_valid_idx, pred_test_idx, scores_test, modelo = entrenar_modelo(nombre, estrategia, datos, device, args)
             pred_valid = [CLASES[i] for i in pred_valid_idx]
             pred_test = [CLASES[i] for i in pred_test_idx]
 
             fila_valid = evaluar_split(y_valid_txt, pred_valid, FAMILIA, nombre, estrategia,
                                        "valid", REPORT_DIR, filas_comparacion, filas_f1_clase)
             fila_test = evaluar_split(y_test_txt, pred_test, FAMILIA, nombre, estrategia,
-                                      "test", REPORT_DIR, filas_comparacion, filas_f1_clase)
+                                      "test", REPORT_DIR, filas_comparacion, filas_f1_clase,
+                                      scores=scores_test, score_labels=CLASES)
             modelos[(nombre, estrategia)] = {"modelo": modelo, "valid": fila_valid, "test": fila_test}
             print(f"   -> valid F1-macro {fila_valid['f1_macro']:.4f} | test F1-macro {fila_test['f1_macro']:.4f}")
 

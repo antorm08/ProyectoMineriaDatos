@@ -103,6 +103,17 @@ def predecir_idx(modelo, loader, device, use_amp):
     return np.concatenate(predicciones)
 
 
+def predecir_scores(modelo, loader, device, use_amp):
+    modelo.eval()
+    scores = []
+    with torch.no_grad():
+        for input_ids, attn in loader:
+            with torch.amp.autocast("cuda", enabled=use_amp):
+                logits = modelo(input_ids=input_ids.to(device), attention_mask=attn.to(device)).logits
+            scores.append(torch.softmax(logits, dim=1).cpu().numpy())
+    return np.concatenate(scores)
+
+
 def f1_macro_rapido(y_true_idx, y_pred_idx, num_classes):
     """F1-macro ligero (sin sklearn) para el early stopping por epoca."""
     f1s = []
@@ -116,7 +127,7 @@ def f1_macro_rapido(y_true_idx, y_pred_idx, num_classes):
 
 
 def entrenar_transformer(nombre, hf_id, estrategia, tensores, y_idx, device, args):
-    """Fine-tuning de un transformer. Devuelve (pred_valid, pred_test, modelo, tokenizer)."""
+    """Fine-tuning de un transformer. Devuelve predicciones, scores, modelo y tokenizer."""
     (train_ids, train_attn, valid_ids, valid_attn, test_ids, test_attn) = tensores
     y_train_idx, y_valid_idx = y_idx
     num_classes = len(CLASES)
@@ -179,7 +190,8 @@ def entrenar_transformer(nombre, hf_id, estrategia, tensores, y_idx, device, arg
     modelo.load_state_dict(mejor_estado)
     pred_valid = predecir_idx(modelo, valid_loader, device, use_amp)
     pred_test = predecir_idx(modelo, test_loader, device, use_amp)
-    return pred_valid, pred_test, modelo, tokenizer
+    scores_test = predecir_scores(modelo, test_loader, device, use_amp)
+    return pred_valid, pred_test, scores_test, modelo, tokenizer
 
 
 def entrenar_y_evaluar(args):
@@ -214,7 +226,7 @@ def entrenar_y_evaluar(args):
 
         for estrategia in args.estrategias:
             print(f"\n>> Fine-tuning {nombre} ({hf_id}) | estrategia: {estrategia}")
-            pred_valid_idx, pred_test_idx, modelo, tok = entrenar_transformer(
+            pred_valid_idx, pred_test_idx, scores_test, modelo, tok = entrenar_transformer(
                 nombre, hf_id, estrategia, tensores, (y_train_idx, y_valid_idx), device, args,
             )
             pred_valid = [CLASES[i] for i in pred_valid_idx]
@@ -223,7 +235,8 @@ def entrenar_y_evaluar(args):
             fila_valid = evaluar_split(y_valid_txt, pred_valid, FAMILIA, nombre, estrategia,
                                        "valid", REPORT_DIR, filas_comparacion, filas_f1_clase)
             fila_test = evaluar_split(y_test_txt, pred_test, FAMILIA, nombre, estrategia,
-                                      "test", REPORT_DIR, filas_comparacion, filas_f1_clase)
+                                      "test", REPORT_DIR, filas_comparacion, filas_f1_clase,
+                                      scores=scores_test, score_labels=CLASES)
             resultados[(nombre, estrategia)] = {
                 "modelo": modelo, "tokenizer": tok, "valid": fila_valid, "test": fila_test,
             }

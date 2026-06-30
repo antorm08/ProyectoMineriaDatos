@@ -32,11 +32,14 @@ import pandas as pd
 from sklearn.metrics import (
     ConfusionMatrixDisplay,
     accuracy_score,
+    auc,
     balanced_accuracy_score,
     classification_report,
     confusion_matrix,
     f1_score,
+    roc_curve,
 )
+from sklearn.preprocessing import label_binarize
 
 # Orden fijo de clases (escala ordinal de sentimiento). Compartido por todas las fases.
 CLASES = ["muy negativo", "negativo", "neutral", "positivo", "muy positivo"]
@@ -85,8 +88,61 @@ def guardar_reporte_clasificacion(y_true, y_pred, ruta_dir, combo, labels=CLASES
     (ruta_dir / f"reporte_clasificacion_{combo}_test.txt").write_text(reporte, encoding="utf-8")
 
 
+def guardar_predicciones_scores(y_true, y_pred, scores, score_labels, ruta_dir, combo, labels=CLASES):
+    """Guarda etiquetas reales, predichas y scores/probabilidades por clase."""
+    ruta_dir = Path(ruta_dir)
+    ruta_dir.mkdir(parents=True, exist_ok=True)
+
+    scores_df = pd.DataFrame(scores, columns=[f"score_{clase.replace(' ', '_')}" for clase in score_labels])
+    for clase in labels:
+        columna = f"score_{clase.replace(' ', '_')}"
+        if columna not in scores_df.columns:
+            scores_df[columna] = 0.0
+    columnas_scores = [f"score_{clase.replace(' ', '_')}" for clase in labels]
+
+    salida = pd.DataFrame({"y_true": list(y_true), "y_pred": list(y_pred)})
+    salida = pd.concat([salida, scores_df[columnas_scores].reset_index(drop=True)], axis=1)
+    salida.to_csv(ruta_dir / f"predicciones_{combo}_test.csv", index=False, encoding="utf-8-sig")
+
+
+def guardar_curva_roc_multiclase(y_true, scores, score_labels, ruta_dir, combo, labels=CLASES):
+    """Guarda ROC/AUC One-vs-Rest para clasificacion multiclase."""
+    ruta_dir = Path(ruta_dir)
+    ruta_dir.mkdir(parents=True, exist_ok=True)
+
+    scores_df = pd.DataFrame(scores, columns=score_labels)
+    for clase in labels:
+        if clase not in scores_df.columns:
+            scores_df[clase] = 0.0
+    scores_ordenados = scores_df[labels].to_numpy()
+    y_bin = label_binarize(y_true, classes=labels)
+
+    filas_auc = []
+    fig, ax = plt.subplots(figsize=(7, 5.5))
+    for idx, clase in enumerate(labels):
+        if len(set(y_bin[:, idx])) < 2:
+            filas_auc.append({"clase": clase, "auc": None})
+            continue
+        fpr, tpr, _ = roc_curve(y_bin[:, idx], scores_ordenados[:, idx])
+        valor_auc = auc(fpr, tpr)
+        filas_auc.append({"clase": clase, "auc": round(float(valor_auc), 4)})
+        ax.plot(fpr, tpr, label=f"{clase} (AUC={valor_auc:.3f})")
+
+    ax.plot([0, 1], [0, 1], linestyle="--", color="gray", linewidth=1)
+    ax.set_title(f"Curva ROC One-vs-Rest - {combo.replace('_', ' ')}")
+    ax.set_xlabel("False Positive Rate")
+    ax.set_ylabel("True Positive Rate")
+    ax.legend(loc="lower right", fontsize=8)
+    fig.tight_layout()
+    fig.savefig(ruta_dir / f"curva_roc_{combo}_test.png", dpi=120)
+    plt.close(fig)
+
+    pd.DataFrame(filas_auc).to_csv(ruta_dir / f"auc_{combo}_test.csv", index=False, encoding="utf-8-sig")
+
+
 def evaluar_split(y_true, y_pred, familia, modelo, estrategia, split, ruta_dir,
-                  filas_comparacion, filas_f1_clase, labels=CLASES):
+                  filas_comparacion, filas_f1_clase, labels=CLASES, scores=None,
+                  score_labels=None):
     """Evalua una prediccion y acumula filas para los CSV de comparacion.
 
     - Agrega una fila a filas_comparacion con las metricas escalares.
@@ -118,5 +174,9 @@ def evaluar_split(y_true, y_pred, familia, modelo, estrategia, split, ruta_dir,
     if split == "test":
         guardar_matriz_confusion(y_true, y_pred, ruta_dir, combo, labels=labels)
         guardar_reporte_clasificacion(y_true, y_pred, ruta_dir, combo, labels=labels)
+        if scores is not None:
+            score_labels = score_labels or labels
+            guardar_predicciones_scores(y_true, y_pred, scores, score_labels, ruta_dir, combo, labels=labels)
+            guardar_curva_roc_multiclase(y_true, scores, score_labels, ruta_dir, combo, labels=labels)
 
     return metricas
