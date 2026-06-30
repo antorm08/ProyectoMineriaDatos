@@ -68,8 +68,10 @@ fuentes de etiqueta en la seccion "Criterio De Etiquetado".
 
 - Validacion de etiquetas: se mide el acuerdo de las reglas frente a las etiquetas humanas ya
   existentes antes de confiar en ellas (actualmente 93% de acuerdo, ver fase 05b).
-- Particion estratificada train/valid/test (70/15/15) que preserva la distribucion de clases,
-  metodologia estandar para clasificacion con desbalance.
+- Particion estratificada train/valid/test que preserva la distribucion de clases,
+  metodologia estandar para clasificacion con desbalance. Esquema 80% desarrollo / 20% prueba,
+  subdividiendo el desarrollo en 70% entrenamiento / 30% validacion (resultado: 56/24/20 sobre
+  el total).
 
 ## Instalacion
 
@@ -464,12 +466,12 @@ reports/05_split/distribucion_split_valid.csv
 reports/05_split/distribucion_split_test.csv
 ```
 
-Tamanos actuales:
+Tamanos actuales (split 80/20 + 70/30, `random_state=42`):
 
 ```text
-train    2923
-valid     627
-test      627
+train    2338
+valid    1003
+test      836
 ```
 
 ### 07. Modelos Clasicos: SVM Y Naive Bayes
@@ -514,19 +516,20 @@ Resultados actuales (F1-Macro en test, ordenado):
 
 ```text
 modelo       estrategia   valid    test
-naive_bayes  smote        0.4779   0.5207
-svm          balanced     0.4700   0.5203
-svm          base         0.4700   0.5066
-svm          smote        0.4873   0.5060   <- mejor por F1-macro en validacion
-naive_bayes  base         0.2953   0.3062
+naive_bayes  smote        0.5009   0.4865   <- mejor por F1-macro en validacion (se guarda)
+svm          smote        0.4852   0.4799
+svm          balanced     0.4953   0.4785
+svm          base         0.4898   0.4587
+naive_bayes  base         0.2970   0.2925
 ```
 
 Hallazgos: (1) el balanceo es decisivo: el Naive Bayes base tiene buena accuracy pero F1-Macro
-pobre (0.31); (2) **SMOTE rescata a Naive Bayes** (0.31 -> 0.52 en F1-Macro), coherente con la
-literatura citada en el documento; (3) SVM es estable y el mejor clasico en validacion;
-(4) la mayor confusion ocurre entre clases adyacentes (positivo vs muy positivo), patron ordinal
-esperable. Quitar stopwords baja levemente el F1 (~0.008) porque parte de la senal vive en palabras
-funcionales; se mantiene por alineacion metodologica y existe la bandera `--sin-stopwords`.
+pobre (0.29); (2) **SMOTE rescata a Naive Bayes** (0.29 -> 0.49 en F1-Macro), coherente con la
+literatura citada en el documento, y lo convierte en el mejor clasico; (3) SVM es estable y
+competitivo en validacion; (4) la mayor confusion ocurre entre clases adyacentes (positivo vs
+muy positivo), patron ordinal esperable. Quitar stopwords baja levemente el F1 porque parte de
+la senal vive en palabras funcionales; se mantiene por alineacion metodologica y existe la
+bandera `--sin-stopwords`.
 
 Para reentrenar solo algunas combinaciones:
 
@@ -567,14 +570,14 @@ Resultados (F1-Macro en test, ordenado):
 
 ```text
 modelo  estrategia    valid    test
-lstm    class_weight  0.4737   0.5247
-cnn     base          0.4800   0.5102
-cnn     class_weight  -        0.4981
-lstm    base          -        0.4969
+cnn     class_weight  0.4831   0.5099
+cnn     base          0.4684   0.4649
+lstm    base          0.4938   0.4560   <- mejor por F1-macro en validacion (se guarda)
+lstm    class_weight  0.4791   0.4535
 ```
 
-Las redes quedan a la par de los clasicos: con ~3000 ejemplos no hay datos suficientes
-para que el deep learning desde cero supere claramente a TF-IDF.
+Las redes quedan a la par de los clasicos: con ~3300 ejemplos de entrenamiento no hay datos
+suficientes para que el deep learning desde cero supere claramente a TF-IDF.
 
 ### 09. Modelos Transformer: BETO Y XLM-RoBERTa
 
@@ -608,13 +611,14 @@ Resultados (F1-Macro):
 
 ```text
 modelo       estrategia    valid    test
-beto         class_weight  0.6339   0.6328   <- mejor transformer en validacion (se guarda)
-xlm_roberta  class_weight  0.6035   0.6498   <- mejor en test
+beto         class_weight  0.6089   0.6258   <- mejor transformer en validacion y test (se guarda)
+xlm_roberta  class_weight  0.6033   0.6039
 ```
 
-Ambos transformers superan por amplio margen (~0.12 de F1-Macro) a clasicos y redes, justo
-lo que anticipa la literatura citada en el documento del proyecto (BETO/BERT en espanol).
-La mejor combinacion se elige por F1-macro en validacion (BETO) y se guarda completa.
+Ambos transformers superan por amplio margen (entre 0.12 y 0.14 de F1-Macro) a clasicos y redes,
+justo lo que anticipa la literatura citada en el documento del proyecto (BETO/BERT en espanol).
+Con este split BETO lidera tanto en validacion como en prueba; la mejor combinacion se elige por
+F1-macro en validacion (BETO) y se guarda completa.
 
 ### 10. Comparacion Unificada De Las Tres Familias
 
@@ -635,9 +639,9 @@ Mejor combinacion por familia (F1-Macro en test):
 
 ```text
 familia        mejor modelo (estrategia)    F1-macro test
-transformer    xlm_roberta (class_weight)   0.6498    <- mejor modelo global
-deep_learning  lstm (class_weight)          0.5247
-clasico        naive_bayes (smote)          0.5207
+transformer    beto (class_weight)          0.6258    <- mejor modelo global
+deep_learning  cnn (class_weight)           0.5099
+clasico        naive_bayes (smote)          0.4865
 ```
 
 Conclusion del avance: el ranking es claro y estable -> **transformers > deep learning ~= clasicos**.

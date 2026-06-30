@@ -220,12 +220,12 @@ reports/05_split/distribucion_split_valid.csv
 reports/05_split/distribucion_split_test.csv
 ```
 
-Tamanos actuales:
+Tamanos actuales (split 80% desarrollo / 20% prueba, con 70/30 interno; `random_state=42`):
 
 ```text
-train    2923
-valid     627
-test      627
+train    2338
+valid    1003
+test      836
 ```
 
 El modelado se divide en tres familias (fases 07-09) y una comparacion final (fase 10).
@@ -252,8 +252,8 @@ models/mejor_modelo.joblib
 
 TF-IDF (1-2 gramas, stopwords ES) + los dos clasicos del enunciado: SVM (LinearSVC) y
 Naive Bayes (MultinomialNB), cruzados con base / balanced / SMOTE. Naive Bayes omite
-'balanced'. Mejores resultados (F1-Macro en test): naive_bayes+smote 0.5207, svm+balanced
-0.5203. SMOTE rescata a Naive Bayes (0.31 -> 0.52), coherente con la literatura del documento.
+'balanced'. Mejores resultados (F1-Macro en test): naive_bayes+smote 0.4865, svm+smote
+0.4799. SMOTE rescata a Naive Bayes (0.29 -> 0.49), coherente con la literatura del documento.
 
 ## 08. Deep Learning (CNN y LSTM)
 
@@ -275,7 +275,8 @@ models/mejor_modelo_dl.pt
 
 PyTorch con embeddings entrenados desde cero: TextCNN (kernels 3/4/5) y BiLSTM, con
 estrategias base / class_weight (perdida ponderada). GPU si esta disponible, early stopping
-por F1-macro. Mejor: lstm+class_weight 0.5247 en test (a la par de los clasicos).
+por F1-macro. Mejor en test: cnn+class_weight 0.5099; el guardado (mejor en validacion) es
+lstm+base. A la par de los clasicos.
 
 ## 09. Transformers (BETO y XLM-RoBERTa)
 
