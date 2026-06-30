@@ -30,10 +30,12 @@ flowchart TD
     A[Empresas y URL Google Maps] --> B[Scraping de reseñas]
     B --> C[Dataset crudo]
     C --> D[Limpieza y auditoría]
-    D --> E[Autoetiquetado con modelo externo]
-    E --> F[Revisión asistida por IA]
-    F --> G[Integración conservadora de etiquetas]
-    G --> H[Etiquetado determinista por reglas]
+    D --> E[Autoetiquetado con pysentimiento]
+    E --> F1[Revisión prioritaria + prompt IA]
+    F1 --> G1[Integración IA de clases minoritarias]
+    G1 --> F2[Segundo lote neutral + prompt IA]
+    F2 --> G2[Integración IA neutral]
+    G2 --> H[Etiquetado determinista por reglas]
     H --> I[Dataset final etiquetado]
     I --> J[Split estratificado]
     J --> K1[Modelos clásicos: TF-IDF + SVM/NB]
@@ -51,10 +53,12 @@ flowchart TD
 |---|---|---|---|
 | Scraping | `data/raw/empresas.csv` | Extrae reseñas de Google Maps por empresa y sede, con pausas y control anti-bloqueo. | `data/raw/dataset_consumidores_peru.csv` |
 | Limpieza y auditoría | Dataset crudo | Normaliza texto, valida estrellas, detecta comentarios cortos, registros sin contenido alfabético e inconsistencias. | `dataset_consumidores_peru_limpio.csv` y reportes de limpieza. |
-| Autoetiquetado | Dataset limpio | Usa un modelo externo de sentimiento como segunda señal frente a las estrellas. | `dataset_consumidores_peru_etiquetado.csv` |
-| Revisión asistida por IA | Casos ambiguos | Prioriza registros con contradicción o baja confianza para revisión focalizada. | Archivos de revisión y etiquetas IA. |
-| Integración conservadora | Etiquetas automáticas e IA | Acepta etiquetas cuando existe consenso o alta confianza, priorizando pureza sobre cobertura. | `dataset_consumidores_peru_etiquetado_final.csv` |
-| Etiquetado por reglas | Dataset final parcial | Aplica reglas deterministas sobre estrellas, probabilidad neutral y probabilidad positiva. | Dataset final actualizado y validación de reglas. |
+| Autoetiquetado | Dataset limpio | Usa `pysentimiento` como segunda señal frente a las estrellas y acepta etiquetas cuando existe consistencia entre ambas fuentes. | `dataset_consumidores_peru_etiquetado.csv` y reportes de autoetiquetado. |
+| Revisión prioritaria asistida por IA | Casos ambiguos del autoetiquetado | Prioriza registros con contradicción, baja confianza o posible clase minoritaria; genera un CSV reducido y un prompt documentado para la IA. | `revision_prioritaria_para_ia.csv`, `prompt_etiquetado_ia.md` y `revision_prioritaria_etiquetas_ia.csv`. |
+| Integración IA de clases minoritarias | Etiquetas automáticas y respuesta IA del primer lote | Acepta solo etiquetas IA con uso aprobado, confianza media o alta y clases permitidas, priorizando pureza sobre cobertura. | `dataset_consumidores_peru_etiquetado_final.csv` y reporte de integración. |
+| Revisión neutral asistida por IA | Dataset final parcial con filas aún sin etiqueta | Selecciona candidatos neutrales mediante estrellas, salida del modelo, etiqueta provisional y patrones textuales; usa un prompt específico para neutralidad. | `revision_neutral_para_ia.csv`, `prompt_etiquetado_ia_neutral.md` y `revision_neutral_etiquetas_ia.csv`. |
+| Integración IA neutral | Respuesta IA del lote neutral | Integra únicamente neutrales aprobados con confianza media o alta. | Dataset final parcial actualizado y reporte de integración neutral. |
+| Etiquetado por reglas | Dataset final parcial | Aplica reglas deterministas sobre estrellas, probabilidad neutral y probabilidad positiva para recuperar etiquetas restantes de alta confianza. | Dataset final actualizado y validación de reglas. |
 | Split estratificado | Dataset final etiquetado | Divide los datos preservando la distribución de clases. | `train.csv`, `valid.csv`, `test.csv` |
 | Modelado | Splits de datos | Entrena modelos clásicos, redes neuronales y transformers con estrategias de balanceo. | Reportes, matrices de confusión y modelos entrenados. |
 | Comparación | Métricas de modelos | Unifica resultados con F1-macro, accuracy, F1 ponderado y balanced accuracy. | Comparación global y selección del mejor modelo. |
@@ -81,14 +85,18 @@ El preprocesamiento se diseñó para conservar la información semántica del co
 
 | Transformación | Descripción | Resultado esperado |
 |---|---|---|
-| Normalización textual | Conversión a una forma uniforme para modelado, eliminación de ruido y estandarización de espacios/signos. | Campo `texto_modelo`. |
-| Conservación del texto limpio | Mantiene una versión natural del comentario para modelos transformer. | Campo `comentario_limpio`. |
+| Limpieza textual ligera | Normaliza el comentario sin alterar su sentido: conserva tildes, signos y estructura natural, pero elimina caracteres invisibles, saltos de línea y espacios repetidos. Esta versión se usa también como entrada para `pysentimiento` y transformers. | Campo `comentario_limpio`. |
+| Normalización para modelado clásico | Genera una versión más uniforme del texto: pasa a minúsculas, elimina URL, signos y caracteres no alfanuméricos, y estandariza espacios. | Campo `texto_modelo`. |
 | Cálculo de longitud | Número de caracteres del comentario. | Campo `longitud_caracteres`. |
 | Conteo de palabras | Número de palabras útiles. | Campo `cantidad_palabras`. |
 | Validación de estrellas | Comprueba que la calificación pertenezca al rango esperado. | Campo `estrellas_validas`. |
 | Señal débil por estrellas | Traduce 1-5 estrellas a sentimiento inicial. | Campo `sentimiento_estrella`. |
 | Señal de modelo externo | Obtiene polaridad y probabilidades `NEG`, `NEU`, `POS`. | Campos `sentimiento_modelo`, `prob_neg`, `prob_neu`, `prob_pos`. |
 | Integración de etiquetas | Combina estrellas, modelo externo, IA y reglas. | Campo `sentimiento_final`. |
+
+El proceso completo de preparación no consistió solo en limpiar texto. Primero se generó `comentario_limpio`, una versión conservadora usada como entrada para `pysentimiento`, y `texto_modelo`, una versión más normalizada para los modelos clásicos y de deep learning. Luego, `pysentimiento` asignó una señal automática de polaridad (`NEG`, `NEU`, `POS`) y probabilidades asociadas; esta señal se cruzó con las estrellas para aceptar etiquetas únicamente cuando existía consistencia entre ambas fuentes. En esta etapa se asignaron 3448 etiquetas finales iniciales, mientras que 1589 filas quedaron marcadas para revisión por baja confianza, contradicción o criterios de auditoría.
+
+Posteriormente, se preparó una revisión prioritaria de 500 casos ambiguos para IA, enfocada principalmente en posibles neutrales, negativos y contradicciones de alta confianza. Para esta revisión se usó un prompt documentado en `reports/03_revision_ia/prompt_etiquetado_ia.md`, que instruye a la IA a actuar como anotador de datos, clasificar cada reseña en una de las cinco clases, usar el texto como fuente principal y devolver un CSV con `sentimiento_ia`, `confianza_ia`, `justificacion_ia` y `usar_etiqueta_ia`. La integración conservadora aceptó solo etiquetas IA con uso aprobado, confianza media o alta y clases permitidas, incorporando 175 etiquetas adicionales. Después se preparó un segundo lote enfocado en neutralidad: de 1177 registros aún sin etiqueta, se identificaron 1013 candidatos neutrales por estrellas, salida del modelo, etiqueta provisional o patrones textuales; se exportaron 300 casos junto con el prompt específico `reports/03_revision_ia/prompt_etiquetado_ia_neutral.md`, y se integraron 167 neutrales adicionales. Finalmente, sobre el residuo sin etiqueta se aplicaron reglas deterministas validadas contra etiquetas IA existentes, recuperando 390 etiquetas más. Con ello, el total consolidado llegó a 4180 reseñas con `sentimiento_final`.
 
 ### Aplicación de reducción
 
@@ -180,7 +188,7 @@ El conjunto de datos original contiene 4800 reseñas. Luego del proceso de etiqu
 | Prueba | 836 | 20.01% | 20% del total |
 | Total usado en modelado | 4177 | 100% | — |
 
-La partición se obtiene en dos cortes estratificados deterministas (`random_state=42`): primero se separa el 20% de prueba (836 registros) del 80% de desarrollo (3341 registros); luego el desarrollo se divide en 70% entrenamiento (2338 registros) y 30% validación (1003 registros). Así se materializa la división solicitada de entrenamiento 80% y prueba 20% y, dentro del entrenamiento/desarrollo, una subdivisión 70/30 entre entrenamiento y validación.
+La partición se obtiene en dos cortes estratificados deterministas (`random_state=42`): primero se separa el 20% de prueba (836 registros) del 80% de desarrollo (3341 registros); luego el desarrollo se divide en 70% entrenamiento (2338 registros) y 30% validación (1003 registros). Así se materializa el esquema de 80% desarrollo y 20% prueba, con una subdivisión interna 70/30 del bloque de desarrollo para entrenamiento y validación; por ello, el entrenamiento efectivo representa 55.97% del total usado en modelado.
 
 ### Distribución estratificada por clase
 
