@@ -1,51 +1,51 @@
 ﻿familia,modelo,estrategia,split,clase,f1
-clasico,svm,base,valid,muy negativo,0.7688
-clasico,svm,base,valid,negativo,0.2136
-clasico,svm,base,valid,neutral,0.4497
-clasico,svm,base,valid,positivo,0.236
-clasico,svm,base,valid,muy positivo,0.6821
-clasico,svm,base,test,muy negativo,0.8113
-clasico,svm,base,test,negativo,0.2955
-clasico,svm,base,test,neutral,0.4235
-clasico,svm,base,test,positivo,0.2532
-clasico,svm,base,test,muy positivo,0.7495
-clasico,svm,balanced,valid,muy negativo,0.747
-clasico,svm,balanced,valid,negativo,0.2353
-clasico,svm,balanced,valid,neutral,0.4494
-clasico,svm,balanced,valid,positivo,0.2486
-clasico,svm,balanced,valid,muy positivo,0.6696
-clasico,svm,balanced,test,muy negativo,0.8138
-clasico,svm,balanced,test,negativo,0.3434
-clasico,svm,balanced,test,neutral,0.4358
-clasico,svm,balanced,test,positivo,0.2775
-clasico,svm,balanced,test,muy positivo,0.7313
-clasico,svm,smote,valid,muy negativo,0.7469
-clasico,svm,smote,valid,negativo,0.272
-clasico,svm,smote,valid,neutral,0.4505
-clasico,svm,smote,valid,positivo,0.3125
-clasico,svm,smote,valid,muy positivo,0.6543
-clasico,svm,smote,test,muy negativo,0.8
-clasico,svm,smote,test,negativo,0.3333
-clasico,svm,smote,test,neutral,0.4277
-clasico,svm,smote,test,positivo,0.2723
-clasico,svm,smote,test,muy positivo,0.6968
-clasico,naive_bayes,base,valid,muy negativo,0.7461
+clasico,svm,base,valid,muy negativo,0.779
+clasico,svm,base,valid,negativo,0.2692
+clasico,svm,base,valid,neutral,0.3831
+clasico,svm,base,valid,positivo,0.305
+clasico,svm,base,valid,muy positivo,0.7126
+clasico,svm,base,test,muy negativo,0.7949
+clasico,svm,base,test,negativo,0.2336
+clasico,svm,base,test,neutral,0.375
+clasico,svm,base,test,positivo,0.1881
+clasico,svm,base,test,muy positivo,0.702
+clasico,svm,balanced,valid,muy negativo,0.7669
+clasico,svm,balanced,valid,negativo,0.3068
+clasico,svm,balanced,valid,neutral,0.3723
+clasico,svm,balanced,valid,positivo,0.3387
+clasico,svm,balanced,valid,muy positivo,0.692
+clasico,svm,balanced,test,muy negativo,0.7956
+clasico,svm,balanced,test,negativo,0.2517
+clasico,svm,balanced,test,neutral,0.3898
+clasico,svm,balanced,test,positivo,0.2613
+clasico,svm,balanced,test,muy positivo,0.6941
+clasico,svm,smote,valid,muy negativo,0.7615
+clasico,svm,smote,valid,negativo,0.3135
+clasico,svm,smote,valid,neutral,0.3816
+clasico,svm,smote,valid,positivo,0.3305
+clasico,svm,smote,valid,muy positivo,0.6387
+clasico,svm,smote,test,muy negativo,0.7865
+clasico,svm,smote,test,negativo,0.2949
+clasico,svm,smote,test,neutral,0.375
+clasico,svm,smote,test,positivo,0.2742
+clasico,svm,smote,test,muy positivo,0.669
+clasico,naive_bayes,base,valid,muy negativo,0.787
 clasico,naive_bayes,base,valid,negativo,0.0
-clasico,naive_bayes,base,valid,neutral,0.0606
+clasico,naive_bayes,base,valid,neutral,0.013
 clasico,naive_bayes,base,valid,positivo,0.0
-clasico,naive_bayes,base,valid,muy positivo,0.67
-clasico,naive_bayes,base,test,muy negativo,0.8053
+clasico,naive_bayes,base,valid,muy positivo,0.6851
+clasico,naive_bayes,base,test,muy negativo,0.7868
 clasico,naive_bayes,base,test,negativo,0.0
-clasico,naive_bayes,base,test,neutral,0.0404
+clasico,naive_bayes,base,test,neutral,0.0
 clasico,naive_bayes,base,test,positivo,0.0
-clasico,naive_bayes,base,test,muy positivo,0.6852
-clasico,naive_bayes,smote,valid,muy negativo,0.7586
-clasico,naive_bayes,smote,valid,negativo,0.2821
-clasico,naive_bayes,smote,valid,neutral,0.4286
-clasico,naive_bayes,smote,valid,positivo,0.3203
-clasico,naive_bayes,smote,valid,muy positivo,0.6
-clasico,naive_bayes,smote,test,muy negativo,0.7914
-clasico,naive_bayes,smote,test,negativo,0.4286
-clasico,naive_bayes,smote,test,neutral,0.3729
-clasico,naive_bayes,smote,test,positivo,0.3509
-clasico,naive_bayes,smote,test,muy positivo,0.6599
+clasico,naive_bayes,base,test,muy positivo,0.6757
+clasico,naive_bayes,smote,valid,muy negativo,0.7595
+clasico,naive_bayes,smote,valid,negativo,0.3286
+clasico,naive_bayes,smote,valid,neutral,0.3852
+clasico,naive_bayes,smote,valid,positivo,0.4108
+clasico,naive_bayes,smote,valid,muy positivo,0.6203
+clasico,naive_bayes,smote,test,muy negativo,0.7926
+clasico,naive_bayes,smote,test,negativo,0.3409
+clasico,naive_bayes,smote,test,neutral,0.3378
+clasico,naive_bayes,smote,test,positivo,0.3365
+clasico,naive_bayes,smote,test,muy positivo,0.6245

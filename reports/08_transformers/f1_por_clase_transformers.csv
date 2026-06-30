@@ -1,21 +1,21 @@
 ﻿familia,modelo,estrategia,split,clase,f1
-transformer,beto,class_weight,valid,muy negativo,0.8129
-transformer,beto,class_weight,valid,negativo,0.473
-transformer,beto,class_weight,valid,neutral,0.7243
-transformer,beto,class_weight,valid,positivo,0.4356
-transformer,beto,class_weight,valid,muy positivo,0.7237
-transformer,beto,class_weight,test,muy negativo,0.8528
-transformer,beto,class_weight,test,negativo,0.4762
-transformer,beto,class_weight,test,neutral,0.6813
-transformer,beto,class_weight,test,positivo,0.4162
-transformer,beto,class_weight,test,muy positivo,0.7376
-transformer,xlm_roberta,class_weight,valid,muy negativo,0.7603
-transformer,xlm_roberta,class_weight,valid,negativo,0.4645
-transformer,xlm_roberta,class_weight,valid,neutral,0.6444
-transformer,xlm_roberta,class_weight,valid,positivo,0.383
-transformer,xlm_roberta,class_weight,valid,muy positivo,0.7654
-transformer,xlm_roberta,class_weight,test,muy negativo,0.8693
-transformer,xlm_roberta,class_weight,test,negativo,0.5564
-transformer,xlm_roberta,class_weight,test,neutral,0.7179
-transformer,xlm_roberta,class_weight,test,positivo,0.3392
-transformer,xlm_roberta,class_weight,test,muy positivo,0.7661
+transformer,xlm_roberta,class_weight,valid,muy negativo,0.8435
+transformer,xlm_roberta,class_weight,valid,negativo,0.4086
+transformer,xlm_roberta,class_weight,valid,neutral,0.609
+transformer,xlm_roberta,class_weight,valid,positivo,0.4118
+transformer,xlm_roberta,class_weight,valid,muy positivo,0.7436
+transformer,xlm_roberta,class_weight,test,muy negativo,0.8423
+transformer,xlm_roberta,class_weight,test,negativo,0.3841
+transformer,xlm_roberta,class_weight,test,neutral,0.6372
+transformer,xlm_roberta,class_weight,test,positivo,0.4197
+transformer,xlm_roberta,class_weight,test,muy positivo,0.7363
+transformer,beto,class_weight,valid,muy negativo,0.8042
+transformer,beto,class_weight,valid,negativo,0.4685
+transformer,beto,class_weight,valid,neutral,0.673
+transformer,beto,class_weight,valid,positivo,0.338
+transformer,beto,class_weight,valid,muy positivo,0.761
+transformer,beto,class_weight,test,muy negativo,0.8122
+transformer,beto,class_weight,test,negativo,0.487
+transformer,beto,class_weight,test,neutral,0.7012
+transformer,beto,class_weight,test,positivo,0.3686
+transformer,beto,class_weight,test,muy positivo,0.7599
