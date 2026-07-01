@@ -206,7 +206,24 @@ El conjunto de entrenamiento se sometió a las tres familias de modelos. Para lo
 
 ## 4.3 Resultados de entrenamiento y validación
 
-La validación permitió comparar la capacidad de generalización antes de observar el conjunto de prueba. En validación, BETO obtuvo el mejor F1-macro, 0.6089, mientras que XLM-RoBERTa obtuvo 0.6033. En prueba BETO también superó a XLM-RoBERTa (0.6258 frente a 0.6039), por lo que fue seleccionado como mejor modelo final al liderar en ambas particiones.
+El entrenamiento se realizó con el conjunto `train` y la selección de modelos se hizo con el conjunto `valid`, manteniendo el conjunto `test` reservado para la evaluación final. La métrica principal de selección fue F1-macro, porque el problema es multiclase y presenta desbalance entre clases; adicionalmente se reportó accuracy para medir la proporción global de aciertos.
+
+Para el modelo ganador, BETO con ponderación de clases, el entrenamiento usó fine-tuning supervisado con CrossEntropyLoss ponderada. Durante el entrenamiento, el script evaluó el F1-macro de validación al finalizar cada época y conservó el mejor estado del modelo; no se almacenó una curva histórica de `loss` ni accuracy de entrenamiento por época, por lo que la interpretación se basa en las métricas de validación y prueba persistidas en los reportes.
+
+| Parámetro de entrenamiento del modelo ganador | Valor |
+|---|---:|
+| Modelo base | `dccuchile/bert-base-spanish-wwm-cased` |
+| Estrategia | `class_weight` |
+| Épocas máximas | 4 |
+| Early stopping | Paciencia de 2 épocas |
+| Batch size | 16 |
+| Longitud máxima | 128 tokens |
+| Learning rate | 2e-5 |
+| Optimizador | AdamW |
+| Weight decay | 0.01 |
+| Función de pérdida | CrossEntropyLoss ponderada |
+
+La validación permitió comparar la capacidad de generalización antes de observar el conjunto de prueba. En validación, BETO obtuvo el mejor F1-macro, 0.6089, y una accuracy de 0.6650; XLM-RoBERTa quedó muy cerca, con F1-macro de 0.6033 y accuracy de 0.6630. En prueba, BETO también superó a XLM-RoBERTa (F1-macro de 0.6258 frente a 0.6039), por lo que fue seleccionado como mejor modelo final al liderar en ambas particiones.
 
 | Familia | Modelo | Estrategia | F1-macro valid | Accuracy valid | F1-macro test | Accuracy test |
 |---|---|---|---:|---:|---:|---:|

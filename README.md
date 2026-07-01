@@ -88,6 +88,125 @@ pip install -r requirements-dev.txt
 python -m pytest tests/ -q
 ```
 
+## Flujo Alternativo: 500 Etiquetas Manuales
+
+Este flujo prepara la metodologia solicitada cuando se parte de una muestra manual de
+500 registros. El objetivo es entrenar un etiquetador inicial con datos revisados por
+humano, usarlo para etiquetar el resto del 80% de desarrollo y despues entrenar los
+modelos finales con el dataset ya etiquetado.
+
+```text
+dataset limpio
+  -> separar 80% desarrollo / 20% prueba final
+  -> extraer 500 registros del 80%
+  -> etiquetar manualmente esos 500
+  -> validar por cross-validation y elegir modelo inicial
+  -> reentrenar el mejor modelo inicial con los 500 completos
+  -> etiquetar automaticamente el resto del 80%
+  -> revisar coherencia con clustering
+  -> entrenar los 6 modelos finales con el dataset etiquetado
+  -> evaluar una sola vez en el 20% reservado
+```
+
+### 1. Separar 80/20 y generar la muestra de 500
+
+```bash
+python scripts/11_etiquetado_manual/01_preparar_muestra_manual.py
+```
+
+Genera:
+
+```text
+data/manual_500/desarrollo_80.csv
+data/manual_500/test_20_reservado.csv
+data/manual_500/muestra_500_para_etiquetar.csv
+data/manual_500/resto_80_para_etiquetar.csv
+```
+
+Luego se completa manualmente la columna `etiqueta_manual` de
+`data/manual_500/muestra_500_para_etiquetar.csv` usando solo estas clases:
+
+```text
+muy negativo
+negativo
+neutral
+positivo
+muy positivo
+```
+
+### 2. Entrenar el etiquetador inicial con validacion cruzada
+
+```bash
+python scripts/11_etiquetado_manual/02_entrenar_modelo_inicial.py
+```
+
+Este script compara modelos iniciales livianos (`svm_balanced` y `naive_bayes`) mediante
+validacion cruzada sobre los 500 registros manuales. Luego reentrena el mejor modelo con
+los 500 completos y lo guarda en:
+
+```text
+models/modelo_etiquetador_inicial.joblib
+```
+
+Reportes generados:
+
+```text
+reports/11_etiquetado_manual/comparacion_modelo_inicial_cv.csv
+reports/11_etiquetado_manual/matrices_confusion_modelo_inicial_cv.csv
+reports/11_etiquetado_manual/hiperparametros_modelo_inicial.json
+```
+
+### 3. Etiquetar automaticamente el resto del 80%
+
+```bash
+python scripts/11_etiquetado_manual/03_etiquetar_resto.py
+```
+
+Genera:
+
+```text
+data/manual_500/desarrollo_80_etiquetado.csv
+```
+
+Este archivo contiene los 500 registros manuales mas el resto del 80% etiquetado por el
+modelo inicial.
+
+### 4. Revisar coherencia con clustering
+
+```bash
+python scripts/11_etiquetado_manual/04_clustering_revision.py
+```
+
+Genera tablas que cruzan clusters contra etiquetas predichas:
+
+```text
+reports/11_etiquetado_manual/clustering_vs_etiquetas_cantidad.csv
+reports/11_etiquetado_manual/clustering_vs_etiquetas_porcentaje.csv
+reports/11_etiquetado_manual/resumen_pureza_clusters.csv
+reports/11_etiquetado_manual/metricas_clustering.csv
+```
+
+El clustering no reemplaza la validacion supervisada; sirve como revision complementaria
+para detectar grupos mezclados o etiquetas posiblemente inconsistentes.
+
+### 5. Entrenamiento final de los 6 modelos
+
+Cuando `desarrollo_80_etiquetado.csv` ya este revisado, ese dataset se usa como base para
+preparar los splits de entrenamiento/validacion y entrenar nuevamente los seis modelos del
+proyecto:
+
+```text
+SVM
+Naive Bayes
+CNN
+LSTM
+BETO
+XLM-RoBERTa
+```
+
+El 20% guardado en `data/manual_500/test_20_reservado.csv` debe mantenerse separado hasta
+la evaluacion final para evitar fuga de informacion.
+
 Codigo compartido reutilizable en `scripts/_comun/`:
 
 ```text

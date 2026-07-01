@@ -1,0 +1,10 @@
+﻿metrica,valor
+filas_dataset_base,4797
+filas_desarrollo_80,3837
+filas_test_20_reservado,960
+filas_muestra_manual,500
+filas_resto_para_etiquetar,3337
+test_size,0.2
+sample_size,500
+random_state,42
+estratificacion,sentimiento_estrella
