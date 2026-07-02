@@ -119,10 +119,35 @@ ETAPAS = [
     ),
     Etapa(
         "07_modelado",
-        "Entrenamiento y evaluacion del clasificador",
+        "Modelos clasicos (SVM y Naive Bayes)",
         PROJECT_ROOT / "scripts" / "07_modelado" / "entrenar_evaluar.py",
         entradas=[TRAIN, VALID, TEST],
         requiere_paquete="imblearn",
+    ),
+    Etapa(
+        "08_dl",
+        "Deep learning (CNN y LSTM)",
+        PROJECT_ROOT / "scripts" / "08_dl" / "entrenar_dl.py",
+        entradas=[TRAIN, VALID, TEST],
+        requiere_paquete="torch",
+        critica=False,
+        por_defecto=False,  # pesado: solo con --solo/--desde
+    ),
+    Etapa(
+        "09_transformers",
+        "Transformers (BETO y XLM-RoBERTa)",
+        PROJECT_ROOT / "scripts" / "09_transformers" / "entrenar_transformers.py",
+        entradas=[TRAIN, VALID, TEST],
+        requiere_paquete="transformers",
+        critica=False,
+        por_defecto=False,  # pesado y descarga modelos: solo con --solo/--desde
+    ),
+    Etapa(
+        "10_comparacion",
+        "Comparacion unificada de las tres familias",
+        PROJECT_ROOT / "scripts" / "10_comparacion" / "comparar_todos.py",
+        critica=False,
+        por_defecto=False,  # corre tras tener 07/08/09
     ),
 ]
 

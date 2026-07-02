@@ -12,7 +12,18 @@ revision asistida por IA de casos ambiguos
 integracion conservadora de etiquetas
 etiquetado automatico por reglas (sin IA, determinista)
 split estratificado
-entrenamiento y evaluacion
+modelado y evaluacion (tres familias de modelos)
+comparacion unificada
+```
+
+El modelado compara **seis modelos en tres familias**, todos sobre el mismo split y
+evaluados con el mismo criterio:
+
+```text
+clasicos      (fase 07) -> SVM, Naive Bayes            (TF-IDF)
+deep learning (fase 08) -> CNN, LSTM                   (embeddings entrenables, PyTorch)
+transformers  (fase 09) -> BETO, XLM-RoBERTa           (fine-tuning, HuggingFace)
+comparacion   (fase 10) -> tabla y grafico unificados de las tres familias
 ```
 
 ## Metodologia
@@ -28,13 +39,13 @@ El pipeline sigue la estructura de CRISP-DM (Cross-Industry Standard Process for
 Comprension del negocio  -> objetivo: clasificar sentimiento multiclase de resenas peruanas
 Comprension de los datos -> scraping y auditoria (etapas 01 y 02-auditoria)
 Preparacion de los datos -> limpieza, autoetiquetado, revision IA, integracion, reglas, split (02-06, 05b)
-Modelado                 -> TF-IDF + 4 clasificadores clasicos (LogReg, SVM, NB, RF) x balanceo (fase 07)
-Evaluacion               -> F1-macro, exactitud balanceada, F1 por clase, matriz de confusion (fase 07)
-Despliegue               -> no contemplado aun
+Modelado                 -> tres familias: clasicos (07), deep learning (08) y transformers (09)
+Evaluacion               -> F1-macro, exactitud balanceada, F1 por clase, matriz de confusion + comparacion (10)
+Despliegue               -> script de prediccion (predecir.py) sobre el mejor modelo clasico
 ```
 
-El ciclo de preparacion -> modelado -> evaluacion ya esta cerrado. La preparacion de datos sigue
-siendo la mayor parte del esfuerzo; el modelado actual es una linea base solida sobre la cual mejorar.
+El ciclo de preparacion -> modelado -> evaluacion ya esta cerrado y abarca las tres familias de
+modelos. La preparacion de datos sigue siendo la mayor parte del esfuerzo.
 
 ### Metodologia De Etiquetado: Supervision Debil Con Consenso
 
@@ -57,8 +68,10 @@ fuentes de etiqueta en la seccion "Criterio De Etiquetado".
 
 - Validacion de etiquetas: se mide el acuerdo de las reglas frente a las etiquetas humanas ya
   existentes antes de confiar en ellas (actualmente 93% de acuerdo, ver fase 05b).
-- Particion estratificada train/valid/test (70/15/15) que preserva la distribucion de clases,
-  metodologia estandar para clasificacion con desbalance.
+- Particion estratificada train/valid/test que preserva la distribucion de clases,
+  metodologia estandar para clasificacion con desbalance. Esquema 80% desarrollo / 20% prueba,
+  subdividiendo el desarrollo en 70% entrenamiento / 30% validacion (resultado: 56/24/20 sobre
+  el total).
 
 ## Instalacion
 
@@ -118,20 +131,35 @@ data/
     dataset_consumidores_peru_etiquetado_final.csv
   splits/
 
+models/
+  mejor_modelo.joblib            (mejor clasico, fase 07)
+  mejor_modelo_dl.pt             (mejor red, fase 08)
+  mejor_modelo_transformer/      (mejor transformer, fase 09)
+
 reports/
   01_limpieza/
   02_autoetiquetado/
   03_revision_ia/
+  03b_reglas/
   04_integracion/
   05_split/
+  06_modelado/        (clasicos: SVM, Naive Bayes)
+  07_dl/              (deep learning: CNN, LSTM)
+  08_transformers/    (transformers: BETO, XLM-RoBERTa)
+  09_comparacion/     (comparacion unificada de las 3 familias)
 
 scripts/
+  _comun/             (codigo compartido: texto, datos, evaluacion, etiquetas)
   01_scraping/
   02_limpieza/
   03_autoetiquetado/
   04_revision_ia/
   05_integracion/
   06_split/
+  07_modelado/        (SVM, Naive Bayes)
+  08_dl/              (CNN, LSTM)
+  09_transformers/    (BETO, XLM-RoBERTa)
+  10_comparacion/     (comparacion unificada)
 ```
 
 ## Estado Actual Del Dataset
@@ -438,15 +466,15 @@ reports/05_split/distribucion_split_valid.csv
 reports/05_split/distribucion_split_test.csv
 ```
 
-Tamanos actuales:
+Tamanos actuales (split 80/20 + 70/30, `random_state=42`):
 
 ```text
-train    2923
-valid     627
-test      627
+train    2338
+valid    1003
+test      836
 ```
 
-### 07. Entrenamiento Y Evaluacion
+### 07. Modelos Clasicos: SVM Y Naive Bayes
 
 ```bash
 python scripts/07_modelado/entrenar_evaluar.py
@@ -465,17 +493,17 @@ Salidas:
 ```text
 reports/06_modelado/comparacion_modelos.csv
 reports/06_modelado/f1_por_clase.csv
-reports/06_modelado/matriz_confusion_<algoritmo>_<estrategia>_test.csv / .png
-reports/06_modelado/reporte_clasificacion_<algoritmo>_<estrategia>_test.txt
+reports/06_modelado/matriz_confusion_<modelo>_<estrategia>_test.csv / .png
+reports/06_modelado/reporte_clasificacion_<modelo>_<estrategia>_test.txt
 models/mejor_modelo.joblib
 ```
 
 El clasificador usa TF-IDF (1-2 gramas, con eliminacion de stopwords en espanol pero conservando
-las palabras de negacion e intensidad) sobre `texto_modelo`. Se comparan los **cuatro algoritmos
-clasicos** del documento del proyecto, cruzados con tres estrategias frente al desbalance:
+las palabras de negacion e intensidad) sobre `texto_modelo`. Esta fase cubre los **dos modelos
+clasicos** del enunciado, cruzados con tres estrategias frente al desbalance:
 
 ```text
-algoritmos:  Regresion Logistica, SVM (LinearSVC), Naive Bayes, Random Forest
+modelos:     SVM (LinearSVC), Naive Bayes (MultinomialNB)
 estrategias: base | balanced (class_weight) | smote (solo en train)
 ```
 
@@ -487,28 +515,139 @@ La mejor combinacion se elige por F1-Macro en validacion y se guarda con joblib.
 Resultados actuales (F1-Macro en test, ordenado):
 
 ```text
-algoritmo            estrategia   valid    test
-regresion_logistica  balanced     0.4993   0.5589   <- mejor
-regresion_logistica  smote        0.4970   0.5447
-naive_bayes          smote        0.4779   0.5207
-svm                  balanced     0.4700   0.5203
-svm                  base         0.4700   0.5066
-naive_bayes          base         0.2953   0.3062
-random_forest        smote        0.3852   0.4393
+modelo       estrategia   valid    test
+naive_bayes  smote        0.5009   0.4865   <- mejor por F1-macro en validacion (se guarda)
+svm          smote        0.4852   0.4799
+svm          balanced     0.4953   0.4785
+svm          base         0.4898   0.4587
+naive_bayes  base         0.2970   0.2925
 ```
 
-Hallazgos: (1) el balanceo es decisivo, el modelo base tiene buena accuracy pero F1-Macro pobre;
-(2) **SMOTE rescata a Naive Bayes** (0.31 -> 0.52 en F1-Macro), coherente con la literatura citada
-en el documento; (3) Random Forest queda por debajo en F1-Macro (favorece las clases mayoritarias);
-(4) la mayor confusion ocurre entre clases adyacentes (positivo vs muy positivo), patron ordinal
-esperable. Quitar stopwords baja levemente el F1 (~0.008) porque parte de la senal vive en palabras
-funcionales; se mantiene por alineacion metodologica y existe la bandera `--sin-stopwords`.
+Hallazgos: (1) el balanceo es decisivo: el Naive Bayes base tiene buena accuracy pero F1-Macro
+pobre (0.29); (2) **SMOTE rescata a Naive Bayes** (0.29 -> 0.49 en F1-Macro), coherente con la
+literatura citada en el documento, y lo convierte en el mejor clasico; (3) SVM es estable y
+competitivo en validacion; (4) la mayor confusion ocurre entre clases adyacentes (positivo vs
+muy positivo), patron ordinal esperable. Quitar stopwords baja levemente el F1 porque parte de
+la senal vive en palabras funcionales; se mantiene por alineacion metodologica y existe la
+bandera `--sin-stopwords`.
 
 Para reentrenar solo algunas combinaciones:
 
 ```bash
-python scripts/07_modelado/entrenar_evaluar.py --algoritmos svm regresion_logistica --estrategias balanced
+python scripts/07_modelado/entrenar_evaluar.py --algoritmos svm --estrategias balanced smote
 ```
+
+### 08. Modelos De Deep Learning: CNN Y LSTM
+
+```bash
+python scripts/08_dl/entrenar_dl.py
+```
+
+Entrada: los mismos splits que la fase 07. Salidas:
+
+```text
+reports/07_dl/comparacion_dl.csv
+reports/07_dl/f1_por_clase_dl.csv
+reports/07_dl/matriz_confusion_<modelo>_<estrategia>_test.csv / .png
+reports/07_dl/reporte_clasificacion_<modelo>_<estrategia>_test.txt
+models/mejor_modelo_dl.pt
+```
+
+Dos arquitecturas en PyTorch, con embeddings **entrenados desde cero** (sin vectores
+preentrenados, coherente con un dataset pequeno y especifico) sobre `texto_modelo`:
+
+```text
+CNN  -> TextCNN: embeddings + Conv1d con kernels 3/4/5 + max-pooling + densa
+LSTM -> BiLSTM: embeddings + LSTM bidireccional + mean-pooling enmascarado + densa
+estrategias: base | class_weight (perdida ponderada por frecuencia inversa)
+```
+
+No se usa SMOTE: sobre secuencias de longitud variable no aplica de forma natural; el
+equivalente estandar en deep learning es ponderar la perdida. El entrenamiento usa
+early stopping por F1-macro en validacion y corre en GPU (CUDA) si esta disponible.
+
+Resultados (F1-Macro en test, ordenado):
+
+```text
+modelo  estrategia    valid    test
+cnn     class_weight  0.4831   0.5099
+cnn     base          0.4684   0.4649
+lstm    base          0.4938   0.4560   <- mejor por F1-macro en validacion (se guarda)
+lstm    class_weight  0.4791   0.4535
+```
+
+Las redes quedan a la par de los clasicos: con ~3300 ejemplos de entrenamiento no hay datos
+suficientes para que el deep learning desde cero supere claramente a TF-IDF.
+
+### 09. Modelos Transformer: BETO Y XLM-RoBERTa
+
+```bash
+python scripts/09_transformers/entrenar_transformers.py
+```
+
+Entrada: los mismos splits, pero usando `comentario_limpio` (texto natural, con mayusculas
+y signos) porque los transformers traen su propio tokenizador subpalabra. Salidas:
+
+```text
+reports/08_transformers/comparacion_transformers.csv
+reports/08_transformers/f1_por_clase_transformers.csv
+reports/08_transformers/matriz_confusion_<modelo>_<estrategia>_test.csv / .png
+reports/08_transformers/reporte_clasificacion_<modelo>_<estrategia>_test.txt
+models/mejor_modelo_transformer/
+```
+
+Fine-tuning de dos transformers preentrenados:
+
+```text
+BETO        -> dccuchile/bert-base-spanish-wwm-cased  (BERT en espanol, U. de Chile)
+XLM-RoBERTa -> xlm-roberta-base                        (RoBERTa multilingue)
+estrategia  -> class_weight (perdida ponderada); --estrategias base class_weight para ambas
+```
+
+Usa GPU con precision mixta (AMP), AdamW con warmup lineal y early stopping por F1-macro.
+La primera corrida descarga los modelos de HuggingFace (~0.4 GB BETO, ~1.1 GB XLM-R).
+
+Resultados (F1-Macro):
+
+```text
+modelo       estrategia    valid    test
+beto         class_weight  0.6089   0.6258   <- mejor transformer en validacion y test (se guarda)
+xlm_roberta  class_weight  0.6033   0.6039
+```
+
+Ambos transformers superan por amplio margen (entre 0.12 y 0.14 de F1-Macro) a clasicos y redes,
+justo lo que anticipa la literatura citada en el documento del proyecto (BETO/BERT en espanol).
+Con este split BETO lidera tanto en validacion como en prueba; la mejor combinacion se elige por
+F1-macro en validacion (BETO) y se guarda completa.
+
+### 10. Comparacion Unificada De Las Tres Familias
+
+```bash
+python scripts/10_comparacion/comparar_todos.py
+```
+
+Reune las comparaciones de las fases 07, 08 y 09 (todas escritas con el mismo esquema de
+columnas, definido en `scripts/_comun/evaluacion.py`) en una sola tabla y un grafico. Salidas:
+
+```text
+reports/09_comparacion/comparacion_global.csv        (todas las filas)
+reports/09_comparacion/comparacion_global_test.csv   (solo prueba, ordenado)
+reports/09_comparacion/comparacion_global_f1_macro.png
+```
+
+Mejor combinacion por familia (F1-Macro en test):
+
+```text
+familia        mejor modelo (estrategia)    F1-macro test
+transformer    beto (class_weight)          0.6258    <- mejor modelo global
+deep_learning  cnn (class_weight)           0.5099
+clasico        naive_bayes (smote)          0.4865
+```
+
+Conclusion del avance: el ranking es claro y estable -> **transformers > deep learning ~= clasicos**.
+Con ~3000 ejemplos, las redes desde cero no superan a TF-IDF, pero el conocimiento preentrenado de
+BETO y XLM-RoBERTa marca la diferencia. La mayor confusion en todas las familias ocurre entre clases
+adyacentes (positivo vs muy positivo), patron ordinal esperable en una escala de 5 niveles.
 
 ## Criterio De Etiquetado
 

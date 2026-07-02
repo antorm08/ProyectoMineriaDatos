@@ -1,0 +1,316 @@
+# SECCIÓN III - METODOLOGÍA
+
+## 3.1 Contexto de la solución y adopción de DSRM
+
+La solución propuesta aborda la clasificación multiclase de sentimiento en reseñas de consumidores peruanos publicadas en Google Maps, considerando cinco niveles de polaridad: `muy negativo`, `negativo`, `neutral`, `positivo` y `muy positivo`. El problema se enmarca en minería de datos aplicada al análisis de opinión, donde el objetivo es transformar comentarios no estructurados en una variable categórica útil para identificar patrones de satisfacción e insatisfacción frente a empresas de distintos rubros. Para el diseño de la propuesta se adopta la metodología DSRM, Design Science Research Methodology, propuesta por Peffers et al. (2007), porque permite construir y evaluar un artefacto computacional orientado a resolver un problema práctico. En este proyecto, el artefacto corresponde a un pipeline de datos y modelado compuesto por scraping, limpieza, etiquetado, partición estratificada, entrenamiento, evaluación y comparación de modelos. Bajo DSRM, la identificación del problema se relaciona con la necesidad de clasificar reseñas en español peruano; los objetivos de solución se traducen en construir un dataset confiable y entrenar modelos comparables; el diseño y desarrollo se materializa en los componentes del pipeline; la demostración se realiza sometiendo el conjunto de datos a los modelos; la evaluación se efectúa mediante métricas de clasificación; y la comunicación se concreta en los reportes, tablas y resultados presentados.
+
+## 3.2 Procedencia del conjunto de datos
+
+El conjunto de datos procede de reseñas públicas de Google Maps asociadas a empresas peruanas. La recolección se realizó mediante scraping controlado, tomando como entrada el archivo `data/raw/empresas.csv`, el cual contiene empresas, sedes, rubros y URL de Google Maps. El scraper genera como salida `data/raw/dataset_consumidores_peru.csv`, con 4800 reseñas iniciales. Cada registro conserva el comentario textual, la empresa evaluada, la sede, el rubro, la calificación en estrellas, una etiqueta inicial derivada de las estrellas, la fecha relativa de la reseña y la URL de origen.
+
+### Estructura del conjunto de datos original
+
+| Campo | Descripción | Uso en la solución |
+|---|---|---|
+| `comentario` | Texto original escrito por el consumidor. | Variable principal para el análisis de sentimiento. |
+| `empresa` | Nombre de la empresa evaluada. | Contexto descriptivo y trazabilidad. |
+| `sede` | Sede o ubicación de la empresa. | Contexto geográfico/comercial. |
+| `rubro` | Sector de actividad de la empresa. | Segmentación descriptiva. |
+| `estrellas` | Calificación numérica de 1 a 5. | Señal débil inicial para etiquetado. |
+| `sentimiento_estrella` | Sentimiento derivado de la cantidad de estrellas. | Etiqueta inicial distante. |
+| `fecha_resena` | Fecha relativa publicada por Google Maps. | Referencia temporal. |
+| `url` | Enlace de procedencia de la reseña. | Trazabilidad del origen. |
+
+## 3.3 Arquitectura de la solución basada en componentes
+
+La arquitectura propuesta se organiza como un pipeline modular. Cada componente recibe una entrada definida, aplica una transformación o evaluación y produce archivos intermedios o finales que permiten auditar el proceso completo.
+
+```mermaid
+flowchart TD
+    A[Empresas y URL Google Maps] --> B[Scraping de reseñas]
+    B --> C[Dataset crudo]
+    C --> D[Limpieza y auditoría]
+    D --> E[Autoetiquetado con pysentimiento]
+    E --> F1[Revisión prioritaria + prompt IA]
+    F1 --> G1[Integración IA de clases minoritarias]
+    G1 --> F2[Segundo lote neutral + prompt IA]
+    F2 --> G2[Integración IA neutral]
+    G2 --> H[Etiquetado determinista por reglas]
+    H --> I[Dataset final etiquetado]
+    I --> J[Split estratificado]
+    J --> K1[Modelos clásicos: TF-IDF + SVM/NB]
+    J --> K2[Deep Learning: CNN/LSTM]
+    J --> K3[Transformers: BETO/XLM-RoBERTa]
+    K1 --> L[Evaluación y comparación]
+    K2 --> L
+    K3 --> L
+    L --> M[Mejor modelo de solución]
+```
+
+### Funcionamiento de los componentes
+
+| Componente | Entrada | Funcionamiento | Salida |
+|---|---|---|---|
+| Scraping | `data/raw/empresas.csv` | Extrae reseñas de Google Maps por empresa y sede, con pausas y control anti-bloqueo. | `data/raw/dataset_consumidores_peru.csv` |
+| Limpieza y auditoría | Dataset crudo | Normaliza texto, valida estrellas, detecta comentarios cortos, registros sin contenido alfabético e inconsistencias. | `dataset_consumidores_peru_limpio.csv` y reportes de limpieza. |
+| Autoetiquetado | Dataset limpio | Usa `pysentimiento` como segunda señal frente a las estrellas y acepta etiquetas cuando existe consistencia entre ambas fuentes. | `dataset_consumidores_peru_etiquetado.csv` y reportes de autoetiquetado. |
+| Revisión prioritaria asistida por IA | Casos ambiguos del autoetiquetado | Prioriza registros con contradicción, baja confianza o posible clase minoritaria; genera un CSV reducido y un prompt documentado para la IA. | `revision_prioritaria_para_ia.csv`, `prompt_etiquetado_ia.md` y `revision_prioritaria_etiquetas_ia.csv`. |
+| Integración IA de clases minoritarias | Etiquetas automáticas y respuesta IA del primer lote | Acepta solo etiquetas IA con uso aprobado, confianza media o alta y clases permitidas, priorizando pureza sobre cobertura. | `dataset_consumidores_peru_etiquetado_final.csv` y reporte de integración. |
+| Revisión neutral asistida por IA | Dataset final parcial con filas aún sin etiqueta | Selecciona candidatos neutrales mediante estrellas, salida del modelo, etiqueta provisional y patrones textuales; usa un prompt específico para neutralidad. | `revision_neutral_para_ia.csv`, `prompt_etiquetado_ia_neutral.md` y `revision_neutral_etiquetas_ia.csv`. |
+| Integración IA neutral | Respuesta IA del lote neutral | Integra únicamente neutrales aprobados con confianza media o alta. | Dataset final parcial actualizado y reporte de integración neutral. |
+| Etiquetado por reglas | Dataset final parcial | Aplica reglas deterministas sobre estrellas, probabilidad neutral y probabilidad positiva para recuperar etiquetas restantes de alta confianza. | Dataset final actualizado y validación de reglas. |
+| Split estratificado | Dataset final etiquetado | Divide los datos preservando la distribución de clases. | `train.csv`, `valid.csv`, `test.csv` |
+| Modelado | Splits de datos | Entrena modelos clásicos, redes neuronales y transformers con estrategias de balanceo. | Reportes, matrices de confusión y modelos entrenados. |
+| Comparación | Métricas de modelos | Unifica resultados con F1-macro, accuracy, F1 ponderado y balanced accuracy. | Comparación global y selección del mejor modelo. |
+
+## 3.4 Preprocesamiento, transformación y reducción
+
+El preprocesamiento se diseñó para conservar la información semántica del comentario y, al mismo tiempo, generar una representación adecuada para los algoritmos. En la etapa de limpieza se mantuvieron 4800 registros, sin duplicados exactos removidos, sin comentarios vacíos, sin estrellas inválidas y sin sentimientos inconsistentes. Se identificaron 156 comentarios con menos de tres palabras, 3 registros sin contenido alfabético y 165 filas marcadas para revisión.
+
+### Criterios de limpieza y auditoría
+
+| Criterio | Resultado |
+|---|---:|
+| Filas iniciales | 4800 |
+| Filas finales tras limpieza | 4800 |
+| Duplicados exactos removidos | 0 |
+| Comentarios vacíos | 0 |
+| Estrellas inválidas | 0 |
+| Sentimientos inconsistentes | 0 |
+| Comentarios cortos, menos de 3 palabras | 156 |
+| Sin contenido alfabético | 3 |
+| Filas para revisión | 165 |
+
+### Transformaciones aplicadas
+
+| Transformación | Descripción | Resultado esperado |
+|---|---|---|
+| Limpieza textual ligera | Normaliza el comentario sin alterar su sentido: conserva tildes, signos y estructura natural, pero elimina caracteres invisibles, saltos de línea y espacios repetidos. Esta versión se usa también como entrada para `pysentimiento` y transformers. | Campo `comentario_limpio`. |
+| Normalización para modelado clásico | Genera una versión más uniforme del texto: pasa a minúsculas, elimina URL, signos y caracteres no alfanuméricos, y estandariza espacios. | Campo `texto_modelo`. |
+| Cálculo de longitud | Número de caracteres del comentario. | Campo `longitud_caracteres`. |
+| Conteo de palabras | Número de palabras útiles. | Campo `cantidad_palabras`. |
+| Validación de estrellas | Comprueba que la calificación pertenezca al rango esperado. | Campo `estrellas_validas`. |
+| Señal débil por estrellas | Traduce 1-5 estrellas a sentimiento inicial. | Campo `sentimiento_estrella`. |
+| Señal de modelo externo | Obtiene polaridad y probabilidades `NEG`, `NEU`, `POS`. | Campos `sentimiento_modelo`, `prob_neg`, `prob_neu`, `prob_pos`. |
+| Integración de etiquetas | Combina estrellas, modelo externo, IA y reglas. | Campo `sentimiento_final`. |
+
+El proceso completo de preparación no consistió solo en limpiar texto. Primero se generó `comentario_limpio`, una versión conservadora usada como entrada para `pysentimiento`, y `texto_modelo`, una versión más normalizada para los modelos clásicos y de deep learning. Luego, `pysentimiento` asignó una señal automática de polaridad (`NEG`, `NEU`, `POS`) y probabilidades asociadas; esta señal se cruzó con las estrellas para aceptar etiquetas únicamente cuando existía consistencia entre ambas fuentes. En esta etapa se asignaron 3448 etiquetas finales iniciales, mientras que 1589 filas quedaron marcadas para revisión por baja confianza, contradicción o criterios de auditoría.
+
+Posteriormente, se preparó una revisión prioritaria de 500 casos ambiguos para IA, enfocada principalmente en posibles neutrales, negativos y contradicciones de alta confianza. Para esta revisión se usó un prompt documentado en `reports/03_revision_ia/prompt_etiquetado_ia.md`, que instruye a la IA a actuar como anotador de datos, clasificar cada reseña en una de las cinco clases, usar el texto como fuente principal y devolver un CSV con `sentimiento_ia`, `confianza_ia`, `justificacion_ia` y `usar_etiqueta_ia`. La integración conservadora aceptó solo etiquetas IA con uso aprobado, confianza media o alta y clases permitidas, incorporando 175 etiquetas adicionales. Después se preparó un segundo lote enfocado en neutralidad: de 1177 registros aún sin etiqueta, se identificaron 1013 candidatos neutrales por estrellas, salida del modelo, etiqueta provisional o patrones textuales; se exportaron 300 casos junto con el prompt específico `reports/03_revision_ia/prompt_etiquetado_ia_neutral.md`, y se integraron 167 neutrales adicionales. Finalmente, sobre el residuo sin etiqueta se aplicaron reglas deterministas validadas contra etiquetas IA existentes, recuperando 390 etiquetas más. Con ello, el total consolidado llegó a 4180 reseñas con `sentimiento_final`.
+
+### Aplicación de reducción
+
+La reducción se aplicó en dos niveles. Primero, a nivel de registros, se excluyeron del modelado los casos sin etiqueta final confiable o sin texto utilizable. El dataset original tenía 4800 filas; 4180 contaban con etiqueta final consolidada y 4177 fueron usadas para modelado. Segundo, a nivel de representación, los modelos clásicos transformaron el texto mediante TF-IDF con unigramas y bigramas, reduciendo el texto crudo a una matriz numérica ponderada por frecuencia e importancia. En el caso de transformers, la reducción semántica se realizó mediante tokenización sub-palabra y representaciones contextuales internas del modelo.
+
+### Reglas deterministas de recuperación de etiquetas
+
+| Regla | Condición | Etiqueta asignada |
+|---|---|---|
+| R1 | 4 o 5 estrellas, modelo `NEU`, `prob_neu >= 0.60` | `neutral` |
+| R2a | 1 estrella, modelo `NEU`, `prob_pos < 0.25` | `muy negativo` |
+| R2b | 2 estrellas, modelo `NEU`, `prob_pos < 0.25` | `negativo` |
+
+Estas reglas recuperaron 390 etiquetas adicionales, principalmente neutrales y negativas, con 93% de acuerdo frente a etiquetas IA existentes. El residuo sin etiqueta confiable fue de 620 registros.
+
+## 3.5 Estructura final del conjunto de datos
+
+El dataset final se encuentra en `data/processed/dataset_consumidores_peru_etiquetado_final.csv`. Integra columnas originales, columnas de limpieza, variables auxiliares de auditoría, señales de modelos externos, etiquetas revisadas e indicadores de reglas.
+
+| Grupo de campos | Campos principales | Función |
+|---|---|---|
+| Identificación y origen | `comentario`, `empresa`, `sede`, `rubro`, `fecha_resena`, `url` | Trazabilidad de la reseña. |
+| Calificación original | `estrellas`, `sentimiento_estrella` | Señal débil inicial basada en estrellas. |
+| Texto procesado | `comentario_limpio`, `texto_modelo` | Entrada para transformers y modelos clásicos/deep learning. |
+| Auditoría textual | `longitud_caracteres`, `cantidad_palabras`, `comentario_corto`, `sin_contenido_alfabetico` | Control de calidad del texto. |
+| Auditoría de consistencia | `duplicado_global`, `duplicado_empresa_sede`, `estrellas_validas`, `sentimiento_esperado`, `sentimiento_consistente`, `requiere_revision` | Validación de registros y detección de casos dudosos. |
+| Modelo externo | `sentimiento_modelo`, `polaridad_modelo`, `confianza_modelo`, `prob_neg`, `prob_neu`, `prob_pos` | Segunda señal automática de sentimiento. |
+| Etiquetado final | `sentimiento_final`, `sentimiento_final_provisional`, `confianza_etiqueta`, `motivo_revision_etiqueta`, `sentimiento_final_origen` | Variable objetivo y trazabilidad de la etiqueta. |
+| Revisión IA | `sentimiento_ia`, `confianza_ia`, `justificacion_ia`, `usar_etiqueta_ia`, `sentimiento_ia_neutral`, `confianza_ia_neutral`, `usar_etiqueta_ia_neutral` | Integración de revisión asistida. |
+| Reglas | `regla_aplicada` | Identifica si una etiqueta fue recuperada por reglas deterministas. |
+
+### Distribución final de clases
+
+| Clase | Cantidad |
+|---|---:|
+| `muy positivo` | 1407 |
+| `muy negativo` | 1054 |
+| `positivo` | 647 |
+| `neutral` | 639 |
+| `negativo` | 433 |
+| Total con etiqueta final | 4180 |
+
+## 3.6 Fundamentación de algoritmos utilizados
+
+La selección de algoritmos se fundamenta en antecedentes del análisis de sentimiento y clasificación de texto. Naive Bayes ha sido utilizado ampliamente como línea base por su simplicidad, eficiencia y buen desempeño en texto representado por bolsa de palabras, como muestran McCallum y Nigam (1998) y Pang, Lee y Vaithyanathan (2002). SVM es una técnica robusta para clasificación de texto de alta dimensionalidad, destacada por Joachims (1998), especialmente cuando se combina con TF-IDF. En aprendizaje profundo, CNN para texto fue popularizada por Kim (2014), al capturar patrones locales de n-gramas, mientras que LSTM se fundamenta en Hochreiter y Schmidhuber (1997) para modelar dependencias secuenciales. Finalmente, los transformers, introducidos por Vaswani et al. (2017) y consolidados en BERT por Devlin et al. (2019), permiten generar representaciones contextuales superiores. Para español, BETO, propuesto por Cañete et al. (2020), y XLM-RoBERTa, de Conneau et al. (2020), son alternativas adecuadas para tareas de lenguaje natural en español y escenarios multilingües.
+
+## 3.7 Exploración y selección del mejor algoritmo
+
+Se exploraron tres familias de algoritmos sobre los mismos datos y con criterios de evaluación comparables. Los modelos clásicos incluyeron SVM y Naive Bayes con TF-IDF; los modelos de deep learning incluyeron CNN y LSTM con embeddings entrenables; y los modelos transformer incluyeron BETO y XLM-RoBERTa con ajuste fino y pérdida ponderada por clase. La métrica principal para seleccionar el mejor modelo fue F1-macro, porque el conjunto de datos presenta desbalance entre clases y esta métrica otorga igual importancia a cada categoría.
+
+| Familia | Modelo | Estrategia | F1-macro test | Accuracy test | Balanced accuracy test |
+|---|---|---|---:|---:|---:|
+| Transformer | BETO | Class weight | 0.6258 | 0.6722 | 0.6272 |
+| Transformer | XLM-RoBERTa | Class weight | 0.6039 | 0.6615 | 0.5991 |
+| Deep learning | CNN | Class weight | 0.5099 | 0.5766 | 0.5185 |
+| Clásico | Naive Bayes | SMOTE | 0.4865 | 0.5455 | 0.4896 |
+| Clásico | SVM | SMOTE | 0.4799 | 0.5646 | 0.4806 |
+| Clásico | SVM | Balanced | 0.4785 | 0.5813 | 0.4823 |
+| Deep learning | CNN | Base | 0.4649 | 0.5778 | 0.4707 |
+| Clásico | SVM | Base | 0.4587 | 0.5837 | 0.4683 |
+| Deep learning | LSTM | Base | 0.4560 | 0.5335 | 0.4597 |
+| Deep learning | LSTM | Class weight | 0.4535 | 0.5311 | 0.4542 |
+| Clásico | Naive Bayes | Base | 0.2925 | 0.5706 | 0.3867 |
+
+El mejor algoritmo fue BETO con ponderación de clases, al obtener el mayor F1-macro en prueba, 0.6258, y la mayor exactitud, 0.6722. BETO es un modelo BERT preentrenado específicamente sobre un gran corpus en español, lo que le permite capturar mejor la variabilidad del lenguaje usado por consumidores peruanos que los modelos basados únicamente en frecuencias o embeddings entrenados desde cero. XLM-RoBERTa, transformer multilingüe, quedó muy cerca en segundo lugar (0.6039), lo que confirma que la familia de transformers domina con claridad sobre los modelos clásicos y las redes entrenadas desde cero.
+
+## 3.8 Detalle del modelo principal: BETO con ponderación de clases
+
+El componente central de la solución es el modelo transformer BETO (`dccuchile/bert-base-spanish-wwm-cased`) ajustado para clasificación multiclase. BETO es una variante de BERT preentrenada específicamente sobre un gran corpus en español con enmascaramiento de palabra completa (whole word masking). Este modelo transforma cada comentario en una secuencia de tokens sub-palabra y calcula representaciones contextuales mediante mecanismos de auto-atención. A diferencia de TF-IDF, que representa el texto como frecuencias ponderadas, BETO incorpora el contexto de cada palabra según su relación con las demás palabras del comentario. Esto es importante en reseñas de consumidores, donde expresiones como ironía, quejas mezcladas con elogios o términos propios del español peruano pueden alterar la polaridad del texto.
+
+Matemáticamente, el transformer calcula atención escalada mediante la expresión:
+
+```text
+Attention(Q, K, V) = softmax((QK^T) / sqrt(d_k)) V
+```
+
+Donde `Q` representa consultas, `K` claves, `V` valores y `d_k` la dimensión de las claves. Este mecanismo permite que el modelo asigne mayor peso a las partes del comentario que explican la polaridad. Luego, una capa de clasificación convierte la representación contextual final (token `[CLS]`) en probabilidades para las cinco clases de sentimiento. La ponderación de clases ajusta la función de pérdida (CrossEntropyLoss con pesos por frecuencia inversa de clase) para penalizar más los errores en clases minoritarias, como `negativo`, `neutral` y `positivo`, evitando que el modelo se sesgue únicamente hacia las clases mayoritarias `muy positivo` y `muy negativo`.
+
+# SECCIÓN IV - RESULTADOS Y ANÁLISIS DE IMPACTO CON RESPECTO A OTRAS PROPUESTAS
+
+## 4.1 Conjunto de datos y división de entrenamiento, validación y prueba
+
+El conjunto de datos original contiene 4800 reseñas. Luego del proceso de etiquetado e integración, 4180 reseñas cuentan con sentimiento final consolidado y 4177 se utilizaron efectivamente para modelado. La división implementada en el proyecto es estratificada y sigue el esquema solicitado de 80% desarrollo y 20% prueba, subdividiendo luego el bloque de desarrollo en 70% entrenamiento y 30% validación. Esta distribución permite entrenar, ajustar y evaluar con conjuntos independientes, preservando la proporción de clases.
+
+| Partición usada | Cantidad | Proporción sobre total | Proporción interna |
+|---|---:|---:|---:|
+| Entrenamiento | 2338 | 55.97% | 70% del desarrollo |
+| Validación | 1003 | 24.01% | 30% del desarrollo |
+| Prueba | 836 | 20.01% | 20% del total |
+| Total usado en modelado | 4177 | 100% | — |
+
+La partición se obtiene en dos cortes estratificados deterministas (`random_state=42`): primero se separa el 20% de prueba (836 registros) del 80% de desarrollo (3341 registros); luego el desarrollo se divide en 70% entrenamiento (2338 registros) y 30% validación (1003 registros). Así se materializa el esquema de 80% desarrollo y 20% prueba, con una subdivisión interna 70/30 del bloque de desarrollo para entrenamiento y validación; por ello, el entrenamiento efectivo representa 55.97% del total usado en modelado.
+
+### Distribución estratificada por clase
+
+| Clase | Train | Valid | Test |
+|---|---:|---:|---:|
+| `muy positivo` | 787 | 338 | 282 |
+| `muy negativo` | 590 | 253 | 211 |
+| `positivo` | 363 | 155 | 129 |
+| `neutral` | 356 | 153 | 127 |
+| `negativo` | 242 | 104 | 87 |
+
+## 4.2 Aplicación del conjunto de datos al modelo de solución
+
+El conjunto de entrenamiento se sometió a las tres familias de modelos. Para los modelos clásicos se usó `texto_modelo` y una representación TF-IDF con unigramas y bigramas. Para CNN y LSTM se usó texto tokenizado con embeddings entrenables. Para transformers se utilizó `comentario_limpio`, porque estos modelos aprovechan mejor la estructura natural del texto. Todos los modelos fueron evaluados con F1-macro, balanced accuracy, F1 ponderado y accuracy, además de matrices de confusión por clase.
+
+## 4.3 Resultados de entrenamiento y validación
+
+La validación permitió comparar la capacidad de generalización antes de observar el conjunto de prueba. En validación, BETO obtuvo el mejor F1-macro, 0.6089, mientras que XLM-RoBERTa obtuvo 0.6033. En prueba BETO también superó a XLM-RoBERTa (0.6258 frente a 0.6039), por lo que fue seleccionado como mejor modelo final al liderar en ambas particiones.
+
+| Familia | Modelo | Estrategia | F1-macro valid | Accuracy valid | F1-macro test | Accuracy test |
+|---|---|---|---:|---:|---:|---:|
+| Transformer | BETO | Class weight | 0.6089 | 0.6650 | 0.6258 | 0.6722 |
+| Transformer | XLM-RoBERTa | Class weight | 0.6033 | 0.6630 | 0.6039 | 0.6615 |
+| Clásico | Naive Bayes | SMOTE | 0.5009 | 0.5513 | 0.4865 | 0.5455 |
+| Clásico | SVM | Balanced | 0.4953 | 0.5793 | 0.4785 | 0.5813 |
+| Deep learning | LSTM | Base | 0.4938 | 0.5693 | 0.4560 | 0.5335 |
+| Clásico | SVM | Base | 0.4898 | 0.5962 | 0.4587 | 0.5837 |
+| Clásico | SVM | SMOTE | 0.4852 | 0.5503 | 0.4799 | 0.5646 |
+| Deep learning | CNN | Class weight | 0.4831 | 0.5523 | 0.5099 | 0.5766 |
+| Deep learning | LSTM | Class weight | 0.4791 | 0.5444 | 0.4535 | 0.5311 |
+| Deep learning | CNN | Base | 0.4684 | 0.5733 | 0.4649 | 0.5778 |
+| Clásico | Naive Bayes | Base | 0.2970 | 0.5763 | 0.2925 | 0.5706 |
+
+## 4.4 Resultados de prueba del mejor modelo
+
+El mejor modelo en prueba fue BETO con ponderación de clases. Obtuvo 0.6722 de accuracy, 0.6258 de F1-macro, 0.6754 de F1 ponderado y 0.6272 de balanced accuracy.
+
+### Reporte de clasificación en prueba
+
+| Clase | Precision | Recall | F1-score | Soporte |
+|---|---:|---:|---:|---:|
+| `muy negativo` | 0.87 | 0.76 | 0.81 | 211 |
+| `negativo` | 0.44 | 0.54 | 0.49 | 87 |
+| `neutral` | 0.71 | 0.69 | 0.70 | 127 |
+| `positivo` | 0.37 | 0.36 | 0.37 | 129 |
+| `muy positivo` | 0.74 | 0.78 | 0.76 | 282 |
+| Accuracy |  |  | 0.67 | 836 |
+| Macro avg | 0.63 | 0.63 | 0.63 | 836 |
+| Weighted avg | 0.68 | 0.67 | 0.68 | 836 |
+
+### Matriz de confusión del mejor modelo
+
+| Real / Predicho | Muy negativo | Negativo | Neutral | Positivo | Muy positivo |
+|---|---:|---:|---:|---:|---:|
+| Muy negativo | 160 | 43 | 7 | 1 | 0 |
+| Negativo | 23 | 47 | 14 | 3 | 0 |
+| Neutral | 0 | 16 | 88 | 20 | 3 |
+| Positivo | 0 | 0 | 8 | 47 | 74 |
+| Muy positivo | 0 | 0 | 7 | 55 | 220 |
+
+La matriz muestra que el modelo identifica con mayor solidez los extremos `muy negativo` y `muy positivo`. La clase `neutral` también alcanza un resultado consistente. La principal dificultad aparece en la clase `positivo`, que se confunde con `muy positivo` (74 reseñas positivas clasificadas como muy positivas); esto es razonable porque ambas categorías comparten expresiones de satisfacción y se diferencian por intensidad. La clase `negativo` también presenta confusiones con `muy negativo` y `neutral`, lo que evidencia la complejidad de distinguir grados intermedios de polaridad.
+
+### Capacidad discriminativa (ROC/AUC One-vs-Rest)
+
+Como métrica complementaria independiente del umbral, se calculó el área bajo la curva ROC (AUC) en esquema One-vs-Rest sobre las probabilidades del modelo en prueba. Los valores confirman una fuerte capacidad de separación, incluso en las clases intermedias más difíciles.
+
+| Clase | AUC (test) |
+|---|---:|
+| `muy negativo` | 0.9696 |
+| `negativo` | 0.8861 |
+| `neutral` | 0.9383 |
+| `positivo` | 0.8360 |
+| `muy positivo` | 0.9116 |
+
+Aunque la clase `positivo` tiene el F1 más bajo, su AUC de 0.836 indica que el modelo sí ordena correctamente la mayoría de los casos según probabilidad; la pérdida de F1 proviene sobre todo de su solapamiento con `muy positivo` en la decisión final por umbral.
+
+## 4.5 Comparación con otros modelos del proyecto
+
+En comparación con otros modelos entrenados, BETO supera al mejor modelo clásico y al mejor modelo de deep learning. Frente a Naive Bayes con SMOTE, mejora el F1-macro de 0.4865 a 0.6258. Frente a CNN con class weight, mejora de 0.5099 a 0.6258. Frente a XLM-RoBERTa, mejora tanto en prueba (0.6039 a 0.6258) como en validación (0.6033 a 0.6089), por lo que el liderazgo de BETO es consistente en ambas particiones.
+
+| Comparación | Mejor alternativa | F1-macro test | Diferencia frente a BETO |
+|---|---|---:|---:|
+| Mejor clásico | Naive Bayes + SMOTE | 0.4865 | +0.1393 |
+| Mejor SVM | SVM + SMOTE | 0.4799 | +0.1459 |
+| Mejor deep learning | CNN + class weight | 0.5099 | +0.1159 |
+| Segundo transformer | XLM-RoBERTa + class weight | 0.6039 | +0.0219 |
+| Modelo propuesto | BETO + class weight | 0.6258 | 0.0000 |
+
+## 4.6 Comparación con propuestas de otros autores
+
+Los resultados son coherentes con la literatura. En clasificación de texto, SVM suele ser una línea base sólida cuando se usa TF-IDF, tal como reporta Joachims (1998), y en este proyecto obtuvo un F1-macro competitivo en torno a 0.48. Naive Bayes, recomendado en trabajos tempranos de clasificación de texto y análisis de sentimiento por McCallum y Nigam (1998) y Pang et al. (2002), mostró bajo rendimiento sin balanceo (0.29) pero mejoró sustancialmente con SMOTE (0.49), llegando a ser el mejor modelo clásico. Las redes neuronales CNN y LSTM, vinculadas a los trabajos de Kim (2014) y Hochreiter y Schmidhuber (1997), alcanzaron resultados similares a los modelos clásicos, probablemente por el tamaño moderado del dataset. En cambio, los transformers, fundamentados en Vaswani et al. (2017), Devlin et al. (2019), Cañete et al. (2020) y Conneau et al. (2020), obtuvieron los mejores resultados debido a su capacidad de capturar contexto semántico y relaciones lingüísticas más complejas.
+
+## 4.7 Discusión e impacto frente a otras propuestas
+
+El impacto principal de la solución propuesta se observa en tres aspectos. Primero, el pipeline no depende únicamente de estrellas, sino que integra señales débiles, modelos externos, revisión asistida y reglas deterministas, lo que mejora la calidad de la variable objetivo. Segundo, la comparación se realizó sobre una misma partición estratificada y con métricas uniformes, lo que permite una evaluación justa entre familias de modelos. Tercero, la selección de BETO demuestra que los modelos transformer preentrenados en español son más adecuados para detectar patrones de sentimiento en reseñas reales en español peruano.
+
+| Aspecto | Propuesta del proyecto | Ventaja frente a alternativas |
+|---|---|---|
+| Modelo matemático | Auto-atención transformer con clasificación multiclase. | Captura contexto y relaciones semánticas, no solo frecuencia de palabras. |
+| Algoritmos evaluados | SVM, Naive Bayes, CNN, LSTM, BETO y XLM-RoBERTa. | Comparación amplia entre modelos clásicos, deep learning y transformers. |
+| Tratamiento del desbalance | SMOTE, class weight y partición estratificada. | Reduce sesgo hacia clases mayoritarias. |
+| Resultados | Mejor F1-macro test: 0.6258; accuracy test: 0.6722. | Supera a clásicos y redes neuronales entrenadas desde cero. |
+| Herramientas | Python, pandas, scikit-learn, PyTorch, HuggingFace Transformers. | Ecosistema reproducible y extensible. |
+| Trazabilidad | Archivos intermedios, reportes CSV y matrices de confusión. | Facilita auditoría y comunicación de resultados. |
+
+En síntesis, la propuesta tiene mayor impacto que una solución basada solo en estrellas o modelos clásicos, porque combina un proceso robusto de preparación de datos con un modelo contextual avanzado. No obstante, los resultados también muestran oportunidades de mejora en las clases intermedias, especialmente `positivo` y `negativo`, por lo que futuras iteraciones podrían aumentar datos de estas clases, revisar manualmente ejemplos ambiguos o ajustar la función de pérdida para separar mejor intensidad y polaridad.
+
+## Referencias
+
+- Cañete, J., Chaperon, G., Fuentes, R., Ho, J. H., Kang, H., & Pérez, J. (2020). Spanish pre-trained BERT model and evaluation data. PML4DC at ICLR.
+- Conneau, A., Khandelwal, K., Goyal, N., et al. (2020). Unsupervised cross-lingual representation learning at scale. ACL.
+- Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. NAACL.
+- Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural Computation.
+- Joachims, T. (1998). Text categorization with support vector machines: Learning with many relevant features. ECML.
+- Kim, Y. (2014). Convolutional neural networks for sentence classification. EMNLP.
+- McCallum, A., & Nigam, K. (1998). A comparison of event models for Naive Bayes text classification. AAAI Workshop.
+- Pang, B., Lee, L., & Vaithyanathan, S. (2002). Thumbs up? Sentiment classification using machine learning techniques. EMNLP.
+- Peffers, K., Tuunanen, T., Rothenberger, M. A., & Chatterjee, S. (2007). A design science research methodology for information systems research. Journal of Management Information Systems.
+- Vaswani, A., Shazeer, N., Parmar, N., et al. (2017). Attention is all you need. NeurIPS.
+
+# CONCLUSIONES
+
+El objetivo del trabajo fue cumplido mediante el diseño, construcción y evaluación de un modelo de solución para clasificar el sentimiento multiclase en reseñas de consumidores peruanos. La propuesta permitió transformar un conjunto de reseñas no estructuradas en un dataset procesado, etiquetado y preparado para modelado, integrando limpieza textual, supervisión débil, revisión asistida, reglas deterministas y partición estratificada. La comparación experimental entre modelos clásicos, redes neuronales y transformers demostró que el mejor desempeño fue alcanzado por BETO con ponderación de clases, con un F1-macro de 0.6258 y una exactitud de 0.6722 en el conjunto de prueba. Estos resultados evidencian que el uso de representaciones contextuales es adecuado para detectar patrones de opinión en comentarios reales, especialmente cuando existen expresiones mixtas, lenguaje informal y distintos grados de polaridad. Por tanto, el modelo propuesto constituye una solución viable para apoyar el análisis de satisfacción e insatisfacción de consumidores en empresas peruanas.
+
+Como actividad más importante a realizar en adelante, se recomienda ampliar y depurar el conjunto de datos mediante una revisión manual focalizada en las clases intermedias `negativo`, `neutral` y `positivo`, ya que fueron las categorías con mayor nivel de confusión. Esta mejora permitiría reducir ambigüedades entre polaridades cercanas, equilibrar mejor la distribución de clases y fortalecer la calidad de la variable objetivo. Con un dataset más robusto, el siguiente paso sería reentrenar el modelo transformer seleccionado, ajustar sus hiperparámetros y evaluar su desempeño en datos nuevos no vistos, con el fin de validar su capacidad de generalización antes de plantear un despliegue operativo.

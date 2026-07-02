@@ -1,24 +1,26 @@
-"""Fase 07: entrenamiento y evaluacion de clasificadores de sentimiento.
+"""Fase 07: entrenamiento y evaluacion de los modelos CLASICOS.
 
-Compara los cuatro algoritmos clasicos que define el documento del proyecto
-(Regresion Logistica, SVM, Naive Bayes y Random Forest) sobre TF-IDF con bigramas,
-cruzados con tres estrategias frente al desbalance de clases:
+Esta fase cubre la familia de modelos clasicos del proyecto: **SVM** (LinearSVC) y
+**Naive Bayes** (MultinomialNB) sobre una representacion TF-IDF con bigramas. Ambos se
+cruzan con tres estrategias frente al desbalance de clases:
 
     base       -> sin ajuste de balanceo
-    balanced   -> class_weight="balanced" (algoritmos que lo soportan)
+    balanced   -> class_weight="balanced" (solo SVM; Naive Bayes no lo soporta)
     smote      -> sobremuestreo SMOTE aplicado SOLO al conjunto de entrenamiento
 
-Naive Bayes no soporta class_weight, por lo que su combinacion con "balanced" se omite.
+Las otras familias viven en fases separadas y comparten el modulo de evaluacion:
 
-Metricas (en validacion y prueba):
-    - F1-Macro (metrica principal, justa con clases minoritarias)
-    - exactitud balanceada (balanced accuracy)
-    - F1 por clase
-    - matriz de confusion (CSV + PNG, sobre prueba)
-    - accuracy (metrica secundaria)
+    fase 08 (scripts/08_dl)           -> CNN y LSTM (deep learning)
+    fase 09 (scripts/09_transformers) -> BETO y XLM-RoBERTa (transformers)
+    fase 10 (scripts/10_comparacion)  -> comparacion unificada de las tres familias
 
-El preprocesamiento TF-IDF elimina stopwords en espanol, pero CONSERVA las palabras
-de negacion e intensidad (no, nunca, sin, pero, muy, ...) porque cargan sentimiento.
+Metricas (en validacion y prueba): F1-Macro (principal), exactitud balanceada,
+F1-weighted, accuracy, F1 por clase, matriz de confusion (CSV + PNG) y classification
+report. El calculo se delega a scripts/_comun/evaluacion.py para que las tres familias
+se midan igual.
+
+El preprocesamiento TF-IDF elimina stopwords en espanol, pero CONSERVA las palabras de
+negacion e intensidad (no, nunca, sin, pero, muy, ...) porque cargan sentimiento.
 
 Entrada:
     data/splits/train.csv, valid.csv, test.csv  (columnas texto_modelo y sentimiento_final)
@@ -26,52 +28,39 @@ Entrada:
 Salidas (reports/06_modelado/):
     comparacion_modelos.csv                       (todas las combinaciones)
     f1_por_clase.csv                              (F1 por clase, formato largo)
-    matriz_confusion_<algoritmo>_<estrategia>_test.csv / .png
-    reporte_clasificacion_<algoritmo>_<estrategia>_test.txt
+    matriz_confusion_<modelo>_<estrategia>_test.csv / .png
+    reporte_clasificacion_<modelo>_<estrategia>_test.txt
 models/:
-    mejor_modelo.joblib   (vectorizador + clasificador de la mejor combinacion)
+    mejor_modelo.joblib   (vectorizador + clasificador de la mejor combinacion clasica)
 """
 
 import argparse
+import sys
 from pathlib import Path
 
 import joblib
-import matplotlib
-
-matplotlib.use("Agg")  # backend sin ventana, para guardar PNG en disco
-import matplotlib.pyplot as plt
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import (
-    ConfusionMatrixDisplay,
-    accuracy_score,
-    balanced_accuracy_score,
-    classification_report,
-    confusion_matrix,
-    f1_score,
-)
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import LinearSVC
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-SPLITS_DIR = PROJECT_ROOT / "data" / "splits"
+sys.path.append(str(PROJECT_ROOT / "scripts"))
+from _comun.datos import cargar_split  # noqa: E402
+from _comun.evaluacion import CLASES, evaluar_split  # noqa: E402
+
 REPORT_DIR = PROJECT_ROOT / "reports" / "06_modelado"
 MODELS_DIR = PROJECT_ROOT / "models"
 MODELO_FILE = MODELS_DIR / "mejor_modelo.joblib"
 
-COLUMNA_TEXTO = "texto_modelo"
-COLUMNA_ETIQUETA = "sentimiento_final"
+FAMILIA = "clasico"
 
-# Orden fijo de clases para que las matrices de confusion sean comparables.
-CLASES = ["muy negativo", "negativo", "neutral", "positivo", "muy positivo"]
-
-ALGORITMOS = ["regresion_logistica", "svm", "naive_bayes", "random_forest"]
+# Solo los dos clasicos del enunciado: SVM y Naive Bayes.
+ALGORITMOS = ["svm", "naive_bayes"]
 ESTRATEGIAS = ["base", "balanced", "smote"]
-# Naive Bayes no acepta class_weight; el resto si.
-SOPORTA_CLASS_WEIGHT = {"regresion_logistica", "svm", "random_forest"}
+# Naive Bayes no acepta class_weight; SVM (LinearSVC) si.
+SOPORTA_CLASS_WEIGHT = {"svm"}
 
 # Palabras de negacion/intensidad que SI se conservan (cargan sentimiento).
 PALABRAS_SENTIMIENTO = {
@@ -99,20 +88,6 @@ STOPWORDS_ES_BASE = {
 STOPWORDS_ES = sorted(STOPWORDS_ES_BASE - PALABRAS_SENTIMIENTO)
 
 
-def cargar_split(nombre):
-    ruta = SPLITS_DIR / f"{nombre}.csv"
-    if not ruta.exists():
-        raise FileNotFoundError(f"No existe el split {nombre}: {ruta}. Corre primero la fase 06.")
-
-    df = pd.read_csv(ruta).fillna("")
-    faltantes = {COLUMNA_TEXTO, COLUMNA_ETIQUETA} - set(df.columns)
-    if faltantes:
-        raise ValueError(f"El split {nombre} no tiene columnas requeridas: {sorted(faltantes)}")
-
-    df = df[(df[COLUMNA_TEXTO].astype(str).str.strip() != "") & (df[COLUMNA_ETIQUETA].astype(str).str.strip() != "")]
-    return df[COLUMNA_TEXTO].astype(str), df[COLUMNA_ETIQUETA].astype(str)
-
-
 def construir_vectorizador(max_features, usar_stopwords):
     return TfidfVectorizer(
         ngram_range=(1, 2),
@@ -123,21 +98,12 @@ def construir_vectorizador(max_features, usar_stopwords):
     )
 
 
-def construir_clasificador(algoritmo, estrategia, random_state):
+def construir_clasificador(algoritmo, estrategia):
     class_weight = "balanced" if estrategia == "balanced" else None
-    if algoritmo == "regresion_logistica":
-        return LogisticRegression(max_iter=1000, class_weight=class_weight)
     if algoritmo == "svm":
         return LinearSVC(class_weight=class_weight, max_iter=2000)
     if algoritmo == "naive_bayes":
         return MultinomialNB()
-    if algoritmo == "random_forest":
-        return RandomForestClassifier(
-            n_estimators=200,
-            class_weight=class_weight,
-            random_state=random_state,
-            n_jobs=-1,
-        )
     raise ValueError(f"Algoritmo desconocido: {algoritmo}")
 
 
@@ -151,49 +117,13 @@ def aplicar_smote(x_train, y_train, random_state):
     return smote.fit_resample(x_train, y_train)
 
 
-def guardar_matriz_confusion(y_true, y_pred, combo, titulo):
-    matriz = confusion_matrix(y_true, y_pred, labels=CLASES)
-    pd.DataFrame(matriz, index=CLASES, columns=CLASES).to_csv(
-        REPORT_DIR / f"matriz_confusion_{combo}_test.csv", encoding="utf-8-sig"
-    )
-
-    display = ConfusionMatrixDisplay(confusion_matrix=matriz, display_labels=CLASES)
-    fig, ax = plt.subplots(figsize=(6.5, 5.5))
-    display.plot(ax=ax, cmap="Blues", xticks_rotation=45, colorbar=False)
-    ax.set_title(titulo)
-    fig.tight_layout()
-    fig.savefig(REPORT_DIR / f"matriz_confusion_{combo}_test.png", dpi=120)
-    plt.close(fig)
-
-
-def evaluar(clasificador, x, y_true, algoritmo, estrategia, split, filas_f1_clase):
-    combo = f"{algoritmo}_{estrategia}"
-    y_pred = clasificador.predict(x)
-
-    f1_por_clase = f1_score(y_true, y_pred, average=None, labels=CLASES, zero_division=0)
-    for clase, valor in zip(CLASES, f1_por_clase):
-        filas_f1_clase.append({
-            "algoritmo": algoritmo,
-            "estrategia": estrategia,
-            "split": split,
-            "clase": clase,
-            "f1": round(float(valor), 4),
-        })
-
-    if split == "test":
-        reporte_txt = classification_report(y_true, y_pred, labels=CLASES, zero_division=0)
-        (REPORT_DIR / f"reporte_clasificacion_{combo}_test.txt").write_text(reporte_txt, encoding="utf-8")
-        guardar_matriz_confusion(y_true, y_pred, combo, combo.replace("_", " "))
-
-    return {
-        "algoritmo": algoritmo,
-        "estrategia": estrategia,
-        "split": split,
-        "f1_macro": round(f1_score(y_true, y_pred, average="macro", labels=CLASES, zero_division=0), 4),
-        "balanced_accuracy": round(balanced_accuracy_score(y_true, y_pred), 4),
-        "f1_weighted": round(f1_score(y_true, y_pred, average="weighted", labels=CLASES, zero_division=0), 4),
-        "accuracy": round(accuracy_score(y_true, y_pred), 4),
-    }
+def obtener_scores(clasificador, x):
+    """Devuelve probabilidades si existen; si no, scores de decision para ROC/AUC."""
+    if hasattr(clasificador, "predict_proba"):
+        return clasificador.predict_proba(x), list(clasificador.classes_)
+    if hasattr(clasificador, "decision_function"):
+        return clasificador.decision_function(x), list(clasificador.classes_)
+    return None, None
 
 
 def entrenar_y_evaluar(algoritmos, estrategias, max_features, random_state, usar_stopwords):
@@ -225,16 +155,24 @@ def entrenar_y_evaluar(algoritmos, estrategias, max_features, random_state, usar
             if estrategia == "smote":
                 x_fit, y_fit = aplicar_smote(x_train, y_train, random_state)
 
-            clasificador = construir_clasificador(algoritmo, estrategia, random_state)
+            clasificador = construir_clasificador(algoritmo, estrategia)
             clasificador.fit(x_fit, y_fit)
 
-            fila_valid = evaluar(clasificador, x_valid, y_valid, algoritmo, estrategia, "valid", filas_f1_clase)
-            fila_test = evaluar(clasificador, x_test, y_test, algoritmo, estrategia, "test", filas_f1_clase)
-            filas_comparacion.extend([fila_valid, fila_test])
+            fila_valid = evaluar_split(
+                y_valid, clasificador.predict(x_valid), FAMILIA, algoritmo, estrategia,
+                "valid", REPORT_DIR, filas_comparacion, filas_f1_clase,
+            )
+            pred_test = clasificador.predict(x_test)
+            scores_test, score_labels = obtener_scores(clasificador, x_test)
+            fila_test = evaluar_split(
+                y_test, pred_test, FAMILIA, algoritmo, estrategia,
+                "test", REPORT_DIR, filas_comparacion, filas_f1_clase,
+                scores=scores_test, score_labels=score_labels,
+            )
             modelos[(algoritmo, estrategia)] = {"clasificador": clasificador, "valid": fila_valid, "test": fila_test}
 
             print(
-                f">> {algoritmo:<20} {estrategia:<9} | "
+                f">> {algoritmo:<14} {estrategia:<9} | "
                 f"valid F1-macro {fila_valid['f1_macro']:.4f} | test F1-macro {fila_test['f1_macro']:.4f}"
             )
 
@@ -254,7 +192,7 @@ def entrenar_y_evaluar(algoritmos, estrategias, max_features, random_state, usar
     joblib.dump(modelo, MODELO_FILE)
 
     print("\n" + "=" * 78)
-    print("COMPARACION DE MODELOS (ordenada por F1-macro en test)")
+    print("COMPARACION DE MODELOS CLASICOS (ordenada por F1-macro en test)")
     print("=" * 78)
     tabla_test = comparacion[comparacion["split"] == "test"].sort_values("f1_macro", ascending=False)
     print(tabla_test.to_string(index=False))
@@ -262,16 +200,16 @@ def entrenar_y_evaluar(algoritmos, estrategias, max_features, random_state, usar
         print("\nCombinaciones omitidas:")
         for o in omitidas:
             print(f"- {o}")
-    print(f"\nMejor combinacion por F1-macro en validacion: {mejor[0]} + {mejor[1]} "
+    print(f"\nMejor combinacion clasica por F1-macro en validacion: {mejor[0]} + {mejor[1]} "
           f"(valid {modelos[mejor]['valid']['f1_macro']:.4f} | test {modelos[mejor]['test']['f1_macro']:.4f})")
     print(f"Modelo guardado en: {MODELO_FILE}")
     print(f"Reportes en: {REPORT_DIR}")
 
 
 def obtener_argumentos():
-    parser = argparse.ArgumentParser(description="Entrena y evalua clasificadores de sentimiento (fase 07).")
+    parser = argparse.ArgumentParser(description="Entrena y evalua los modelos clasicos (SVM y Naive Bayes, fase 07).")
     parser.add_argument("--algoritmos", nargs="+", default=ALGORITMOS, choices=ALGORITMOS,
-                        help="Algoritmos a comparar.")
+                        help="Algoritmos clasicos a comparar.")
     parser.add_argument("--estrategias", nargs="+", default=ESTRATEGIAS, choices=ESTRATEGIAS,
                         help="Estrategias de balanceo a comparar.")
     parser.add_argument("--max-features", type=int, default=20000, help="Maximo de features TF-IDF.")

@@ -220,15 +220,19 @@ reports/05_split/distribucion_split_valid.csv
 reports/05_split/distribucion_split_test.csv
 ```
 
-Tamanos actuales:
+Tamanos actuales (split 80% desarrollo / 20% prueba, con 70/30 interno; `random_state=42`):
 
 ```text
-train    2923
-valid     627
-test      627
+train    2338
+valid    1003
+test      836
 ```
 
-## 07. Entrenamiento Y Evaluacion
+El modelado se divide en tres familias (fases 07-09) y una comparacion final (fase 10).
+Las tres familias parten de los mismos splits y se evaluan con el mismo modulo comun
+(`scripts/_comun/evaluacion.py`), por lo que sus metricas son directamente comparables.
+
+## 07. Modelos Clasicos (SVM y Naive Bayes)
 
 Comando:
 
@@ -236,37 +240,78 @@ Comando:
 python scripts/07_modelado/entrenar_evaluar.py
 ```
 
-Entrada:
-
-```text
-data/splits/train.csv
-data/splits/valid.csv
-data/splits/test.csv
-```
-
-Salidas:
+Entrada: `data/splits/{train,valid,test}.csv` (columna `texto_modelo`). Salidas:
 
 ```text
 reports/06_modelado/comparacion_modelos.csv
 reports/06_modelado/f1_por_clase.csv
-reports/06_modelado/matriz_confusion_<algoritmo>_<estrategia>_test.csv / .png
-reports/06_modelado/reporte_clasificacion_<algoritmo>_<estrategia>_test.txt
+reports/06_modelado/matriz_confusion_<modelo>_<estrategia>_test.csv / .png
+reports/06_modelado/reporte_clasificacion_<modelo>_<estrategia>_test.txt
 models/mejor_modelo.joblib
 ```
 
-Clasificadores: TF-IDF (1-2 gramas, con stopwords ES) + comparacion de los cuatro algoritmos
-clasicos del documento (Regresion Logistica, SVM, Naive Bayes, Random Forest) cruzados con tres
-estrategias de balanceo (base, class_weight='balanced', SMOTE en train). Naive Bayes omite
-'balanced'. Metricas: F1-Macro (principal) y exactitud balanceada.
+TF-IDF (1-2 gramas, stopwords ES) + los dos clasicos del enunciado: SVM (LinearSVC) y
+Naive Bayes (MultinomialNB), cruzados con base / balanced / SMOTE. Naive Bayes omite
+'balanced'. Mejores resultados (F1-Macro en test): naive_bayes+smote 0.4865, svm+smote
+0.4799. SMOTE rescata a Naive Bayes (0.29 -> 0.49), coherente con la literatura del documento.
 
-Mejores resultados (F1-Macro en test):
+## 08. Deep Learning (CNN y LSTM)
 
-```text
-algoritmo            estrategia   valid    test
-regresion_logistica  balanced     0.4993   0.5589   (mejor)
-regresion_logistica  smote        0.4970   0.5447
-naive_bayes          smote        0.4779   0.5207
-svm                  balanced     0.4700   0.5203
+Comando:
+
+```bash
+python scripts/08_dl/entrenar_dl.py
 ```
 
-SMOTE rescata a Naive Bayes (F1-Macro 0.31 -> 0.52), coherente con la literatura del documento.
+Entrada: los mismos splits (`texto_modelo`). Salidas:
+
+```text
+reports/07_dl/comparacion_dl.csv
+reports/07_dl/f1_por_clase_dl.csv
+reports/07_dl/matriz_confusion_<modelo>_<estrategia>_test.csv / .png
+reports/07_dl/reporte_clasificacion_<modelo>_<estrategia>_test.txt
+models/mejor_modelo_dl.pt
+```
+
+PyTorch con embeddings entrenados desde cero: TextCNN (kernels 3/4/5) y BiLSTM, con
+estrategias base / class_weight (perdida ponderada). GPU si esta disponible, early stopping
+por F1-macro. Mejor en test: cnn+class_weight 0.5099; el guardado (mejor en validacion) es
+lstm+base. A la par de los clasicos.
+
+## 09. Transformers (BETO y XLM-RoBERTa)
+
+Comando:
+
+```bash
+python scripts/09_transformers/entrenar_transformers.py
+```
+
+Entrada: los mismos splits, pero con `comentario_limpio` (texto natural). Salidas:
+
+```text
+reports/08_transformers/comparacion_transformers.csv
+reports/08_transformers/f1_por_clase_transformers.csv
+reports/08_transformers/matriz_confusion_<modelo>_<estrategia>_test.csv / .png
+reports/08_transformers/reporte_clasificacion_<modelo>_<estrategia>_test.txt
+models/mejor_modelo_transformer/
+```
+
+Fine-tuning de BETO (dccuchile/bert-base-spanish-wwm-cased) y XLM-RoBERTa (xlm-roberta-base)
+con HuggingFace, perdida ponderada, AdamW + warmup, AMP en GPU y early stopping por F1-macro.
+La primera corrida descarga los modelos. Los transformers son la mejor familia (ver fase 10).
+
+## 10. Comparacion Unificada
+
+Comando:
+
+```bash
+python scripts/10_comparacion/comparar_todos.py
+```
+
+Une las comparaciones de las fases 07/08/09 en una tabla y un grafico:
+
+```text
+reports/09_comparacion/comparacion_global.csv
+reports/09_comparacion/comparacion_global_test.csv
+reports/09_comparacion/comparacion_global_f1_macro.png
+```
