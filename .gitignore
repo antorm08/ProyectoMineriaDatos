@@ -44,3 +44,7 @@ models/v2_mejor_modelo_transformer/
 
 # Cache de modelos descargados de HuggingFace
 .cache/
+
+# Informe: dependencias de Node y artefactos temporales
+informe/node_modules/
+informe/package-lock.json
