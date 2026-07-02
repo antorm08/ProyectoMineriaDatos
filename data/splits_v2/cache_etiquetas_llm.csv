@@ -1,0 +1,1461 @@
+﻿bloque,id_registro,etiqueta_llm,confianza_llm,justificacion_llm,modelo
+semilla,3012,positivo,0.9,Elogia mejoras y recomienda sin reservas,openai/gpt-oss-120b
+semilla,195,positivo,0.85,"Destaca rapidez y personalización, tono favorable",openai/gpt-oss-120b
+semilla,693,negativo,0.9,"Queja por larga espera, insatisfacción clara",openai/gpt-oss-120b
+semilla,2565,muy positivo,0.92,"Recomienda fuertemente, destaca buenas promociones",openai/gpt-oss-120b
+semilla,1979,positivo,0.85,"Planea volver, muestra satisfacción moderada",openai/gpt-oss-120b
+semilla,323,neutral,0.8,"Solo describe ubicación, sin valoración",openai/gpt-oss-120b
+semilla,2011,muy negativo,0.95,"Expresa imposibilidad y enojo, desaconseja",openai/gpt-oss-120b
+semilla,2088,neutral,0.85,Combina elogio personal y queja de otros,openai/gpt-oss-120b
+semilla,1920,positivo,0.85,"Elogia rapidez, menciona pequeños fallos",openai/gpt-oss-120b
+semilla,3904,muy negativo,0.96,"Critica fuertemente ambiente y servicio, tono negativo",openai/gpt-oss-120b
+semilla,1562,muy positivo,0.94,"Entusiasta elogio a descuentos, desea máxima calificación",openai/gpt-oss-120b
+semilla,1752,positivo,0.85,"Elogia lugar, menciona única queja menor",openai/gpt-oss-120b
+semilla,2160,negativo,0.88,Denuncia mal trato y falta de formalidad,openai/gpt-oss-120b
+semilla,985,muy positivo,0.93,"Elogia atención, recomienda fuertemente",openai/gpt-oss-120b
+semilla,4140,positivo,0.85,"Describe variedad y seguridad, recomienda visita",openai/gpt-oss-120b
+semilla,2657,negativo,0.8,"Critica baño, insatisfacción puntual",openai/gpt-oss-120b
+semilla,108,muy positivo,0.95,Expresa entusiasmo y agradecimiento,openai/gpt-oss-120b
+semilla,1134,negativo,0.88,Queja por demoras y falta de cajas,openai/gpt-oss-120b
+semilla,4258,positivo,0.85,"Elogia surtido y ofertas, menciona colas",openai/gpt-oss-120b
+semilla,2430,muy negativo,0.94,"Critica atención y lentitud, tono fuertemente negativo",openai/gpt-oss-120b
+semilla,4789,positivo,0.85,"Elogia tienda y servicio, menciona precios altos",openai/gpt-oss-120b
+semilla,1735,neutral,0.8,"Describe concurrencia y faltas, sin fuerte preferencia",openai/gpt-oss-120b
+semilla,1543,positivo,0.9,"Resalta variedad y calidad, tono favorable",openai/gpt-oss-120b
+semilla,4513,negativo,0.88,"Queja logística, decide no comprar",openai/gpt-oss-120b
+semilla,4603,muy positivo,0.96,"Entusiasmo extremo, elogio total",openai/gpt-oss-120b
+semilla,4395,positivo,0.95,"Elogia variedad, precio y atención, sin quejas.",openai/gpt-oss-120b
+semilla,2803,negativo,0.93,"Describe mala atención y descontento, sin gravedad.",openai/gpt-oss-120b
+semilla,3931,neutral,0.9,Información objetiva sin elogios ni quejas predominantes.,openai/gpt-oss-120b
+semilla,187,positivo,0.92,Elogia instalaciones y ambiente sin exageración.,openai/gpt-oss-120b
+semilla,923,muy negativo,0.99,"Queja grave, enojo extremo, recomienda no usar.",openai/gpt-oss-120b
+semilla,2166,muy negativo,0.98,"Enfado fuerte, denuncia fraude, sugiere desaparición.",openai/gpt-oss-120b
+semilla,1698,negativo,0.94,Insatisfacción con atención y cansancio del personal.,openai/gpt-oss-120b
+semilla,556,negativo,0.93,Queja por larga espera y lentitud del personal.,openai/gpt-oss-120b
+semilla,992,muy positivo,0.97,Elogio entusiasta y recomendación implícita.,openai/gpt-oss-120b
+semilla,4756,positivo,0.9,"Elogio breve a la variedad, sin críticas.",openai/gpt-oss-120b
+semilla,2162,muy negativo,0.99,"Queja extensa, enojo fuerte, indica no volver.",openai/gpt-oss-120b
+semilla,1221,positivo,0.92,"Elogia ofertas, ropa y ambiente, sin críticas.",openai/gpt-oss-120b
+semilla,974,muy positivo,0.94,Entusiasmo y recomendación para coworking.,openai/gpt-oss-120b
+semilla,74,neutral,0.85,Comentario descriptivo sin valoración clara.,openai/gpt-oss-120b
+semilla,2393,negativo,0.9,Breve queja sobre mala atención.,openai/gpt-oss-120b
+semilla,3096,positivo,0.93,"Elogia distribución, rapidez y servicios sin exageración.",openai/gpt-oss-120b
+semilla,1238,muy positivo,0.96,"Entusiasmo y elogio constante, recomendación implícita.",openai/gpt-oss-120b
+semilla,3124,positivo,0.92,"Elogia tamaño, variedad y ofertas, sin exageración.",openai/gpt-oss-120b
+semilla,4090,positivo,0.91,Elogio general con pequeña crítica.,openai/gpt-oss-120b
+semilla,2758,muy negativo,0.98,"Queja fuerte, rechazo total, indica no volver.",openai/gpt-oss-120b
+semilla,1717,muy positivo,0.95,Entusiasmo y recomendación clara.,openai/gpt-oss-120b
+semilla,4604,positivo,0.9,Elogio positivo sin exceso.,openai/gpt-oss-120b
+semilla,312,muy negativo,0.96,"Queja intensa, califica como peor, sugiere cambiar.",openai/gpt-oss-120b
+semilla,1088,neutral,0.88,Comentario equilibrado entre elogio y crítica.,openai/gpt-oss-120b
+semilla,3691,negativo,0.9,Critica lentitud y escasez de cajas pese a amplitud.,openai/gpt-oss-120b
+semilla,3190,muy positivo,0.98,"Calidad buena y trato amable, elogio sin reservas",openai/gpt-oss-120b
+semilla,363,muy negativo,0.99,"Queja grave de lenta atención, peor servicio y sin reclamos",openai/gpt-oss-120b
+semilla,4065,negativo,0.96,Productos en descomposición y falta de revisión pese a renovaciones,openai/gpt-oss-120b
+semilla,2754,muy positivo,0.97,"Amplia variedad y ofertas, reseña entusiasta",openai/gpt-oss-120b
+semilla,2654,neutral,0.95,"Atención buena, precios similares, promociones poco atractivas",openai/gpt-oss-120b
+semilla,1633,negativo,0.96,Atención lenta y falta de personal en horario pico,openai/gpt-oss-120b
+semilla,1857,positivo,0.95,"Buenos precios y orden, zona mayorista con ofertas",openai/gpt-oss-120b
+semilla,962,positivo,0.95,"Servicio bueno, aunque tiempos lentos, buen diseño",openai/gpt-oss-120b
+semilla,1247,muy positivo,0.97,"Ofertas excelentes y café agradable, reseña entusiasta",openai/gpt-oss-120b
+semilla,1674,muy negativo,0.99,"Cobro extra, mala atención y abuso al consumidor",openai/gpt-oss-120b
+semilla,202,positivo,0.94,Comentario breve pero positivo,openai/gpt-oss-120b
+semilla,1581,positivo,0.94,Ventanas abiertas y atención rápida,openai/gpt-oss-120b
+semilla,1662,negativo,0.95,"Pocas ATM, colas largas y monto mínimo restrictivo",openai/gpt-oss-120b
+semilla,1157,negativo,0.95,"Personal clasista, atención lenta y falta de tallas",openai/gpt-oss-120b
+semilla,3622,positivo,0.95,"Tienda acogedora, limpia y atención rápida",openai/gpt-oss-120b
+semilla,966,muy positivo,0.98,"Amplia, personal amable y soluciones pacientes",openai/gpt-oss-120b
+semilla,1163,neutral,0.94,"Cajeros llenos, pero asistencia rápida para prenda",openai/gpt-oss-120b
+semilla,4667,negativo,0.95,"Servicio al cliente peor, busca otra tienda",openai/gpt-oss-120b
+semilla,4637,positivo,0.95,Variedad y buena atención similar a otras tiendas,openai/gpt-oss-120b
+semilla,3400,muy negativo,0.99,"Mala orientación, falta de empatía y atención deficiente",openai/gpt-oss-120b
+semilla,720,muy positivo,0.97,"Entusiasmo por cambio de piso, reseña positiva",openai/gpt-oss-120b
+semilla,3497,positivo,0.94,Comentario breve pero positivo,openai/gpt-oss-120b
+semilla,1707,negativo,0.95,Precios razonables pero discriminación en cajas especiales,openai/gpt-oss-120b
+semilla,731,positivo,0.95,"Amplio, buen personal y espera mínima",openai/gpt-oss-120b
+semilla,2372,muy negativo,0.99,"Servicio horrible, falta de respuesta y atención",openai/gpt-oss-120b
+semilla,2887,positivo,0.78,"Elogio inicial, pero menciona mejoras, tono moderadamente positivo",openai/gpt-oss-120b
+semilla,2913,negativo,0.85,"Describe mala atención y largas esperas, predominan quejas",openai/gpt-oss-120b
+semilla,37,muy negativo,0.9,"Enojo intenso, denuncia fraude, recomienda no usar",openai/gpt-oss-120b
+semilla,919,muy negativo,0.85,Expresión corta de fuerte descontento,openai/gpt-oss-120b
+semilla,2184,negativo,0.8,"Agradece ayuda pero reclama falta de solución, tono negativo",openai/gpt-oss-120b
+semilla,4779,muy positivo,0.95,"Entusiasmo claro, recomienda fuertemente",openai/gpt-oss-120b
+semilla,4534,positivo,0.78,"Elogio general, menciona único inconveniente",openai/gpt-oss-120b
+semilla,4187,muy positivo,0.85,"Elogio enfático, destaca variedad",openai/gpt-oss-120b
+semilla,185,muy positivo,0.9,Palabra corta pero entusiasta,openai/gpt-oss-120b
+semilla,878,muy negativo,0.9,"Denuncia grave, recomienda no usar",openai/gpt-oss-120b
+semilla,2673,muy positivo,0.9,Entusiasmo y recomendación implícita,openai/gpt-oss-120b
+semilla,769,negativo,0.75,Queja breve de mala atención,openai/gpt-oss-120b
+semilla,2229,muy negativo,0.95,"Acusación de estafa, rechazo total",openai/gpt-oss-120b
+semilla,4451,positivo,0.8,Elogio general sin exageración,openai/gpt-oss-120b
+semilla,1191,neutral,0.75,"Elogia y critica, equilibrio",openai/gpt-oss-120b
+semilla,925,negativo,0.78,Queja clara de mala atención,openai/gpt-oss-120b
+semilla,3188,muy positivo,0.88,Entusiasmo y recomendación implícita,openai/gpt-oss-120b
+semilla,210,neutral,0.6,Texto insuficiente para polaridad,openai/gpt-oss-120b
+semilla,4706,positivo,0.8,"Elogia variedad, menciona pequeños inconvenientes",openai/gpt-oss-120b
+semilla,1331,positivo,0.75,Comentario mayormente positivo con sugerencias,openai/gpt-oss-120b
+semilla,26,muy negativo,0.99,Uso de 'pésimo' y queja grave sobre atención.,openai/gpt-oss-120b
+semilla,3309,negativo,0.99,Queja clara de mala atención pese a variedad.,openai/gpt-oss-120b
+semilla,473,positivo,0.99,Elogio de rapidez en la atención.,openai/gpt-oss-120b
+semilla,558,muy negativo,0.99,Queja grave de mala coordinación y pérdida de tiempo.,openai/gpt-oss-120b
+semilla,350,negativo,0.99,"Califica la app como mediocre, muestra insatisfacción.",openai/gpt-oss-120b
+semilla,3993,positivo,0.99,Recomendación general pese al precio alto.,openai/gpt-oss-120b
+semilla,3768,muy positivo,0.99,"Elogio amplio, buen control bioseguridad y variedad.",openai/gpt-oss-120b
+semilla,4714,muy positivo,0.99,"Elogio entusiasta de calidad, variedad y atención cálida.",openai/gpt-oss-120b
+semilla,106,positivo,0.99,"Elogio a la arquitectura, tono positivo.",openai/gpt-oss-120b
+semilla,2105,muy negativo,0.99,"Denuncia estafa, cobro indebido y mala gestión.",openai/gpt-oss-120b
+semilla,3867,neutral,0.99,"Comentario sin valoración, solo indica ausencia.",openai/gpt-oss-120b
+semilla,946,positivo,0.99,"Elogio a atención y stock, aunque falta modelo.",openai/gpt-oss-120b
+semilla,4386,neutral,0.99,"Elogio ubicación, pero critica cantidad de carnes y productos.",openai/gpt-oss-120b
+semilla,35,muy negativo,0.99,Queja fuerte por larga espera y mala atención.,openai/gpt-oss-120b
+semilla,1678,muy negativo,0.99,"Denuncia pésimo servicio, fallas y pérdida de tiempo.",openai/gpt-oss-120b
+semilla,2328,positivo,0.99,"Elogio atención y asesoría, aunque critica estacionamiento.",openai/gpt-oss-120b
+semilla,2437,negativo,0.99,Queja de lentitud y pérdida de tiempo.,openai/gpt-oss-120b
+semilla,1316,positivo,0.99,"Elogio espacio y amabilidad, menciona poco personal.",openai/gpt-oss-120b
+semilla,4143,neutral,0.99,Descripción objetiva sin valoración positiva ni negativa.,openai/gpt-oss-120b
+semilla,780,negativo,0.99,Queja de mala atención y falta de concentración.,openai/gpt-oss-120b
+semilla,3881,muy negativo,0.97,Queja grave de atención y cuenta inválida,openai/gpt-oss-120b
+semilla,2033,positivo,0.88,"Buen lugar, pero se llena rápido",openai/gpt-oss-120b
+semilla,2698,positivo,0.85,"Elogia calidad, menciona poca variedad masculina",openai/gpt-oss-120b
+semilla,4500,muy negativo,0.96,Queja grave de productos y falta de respuesta,openai/gpt-oss-120b
+semilla,2034,neutral,0.8,"Comentario mixto, falta de orientación pero no es malo",openai/gpt-oss-120b
+semilla,448,positivo,0.85,"Elogia seguridad, orden y buena atención",openai/gpt-oss-120b
+semilla,102,muy positivo,0.95,Elogio breve y entusiasta,openai/gpt-oss-120b
+semilla,1663,positivo,0.84,Describe espacio amplio y agradable,openai/gpt-oss-120b
+semilla,1615,muy positivo,0.92,Comentario breve y muy elogioso,openai/gpt-oss-120b
+semilla,1499,positivo,0.86,"Elogia limpieza y ofertas, menciona rapidez de agotamiento",openai/gpt-oss-120b
+semilla,1280,negativo,0.82,Critica exceso de pantallas y contaminación visual,openai/gpt-oss-120b
+semilla,532,muy negativo,0.99,Queja extensa y severa sobre atención y gestión,openai/gpt-oss-120b
+semilla,3271,positivo,0.83,"Describe orden y limpieza, sin quejas",openai/gpt-oss-120b
+semilla,1579,muy positivo,0.96,Elogio extenso y entusiasta del servicio,openai/gpt-oss-120b
+semilla,4097,positivo,0.84,"Elogia atención, señala falta de productos y ofertas",openai/gpt-oss-120b
+semilla,880,muy negativo,0.97,Denuncia fraude y pésimo servicio,openai/gpt-oss-120b
+semilla,2240,muy negativo,0.96,Queja grave de falta de atención y denuncias,openai/gpt-oss-120b
+semilla,956,neutral,0.8,Descripción informativa sin elogios ni quejas,openai/gpt-oss-120b
+semilla,1815,muy positivo,0.94,Elogio entusiasta de descuentos y organización,openai/gpt-oss-120b
+semilla,2094,neutral,0.78,Comentario descriptivo sin valoración clara,openai/gpt-oss-120b
+semilla,2783,negativo,0.94,Quejas sobre cajas cerradas y cobros excesivos.,openai/gpt-oss-120b
+semilla,1009,muy negativo,0.96,Queja grave de larga espera y atención pésima.,openai/gpt-oss-120b
+semilla,3915,negativo,0.9,Señala deficiencias sin expresar enojo.,openai/gpt-oss-120b
+semilla,3074,neutral,0.93,Solo describe productos sin valoración.,openai/gpt-oss-120b
+semilla,3321,muy positivo,0.97,Elogio entusiasta y recomendación fuerte.,openai/gpt-oss-120b
+semilla,1736,positivo,0.94,Recomendación positiva con varios beneficios.,openai/gpt-oss-120b
+semilla,1082,positivo,0.92,Comentario breve pero favorable sobre atención.,openai/gpt-oss-120b
+semilla,53,neutral,0.95,Información sin valoración.,openai/gpt-oss-120b
+semilla,3646,muy positivo,0.96,Entusiasmo y recomendación clara.,openai/gpt-oss-120b
+semilla,2137,negativo,0.93,Crítica a la gestión de reclamos.,openai/gpt-oss-120b
+semilla,857,positivo,0.92,Elogio breve y favorable.,openai/gpt-oss-120b
+semilla,2853,neutral,0.88,Combina comentario positivo y negativo sin dominio.,openai/gpt-oss-120b
+semilla,4030,muy positivo,0.97,Elogio entusiasta y recomendación fuerte.,openai/gpt-oss-120b
+semilla,1887,muy positivo,0.98,Elogio extenso y entusiasta del supermercado.,openai/gpt-oss-120b
+semilla,848,muy positivo,0.95,Palabra única de alta valoración.,openai/gpt-oss-120b
+semilla,1474,positivo,0.91,Menciona buena ubicación y ofertas.,openai/gpt-oss-120b
+semilla,712,positivo,0.9,Comentario breve pero favorable sobre rapidez.,openai/gpt-oss-120b
+semilla,2920,muy negativo,0.96,Denuncia caos y falta de supervisión.,openai/gpt-oss-120b
+semilla,4728,positivo,0.92,Comentario mayormente favorable con pequeñas observaciones.,openai/gpt-oss-120b
+semilla,3624,positivo,0.91,Elogio breve de limpieza y seguridad.,openai/gpt-oss-120b
+semilla,3481,positivo,0.88,"Comodidad destacada, sin quejas, tono positivo.",openai/gpt-oss-120b
+semilla,4330,muy positivo,0.92,"Muchos elogios, recomienda, tono entusiasta.",openai/gpt-oss-120b
+semilla,2507,negativo,0.9,"Critica variedad y calidad, tono claramente negativo.",openai/gpt-oss-120b
+semilla,134,muy negativo,0.96,"Expresión de enojo fuerte, califica atención como mala.",openai/gpt-oss-120b
+semilla,4106,positivo,0.86,"Elogia variedad y parqueo, menciona ligera dificultad.",openai/gpt-oss-120b
+semilla,4168,positivo,0.9,"Alaba precios, amabilidad, tono satisfecho.",openai/gpt-oss-120b
+semilla,4610,muy positivo,0.9,"Elogio amplio, personal eficiente, tono muy entusiasta.",openai/gpt-oss-120b
+semilla,4785,muy positivo,0.9,"Elogios y recomendación fuerte, tono muy positivo.",openai/gpt-oss-120b
+semilla,742,muy positivo,0.85,"Breve pero usa 'Excelente', tono muy positivo.",openai/gpt-oss-120b
+semilla,40,negativo,0.84,"Menciona beneficios pero críticas fuertes, calificación baja.",openai/gpt-oss-120b
+semilla,3357,muy positivo,0.9,"Elogio surtido y atención, tono muy positivo.",openai/gpt-oss-120b
+semilla,2089,positivo,0.86,"Buena atención y solución rápida, tono positivo.",openai/gpt-oss-120b
+semilla,1445,muy negativo,0.95,"Queja grave sobre atención, tono muy negativo.",openai/gpt-oss-120b
+semilla,2116,muy negativo,0.95,"Denuncia mala actitud, tono muy negativo.",openai/gpt-oss-120b
+semilla,3181,positivo,0.86,"Elogia organización y respuesta rápida, tono positivo.",openai/gpt-oss-120b
+semilla,1791,neutral,0.8,"Queja de promoción engañosa, pero sigue comprando.",openai/gpt-oss-120b
+semilla,2529,positivo,0.86,"Destaca variedad y marcas locales, tono positivo.",openai/gpt-oss-120b
+semilla,1876,positivo,0.86,"Resalta ubicación y amplio estacionamiento, tono positivo.",openai/gpt-oss-120b
+semilla,433,negativo,0.8,"Señala falta de fila preferencial, tono negativo.",openai/gpt-oss-120b
+semilla,2099,negativo,0.86,"Reclamos no resueltos, calidad baja, tono negativo.",openai/gpt-oss-120b
+semilla,4271,neutral,0.9,Comentario informativo sin valoración,openai/gpt-oss-120b
+semilla,1407,positivo,0.94,"Elogia mucho, menciona solo una queja menor",openai/gpt-oss-120b
+semilla,1379,positivo,0.92,Resalta variedad y seguridad sin exagerar,openai/gpt-oss-120b
+semilla,863,muy positivo,0.96,"Entusiasmo claro, recomienda implícitamente",openai/gpt-oss-120b
+semilla,1749,positivo,0.9,"Comentario positivo, sin exageración",openai/gpt-oss-120b
+semilla,2171,muy negativo,0.97,"Queja grave de atención, recomienda no ir",openai/gpt-oss-120b
+semilla,2194,neutral,0.88,Elogio y queja equilibrados,openai/gpt-oss-120b
+semilla,23,muy negativo,0.96,"Queja grave, solicita solución, tono enfadado",openai/gpt-oss-120b
+semilla,2348,muy positivo,0.93,Entusiasmo y recomendación clara,openai/gpt-oss-120b
+semilla,3384,muy negativo,0.99,"Denuncia grave, recomienda no consumir",openai/gpt-oss-120b
+semilla,4432,positivo,0.9,"Elogio del producto, tono moderado",openai/gpt-oss-120b
+semilla,4098,positivo,0.9,"Resalta variedad y espacio, sin quejas",openai/gpt-oss-120b
+semilla,1092,muy positivo,0.95,Elogio breve pero entusiasta,openai/gpt-oss-120b
+semilla,2071,neutral,0.85,Elogio y queja equilibrados,openai/gpt-oss-120b
+semilla,1592,neutral,0.8,Comentario breve sin valoración clara,openai/gpt-oss-120b
+semilla,158,muy negativo,0.96,Queja grave dirigida a extranjeros,openai/gpt-oss-120b
+semilla,356,muy positivo,0.95,Elogio entusiasta y breve,openai/gpt-oss-120b
+semilla,140,negativo,0.88,Queja de falla y aglomeración,openai/gpt-oss-120b
+semilla,4089,positivo,0.92,"Elogia variedad, menciona problema menor",openai/gpt-oss-120b
+semilla,3398,negativo,0.87,Critica calidad de ropa pese a elogios al local,openai/gpt-oss-120b
+semilla,1601,negativo,0.85,"Buena atención pero sospecha e inquisición, quejas predominan",openai/gpt-oss-120b
+semilla,3031,positivo,0.9,"Todo rápido y variedad, satisfacción moderada",openai/gpt-oss-120b
+semilla,4138,muy positivo,0.95,"Entusiasmo claro, recomienda fuertemente",openai/gpt-oss-120b
+semilla,206,positivo,0.8,"Comentario breve, tono ligeramente positivo",openai/gpt-oss-120b
+semilla,1313,positivo,0.88,"Variedad y precios buenos, preferencia sobre competencia",openai/gpt-oss-120b
+semilla,3490,positivo,0.9,Elogio general sin quejas,openai/gpt-oss-120b
+semilla,1892,positivo,0.85,"Mayoría positiva, pequeña queja de baños",openai/gpt-oss-120b
+semilla,2314,negativo,0.8,Falta de coordinación y problemas de pago señalados,openai/gpt-oss-120b
+semilla,33,muy negativo,0.97,"Queja grave, enojo, recomienda no ir",openai/gpt-oss-120b
+semilla,4473,positivo,0.9,"Elogio breve, satisfacción moderada",openai/gpt-oss-120b
+semilla,4081,positivo,0.85,"Elogio amplio, tono satisfecho",openai/gpt-oss-120b
+semilla,24,negativo,0.85,"Ambiente bonito, pero servicio desastroso domina",openai/gpt-oss-120b
+semilla,1613,muy positivo,0.95,"Elogio máximo, recomendación implícita",openai/gpt-oss-120b
+semilla,2842,positivo,0.85,"Buena atención, falta lector de precios",openai/gpt-oss-120b
+semilla,4104,positivo,0.88,"Elogio general, pequeñas críticas de calidad y ofertas",openai/gpt-oss-120b
+semilla,266,neutral,0.8,"Información equilibrada, sin clara polaridad",openai/gpt-oss-120b
+semilla,2118,muy negativo,0.96,"Queja grave, desconfianza total",openai/gpt-oss-120b
+semilla,1712,positivo,0.9,"Elogio general, orden, limpieza y buenos precios",openai/gpt-oss-120b
+semilla,779,muy positivo,0.9,Entusiasmo y recomendación fuerte como número 1,openai/gpt-oss-120b
+semilla,3988,neutral,0.8,"Descripción equilibrada, incluye inconveniente de estacionamiento",openai/gpt-oss-120b
+semilla,745,positivo,0.95,"Elogio sencillo, sin peros ni entusiasmo extremo.",openai/gpt-oss-120b
+semilla,2513,positivo,0.9,"Destaca variedad y precios competitivos, tono favorable.",openai/gpt-oss-120b
+semilla,2429,negativo,0.9,"Queja extensa sobre colas y atención, predominan aspectos negativos.",openai/gpt-oss-120b
+semilla,4755,positivo,0.9,"Elogio a frescura y surtido, sin entusiasmo exagerado.",openai/gpt-oss-120b
+semilla,3600,positivo,0.9,"Comentario breve y positivo, sin exageración.",openai/gpt-oss-120b
+semilla,2987,muy positivo,0.95,"Elogio entusiasta a infraestructura, atención, precios y variedad.",openai/gpt-oss-120b
+semilla,2399,muy negativo,0.98,"Fuerte queja, desaconseja totalmente el local.",openai/gpt-oss-120b
+semilla,2794,neutral,0.85,"Combina elogios y críticas al personal, tono mixto.",openai/gpt-oss-120b
+semilla,131,muy positivo,0.97,Comentario breve pero altamente elogioso.,openai/gpt-oss-120b
+semilla,1839,muy negativo,0.98,"Queja grave sobre limpieza, distribución y personal, desaconseja.",openai/gpt-oss-120b
+semilla,1699,neutral,0.85,"Elogia en general, pero critica fuertemente al encargado.",openai/gpt-oss-120b
+semilla,1063,muy negativo,0.98,"Fuerte queja de servicio y organización, tono extremadamente negativo.",openai/gpt-oss-120b
+semilla,4436,positivo,0.88,"Elogio amplio a ofertas y calidad, tono entusiasta moderado.",openai/gpt-oss-120b
+semilla,4614,positivo,0.9,"Breve elogio al surtido y calidad, sin exageración.",openai/gpt-oss-120b
+semilla,1925,positivo,0.9,"Elogio al lugar y ofertas, tono favorable.",openai/gpt-oss-120b
+semilla,4633,neutral,0.85,"Elogia calidad pero critica precios y disponibilidad, tono mixto.",openai/gpt-oss-120b
+semilla,2606,positivo,0.9,"Resalta variedad y cumplimiento de normas, tono favorable.",openai/gpt-oss-120b
+semilla,2336,neutral,0.85,Combina experiencia positiva en oficina con queja del servicio telefónico.,openai/gpt-oss-120b
+semilla,2590,positivo,0.9,Elogio breve a productos y precios accesibles.,openai/gpt-oss-120b
+semilla,1249,muy positivo,0.97,"Elogio extenso y entusiasta a variedad, precios y atención.",openai/gpt-oss-120b
+semilla,726,muy positivo,0.95,Elogio entusiasta y recomendación clara,openai/gpt-oss-120b
+semilla,34,negativo,0.9,"Insatisfacción clara, queja moderada sin amenaza grave",openai/gpt-oss-120b
+semilla,1423,muy negativo,0.96,"Queja grave, describe problemas serios y desaconseja",openai/gpt-oss-120b
+semilla,3994,positivo,0.88,Elogio moderado sin peros,openai/gpt-oss-120b
+semilla,763,neutral,0.85,Comentario informativo sin valoración,openai/gpt-oss-120b
+semilla,1715,neutral,0.84,Pros y contras equilibrados,openai/gpt-oss-120b
+semilla,4696,positivo,0.87,Elogio mayor con pequeñas quejas,openai/gpt-oss-120b
+semilla,833,positivo,0.9,Elogio breve y positivo,openai/gpt-oss-120b
+semilla,3552,negativo,0.88,Quejas predominantes pese a algunos elogios,openai/gpt-oss-120b
+semilla,562,negativo,0.9,Insatisfacción clara por mala atención,openai/gpt-oss-120b
+semilla,2086,positivo,0.9,Elogio simple y positivo,openai/gpt-oss-120b
+semilla,155,muy negativo,0.96,"Queja extrema, recomienda no usar",openai/gpt-oss-120b
+semilla,3739,muy positivo,0.94,Elogio entusiasta y recomendación implícita,openai/gpt-oss-120b
+semilla,593,neutral,0.85,Información sin valoración,openai/gpt-oss-120b
+semilla,4254,muy positivo,0.93,Elogio amplio y recomendación implícita,openai/gpt-oss-120b
+semilla,631,muy negativo,0.96,"Queja extrema, tono de enojo",openai/gpt-oss-120b
+semilla,1747,neutral,0.82,Descripción informativa sin valoración clara,openai/gpt-oss-120b
+semilla,4332,muy positivo,0.94,Elogio entusiasta y recomendación,openai/gpt-oss-120b
+semilla,2316,negativo,0.89,Quejas predominantes pese a excepción positiva,openai/gpt-oss-120b
+semilla,2939,neutral,0.84,"Pros y contras equilibrados, sin fuerte inclinación",openai/gpt-oss-120b
+semilla,3086,positivo,0.85,"Destaca tamaño, cajas automáticas y estacionamiento, tono positivo",openai/gpt-oss-120b
+semilla,1317,neutral,0.8,"Elogio y queja equilibrados, sin dominio claro",openai/gpt-oss-120b
+semilla,3166,muy positivo,0.95,"Entusiasmo total, recomienda sin reservas",openai/gpt-oss-120b
+semilla,1763,positivo,0.85,Menciona buena atención y proceso óptimo,openai/gpt-oss-120b
+semilla,637,muy negativo,0.9,Enfoca pérdida de tiempo y falta de solución,openai/gpt-oss-120b
+semilla,1292,negativo,0.8,Elogia presentación pero critica ambiente aburrido,openai/gpt-oss-120b
+semilla,47,negativo,0.85,Señala deficiencia de velocidad y ascensores,openai/gpt-oss-120b
+semilla,2876,muy positivo,0.9,Elogio entusiasta a calidad y variedad,openai/gpt-oss-120b
+semilla,599,neutral,0.8,Queja de cola y elogio a rapidez y amabilidad,openai/gpt-oss-120b
+semilla,3573,positivo,0.85,"Variedad y atención buenas, precios altos pero ofertas",openai/gpt-oss-120b
+semilla,3117,muy positivo,0.95,"Entusiasmo extremo, recomendación implícita",openai/gpt-oss-120b
+semilla,870,positivo,0.7,Comentario breve pero favorable,openai/gpt-oss-120b
+semilla,4648,positivo,0.85,"Elogio a variedad, precios y atención",openai/gpt-oss-120b
+semilla,2732,muy positivo,0.9,"Alto elogio y bendición, tono entusiasta",openai/gpt-oss-120b
+semilla,2469,positivo,0.8,"Servicio bueno, aunque espera larga",openai/gpt-oss-120b
+semilla,2421,muy negativo,0.95,Queja grave de cola y falta de asientos,openai/gpt-oss-120b
+semilla,3948,neutral,0.8,"Elogio al personal, pero falta de tirendas",openai/gpt-oss-120b
+semilla,3758,positivo,0.85,"Buenas ofertas y poca gente, tono favorable",openai/gpt-oss-120b
+semilla,4154,muy positivo,0.95,"Elogio completo y entusiasta, sin reservas",openai/gpt-oss-120b
+semilla,3868,negativo,0.85,Queja de larga espera y llamadas frecuentes,openai/gpt-oss-120b
+semilla,3214,muy negativo,0.95,"Queja grave sobre seguridad y atención, recomienda no ir",openai/gpt-oss-120b
+semilla,2674,negativo,0.88,"Queja de largas colas, aunque menciona variedad de productos",openai/gpt-oss-120b
+semilla,691,negativo,0.9,Se queja de larga espera para tickets,openai/gpt-oss-120b
+semilla,285,positivo,0.93,Elogio a amabilidad y rapidez del personal,openai/gpt-oss-120b
+semilla,3688,neutral,0.85,Combina críticas de aisles y precios con elogios generales,openai/gpt-oss-120b
+semilla,4398,positivo,0.94,"Elogia pastas y ajíes, sin quejas",openai/gpt-oss-120b
+semilla,1260,positivo,0.96,Elogio general del centro comercial,openai/gpt-oss-120b
+semilla,1192,positivo,0.95,Destaca ambiente agradable y prendas bonitas,openai/gpt-oss-120b
+semilla,4704,neutral,0.84,Elogia productos pero lamenta eliminación de sección de plantas,openai/gpt-oss-120b
+semilla,245,muy positivo,0.97,"Elogio enfático, lo califica como el mejor",openai/gpt-oss-120b
+semilla,3259,neutral,0.9,Comentario informativo sin valoración clara,openai/gpt-oss-120b
+semilla,1657,muy negativo,0.94,Queja grave por falta de información y dirección,openai/gpt-oss-120b
+semilla,390,muy negativo,0.96,"Denuncia servicio pésimo, largas esperas y cierre abrupto",openai/gpt-oss-120b
+semilla,3560,negativo,0.88,"Critica precios altos, aunque menciona excepciones",openai/gpt-oss-120b
+semilla,3457,neutral,0.9,"Texto informativo, sin elogio ni queja marcada",openai/gpt-oss-120b
+semilla,3759,positivo,0.95,"Elogia orden, limpieza e iluminación",openai/gpt-oss-120b
+semilla,2721,positivo,0.94,Recomienda el lugar para comprar,openai/gpt-oss-120b
+semilla,227,muy negativo,0.96,Queja grave de mala atención y largas esperas,openai/gpt-oss-120b
+semilla,3295,muy negativo,0.93,Queja intensa por cobro y situación de salud,openai/gpt-oss-120b
+semilla,11,negativo,0.9,Critica falta de ventanillas y lentitud,openai/gpt-oss-120b
+semilla,2610,muy positivo,0.95,Elogio entusiasta sin quejas,openai/gpt-oss-120b
+semilla,288,neutral,0.9,"Solo describe servicios, sin valoración",openai/gpt-oss-120b
+semilla,1776,positivo,0.85,"Mayoría positiva, con pequeño inconveniente",openai/gpt-oss-120b
+semilla,4550,muy negativo,0.97,"Queja grave, agresión, recomienda evitar",openai/gpt-oss-120b
+semilla,52,positivo,0.9,Elogio breve sin reservas,openai/gpt-oss-120b
+semilla,1997,muy negativo,0.96,"Queja fuerte, servicio deficiente",openai/gpt-oss-120b
+semilla,3408,negativo,0.85,"Insatisfacción clara, predominan críticas",openai/gpt-oss-120b
+semilla,995,neutral,0.9,Solo información del local,openai/gpt-oss-120b
+semilla,819,muy positivo,0.9,"Elogio entusiasta, sin quejas",openai/gpt-oss-120b
+semilla,2599,muy positivo,0.93,"Elogio entusiasta, recomendación implícita",openai/gpt-oss-120b
+semilla,4188,positivo,0.88,Elogio con varios aspectos positivos,openai/gpt-oss-120b
+semilla,3210,muy negativo,0.96,"Queja grave, maltrato y fallas",openai/gpt-oss-120b
+semilla,2101,muy negativo,0.97,"Queja fuerte, amenaza de cambio",openai/gpt-oss-120b
+semilla,743,negativo,0.85,"Insatisfacción clara, sin agresión",openai/gpt-oss-120b
+semilla,740,muy positivo,0.95,"Elogio entusiasta, alta satisfacción",openai/gpt-oss-120b
+semilla,1705,positivo,0.84,"Mayoría positiva, con observaciones de precios",openai/gpt-oss-120b
+semilla,1237,positivo,0.86,Elogio con sugerencia de mejora,openai/gpt-oss-120b
+semilla,1297,muy negativo,0.94,Queja fuerte sobre falta de tallas,openai/gpt-oss-120b
+semilla,3438,positivo,0.85,Elogio con queja leve de rapidez,openai/gpt-oss-120b
+semilla,2998,positivo,0.88,Elogio de ubicación y precios,openai/gpt-oss-120b
+semilla,2376,muy negativo,0.97,"Enojo grave, falta de solución, quiere cambiar de proveedor",openai/gpt-oss-120b
+semilla,2460,negativo,0.85,"Elogio leve, quejas mayores sobre errores y falta de gestión",openai/gpt-oss-120b
+semilla,4149,neutral,0.8,"Elogios y quejas equilibrados, sin dominio claro",openai/gpt-oss-120b
+semilla,1838,negativo,0.75,"Critica falta de orden, sin elogios claros",openai/gpt-oss-120b
+semilla,1385,positivo,0.9,Elogio moderado de ropa y precio,openai/gpt-oss-120b
+semilla,87,positivo,0.85,Breve elogio sin exageración,openai/gpt-oss-120b
+semilla,4336,muy positivo,0.92,"Entusiasmo claro, recomienda implícitamente",openai/gpt-oss-120b
+semilla,455,positivo,0.88,Elogio de atención y gestión rápida,openai/gpt-oss-120b
+semilla,4279,positivo,0.84,"Elogio de precio, calidad y ambiente seguro",openai/gpt-oss-120b
+semilla,2298,negativo,0.86,Queja de demoras por boxes vacíos,openai/gpt-oss-120b
+semilla,2362,muy negativo,0.96,Queja grave de mala atención y cobros indebidos,openai/gpt-oss-120b
+semilla,2310,muy negativo,0.94,"Enojo intenso, crítica extensa a la atención",openai/gpt-oss-120b
+semilla,4183,positivo,0.85,Elogio breve de variedad y ofertas,openai/gpt-oss-120b
+semilla,2019,muy negativo,0.95,"Fuerte queja, atención calificada como pésima",openai/gpt-oss-120b
+semilla,1936,muy positivo,0.93,"Entusiasmo alto, múltiples elogios y agradecimiento",openai/gpt-oss-120b
+semilla,988,positivo,0.88,Elogio claro de buena atención,openai/gpt-oss-120b
+semilla,3017,muy positivo,0.9,"Uso de “Fantástico”, entusiasmo fuerte",openai/gpt-oss-120b
+semilla,1692,negativo,0.84,Critica falta de capacitación y calidad de servicio,openai/gpt-oss-120b
+semilla,2183,muy negativo,0.88,"Rechazo total, no recomienda el servicio",openai/gpt-oss-120b
+semilla,3369,muy negativo,0.95,"Queja extensa, atención pésima y gran molestia",openai/gpt-oss-120b
+semilla,3748,positivo,0.85,Elogio de variedad y amplitud sin quejas,openai/gpt-oss-120b
+semilla,4566,muy positivo,0.9,"Entusiasta alaba calidad, variedad y comodidad",openai/gpt-oss-120b
+semilla,4070,muy negativo,0.95,Queja grave de producto defectuoso y marca no confiable,openai/gpt-oss-120b
+semilla,4123,positivo,0.85,"Elogia precios bajos, limpieza y buena atención",openai/gpt-oss-120b
+semilla,1462,positivo,0.8,"Destaca diversidad y ambiente festivo, sin quejas",openai/gpt-oss-120b
+semilla,899,muy negativo,0.95,Queja fuerte sobre atención deficiente y falta de ayuda,openai/gpt-oss-120b
+semilla,3448,neutral,0.75,Combina elogios y queja menor sobre marcas,openai/gpt-oss-120b
+semilla,477,muy positivo,0.9,Entusiasta recomendación y elogio al servicio,openai/gpt-oss-120b
+semilla,1417,positivo,0.85,"Elogia variedad, precios y rapidez sin quejas",openai/gpt-oss-120b
+semilla,2461,positivo,0.85,Resalta rapidez y comodidad del local,openai/gpt-oss-120b
+semilla,3253,muy negativo,0.95,Quejas extensas sobre mala gestión y equipamiento defectuoso,openai/gpt-oss-120b
+semilla,2395,muy negativo,0.95,"Acusa estafa y mala atención, tono de enojo",openai/gpt-oss-120b
+semilla,4209,positivo,0.8,Elogio general con aviso de paciencia,openai/gpt-oss-120b
+semilla,4582,positivo,0.75,"Elogia completitud, menciona falta de suplementos",openai/gpt-oss-120b
+semilla,399,negativo,0.8,Queja por larga espera,openai/gpt-oss-120b
+semilla,504,muy negativo,0.95,Queja extensa de falta de solución y mala atención,openai/gpt-oss-120b
+semilla,3625,positivo,0.85,Elogio de calidad de remeras,openai/gpt-oss-120b
+semilla,2339,neutral,0.7,"Alaba rapidez temprana, advierte complicaciones tarde",openai/gpt-oss-120b
+semilla,2531,positivo,0.85,"Resalta variedad, precios y beneficios de tarjeta",openai/gpt-oss-120b
+semilla,842,positivo,0.8,Elogia ubicación y seguridad,openai/gpt-oss-120b
+semilla,732,positivo,0.0,"Calidad y pago fácil, queja menor de colas.",openai/gpt-oss-120b
+semilla,644,muy negativo,0.0,"Larga espera y atención pésima, tono enfadado.",openai/gpt-oss-120b
+semilla,2069,muy positivo,0.0,Elogio entusiasta a la atención.,openai/gpt-oss-120b
+semilla,1970,negativo,0.0,Critica falta de experiencia y mal trato.,openai/gpt-oss-120b
+semilla,1132,muy negativo,0.0,"Demora excesiva, siente abuso de tiempo.",openai/gpt-oss-120b
+semilla,221,negativo,0.0,Breve queja de mala atención.,openai/gpt-oss-120b
+semilla,373,negativo,0.0,Informa cierre inesperado y página desactualizada.,openai/gpt-oss-120b
+semilla,4695,muy positivo,0.0,"Elogio entusiasta al lugar, personal y parqueaderos.",openai/gpt-oss-120b
+semilla,589,muy positivo,0.0,Elogio breve pero entusiasta.,openai/gpt-oss-120b
+semilla,291,muy positivo,0.0,"Destaca completitud del centro, tono entusiasta.",openai/gpt-oss-120b
+semilla,4697,positivo,0.0,"Muchos elogios, menciona precio alto y pocas cocheras.",openai/gpt-oss-120b
+semilla,1198,neutral,0.0,"Solo describe distribución, sin valoración.",openai/gpt-oss-120b
+semilla,2391,muy negativo,0.0,Elogia atención pero denuncia estafa y mala calidad.,openai/gpt-oss-120b
+semilla,3298,positivo,0.0,"Fidelidad, reconoce pocas cajas pero rapidez.",openai/gpt-oss-120b
+semilla,151,muy negativo,0.0,Denuncia pérdida de dinero y falta de responsabilidad.,openai/gpt-oss-120b
+semilla,222,muy negativo,0.0,"Denuncia pésima atención, apps, llama peor banco.",openai/gpt-oss-120b
+semilla,4080,positivo,0.0,"Elogia orden y compras, menciona cobro baño.",openai/gpt-oss-120b
+semilla,4592,muy positivo,0.0,"Elogio entusiasta a orden, atención y ubicación.",openai/gpt-oss-120b
+semilla,2918,muy negativo,0.0,"Quejas múltiples, largas esperas, falta de stock, tono crítico.",openai/gpt-oss-120b
+semilla,3974,neutral,0.0,Describe variedad de tallas sin valoración.,openai/gpt-oss-120b
+semilla,746,muy negativo,0.98,"Queja grave, advierte estafa y recomienda no comprar",openai/gpt-oss-120b
+semilla,882,muy negativo,0.97,"Denuncia estafa, falta de respuesta y reembolsos, recomienda evitar",openai/gpt-oss-120b
+semilla,9,negativo,0.9,"Critica incompetencia y problemas, insatisfacción clara",openai/gpt-oss-120b
+semilla,3912,negativo,0.92,"Desorden y falta de orientación, no volvería",openai/gpt-oss-120b
+semilla,2922,muy negativo,0.95,"Denuncia cobro extra como estafa, decide no volver",openai/gpt-oss-120b
+semilla,1369,positivo,0.93,"Comentario positivo sobre orden, limpieza y atención",openai/gpt-oss-120b
+semilla,466,positivo,0.9,Elogio a precios bajos de celulares,openai/gpt-oss-120b
+semilla,3158,positivo,0.9,Resalta variedad y rapidez en cajas,openai/gpt-oss-120b
+semilla,4300,muy positivo,0.96,"Elogio entusiasta a variedad, precios y servicio",openai/gpt-oss-120b
+semilla,386,negativo,0.92,Queja por celular defectuoso y larga espera,openai/gpt-oss-120b
+semilla,4026,positivo,0.94,"Elogio a comodidad, variedad y recomendación",openai/gpt-oss-120b
+semilla,1368,positivo,0.93,Destaca atención esmerada y ambiente amigable,openai/gpt-oss-120b
+semilla,2260,muy negativo,0.95,Fuerte queja por servicio pésimo y atención deprimente,openai/gpt-oss-120b
+semilla,1052,negativo,0.9,"Critica larga espera y mala atención, cambió de empresa",openai/gpt-oss-120b
+semilla,4561,positivo,0.92,Elogio a variedad y cumplimiento de bioseguridad,openai/gpt-oss-120b
+semilla,253,negativo,0.9,Queja por atención deficiente en plataforma,openai/gpt-oss-120b
+semilla,3887,positivo,0.9,Expresa satisfacción con la experiencia,openai/gpt-oss-120b
+semilla,794,positivo,0.9,Elogio a firma excelente y atención muy buena,openai/gpt-oss-120b
+semilla,1836,muy negativo,0.94,Denuncia mala atención y cobro injusto por baño,openai/gpt-oss-120b
+semilla,2607,positivo,0.9,Menciona buenos precios y poca concurrencia,openai/gpt-oss-120b
+semilla,4256,positivo,0.85,"Mayoría elogios, crítica leve a atención.",openai/gpt-oss-120b
+semilla,3737,positivo,0.9,"Solo elogios, sin quejas.",openai/gpt-oss-120b
+semilla,1713,positivo,0.8,"Predominan elogios, queja menor sobre patio.",openai/gpt-oss-120b
+semilla,3297,neutral,0.75,Elogios y quejas equilibrados.,openai/gpt-oss-120b
+semilla,368,muy negativo,0.9,Queja grave de atención y larga espera.,openai/gpt-oss-120b
+semilla,4228,muy positivo,0.9,"Elogios continuos, sin quejas.",openai/gpt-oss-120b
+semilla,2857,muy positivo,0.85,Solo aspectos positivos.,openai/gpt-oss-120b
+semilla,2424,negativo,0.8,"Experiencia mala, aunque algo de cortesía.",openai/gpt-oss-120b
+semilla,4581,muy positivo,0.9,Elogio entusiasta y recomendación implícita.,openai/gpt-oss-120b
+semilla,2527,negativo,0.75,"Crítica a imagen, pese a interior tranquilo.",openai/gpt-oss-120b
+semilla,3308,muy positivo,0.85,"Recomendación fuerte, elogios predominantes.",openai/gpt-oss-120b
+semilla,2823,neutral,0.75,Elogios y queja de sabor equilibrados.,openai/gpt-oss-120b
+semilla,2947,neutral,0.7,"Positivo precio, calidad regular, balance.",openai/gpt-oss-120b
+semilla,1918,muy positivo,0.85,Entusiasmo y recomendación implícita.,openai/gpt-oss-120b
+semilla,2968,positivo,0.8,"Mayoría elogios, sugerencia menor.",openai/gpt-oss-120b
+semilla,1656,muy negativo,0.85,"Servicio pésimo, queja grave.",openai/gpt-oss-120b
+semilla,4238,positivo,0.75,"Elogios predominan, críticas menores.",openai/gpt-oss-120b
+semilla,1031,muy negativo,0.9,Queja grave de atención y tiempo.,openai/gpt-oss-120b
+semilla,1758,muy positivo,0.85,"Elogios sin quejas, recomendación implícita.",openai/gpt-oss-120b
+semilla,817,negativo,0.8,Queja clara de falta de personal.,openai/gpt-oss-120b
+semilla,1019,negativo,0.95,"Quejas sobre esperas, falta de fila preferencial y trato deficiente",openai/gpt-oss-120b
+semilla,970,positivo,0.93,"Elogia atención y solución, aunque sugiere mejoras",openai/gpt-oss-120b
+semilla,286,neutral,0.9,"Solo indica falta de estacionamiento, sin valoración",openai/gpt-oss-120b
+semilla,3967,positivo,0.88,"Elogia en general, menciona demora como único inconveniente",openai/gpt-oss-120b
+semilla,1938,muy positivo,0.96,Elogio amplio y recomendación enfática,openai/gpt-oss-120b
+semilla,2095,muy positivo,0.97,"Entusiasmo y agradecimiento, elogia atención y educación",openai/gpt-oss-120b
+semilla,653,negativo,0.94,"Se queja de larga espera, especialmente en atención preferencial",openai/gpt-oss-120b
+semilla,837,positivo,0.85,"Destaca rapidez del acceso, sin más comentarios",openai/gpt-oss-120b
+semilla,1753,muy negativo,0.96,Advertencia fuerte por colas imposibles después de las 7 pm,openai/gpt-oss-120b
+semilla,2359,muy negativo,0.93,Critica fuertemente la atención y falta de respeto al cliente,openai/gpt-oss-120b
+semilla,4544,neutral,0.88,"Combina variedad con colas largas, sin predominio claro",openai/gpt-oss-120b
+semilla,4213,negativo,0.85,"Señala falta de aire acondicionado, queja sin elogio",openai/gpt-oss-120b
+semilla,4595,positivo,0.9,"Elogia productos y servicio, sin exageración",openai/gpt-oss-120b
+semilla,4124,muy positivo,0.94,"Alaba orden, protocolos y amabilidad, tono muy favorable",openai/gpt-oss-120b
+semilla,2712,muy positivo,0.96,"Elogia rapidez, atención, precios y amabilidad, tono entusiasta",openai/gpt-oss-120b
+semilla,2170,muy negativo,0.97,Denuncia trato nefasto y actitud pésima del personal,openai/gpt-oss-120b
+semilla,2839,positivo,0.88,"Elogia espacio y rapidez, menciona falta de producto vegetariano",openai/gpt-oss-120b
+semilla,544,muy negativo,0.98,"Critica falta de solución, amenazas y mala calidad de internet",openai/gpt-oss-120b
+semilla,547,negativo,0.9,Se queja de larga espera y atención solo tras quejarse,openai/gpt-oss-120b
+semilla,1220,positivo,0.9,"Elogia variedad y conveniencia, tono positivo",openai/gpt-oss-120b
+semilla,2188,muy negativo,0.95,"Quejas graves sobre atención, falta de asientos y trato discriminatorio",openai/gpt-oss-120b
+semilla,1679,muy negativo,0.94,"Denuncia abuso, amenazas y falta de respeto en zona preferencial",openai/gpt-oss-120b
+semilla,69,neutral,0.85,Solo afirma sin expresar opinión,openai/gpt-oss-120b
+semilla,1047,muy negativo,0.9,"Critica severamente la atención, la califica como pésima",openai/gpt-oss-120b
+semilla,2467,muy positivo,0.93,"Elogia atención excelente y regalo, recomienda implícitamente",openai/gpt-oss-120b
+semilla,4120,muy positivo,0.96,"Enthusiastic praise, highlights variedad, precios, amabilidad, recomienda",openai/gpt-oss-120b
+semilla,248,muy positivo,0.97,"Alto elogio, destaca eficiencia, profesionalismo, recomienda ampliamente",openai/gpt-oss-120b
+semilla,3930,negativo,0.9,Queja sobre precios altos y desorden en colas,openai/gpt-oss-120b
+semilla,2389,muy negativo,0.95,Expresa enojo grave por falta de solución y demoras,openai/gpt-oss-120b
+semilla,584,muy negativo,0.92,Denuncia maltrato y actitud desagradable del personal,openai/gpt-oss-120b
+semilla,2078,positivo,0.88,Breve elogio a la buena atención,openai/gpt-oss-120b
+semilla,3576,positivo,0.9,Elogia atención y rapidez sin exageración,openai/gpt-oss-120b
+semilla,3866,muy negativo,0.93,"Acusa falta de honestidad y servicio, tono muy crítico",openai/gpt-oss-120b
+semilla,1041,muy negativo,0.9,Expresa fuerte insatisfacción con la atención,openai/gpt-oss-120b
+semilla,756,neutral,0.85,"Solo solicita información, sin valoración",openai/gpt-oss-120b
+semilla,2835,neutral,0.88,"Combina elogios y quejas, sin predominio claro",openai/gpt-oss-120b
+semilla,3960,positivo,0.9,"Elogia organización y trato amable, sin exageración",openai/gpt-oss-120b
+semilla,57,positivo,0.85,Mayoría de elogios con algunas críticas menores,openai/gpt-oss-120b
+semilla,3249,neutral,0.86,"Describe condiciones, combina aspectos positivos y negativos",openai/gpt-oss-120b
+semilla,934,negativo,0.9,Elogia instalaciones pero denuncia trato discriminatorio y espera larga,openai/gpt-oss-120b
+semilla,1011,muy negativo,1.0,"Quejas graves, recomienda no usar el servicio",openai/gpt-oss-120b
+semilla,2404,muy negativo,1.0,"Servicio pésimo, redirecciones y falta de solución",openai/gpt-oss-120b
+semilla,3922,neutral,1.0,Combina queja de lentitud con elogio a ofertas,openai/gpt-oss-120b
+semilla,1345,muy positivo,1.0,"Elogio entusiasta, recomienda ampliamente la tienda",openai/gpt-oss-120b
+semilla,1076,positivo,1.0,"Mayoría positiva, destaca como el mejor pese a lentitud",openai/gpt-oss-120b
+semilla,651,negativo,1.0,Queja por cobro y falta de buenas opciones,openai/gpt-oss-120b
+semilla,647,muy negativo,1.0,"Atención pésima, colas largas, recomienda buscar otro local",openai/gpt-oss-120b
+semilla,2940,neutral,1.0,Elogia variedad pero critica desorden y señalética,openai/gpt-oss-120b
+semilla,2409,muy negativo,1.0,Denuncia cobro extra y promoción engañosa,openai/gpt-oss-120b
+semilla,3013,positivo,1.0,Encuentra producto y recibe apoyo del personal,openai/gpt-oss-120b
+semilla,3016,muy positivo,1.0,"Elogio amplio, orden, limpieza y excelentes facilidades",openai/gpt-oss-120b
+semilla,3351,neutral,1.0,Comentario informativo sin valoración clara,openai/gpt-oss-120b
+semilla,2486,muy negativo,1.0,"Servicio pésimo, producto defectuoso y sin solución",openai/gpt-oss-120b
+semilla,4799,positivo,1.0,Elogio breve a limpieza y variedad,openai/gpt-oss-120b
+semilla,3244,neutral,1.0,"Elogia precios, pero critica actitudes de seguridad",openai/gpt-oss-120b
+semilla,3558,muy positivo,1.0,"Entusiasta, destaca ofertas y colección navideña",openai/gpt-oss-120b
+semilla,1106,neutral,1.0,Comentario descriptivo sin valoración,openai/gpt-oss-120b
+semilla,4681,negativo,1.0,Se lamenta del deterioro del servicio,openai/gpt-oss-120b
+semilla,93,positivo,1.0,Elogio breve a orden y limpieza,openai/gpt-oss-120b
+semilla,2159,muy negativo,1.0,"Experiencia frustrante, advierte no perder tiempo",openai/gpt-oss-120b
+semilla,1833,muy negativo,0.98,"Quejas graves, cobro excesivo, trato pésimo, recomienda no ir.",openai/gpt-oss-120b
+semilla,4469,muy positivo,0.96,"Entusiasmo claro, elogio sin reservas, recomienda fuertemente.",openai/gpt-oss-120b
+semilla,3598,positivo,0.92,"Elogio a la atención, sin entusiasmo extremo.",openai/gpt-oss-120b
+semilla,4421,positivo,0.9,"Resalta orden, calidad y precios, tono favorable.",openai/gpt-oss-120b
+semilla,3597,neutral,0.88,"Elogio al personal, pero indica falta de novedades.",openai/gpt-oss-120b
+semilla,3797,positivo,0.86,"Variedad y descuentos resaltados, sin quejas.",openai/gpt-oss-120b
+semilla,917,muy negativo,0.92,"Queja grave, recomienda no ir, sugiere estafa.",openai/gpt-oss-120b
+semilla,10,negativo,0.81,"Expresa frustración por lentitud, sin exagerar.",openai/gpt-oss-120b
+semilla,701,neutral,0.78,"Solo informa presencia de cola, sin juicio.",openai/gpt-oss-120b
+semilla,4021,positivo,0.87,Describe muchos servicios y concluye que vale la pena.,openai/gpt-oss-120b
+semilla,4281,positivo,0.89,"Elogia personal amable y variedad, tono positivo.",openai/gpt-oss-120b
+semilla,3910,muy negativo,0.93,"Denuncia comportamiento obsceno y molesto, tono muy negativo.",openai/gpt-oss-120b
+semilla,642,negativo,0.84,"Critica lentitud del sistema, pérdida de tiempo.",openai/gpt-oss-120b
+semilla,325,negativo,0.8,Se queja del cierre y falta de información.,openai/gpt-oss-120b
+semilla,3165,positivo,0.9,"Resalta buena ubicación, parqueo y comodidad, tono positivo.",openai/gpt-oss-120b
+semilla,452,positivo,0.9,"Menciona siempre buena atención, tono positivo.",openai/gpt-oss-120b
+semilla,123,muy negativo,0.88,"Exige cambio de administradora, critica trato, tono fuerte.",openai/gpt-oss-120b
+semilla,3251,negativo,0.85,"Buen servicio pero seguridad discriminatoria, sentimiento negativo.",openai/gpt-oss-120b
+semilla,3003,positivo,0.86,"Variedad buena, detalle raro pero en general positivo.",openai/gpt-oss-120b
+semilla,3783,positivo,0.9,"Destaca variedad, ofertas y atención correcta, tono positivo.",openai/gpt-oss-120b
+semilla,3090,positivo,0.88,"Alaba fácil aparcamiento, sin quejas.",openai/gpt-oss-120b
+semilla,645,negativo,0.8,"Se queja de horario incorrecto, información deficiente.",openai/gpt-oss-120b
+semilla,2018,negativo,0.8,"Critica falta de sistema y derivación, tono negativo.",openai/gpt-oss-120b
+semilla,2149,muy negativo,0.95,"Denuncia pésimo servicio, cobros indebidos, tono muy negativo.",openai/gpt-oss-120b
+semilla,1722,neutral,0.75,"Menciona precios bajos y mejoras, pero también anticuado.",openai/gpt-oss-120b
+test,49,neutral,0.9,"Solo describe ubicación, sin valoración.",openai/gpt-oss-120b
+test,2269,muy negativo,0.98,"Queja grave, recomienda no ir.",openai/gpt-oss-120b
+test,1325,positivo,0.95,"Elogio moderado, tono positivo.",openai/gpt-oss-120b
+test,3121,positivo,0.94,"Elogio sin quejas, tono positivo.",openai/gpt-oss-120b
+test,4316,positivo,0.93,"Mayoría de elogios, único inconveniente menor.",openai/gpt-oss-120b
+test,1624,muy positivo,0.96,"Entusiasmo claro, recomienda fuertemente.",openai/gpt-oss-120b
+test,147,positivo,0.92,"Elogio breve, tono positivo.",openai/gpt-oss-120b
+test,4230,muy positivo,0.95,"Entusiasmo alto, recomendación fuerte.",openai/gpt-oss-120b
+test,2516,positivo,0.9,Comentario positivo sin quejas.,openai/gpt-oss-120b
+test,2778,negativo,0.93,Quejas predominan sobre elogios.,openai/gpt-oss-120b
+test,2852,neutral,0.9,Pros y contras equilibrados.,openai/gpt-oss-120b
+test,3064,muy negativo,0.97,"Queja grave, tono enfadado.",openai/gpt-oss-120b
+test,840,neutral,0.9,"Solo información, sin valoración.",openai/gpt-oss-120b
+test,2093,positivo,0.92,"Elogio breve, tono positivo.",openai/gpt-oss-120b
+test,2881,muy positivo,0.95,"Entusiasmo claro, recomienda.",openai/gpt-oss-120b
+test,4458,muy positivo,0.96,"Entusiasmo alto, recomendación fuerte.",openai/gpt-oss-120b
+test,3626,muy positivo,0.97,"Entusiasmo fuerte, recomendación clara.",openai/gpt-oss-120b
+test,179,positivo,0.9,"Elogio de seguridad, tono positivo.",openai/gpt-oss-120b
+test,316,muy negativo,0.94,"Queja grave, servicio deficiente.",openai/gpt-oss-120b
+test,4653,neutral,0.88,Observación sin valoración positiva o negativa.,openai/gpt-oss-120b
+test,912,negativo,0.93,Queja sobre falta de empatía y largas esperas,openai/gpt-oss-120b
+test,2301,muy negativo,0.96,"Queja grave de desinformación, pérdida de tiempo y falta de solución",openai/gpt-oss-120b
+test,279,neutral,0.88,Comentario breve sin valoración clara,openai/gpt-oss-120b
+test,3093,neutral,0.85,Elogia varios aspectos pero menciona varios problemas significativos,openai/gpt-oss-120b
+test,4543,positivo,0.9,Resalta variedad y productos saludables sin quejas,openai/gpt-oss-120b
+test,1525,neutral,0.84,Información objetiva con leve mención a menos cajas,openai/gpt-oss-120b
+test,997,muy positivo,0.92,Elogio enfático del centro de atención,openai/gpt-oss-120b
+test,1990,muy negativo,0.97,Queja grave de mala atención y falta de solución,openai/gpt-oss-120b
+test,2520,negativo,0.86,Precio bueno pero atención en caja muy lenta,openai/gpt-oss-120b
+test,198,muy positivo,0.95,Elogio entusiasta y recomendación del BCP,openai/gpt-oss-120b
+test,1222,positivo,0.88,Destaca presencia de marcas exclusivas sin críticas,openai/gpt-oss-120b
+test,2658,negativo,0.85,Seguridad adecuada pero incomodidad por niños descontrolados,openai/gpt-oss-120b
+test,238,muy positivo,0.94,Elogia rapidez y practicidad del proceso digital,openai/gpt-oss-120b
+test,1673,muy negativo,0.96,Queja extensa de mala atención y largas colas,openai/gpt-oss-120b
+test,3847,positivo,0.89,Elogio breve a la buena atención,openai/gpt-oss-120b
+test,3356,positivo,0.9,"Resalta limpieza, orden y excelente atención",openai/gpt-oss-120b
+test,3439,neutral,0.84,"Elogia precios y productos, pero critica música molesta",openai/gpt-oss-120b
+test,678,negativo,0.87,Señala largas esperas y atención mediocre,openai/gpt-oss-120b
+test,2957,positivo,0.9,"Elogia renovación y surtido, menciona pocos detalles negativos",openai/gpt-oss-120b
+test,3307,positivo,0.9,"Resalta comodidad, organización y facilidades del centro",openai/gpt-oss-120b
+test,2168,muy negativo,0.86,"Queja grave de servicio y falta de cajas, indica insatisfacción fuerte.",openai/gpt-oss-120b
+test,1018,muy negativo,0.92,"Pésima atención, desorden, recomienda no ir.",openai/gpt-oss-120b
+test,2428,negativo,0.81,"Mala atención predominante, aunque empleados se esfuerzan.",openai/gpt-oss-120b
+test,2980,positivo,0.85,"Ubicación excelente y buen surtido, sin quejas.",openai/gpt-oss-120b
+test,2445,negativo,0.78,Mala atención y falta de servicio sin problemas.,openai/gpt-oss-120b
+test,3071,muy negativo,0.9,"Enojo intenso por falta de variedad, cobros y explotación.",openai/gpt-oss-120b
+test,3045,positivo,0.86,"Instalaciones en óptimo estado, comentario positivo.",openai/gpt-oss-120b
+test,1687,neutral,0.75,"Bueno en general, pero trabajadores cortantes.",openai/gpt-oss-120b
+test,2981,neutral,0.8,"Experiencia mixta con pros y contras, aceptable.",openai/gpt-oss-120b
+test,1266,positivo,0.9,Lugar agradable y buen ambiente.,openai/gpt-oss-120b
+test,3382,muy negativo,0.9,"Cobro doble y demora devolución, queja grave.",openai/gpt-oss-120b
+test,1013,muy negativo,0.92,"Engaño y mala atención, advierte no ir.",openai/gpt-oss-120b
+test,944,neutral,0.77,"Ambiente moderno, pero falta de asientos y espera.",openai/gpt-oss-120b
+test,4612,positivo,0.9,"Gran variedad, buenos precios y calidad.",openai/gpt-oss-120b
+test,3410,neutral,0.74,"Pocas promociones y mucha gente, algo negativo.",openai/gpt-oss-120b
+test,3461,neutral,0.7,Descripción informativa sin valoración clara.,openai/gpt-oss-120b
+test,3838,negativo,0.81,Largo tiempo para efectivo y wifi deficiente.,openai/gpt-oss-120b
+test,4356,positivo,0.85,"Amplia oferta y buena atención, comentarios positivos.",openai/gpt-oss-120b
+test,2739,muy positivo,0.95,"Excelente lugar, atención sobresaliente, lo recomiendo.",openai/gpt-oss-120b
+test,4286,muy positivo,0.95,"Lugar favorito, entusiasmo y recomendación fuerte.",openai/gpt-oss-120b
+test,4376,muy positivo,0.97,"Elogio entusiasta, destaca variedad y calidad",openai/gpt-oss-120b
+test,3011,muy positivo,0.96,"Entusiasmo claro, recomienda y destaca variedad",openai/gpt-oss-120b
+test,2084,neutral,0.9,"Comentario breve, sin valoración positiva ni negativa",openai/gpt-oss-120b
+test,1190,muy positivo,0.94,"Entusiasmo festivo, expresa alegría y recomendación implícita",openai/gpt-oss-120b
+test,1450,negativo,0.92,Queja clara de desorden y aglomeración,openai/gpt-oss-120b
+test,3304,positivo,0.88,"Mayoría positiva, menciona renovación y buena compra",openai/gpt-oss-120b
+test,4062,positivo,0.85,"Elogia variedad y precios, pero señala ruido excesivo",openai/gpt-oss-120b
+test,2618,muy positivo,0.96,"Entusiasmo alto, destaca atención y servicio excelente",openai/gpt-oss-120b
+test,4440,muy positivo,0.98,"Elogio entusiasta, recomienda y califica 10/10",openai/gpt-oss-120b
+test,3837,negativo,0.95,Queja directa sobre atención y educación,openai/gpt-oss-120b
+test,1223,neutral,0.85,Comentario descriptivo sin valoración clara,openai/gpt-oss-120b
+test,4221,positivo,0.88,"Elogia sabor y frescura, menciona horario limitado",openai/gpt-oss-120b
+test,1729,neutral,0.84,Balancea aspectos negativos y positivos sin predominancia,openai/gpt-oss-120b
+test,2766,muy negativo,0.96,"Queja grave, describe imposibilidad y frustración",openai/gpt-oss-120b
+test,1611,positivo,0.9,Elogio breve de atención y limpieza,openai/gpt-oss-120b
+test,3175,positivo,0.88,"Comentario positivo, destaca corrección y calidad",openai/gpt-oss-120b
+test,4265,positivo,0.87,"Elogia variedad y ofertas, menciona ausencia menor",openai/gpt-oss-120b
+test,4571,muy positivo,0.93,Entusiasmo al recomendar producto específico,openai/gpt-oss-120b
+test,2594,muy positivo,0.9,Recomendación entusiasta de ofertas y tarjetas,openai/gpt-oss-120b
+test,3024,neutral,0.84,"Elogia pero lamenta cierre, tono mixto",openai/gpt-oss-120b
+test,1130,muy negativo,0.98,"Queja grave, maltrato, recomienda no ir",openai/gpt-oss-120b
+test,2573,positivo,0.9,"Oferta buena, ambiente tranquilo, satisfacción moderada",openai/gpt-oss-120b
+test,3189,positivo,0.92,"Buena atención y variedad, tono positivo moderado",openai/gpt-oss-120b
+test,2941,neutral,0.85,Combina aspectos positivos y negativos sin predominio,openai/gpt-oss-120b
+test,3469,muy positivo,0.96,"Entusiasmo claro, recomienda fuertemente",openai/gpt-oss-120b
+test,231,negativo,0.9,"Insatisfacción por demoras y aglomeración, sugiere alternativas",openai/gpt-oss-120b
+test,2543,positivo,0.85,"Elogia variedad y comodidad, menciona atención deficiente",openai/gpt-oss-120b
+test,55,neutral,0.8,Comentario informativo sin valoración,openai/gpt-oss-120b
+test,4201,muy negativo,0.97,Queja grave de atención y promesas incumplidas,openai/gpt-oss-120b
+test,3874,positivo,0.88,Comentario breve pero favorable,openai/gpt-oss-120b
+test,217,negativo,0.85,Expresa insatisfacción por ausencia de sistema,openai/gpt-oss-120b
+test,570,neutral,0.84,"Alaba atención, critica larga espera y lentitud",openai/gpt-oss-120b
+test,2710,positivo,0.9,"Precio bueno y poca espera, satisfacción moderada",openai/gpt-oss-120b
+test,4095,neutral,0.85,Equilibrio entre buen servicio y problemas de stock,openai/gpt-oss-120b
+test,4490,muy negativo,0.96,"Experiencia grave, riesgo de intoxicación, queja fuerte",openai/gpt-oss-120b
+test,3708,positivo,0.88,Comentario breve y favorable,openai/gpt-oss-120b
+test,1380,muy positivo,0.92,Elogio amplio y entusiasta del establecimiento,openai/gpt-oss-120b
+test,2294,negativo,0.88,Critica personal pese a instalaciones limpias,openai/gpt-oss-120b
+test,4309,neutral,0.8,Texto informativo sin valoración,openai/gpt-oss-120b
+test,1477,positivo,0.9,"Elogio a variedad y calidad, sugerencia leve",openai/gpt-oss-120b
+test,1021,muy negativo,0.96,"Queja grave por cobro indebido y burla al cliente, sugiere no ir.",openai/gpt-oss-120b
+test,947,positivo,0.94,"Elogio a la atención rápida y bioseguridad, indica buena experiencia.",openai/gpt-oss-120b
+test,1395,negativo,0.92,Larga fila y escaso personal generan insatisfacción al recoger compras.,openai/gpt-oss-120b
+test,621,negativo,0.93,"Falta de ticket preferencial y equipos, muestra clara insatisfacción.",openai/gpt-oss-120b
+test,4217,negativo,0.91,"Muchas quejas sobre higiene y accesibilidad, pese a precios aceptables.",openai/gpt-oss-120b
+test,2463,positivo,0.95,"Elogia orden, limpieza y personal competente, anima a seguir mejorando.",openai/gpt-oss-120b
+test,926,muy negativo,0.96,"Personal descortés y distraído, queja grave que desaconseja el servicio.",openai/gpt-oss-120b
+test,1229,positivo,0.94,"Prefiere tienda física, entrega rápida y buena variedad, satisfacción moderada.",openai/gpt-oss-120b
+test,1002,positivo,0.95,"Atención rápida en cita programada, experiencia satisfactoria.",openai/gpt-oss-120b
+test,4066,neutral,0.9,Comentario informativo sobre ropa básica útil en emergencias.,openai/gpt-oss-120b
+test,1184,negativo,0.92,"Escasez de cajeras y largas esperas, genera insatisfacción.",openai/gpt-oss-120b
+test,572,negativo,0.91,"Proceso de compra lento, aunque personal amable, causa insatisfacción.",openai/gpt-oss-120b
+test,4092,neutral,0.88,"Observación mixta sobre ubicación de tiendas, sin fuerte preferencia.",openai/gpt-oss-120b
+test,4584,muy positivo,0.97,"Entusiasta elogio, super descuentos y ambiente agradable, visita altamente recomendada.",openai/gpt-oss-120b
+test,2994,positivo,0.94,"Elogio a la amabilidad del personal, satisfacción evidente.",openai/gpt-oss-120b
+test,1179,positivo,0.93,"Reconoce mejoras y sugiere capacitación, tono constructivo y positivo.",openai/gpt-oss-120b
+test,219,negativo,0.9,"Restricción de acceso a cajeros fuera de horario, queja clara.",openai/gpt-oss-120b
+test,3535,negativo,0.91,"Critica presentación de ropa, sugiere mejoras en exhibición.",openai/gpt-oss-120b
+test,1992,muy negativo,0.96,"Falta de atención a mayores y trato despótico, queja grave.",openai/gpt-oss-120b
+test,3179,muy positivo,0.95,"Recomendación entusiasta, destaca descuentos y preferencia por la tienda.",openai/gpt-oss-120b
+test,3823,muy negativo,0.95,"Quejas graves de lentitud y discriminación, tono muy negativo",openai/gpt-oss-120b
+test,3830,muy negativo,0.96,"Enojo intenso, críticas severas al personal y servicio",openai/gpt-oss-120b
+test,3329,positivo,0.9,Elogio moderado de variedad y organización,openai/gpt-oss-120b
+test,3976,positivo,0.85,"Mayormente positivo, aunque menciona colas largas",openai/gpt-oss-120b
+test,2275,muy negativo,0.97,"Queja grave de retrasos y mentiras, recomendación negativa",openai/gpt-oss-120b
+test,3466,positivo,0.84,"Elogio general, con observaciones negativas menores",openai/gpt-oss-120b
+test,1909,muy positivo,0.93,"Entusiasmo claro, recomienda volver",openai/gpt-oss-120b
+test,3767,positivo,0.8,Comentario breve pero positivo,openai/gpt-oss-120b
+test,1802,positivo,0.85,Elogio moderado del patio de comida y variedad,openai/gpt-oss-120b
+test,2983,neutral,0.8,Balance entre satisfacción y queja de cajas automáticas,openai/gpt-oss-120b
+test,4109,positivo,0.86,"Elogio fuerte, con inconveniente menor de transporte",openai/gpt-oss-120b
+test,3932,muy positivo,0.94,"Entusiasmo y recomendación clara, elogios predominantes",openai/gpt-oss-120b
+test,3107,neutral,0.78,"Comentario equilibrado, menciona falta de zapatos nacionales",openai/gpt-oss-120b
+test,894,muy negativo,0.95,Queja fuerte de mala atención y falta de solución,openai/gpt-oss-120b
+test,449,positivo,0.85,"Elogio a la atención, con mención breve de cola",openai/gpt-oss-120b
+test,4462,positivo,0.8,Comentario breve pero favorable,openai/gpt-oss-120b
+test,3690,muy positivo,0.92,"Entusiasmo claro, recomendación positiva",openai/gpt-oss-120b
+test,88,muy positivo,0.9,Comentario breve pero altamente entusiasta,openai/gpt-oss-120b
+test,1570,negativo,0.8,"Queja de discriminación, aunque menciona intención de volver",openai/gpt-oss-120b
+test,370,muy negativo,0.94,Fuerte queja de ineficiencia y larga espera,openai/gpt-oss-120b
+test,2949,positivo,0.85,"Elogia variedad, calidad y ofertas, sin quejas.",openai/gpt-oss-120b
+test,2619,muy positivo,0.9,"Entusiasmo claro, recomienda la tienda y tarjeta.",openai/gpt-oss-120b
+test,2846,positivo,0.8,"Elogia tienda y ofertas, menciona demoras en caja.",openai/gpt-oss-120b
+test,4623,neutral,0.7,"Solo describe variedad, sin valoración.",openai/gpt-oss-120b
+test,3615,positivo,0.8,"Elogia variedad, precios y limpieza sin quejas.",openai/gpt-oss-120b
+test,1038,muy negativo,0.95,"Quejas graves, servicio pésimo y burlas.",openai/gpt-oss-120b
+test,1496,positivo,0.8,"Elogia atención, menciona duda menor.",openai/gpt-oss-120b
+test,652,muy negativo,0.85,"Larga espera y falta de producto, califica servicio pésimo.",openai/gpt-oss-120b
+test,983,positivo,0.85,Elogia atención rápida y poca fila.,openai/gpt-oss-120b
+test,2697,neutral,0.75,"Elogia tienda y atención, critica largas colas.",openai/gpt-oss-120b
+test,66,positivo,0.8,"Indica mejora continua, tono positivo.",openai/gpt-oss-120b
+test,2716,positivo,0.85,Elogia rapidez y ausencia de filas.,openai/gpt-oss-120b
+test,583,positivo,0.8,"Buen trato y servicio, advierte colas.",openai/gpt-oss-120b
+test,690,negativo,0.85,Critica atención regular y largas esperas.,openai/gpt-oss-120b
+test,3713,muy positivo,0.8,"Elogia disposición y ambiente, tono entusiasta.",openai/gpt-oss-120b
+test,2505,positivo,0.8,"Elogia tienda, menciona máquina de precios fuera.",openai/gpt-oss-120b
+test,3043,neutral,0.75,Describe variedad y precios sin valoración clara.,openai/gpt-oss-120b
+test,3187,positivo,0.85,Elogia atención amable y todo bien.,openai/gpt-oss-120b
+test,4163,positivo,0.8,"Alaba protocolos y orden, tono positivo.",openai/gpt-oss-120b
+test,1387,muy positivo,0.85,"Entusiasmo al comprar, destaca seguridad y felicidad.",openai/gpt-oss-120b
+test,4067,neutral,0.78,"Atención medianamente buena, falta amabilidad, menciona promociones.",openai/gpt-oss-120b
+test,683,negativo,0.85,"Espera larga y falta de ayudantes, queja clara.",openai/gpt-oss-120b
+test,3219,muy negativo,0.95,"Seguridad grosera, humillación, experiencia muy negativa.",openai/gpt-oss-120b
+test,2694,muy positivo,0.9,"Retiro rápido y excelente, recomienda fuertemente.",openai/gpt-oss-120b
+test,3336,positivo,0.85,"Atención rápida, orden, amable, beneficios, tono positivo.",openai/gpt-oss-120b
+test,2293,negativo,0.88,"Personal ineficiente, largas colas, atención lenta, queja fuerte.",openai/gpt-oss-120b
+test,4303,positivo,0.8,"Resalta buen servicio, tono positivo.",openai/gpt-oss-120b
+test,705,neutral,0.75,"Seguro y cómodo, pero falta variedad de tiendas.",openai/gpt-oss-120b
+test,2982,positivo,0.85,"Buenos productos y servicio, pasillos amplios, limpio.",openai/gpt-oss-120b
+test,2350,muy positivo,0.88,"Muy buena atención y rapidez, entusiasmo.",openai/gpt-oss-120b
+test,302,positivo,0.82,"Excelente trato, cola larga, pero atención oportuna.",openai/gpt-oss-120b
+test,4448,muy positivo,0.8,"Solo estrellas por el bistró, entusiasmo evidente.",openai/gpt-oss-120b
+test,1767,muy positivo,0.9,"Muy buena atención al cliente, elogio fuerte.",openai/gpt-oss-120b
+test,1533,neutral,0.7,"Menciona precio de cafetera, sin valoración.",openai/gpt-oss-120b
+test,4615,positivo,0.8,"Personal amable, variedad, nota de llevar bolsas.",openai/gpt-oss-120b
+test,1393,positivo,0.85,"Nuevas prendas, combinaciones hermosas, comentario positivo.",openai/gpt-oss-120b
+test,540,negativo,0.78,"Horario corto, queja sobre disponibilidad.",openai/gpt-oss-120b
+test,3522,muy negativo,0.85,Queja fuerte por cobro de estacionamiento.,openai/gpt-oss-120b
+test,2061,neutral,0.7,Descripción neutral de conservación histórica.,openai/gpt-oss-120b
+test,2335,positivo,0.78,"Agencia atendió bien, contraste con otra, tono positivo.",openai/gpt-oss-120b
+test,758,muy positivo,0.97,"Elogio entusiasta, destaca excelente atención y recomienda continuar.",openai/gpt-oss-120b
+test,531,negativo,0.94,"Queja clara por larga espera, muestra insatisfacción moderada.",openai/gpt-oss-120b
+test,2452,positivo,0.92,"Elogio a atención dinámica, aunque reconoce que suele ser diferente.",openai/gpt-oss-120b
+test,3697,muy negativo,0.96,"Denuncia estafa y mala calidad, tono de enojo y rechazo total.",openai/gpt-oss-120b
+test,1406,positivo,0.9,"Comentario breve, elogia ropa y sugiere recomendación.",openai/gpt-oss-120b
+test,4219,muy negativo,0.97,"Critica grave higiene y servicio, menciona falta de respuesta y accesibilidad.",openai/gpt-oss-120b
+test,4197,negativo,0.91,"Señala ofertas limitadas y precios altos, tono crítico.",openai/gpt-oss-120b
+test,3001,positivo,0.93,"Resalta buena organización y rapidez, satisfacción moderada.",openai/gpt-oss-120b
+test,2583,muy positivo,0.96,"Elogio entusiasta a ofertas, atención y rapidez.",openai/gpt-oss-120b
+test,2588,positivo,0.89,"Destaca precios cómodos y accesibles, tono favorable.",openai/gpt-oss-120b
+test,172,muy positivo,0.95,"Elogio fuerte y motivador, recomienda seguir adelante.",openai/gpt-oss-120b
+test,522,muy negativo,0.98,Queja vehemente por atención pésima y personal grosero.,openai/gpt-oss-120b
+test,454,neutral,0.88,Descripción informativa sin fuerte valoración positiva ni negativa.,openai/gpt-oss-120b
+test,3104,muy positivo,0.94,Elogio amplio y recomendación clara a visitar.,openai/gpt-oss-120b
+test,3834,muy negativo,0.96,"Denuncia mala atención y retención de dinero, tono muy crítico.",openai/gpt-oss-120b
+test,3128,neutral,0.87,"Queja por error de precio, pero se resolvió, tono equilibrado.",openai/gpt-oss-120b
+test,1927,positivo,0.92,Expresa satisfacción general y buen orden del supermercado.,openai/gpt-oss-120b
+test,3585,positivo,0.9,"Resalta variedad y calidad, comparación favorable, tono positivo.",openai/gpt-oss-120b
+test,4417,muy positivo,0.93,"Elogio breve y entusiasta con emoji, recomienda productos.",openai/gpt-oss-120b
+test,2352,muy negativo,0.97,"Critica asesoramiento pésimo y personal incapaz, tono fuertemente negativo.",openai/gpt-oss-120b
+test,4259,positivo,0.88,"Personal atento, gran variedad y precios competitivos, ubicación conveniente.",openai/gpt-oss-120b
+test,2814,positivo,0.9,"Buen equipo y precios, pero necesita mejor distribución; lo recomiendo.",openai/gpt-oss-120b
+test,329,muy negativo,0.96,"Arrogancia, lentitud extrema, falta de respeto al cliente.",openai/gpt-oss-120b
+test,1257,muy positivo,0.92,"Me gusta mucho, ofertas, espacio cómodo con agua caliente.",openai/gpt-oss-120b
+test,3986,muy positivo,0.95,"Servicio excelente, gran variedad, ofertas atractivas, tienda muy grande.",openai/gpt-oss-120b
+test,2080,neutral,0.84,"Buena atención y productos, pero no permiten portabilidad prepago.",openai/gpt-oss-120b
+test,1207,positivo,0.87,"Muchísima variedad, aconseja ir entre semana para evitar aglomeración.",openai/gpt-oss-120b
+test,2139,muy negativo,0.98,"Gran estafa, atención terrible, robos, largas esperas, sin respuesta.",openai/gpt-oss-120b
+test,1397,positivo,0.86,Eficiente y rápido en atención y solución de problemas.,openai/gpt-oss-120b
+test,470,positivo,0.82,Muy buena atención de los asistentes de los módulos.,openai/gpt-oss-120b
+test,3859,muy negativo,0.97,"Vigilador robó pedido, total asco, inseguridad, denuncia.",openai/gpt-oss-120b
+test,1724,neutral,0.9,"Información sobre local amplio, cine cercano, tiendas y cajeros.",openai/gpt-oss-120b
+test,2815,positivo,0.85,"Amplio, todo disponible, buenos precios y variedad.",openai/gpt-oss-120b
+test,3756,positivo,0.88,"Protocolos, marcas, ofertas; recomienda ir entre semana por aforo.",openai/gpt-oss-120b
+test,367,muy negativo,0.95,"No atienden cuentas corporativas, app falla, caos, sin solución.",openai/gpt-oss-120b
+test,3642,positivo,0.8,Me gustan los productos que vende.,openai/gpt-oss-120b
+test,2221,positivo,0.8,"Amplio, buena atención, bien ubicado.",openai/gpt-oss-120b
+test,1453,neutral,0.86,"Buena ubicación, estacionamiento difícil, portafolio reducido, prefiero Ripley.",openai/gpt-oss-120b
+test,2828,positivo,0.86,"Buen lugar, amplio estacionamiento, productos variados, encontré lo necesario.",openai/gpt-oss-120b
+test,1537,muy positivo,0.9,"Tienda renovada, buena atención, recomiendo visitar.",openai/gpt-oss-120b
+test,1286,muy negativo,0.98,"Queja grave, servicio pésimo, devolución imposible",openai/gpt-oss-120b
+test,1259,negativo,0.85,"Variedad buena, pero colas lentas generan insatisfacción",openai/gpt-oss-120b
+test,241,positivo,0.9,Elogio claro a la atención,openai/gpt-oss-120b
+test,1915,muy positivo,0.95,Elogio entusiasta de productos y precios,openai/gpt-oss-120b
+test,2344,muy positivo,0.93,Elogio fuerte a la atención y solución,openai/gpt-oss-120b
+test,1143,negativo,0.84,"Ambiente amable, pero problemas se manejan terriblemente",openai/gpt-oss-120b
+test,1312,neutral,0.8,Solo describe variedad sin juicio,openai/gpt-oss-120b
+test,1686,neutral,0.78,"Describe tienda, atención regular, sin fuerte valoración",openai/gpt-oss-120b
+test,2271,muy negativo,0.97,"Larga espera, califica como pésimo, fuerte queja",openai/gpt-oss-120b
+test,4126,muy positivo,0.92,"Elogio amplio surtido, atención y seguridad, tono entusiasta",openai/gpt-oss-120b
+test,3889,positivo,0.88,"Elogio a la atención, tono positivo",openai/gpt-oss-120b
+test,1448,neutral,0.8,"Ayuda al comprar, pero devolución lenta, balanceado",openai/gpt-oss-120b
+test,4711,muy positivo,0.95,"Elogio entusiasta, tienda quedó espectacular",openai/gpt-oss-120b
+test,1133,muy negativo,0.96,"Queja grave por falta de protocolo, desaconseja visita",openai/gpt-oss-120b
+test,3265,positivo,0.9,Elogio a amplitud y atención eficiente,openai/gpt-oss-120b
+test,4205,negativo,0.85,Critica precios ocultos y falta de ofertas,openai/gpt-oss-120b
+test,1957,neutral,0.75,"Solo menciona existencia de ofertas, sin juicio",openai/gpt-oss-120b
+test,1210,positivo,0.88,Elogia variedad y ropa de invierno,openai/gpt-oss-120b
+test,921,muy negativo,0.97,"Experiencia horrible, atención no asume responsabilidad",openai/gpt-oss-120b
+test,2152,muy negativo,0.96,"Queja extensa, advierte que perderás tiempo",openai/gpt-oss-120b
+test,4634,muy positivo,0.96,Elogia mucho la tienda y su atención,openai/gpt-oss-120b
+test,2151,negativo,0.94,Queja por falta de cobertura y cambio a otro proveedor,openai/gpt-oss-120b
+test,812,negativo,0.95,Indica falta de atención al público,openai/gpt-oss-120b
+test,3821,muy negativo,0.97,Enojo por engaño y falta de atención,openai/gpt-oss-120b
+test,4212,negativo,0.9,Elogia variedad pero critica falta de accesibilidad,openai/gpt-oss-120b
+test,2895,muy positivo,0.96,Alaba mucho el buffet y el servicio rápido,openai/gpt-oss-120b
+test,876,neutral,0.85,Texto sin opinión clara,openai/gpt-oss-120b
+test,1773,neutral,0.85,Texto meramente informativo sin valoración,openai/gpt-oss-120b
+test,728,positivo,0.93,Recomienda el centro y destaca buen servicio,openai/gpt-oss-120b
+test,2591,positivo,0.92,Elogia comodidad de la ropa comparada con otras tiendas,openai/gpt-oss-120b
+test,539,muy negativo,0.98,Expresa enojo y describe desastre total,openai/gpt-oss-120b
+test,1315,muy negativo,0.98,"Queja grave, acusa falta de servicio y engaño",openai/gpt-oss-120b
+test,2330,muy positivo,0.96,Elogia atención y la califica mejor que otras oficinas,openai/gpt-oss-120b
+test,1704,positivo,0.9,"Destaca calidad y ubicación, menciona precios altos",openai/gpt-oss-120b
+test,3929,muy positivo,0.96,Resalta múltiples aspectos positivos del supermercado,openai/gpt-oss-120b
+test,2558,muy positivo,0.95,Elogia orden y atención recomendando,openai/gpt-oss-120b
+test,680,negativo,0.93,Se queja de larga espera para ser atendido,openai/gpt-oss-120b
+test,2934,negativo,0.9,Describe problemas de acceso y atención confusa,openai/gpt-oss-120b
+test,4655,muy positivo,0.94,Muestra entusiasmo por la venta diaria del chuculum,openai/gpt-oss-120b
+test,4088,negativo,0.92,Enumera varios problemas de infraestructura y servicio,openai/gpt-oss-120b
+test,569,negativo,0.85,"Lenta, larga espera, queja mayor que elogio",openai/gpt-oss-120b
+test,3349,neutral,0.7,Comentario mixto sin clara polaridad,openai/gpt-oss-120b
+test,3706,negativo,0.75,"Quejas sobre tiendas y ubicación, pese a cierre positivo",openai/gpt-oss-120b
+test,2104,muy negativo,0.95,"Queja grave, abuso, recomienda no ir",openai/gpt-oss-120b
+test,4600,muy positivo,0.9,"Entusiasta, elogios sin reservas, experiencia excelente",openai/gpt-oss-120b
+test,2278,negativo,0.8,"Confusión en pagos, insatisfacción clara",openai/gpt-oss-120b
+test,1786,positivo,0.85,"Elogios moderados, experiencia agradable y segura",openai/gpt-oss-120b
+test,931,negativo,0.85,"Lentitud en atención, queja clara",openai/gpt-oss-120b
+test,2253,muy negativo,0.95,"Abusivo, pérdida de tiempo y dinero, fuerte queja",openai/gpt-oss-120b
+test,3489,positivo,0.8,"Elogios y buenas ofertas, tono positivo",openai/gpt-oss-120b
+test,2899,positivo,0.9,Comentario breve y positivo,openai/gpt-oss-120b
+test,342,neutral,0.7,"Comentario mixto, ni totalmente positivo ni negativo",openai/gpt-oss-120b
+test,3499,negativo,0.85,"Queja sobre precios, experiencia mala",openai/gpt-oss-120b
+test,2569,neutral,0.75,"Elogio de precios y queja de atención, equilibrio",openai/gpt-oss-120b
+test,514,muy negativo,0.95,"Queja grave, falta de solución, tono enfadado",openai/gpt-oss-120b
+test,453,positivo,0.9,"Elogio con recomendación, tono positivo",openai/gpt-oss-120b
+test,2571,positivo,0.85,"Comentario breve, elogio del precio",openai/gpt-oss-120b
+test,4053,muy negativo,0.95,"Queja fuerte sobre cobro de baño, ética cuestionada",openai/gpt-oss-120b
+test,1145,negativo,0.8,"Queja sobre gerente y precios, insatisfacción clara",openai/gpt-oss-120b
+test,910,muy negativo,0.95,"Queja grave, falta de solución, tono enfadado",openai/gpt-oss-120b
+test,2620,positivo,0.92,"Elogia ambiente y productos, sin quejas.",openai/gpt-oss-120b
+test,1118,muy positivo,0.96,Expresión corta de alta satisfacción.,openai/gpt-oss-120b
+test,3152,positivo,0.9,Destaca buen servicio y reembolso amable.,openai/gpt-oss-120b
+test,346,muy negativo,0.97,"Denuncia robo y falta de dinero, tono furioso.",openai/gpt-oss-120b
+test,1475,negativo,0.85,Ofertas buenas pero queja fuerte de ubicación.,openai/gpt-oss-120b
+test,2277,muy negativo,0.94,Critica atención y espera de 2 horas.,openai/gpt-oss-120b
+test,4609,muy positivo,0.96,"Entusiasmo evidente, recomienda promoción.",openai/gpt-oss-120b
+test,203,muy positivo,0.9,Califica arquitectura como espectacular.,openai/gpt-oss-120b
+test,3151,neutral,0.8,Mezcla elogio y molestia por preguntas repetidas.,openai/gpt-oss-120b
+test,4180,positivo,0.9,Resalta modernidad y variedad de marcas.,openai/gpt-oss-120b
+test,4577,neutral,0.85,Descripción informativa sin valoración.,openai/gpt-oss-120b
+test,3082,positivo,0.9,"Menciona buena ubicación, variedad y atención.",openai/gpt-oss-120b
+test,4629,neutral,0.85,Descripción estructural sin juicio.,openai/gpt-oss-120b
+test,2917,muy negativo,0.98,"Quejas múltiples, no recomienda el lugar.",openai/gpt-oss-120b
+test,1125,negativo,0.88,"Se queja de cargos extra, decide no usar.",openai/gpt-oss-120b
+test,2410,negativo,0.85,"Critica proceso y larga espera, tono negativo.",openai/gpt-oss-120b
+test,3627,muy positivo,0.92,"Entusiasmo por producto, lo llama maravilla.",openai/gpt-oss-120b
+test,4408,neutral,0.85,"Lista variedad, sin opinión clara.",openai/gpt-oss-120b
+test,2755,positivo,0.9,Destaca rapidez de atención en congestión.,openai/gpt-oss-120b
+test,3778,neutral,0.85,"Describe tamaño, sin valoración.",openai/gpt-oss-120b
+test,2693,positivo,0.85,"Oferta y limpieza, pero velocidad en caja lenta.",openai/gpt-oss-120b
+test,1777,muy positivo,0.9,"Café agradable, ambiente super positivo.",openai/gpt-oss-120b
+test,4495,muy negativo,0.95,"Organización pésima, personal incapaz.",openai/gpt-oss-120b
+test,3050,neutral,0.8,"Todo correcto, sin entusiasmo ni quejas.",openai/gpt-oss-120b
+test,4775,muy positivo,0.9,Pollo excelente y experiencia divertida.,openai/gpt-oss-120b
+test,4076,muy negativo,0.96,"Producto no disponible, publicidad engañosa.",openai/gpt-oss-120b
+test,499,muy negativo,0.97,"Peor servicio, falta de empatía total.",openai/gpt-oss-120b
+test,3611,muy positivo,0.95,"Atención excelente, tienda favorita, gran entusiasmo.",openai/gpt-oss-120b
+test,1006,muy negativo,0.94,"Descuento no se cumple, se siente estafa.",openai/gpt-oss-120b
+test,1065,negativo,0.85,No ayudaron con mi solicitud.,openai/gpt-oss-120b
+test,137,negativo,0.8,"Cajero falla, no permite depósitos.",openai/gpt-oss-120b
+test,1240,positivo,0.8,Buen ambiente y seguridad.,openai/gpt-oss-120b
+test,3841,positivo,0.85,"Buena atención, cumple bioseguridad.",openai/gpt-oss-120b
+test,3101,neutral,0.75,"Variedad y auto‑pago útiles, pero ofertas molestas.",openai/gpt-oss-120b
+test,1234,positivo,0.85,Productos muy buenos.,openai/gpt-oss-120b
+test,4621,neutral,0.75,"Poca variedad, pero parqueo tranquilo.",openai/gpt-oss-120b
+test,626,muy negativo,0.95,"Cola interminable, pocos puestos funcionan.",openai/gpt-oss-120b
+test,4337,muy positivo,0.9,"Personal amable, buen servicio sin problemas.",openai/gpt-oss-120b
+test,169,muy negativo,0.85,"Solo un local recibe CTS, muy mal.",openai/gpt-oss-120b
+test,2363,muy negativo,0.96,"Movistar actúa como criminal, total desprecio.",openai/gpt-oss-120b
+test,2608,muy positivo,0.95,"Elogios, recomendación y buena atención",openai/gpt-oss-120b
+test,2206,muy negativo,0.96,"Queja grave por demoras, falta de efectivo y mala atención",openai/gpt-oss-120b
+test,3722,positivo,0.93,"Elogia ofertas y atención, tono positivo",openai/gpt-oss-120b
+test,2073,positivo,0.9,Destaca mejora en tiempo de atención,openai/gpt-oss-120b
+test,3531,muy negativo,0.97,Queja grave por falta de servicio y responsabilidad,openai/gpt-oss-120b
+test,1281,negativo,0.92,Critica largas colas y pedidos incompletos,openai/gpt-oss-120b
+test,2926,muy negativo,0.98,Denuncia robo y falta de seguridad,openai/gpt-oss-120b
+test,2530,neutral,0.88,"Comentario mixto, buen pero poca afluencia",openai/gpt-oss-120b
+test,822,neutral,0.85,Texto sin valoración clara,openai/gpt-oss-120b
+test,3277,positivo,0.9,Elogio con sugerencia de más cajeros,openai/gpt-oss-120b
+test,2341,muy positivo,0.94,Expresa excelente experiencia y recomendación,openai/gpt-oss-120b
+test,2799,negativo,0.9,"Critica precios altos y calidad, tono negativo",openai/gpt-oss-120b
+test,2484,negativo,0.9,Señala incumplimiento de horario de apertura,openai/gpt-oss-120b
+test,3367,negativo,0.92,Mala atención y falta de información,openai/gpt-oss-120b
+test,4479,muy positivo,0.96,Entusiasmo y elogio sin reservas,openai/gpt-oss-120b
+test,3014,muy positivo,0.94,"Elogio entusiasta, lo califica como mejor",openai/gpt-oss-120b
+test,4678,muy negativo,0.97,Denuncia falta de surtido y mala gestión,openai/gpt-oss-120b
+test,2496,muy negativo,0.93,"Critica atención, calor y precio, no lo recomienda",openai/gpt-oss-120b
+test,1582,positivo,0.9,Elogia ubicación y buena atención,openai/gpt-oss-120b
+test,3301,positivo,0.88,"Recomienda como alternativa, aunque menciona faltas",openai/gpt-oss-120b
+test,3888,muy positivo,0.96,Expresa gran satisfacción con la atención,openai/gpt-oss-120b
+test,1886,positivo,0.88,"Destaca variedad, menciona congestión sin quejarse fuertemente",openai/gpt-oss-120b
+test,3061,muy negativo,0.97,"Enojo intenso, denuncia insultos y maltrato, aconseja evitar",openai/gpt-oss-120b
+test,296,muy positivo,0.94,"Elogia rapidez y puntualidad, tono muy favorable",openai/gpt-oss-120b
+test,4425,muy positivo,0.96,"Alaba atención, ofertas y calidad, muestra gran entusiasmo",openai/gpt-oss-120b
+test,681,negativo,0.86,"Insatisfacción por demoras y horarios limitados, sugiere mejoras",openai/gpt-oss-120b
+test,4521,negativo,0.85,"Critica precios altos y producto con hongos, tono desfavorable",openai/gpt-oss-120b
+test,3333,muy positivo,0.94,"Elogia variedad, atención, estacionamiento y baños, tono muy positivo",openai/gpt-oss-120b
+test,3225,muy negativo,0.96,"Denuncia producto próximo a vencerse, riesgo salud, critica personal",openai/gpt-oss-120b
+test,3891,negativo,0.88,Se queja de mala atención y falta de ayuda del personal,openai/gpt-oss-120b
+test,3645,positivo,0.9,"Elogia ubicación y productos, sin quejas",openai/gpt-oss-120b
+test,3849,muy positivo,0.96,Alaba servicio excelente y ayuda en retiro de dinero,openai/gpt-oss-120b
+test,4770,positivo,0.85,"Elogia servicio, menciona problema de arroz con gusanos",openai/gpt-oss-120b
+test,641,muy negativo,0.97,"Denuncia cobro excesivo, los llama ladrones, tono muy hostil",openai/gpt-oss-120b
+test,3287,positivo,0.88,"Reconoce limitaciones, valora renovación y mejora, tono positivo",openai/gpt-oss-120b
+test,3047,muy positivo,0.96,Expresa amor y entusiasmo extremo por la cadena,openai/gpt-oss-120b
+test,2656,positivo,0.88,"Destaca ofertas, menciona seguridad molesta, tono mayormente positivo",openai/gpt-oss-120b
+test,3777,positivo,0.88,"Califica como bueno para comer y comprar, tono favorable",openai/gpt-oss-120b
+test,112,neutral,0.9,Comentario informativo sin valoración positiva ni negativa,openai/gpt-oss-120b
+test,885,muy negativo,0.97,"Critica servicio, personal lento y falta de atención, tono muy negativo",openai/gpt-oss-120b
+test,868,muy positivo,0.95,Expresa entusiasmo y recomendación clara,openai/gpt-oss-120b
+test,1167,neutral,0.8,Mezcla elogios y quejas sin dominio claro,openai/gpt-oss-120b
+test,4347,muy negativo,0.95,"Queja grave, enojo y crítica al servicio",openai/gpt-oss-120b
+test,3749,muy positivo,0.9,"Entusiasmo claro, recomienda y elogia precios y ofertas",openai/gpt-oss-120b
+test,2180,muy negativo,0.96,"Experiencia muy mala, queja grave y recomendación de evitar",openai/gpt-oss-120b
+test,121,positivo,0.75,Comentario breve y positivo sin exageración,openai/gpt-oss-120b
+test,1026,muy negativo,0.94,"Queja severa, atención pésima y falta de solución",openai/gpt-oss-120b
+test,1807,neutral,0.7,Observación informativa sin valoración clara,openai/gpt-oss-120b
+test,3274,neutral,0.78,Elogia variedad pero critica ausencia de cajeros,openai/gpt-oss-120b
+test,3368,negativo,0.8,"Queja sobre información falsa, insatisfacción moderada",openai/gpt-oss-120b
+test,4131,positivo,0.85,"Elogio amplio, destaca comodidad y precios sin exageración",openai/gpt-oss-120b
+test,979,positivo,0.78,"Servicio rápido y amable, aunque menciona problema de parqueo",openai/gpt-oss-120b
+test,2557,positivo,0.88,"Elogia variedad y ofertas, tono favorable",openai/gpt-oss-120b
+test,54,neutral,0.6,Simple descripción sin valoración,openai/gpt-oss-120b
+test,1050,muy negativo,0.96,Denuncia servicio pésimo y acusaciones graves,openai/gpt-oss-120b
+test,895,muy negativo,0.94,Queja fuerte sobre atención y falta de solución,openai/gpt-oss-120b
+test,82,positivo,0.85,"Elogia atención eficiente y amabilidad, tono positivo",openai/gpt-oss-120b
+test,4025,positivo,0.8,Comentario breve y favorable sobre calidad,openai/gpt-oss-120b
+test,486,muy positivo,0.9,"Entusiasmo claro, elogia atención personalizada",openai/gpt-oss-120b
+test,2199,negativo,0.78,Elogia personal pero critica políticas y frecuentes reclamos,openai/gpt-oss-120b
+test,207,muy positivo,0.97,"Elogio entusiasta, recomienda fuertemente.",openai/gpt-oss-120b
+test,3785,positivo,0.92,Elogio claro sin exageración.,openai/gpt-oss-120b
+test,1768,positivo,0.9,"Comentario positivo, sin quejas.",openai/gpt-oss-120b
+test,3097,muy positivo,0.96,"Elogio entusiasta, recomienda ampliamente.",openai/gpt-oss-120b
+test,4085,muy positivo,0.95,"Elogio fuerte, recomendación clara.",openai/gpt-oss-120b
+test,1491,positivo,0.9,"Elogio y promoción, sin quejas.",openai/gpt-oss-120b
+test,1291,muy negativo,0.98,"Queja grave, discriminación, recomienda no ir.",openai/gpt-oss-120b
+test,872,negativo,0.9,"Insatisfacción clara, sin exageración.",openai/gpt-oss-120b
+test,536,muy negativo,0.97,"Queja fuerte, experiencia horrorosa.",openai/gpt-oss-120b
+test,3446,neutral,0.88,"Comentario mixto, elogio y sugerencia de mejora.",openai/gpt-oss-120b
+test,3548,positivo,0.91,"Elogio entusiasta, sin quejas.",openai/gpt-oss-120b
+test,2679,positivo,0.9,"Comentario positivo, sin críticas.",openai/gpt-oss-120b
+test,2112,muy negativo,0.99,"Enojo extremo, queja grave.",openai/gpt-oss-120b
+test,3666,muy negativo,0.98,"Queja fuerte, servicio pésimo.",openai/gpt-oss-120b
+test,1502,positivo,0.92,"Elogio positivo, sin críticas.",openai/gpt-oss-120b
+test,2838,positivo,0.9,"Comentario positivo, sin críticas.",openai/gpt-oss-120b
+test,3485,positivo,0.88,"Elogio con sugerencia, tono mayormente positivo.",openai/gpt-oss-120b
+test,105,neutral,0.85,Texto informativo sin valoración.,openai/gpt-oss-120b
+test,3651,neutral,0.87,Elogio y queja equilibrados.,openai/gpt-oss-120b
+test,403,muy negativo,0.96,"Queja grave de larga espera, tono enfadado.",openai/gpt-oss-120b
+test,3065,muy negativo,0.97,"Entrega no llegó, servicio fatal, sin devolución.",openai/gpt-oss-120b
+test,3429,positivo,0.94,"Lugar bueno pero falta bioseguridad, sigue recomendando.",openai/gpt-oss-120b
+test,2609,positivo,0.93,"Buenas marcas y poca gente, positivo en Covid.",openai/gpt-oss-120b
+test,3676,negativo,0.92,"2X1 caro, no vale la pena.",openai/gpt-oss-120b
+test,3670,muy negativo,0.97,"Pésima atención, colas interminables, muy negativo.",openai/gpt-oss-120b
+test,3553,negativo,0.91,"Buenos precios, pero sin AC, poca luz, personal escaso.",openai/gpt-oss-120b
+test,3671,muy negativo,0.96,"Desorden total, público maleducado, muy negativo.",openai/gpt-oss-120b
+test,3200,muy positivo,0.98,"Excelente atención, seguridad, placer comprar siempre.",openai/gpt-oss-120b
+test,4,negativo,0.9,"Falta de estacionamiento, inconveniente.",openai/gpt-oss-120b
+test,3227,negativo,0.9,"Cobran por 5 minutos, abuso, negativo.",openai/gpt-oss-120b
+test,429,negativo,0.9,"Demoran mucho, atención presencial lenta, negativo.",openai/gpt-oss-120b
+test,2367,muy negativo,0.97,"Pesima atención, desinformados, despotas, muy negativo.",openai/gpt-oss-120b
+test,1035,muy negativo,0.96,"Pésima experiencia, procesos no explicados, muy negativo.",openai/gpt-oss-120b
+test,3473,muy positivo,0.98,"Muy bueno, atención amable, seguridad, me encantó.",openai/gpt-oss-120b
+test,655,negativo,0.89,"Atención lenta, personal insuficiente, negativo.",openai/gpt-oss-120b
+test,3282,positivo,0.94,"POS rápido, sin colas, positivo.",openai/gpt-oss-120b
+test,3278,muy positivo,0.98,"Garantía comprar, mejor que Metro, muy positivo.",openai/gpt-oss-120b
+test,2027,negativo,0.89,"Empresa incapaz de solucionar, negativo.",openai/gpt-oss-120b
+test,1675,negativo,0.88,"Falta aire acondicionado, prefiero otro, negativo.",openai/gpt-oss-120b
+test,3720,neutral,0.85,"Buen lugar, lactario poco accesible, neutral.",openai/gpt-oss-120b
+test,4038,positivo,0.9,"Elogio claro, sin quejas",openai/gpt-oss-120b
+test,2211,muy positivo,0.95,"Entusiasta, destaca excelente servicio y solución",openai/gpt-oss-120b
+test,211,neutral,0.85,Comentario informativo sin valoración positiva ni negativa,openai/gpt-oss-120b
+test,1504,positivo,0.88,"Mayoría de elogios, menciona una pequeña queja",openai/gpt-oss-120b
+test,3081,negativo,0.9,Queja clara sobre aglomeración y falta de normas,openai/gpt-oss-120b
+test,3018,positivo,0.9,"Elogios a facilidades, sin quejas ni entusiasmo extremo",openai/gpt-oss-120b
+test,2908,muy negativo,0.96,Queja grave de mal servicio y producto defectuoso,openai/gpt-oss-120b
+test,1090,positivo,0.85,"Elogio breve a la atención, sin exceso de entusiasmo",openai/gpt-oss-120b
+test,274,neutral,0.84,"Combina elogios y queja de cola, sin predominancia clara",openai/gpt-oss-120b
+test,1170,positivo,0.88,"Resalta comodidades, sin quejas, tono favorable",openai/gpt-oss-120b
+test,201,positivo,0.85,"Elogio breve a la atención, sin exageración",openai/gpt-oss-120b
+test,2725,muy positivo,0.94,"Entusiasta, destaca rapidez, orden y excelente atención",openai/gpt-oss-120b
+test,1202,positivo,0.85,"Elogio general sin quejas, tono moderado",openai/gpt-oss-120b
+test,2681,neutral,0.82,"Combina crítica de calidad y elogio, sin dominio claro",openai/gpt-oss-120b
+test,3754,positivo,0.85,"Elogio breve, tono favorable",openai/gpt-oss-120b
+test,3098,positivo,0.88,"Resalta tamaño y ofertas, tono positivo moderado",openai/gpt-oss-120b
+test,3346,muy positivo,0.96,"Entusiasta, recomienda, destaca atención y variedad",openai/gpt-oss-120b
+test,4447,positivo,0.86,"Elogio general y buena atención, tono favorable",openai/gpt-oss-120b
+test,766,negativo,0.9,Queja breve sobre calidad de productos,openai/gpt-oss-120b
+test,1913,muy positivo,0.95,"Elogio amplio, recomienda como ideal para compras",openai/gpt-oss-120b
+test,1272,muy positivo,0.95,"Elogio entusiasta, recomienda fuertemente",openai/gpt-oss-120b
+test,357,muy positivo,0.97,"Elogio breve, muestra gran satisfacción",openai/gpt-oss-120b
+test,1625,muy negativo,0.96,"Queja grave, pérdida de dinero, recomienda no ir",openai/gpt-oss-120b
+test,3246,positivo,0.85,"Elogio general, menciona inconveniente menor",openai/gpt-oss-120b
+test,39,negativo,0.88,"Insatisfacción clara, critica costos y calidad",openai/gpt-oss-120b
+test,2246,muy negativo,0.95,Queja grave de atención lenta y mala,openai/gpt-oss-120b
+test,4491,muy negativo,0.94,"Experiencia negativa, falta de atención y disponibilidad",openai/gpt-oss-120b
+test,3766,positivo,0.85,"Comentario positivo breve, sin entusiasmo extremo",openai/gpt-oss-120b
+test,1409,muy positivo,0.9,Elogio entusiasta del centro comercial,openai/gpt-oss-120b
+test,3164,muy positivo,0.96,"Elogio entusiasta, recomienda fuertemente",openai/gpt-oss-120b
+test,4588,positivo,0.88,Comentario positivo sobre orden y mejoras,openai/gpt-oss-120b
+test,2495,negativo,0.87,"Queja de publicidad engañosa, insatisfacción",openai/gpt-oss-120b
+test,1142,muy negativo,0.96,"Denuncia grave, advierte peligro y mala gestión",openai/gpt-oss-120b
+test,2718,positivo,0.85,"Elogio a atención, satisfacción moderada",openai/gpt-oss-120b
+test,3972,neutral,0.8,Describe pros y contras sin clara preferencia,openai/gpt-oss-120b
+test,2870,positivo,0.84,Comentario positivo sobre variedad y precios,openai/gpt-oss-120b
+test,3211,negativo,0.88,Queja de cobro excesivo y mala atención,openai/gpt-oss-120b
+test,2834,neutral,0.8,"Mezcla elogio y queja, sin polaridad clara",openai/gpt-oss-120b
+test,3324,muy positivo,0.94,"Elogio amplio, recomienda con entusiasmo",openai/gpt-oss-120b
+test,2172,muy negativo,0.95,Queja grave de falta de servicio y demora,openai/gpt-oss-120b
+test,3589,positivo,0.85,"Mayormente elogios, solo ligera queja de atención.",openai/gpt-oss-120b
+test,1376,muy positivo,0.9,"Entusiasmo claro, sin quejas, recomienda implícitamente.",openai/gpt-oss-120b
+test,3312,positivo,0.8,"Elogio simple, sin quejas.",openai/gpt-oss-120b
+test,2841,neutral,0.75,"Elogio y queja equilibrados, sin dominio claro.",openai/gpt-oss-120b
+test,1982,muy negativo,0.95,"Queja grave, enojo, sugiere no ir.",openai/gpt-oss-120b
+test,2670,positivo,0.8,"Satisfacción moderada, queja menor.",openai/gpt-oss-120b
+test,741,positivo,0.85,"Elogio simple, sin quejas.",openai/gpt-oss-120b
+test,456,neutral,0.75,"Comentario equilibrado, ni muy bueno ni malo.",openai/gpt-oss-120b
+test,4368,muy positivo,0.9,"Entusiasmo fuerte, elogio sin reservas.",openai/gpt-oss-120b
+test,1647,negativo,0.85,"Insatisfacción clara, predominan quejas.",openai/gpt-oss-120b
+test,982,positivo,0.85,"Elogio moderado, sin quejas.",openai/gpt-oss-120b
+test,3051,positivo,0.8,"Elogio mayor, pero menciona inconvenientes.",openai/gpt-oss-120b
+test,3331,muy positivo,0.9,"Elogio entusiasta, sin reservas.",openai/gpt-oss-120b
+test,375,muy negativo,0.95,"Queja grave, recomienda no ir.",openai/gpt-oss-120b
+test,610,positivo,0.8,"Elogio fuerte, preocupación menor.",openai/gpt-oss-120b
+test,4059,muy negativo,0.95,"Queja severa, tono de burla, desconfianza.",openai/gpt-oss-120b
+test,611,muy positivo,0.9,"Entusiasmo claro, elogio sin reservas.",openai/gpt-oss-120b
+test,2632,muy negativo,0.95,"Queja grave, descripción desalentadora.",openai/gpt-oss-120b
+test,2978,positivo,0.75,"Mayoría elogios, ligera queja de vestuario.",openai/gpt-oss-120b
+test,3594,muy positivo,0.85,"Elogio entusiasta, sin quejas.",openai/gpt-oss-120b
+test,4257,muy positivo,0.95,"Elogia variedad, calidad, precios, atención y recomienda fuertemente",openai/gpt-oss-120b
+test,3855,muy positivo,0.94,"Destaca excelente lugar, buena atención y responsabilidad ambiental",openai/gpt-oss-120b
+test,3508,muy negativo,0.96,"Queja grave por producto defectuoso y atención grosera, desaconseja",openai/gpt-oss-120b
+test,4246,positivo,0.88,Reconoce fila larga pero servicio rápido y buen abastecimiento,openai/gpt-oss-120b
+test,2682,neutral,0.8,Menciona falta de variedad pero califica ambiente y precios como buenos,openai/gpt-oss-120b
+test,1004,muy positivo,0.92,"Alaba rapidez y amabilidad del personal, recomienda implícitamente",openai/gpt-oss-120b
+test,1760,negativo,0.85,"Expone confusión y falta de claridad en descuentos, muestra insatisfacción",openai/gpt-oss-120b
+test,1055,muy negativo,0.96,"Denuncia asesoramiento deficiente y cobros indebidos, sugiere evitar",openai/gpt-oss-120b
+test,1115,positivo,0.84,"Recomienda lugar para comprar celular, tono favorable",openai/gpt-oss-120b
+test,3961,muy positivo,0.93,"Elogia experiencia cómoda, buena atención y limpieza, recomienda fuertemente",openai/gpt-oss-120b
+test,4518,negativo,0.82,"Combina ambiente agradable con sensación incómoda de vigilancia, genera insatisfacción",openai/gpt-oss-120b
+test,3238,positivo,0.86,"Destaca estacionamiento seguro y buena atención, tono favorable",openai/gpt-oss-120b
+test,3924,negativo,0.81,Señala escasez de personal y oferta limitada en deportes,openai/gpt-oss-120b
+test,1610,neutral,0.7,Comentario breve sin valoración positiva ni negativa,openai/gpt-oss-120b
+test,1298,muy positivo,0.94,"Elogia tamaño, variedad y experiencia, recomienda fuertemente",openai/gpt-oss-120b
+test,1468,neutral,0.78,Describe ubicación y oferta sin expresar preferencia clara,openai/gpt-oss-120b
+test,4130,positivo,0.85,"Aprecia tienda y comida, critica sistema pero sigue recomendando",openai/gpt-oss-120b
+test,4082,neutral,0.78,Combina precios bajos y cajera amable con problemas de seguridad y atención,openai/gpt-oss-120b
+test,2051,muy negativo,0.95,"Critica fuertemente a Movistar, advierte dolores de cabeza",openai/gpt-oss-120b
+test,4129,muy positivo,0.96,"Alaba atención, calidad y variedad, invita a comprar",openai/gpt-oss-120b
+test,1635,negativo,0.92,"Queja sobre atención, sin elogios",openai/gpt-oss-120b
+test,2771,negativo,0.88,"Mayoría quejas sobre comida y entrega, aunque menciona mejor atención",openai/gpt-oss-120b
+test,2466,muy negativo,0.96,"Enojo grave, fraude, denuncia, recomienda no usar",openai/gpt-oss-120b
+test,2738,positivo,0.9,"Elogio general, con pequeño inconveniente de caja llena",openai/gpt-oss-120b
+test,1766,muy positivo,0.97,"Entusiasmo y recomendación, calificación perfecta",openai/gpt-oss-120b
+test,2821,positivo,0.93,"Elogio limpio y ordenado, satisfacción",openai/gpt-oss-120b
+test,3226,negativo,0.89,Queja sobre calor y falta de confort,openai/gpt-oss-120b
+test,3895,muy negativo,0.95,Enojo fuerte por mala atención y falta de cortesía,openai/gpt-oss-120b
+test,3260,positivo,0.91,"Elogio atención y precios, con descuento",openai/gpt-oss-120b
+test,2263,muy negativo,0.94,"Fuerte queja, califica como terrible",openai/gpt-oss-120b
+test,3418,positivo,0.88,Elogio variedad y experiencia agradable,openai/gpt-oss-120b
+test,1161,negativo,0.87,Predominan quejas de servicio pese a ambiente agradable,openai/gpt-oss-120b
+test,2175,muy negativo,0.93,Enojo grave por mala atención e internet,openai/gpt-oss-120b
+test,4624,muy positivo,0.96,"Elogio amplio, destaca calidad y variedad",openai/gpt-oss-120b
+test,3647,muy positivo,0.94,Entusiasmo y recomendación clara,openai/gpt-oss-120b
+test,4181,neutral,0.85,Texto informativo sin valoración clara,openai/gpt-oss-120b
+test,1152,neutral,0.86,"Elogio variedad y descuentos, pero menciona atención lenta",openai/gpt-oss-120b
+test,776,negativo,0.9,Queja simple sobre señal deficiente,openai/gpt-oss-120b
+test,276,negativo,0.89,Queja por largas colas y mala atención,openai/gpt-oss-120b
+test,1126,muy negativo,0.97,"Enojo grave, producto dañado y servicio deficiente",openai/gpt-oss-120b
+test,650,muy negativo,0.99,"Pésima atención, sin solución, pérdida de tiempo y dinero",openai/gpt-oss-120b
+test,3472,muy positivo,0.98,"Recomienda 100%, ambiente lindo, variedad y seguridad, entusiasmo claro",openai/gpt-oss-120b
+test,2672,positivo,0.85,"Muchos productos y buen servicio, pero ropa desordenada dificulta encontrar",openai/gpt-oss-120b
+test,4252,muy positivo,0.95,"Parqueo gratuito, compras y helado cómodamente, experiencia totalmente positiva",openai/gpt-oss-120b
+test,4045,negativo,0.88,"Cobran cuotas pese a indicar sin cuotas, falta de atención",openai/gpt-oss-120b
+test,1071,muy negativo,0.97,"Atención extremadamente mala, queja grave",openai/gpt-oss-120b
+test,4352,muy negativo,0.99,"Desorden, descortesía y caos, experiencia muy negativa",openai/gpt-oss-120b
+test,2412,negativo,0.85,"Esperó 40 minutos y error en turno, insatisfacción clara",openai/gpt-oss-120b
+test,4516,positivo,0.8,"Todo bien, pero personal poco amigable, falta de cortesía",openai/gpt-oss-120b
+test,823,neutral,0.78,"Buena atención pero reclamo sin resolver, opinión mixta",openai/gpt-oss-120b
+test,4515,negativo,0.82,"Buena atención y variedad, pero espera larga y protocolos ridículos",openai/gpt-oss-120b
+test,3502,muy positivo,0.96,"Elogio entusiasta a Marco, servicio excepcional, volverá",openai/gpt-oss-120b
+test,4318,muy positivo,0.95,"Colaboradora excelente, entrenamiento destacado, felicitaciones",openai/gpt-oss-120b
+test,905,muy negativo,0.94,"Cobran intereses, no resuelven rápido, no la recomiendo",openai/gpt-oss-120b
+test,1966,positivo,0.88,"Lugar amplio, catálogo grande, cómodo y agradable",openai/gpt-oss-120b
+test,1818,negativo,0.86,"Pocas cajas y control absurdo retrasan salida, experiencia negativa",openai/gpt-oss-120b
+test,4072,negativo,0.8,"Buena atención interna, pero obras inseguras para clientes",openai/gpt-oss-120b
+test,4760,positivo,0.88,"Magnífico, variedad y precios, solo cajeras distraídas como mejora",openai/gpt-oss-120b
+test,694,negativo,0.8,"Lugar grande, pero atención incompetente, experiencia negativa",openai/gpt-oss-120b
+test,3724,muy positivo,0.94,"Buena experiencia, anfitrionas, variedad de perfumes, super recomendado",openai/gpt-oss-120b
+test,2973,positivo,0.85,"Describe ambiente tranquilo y ordenado, sin quejas.",openai/gpt-oss-120b
+test,596,negativo,0.9,Se queja de limitaciones de pago y falta de facilidades.,openai/gpt-oss-120b
+test,1848,neutral,0.8,"Menciona precios normales y estacionamiento caro, sin fuerte polaridad.",openai/gpt-oss-120b
+test,3583,negativo,0.85,Elogia ofertas pero critica falta de mobiliario e higiene.,openai/gpt-oss-120b
+test,606,positivo,0.9,"Resalta atención eficaz y seguimiento, tono satisfecho.",openai/gpt-oss-120b
+test,2297,muy negativo,0.9,"Critica falta de atención, esperas largas y ausencia de solución.",openai/gpt-oss-120b
+test,2420,muy negativo,0.95,Denuncia atención pésima y pérdida de tiempo.,openai/gpt-oss-120b
+test,1356,positivo,0.9,Elogia buena atención y ambiente agradable.,openai/gpt-oss-120b
+test,4199,muy negativo,0.98,"Denuncia trato discriminatorio y humillante, tono extremadamente negativo.",openai/gpt-oss-120b
+test,2417,negativo,0.9,"Larga espera y falta de entusiasmo, compra en otro sitio.",openai/gpt-oss-120b
+test,724,muy positivo,0.95,Expresa entusiasmo y alta recomendación.,openai/gpt-oss-120b
+test,510,negativo,0.85,Se queja de lentitud del lugar.,openai/gpt-oss-120b
+test,68,neutral,0.8,Comentario descriptivo sin emoción.,openai/gpt-oss-120b
+test,5,muy negativo,0.9,Critica cierre inesperado y pérdida de tiempo.,openai/gpt-oss-120b
+test,1691,negativo,0.85,Describe mala experiencia y recomienda no comprar rápido.,openai/gpt-oss-120b
+test,1294,muy negativo,0.9,"Denuncia ascensores rotos, tono muy crítico.",openai/gpt-oss-120b
+test,3405,muy negativo,0.95,Expresa decepción y problemas de calidad.,openai/gpt-oss-120b
+test,3762,positivo,0.8,"Resalta orden y buena ubicación, sin quejas.",openai/gpt-oss-120b
+test,2500,negativo,0.85,Critica falta de stock y mala atención.,openai/gpt-oss-120b
+test,1251,muy positivo,0.9,"Elogia completitud, orden y amabilidad del personal.",openai/gpt-oss-120b
+test,1603,muy negativo,0.95,"Queja grave por altas comisiones, sugiere evitar retiros.",openai/gpt-oss-120b
+test,2351,positivo,0.9,"Elogio simple de la atención, sin entusiasmo excesivo.",openai/gpt-oss-120b
+test,527,muy negativo,0.96,"Queja severa, falta de reembolso y plan incorrecto, califica como desastre.",openai/gpt-oss-120b
+test,72,neutral,0.85,"Solo menciona ubicación, sin valoración positiva ni negativa.",openai/gpt-oss-120b
+test,2195,negativo,0.7,"Observa poca asistencia y proceso largo, tono insatisfecho.",openai/gpt-oss-120b
+test,1510,muy positivo,0.93,"Elogio entusiasta de variedad, servicio y precios, recomienda fuertemente.",openai/gpt-oss-120b
+test,1254,positivo,0.88,"Menciona buenas ofertas y baño básico, tono positivo moderado.",openai/gpt-oss-120b
+test,2418,negativo,0.8,"Critica falta de asientos, riesgo para mayores, tono negativo.",openai/gpt-oss-120b
+test,3805,muy positivo,0.94,"Elogio entusiasta del lugar y atención, recomienda sin reservas.",openai/gpt-oss-120b
+test,407,negativo,0.65,"Indica ausencia de cable, tono de insatisfacción.",openai/gpt-oss-120b
+test,773,muy negativo,0.92,"Queja fuerte por doble fila y lentitud, tono muy negativo.",openai/gpt-oss-120b
+test,362,muy negativo,0.98,"Denuncia extrema, filas largas, personal indiferente, tono muy negativo.",openai/gpt-oss-120b
+test,3796,positivo,0.85,"Describe local amplio y cómodo, tono positivo moderado.",openai/gpt-oss-120b
+test,28,muy negativo,0.96,"Critica severamente atención y personal, tono muy negativo.",openai/gpt-oss-120b
+test,546,negativo,0.88,"Señala lentitud excesiva en atención, insatisfacción clara.",openai/gpt-oss-120b
+test,942,positivo,0.9,"Elogia buena atención y expresa esperanza, tono positivo.",openai/gpt-oss-120b
+test,4388,positivo,0.88,"Resalta calidad, pocas colas y buen estacionamiento, tono positivo.",openai/gpt-oss-120b
+test,4116,neutral,0.8,Menciona variedad y precios sin valoración positiva ni negativa.,openai/gpt-oss-120b
+test,861,neutral,0.75,"Indica capacidad y ubicación, sin juicio de calidad.",openai/gpt-oss-120b
+test,2185,muy negativo,0.9,"Queja extensa por lentitud, falta de estacionamiento y solución tardía.",openai/gpt-oss-120b
+test,1933,positivo,0.9,"Elogia el parking cubierto, sin quejas.",openai/gpt-oss-120b
+test,4189,muy positivo,0.95,"Entusiasta, destaca precios bajos y buena distribución.",openai/gpt-oss-120b
+test,2536,negativo,0.85,"Critica precios altos, aunque menciona prendas lindas.",openai/gpt-oss-120b
+test,3402,muy negativo,0.97,"Quejas extensas, servicio pésimo, recomienda no ir.",openai/gpt-oss-120b
+test,1632,muy negativo,0.96,"Esperas largas, sin solución, tono muy crítico.",openai/gpt-oss-120b
+test,801,negativo,0.8,Se queja de demoras en gestión de llaves.,openai/gpt-oss-120b
+test,1591,muy negativo,0.9,"Muy mala atención, pocas ventanillas, largas colas.",openai/gpt-oss-120b
+test,3900,muy negativo,0.95,"Experiencia mala, cobro de estacionamiento injusto, tono enfadado.",openai/gpt-oss-120b
+test,565,positivo,0.85,"Buen servicio, pero falta cercanía del personal.",openai/gpt-oss-120b
+test,4749,positivo,0.9,"Limpio, ordenado, precios buenos, buen estacionamiento.",openai/gpt-oss-120b
+test,1287,muy negativo,0.97,"Producto defectuoso, gestión lenta, exige devolución.",openai/gpt-oss-120b
+test,304,muy positivo,0.96,"Excelente atención, personal muy atento.",openai/gpt-oss-120b
+test,855,neutral,0.9,Comentario breve sin carga positiva ni negativa.,openai/gpt-oss-120b
+test,4359,muy negativo,0.88,"Balanza errónea, precio excesivo, no volverá a comprar.",openai/gpt-oss-120b
+test,4392,muy positivo,0.95,"Recomendación entusiasta de helados, vuelve siempre.",openai/gpt-oss-120b
+test,3347,muy positivo,0.96,"Elogios múltiples, recomienda el lugar.",openai/gpt-oss-120b
+test,3788,neutral,0.85,Comparación factual sin valoración clara.,openai/gpt-oss-120b
+test,421,negativo,0.8,"Atención lenta y sistemas rotos, tono crítico.",openai/gpt-oss-120b
+test,2057,positivo,0.9,"Buena atención, se sintió bien atendido.",openai/gpt-oss-120b
+test,3908,negativo,0.85,"Cobro extra inesperado, queja por rango de entrega.",openai/gpt-oss-120b
+test,339,neutral,0.96,"Solo menciona hechos, sin valoración positiva ni negativa.",openai/gpt-oss-120b
+test,2014,negativo,0.94,"Queja clara de falta de soluciones, insatisfacción evidente.",openai/gpt-oss-120b
+test,1871,positivo,0.92,"Elogia variedad y ofertas, tono favorable sin exageración.",openai/gpt-oss-120b
+test,3686,muy negativo,0.95,"Queja fuerte sobre estacionamiento y tráfico, desaconseja la visita.",openai/gpt-oss-120b
+test,3191,muy positivo,0.96,"Recomendación entusiasta, destaca buena atención y precios.",openai/gpt-oss-120b
+test,4658,negativo,0.9,Critica política de fotos pese a limpieza; predominio negativo.,openai/gpt-oss-120b
+test,3863,negativo,0.88,"Denuncia larga espera y personal insuficiente, tono negativo.",openai/gpt-oss-120b
+test,2943,neutral,0.9,"Menciona tanto problemas como ventajas, balance neutral.",openai/gpt-oss-120b
+test,3290,positivo,0.92,"Califica tienda por encima del promedio, comentario positivo.",openai/gpt-oss-120b
+test,1036,muy negativo,0.95,"Se queja de servicio cancelado y ruido, tono muy negativo.",openai/gpt-oss-120b
+test,2048,negativo,0.88,"Sugiere mejora en atención, queja moderada.",openai/gpt-oss-120b
+test,3810,negativo,0.9,"Se lamenta del tipo de cambio y comisión, insatisfacción.",openai/gpt-oss-120b
+test,3547,neutral,0.85,"Problema de retiro online, pero destaca atención amable; neutral.",openai/gpt-oss-120b
+test,255,muy negativo,0.96,"Describe instalaciones deterioradas, tono fuertemente negativo.",openai/gpt-oss-120b
+test,897,muy negativo,0.96,"Rant extenso sobre mala atención, líneas saturadas y hostigamiento.",openai/gpt-oss-120b
+test,3261,positivo,0.92,"Alaba atención y limpieza, menciona falta de cajeros, positivo.",openai/gpt-oss-120b
+test,3545,negativo,0.9,"Critica distribución y precios, tono negativo.",openai/gpt-oss-120b
+test,3919,neutral,0.88,"Opinión mixta, no le gusta pero es opción rápida.",openai/gpt-oss-120b
+test,2394,negativo,0.89,"Denuncia trato irrespetuoso del personal, queja negativa.",openai/gpt-oss-120b
+test,1008,muy negativo,0.96,"Pésima atención al cliente, queja muy negativa.",openai/gpt-oss-120b
+test,434,negativo,0.92,"Queja por larga espera, tono crítico",openai/gpt-oss-120b
+test,908,negativo,0.91,"Atención rápida pero personal desinteresado, decide no volver",openai/gpt-oss-120b
+test,1246,positivo,0.88,Expresa satisfacción al encontrar todo,openai/gpt-oss-120b
+test,1641,positivo,0.87,Destaca comodidad del ambiente,openai/gpt-oss-120b
+test,3383,muy negativo,0.96,"Queja grave por ruido, experiencia horrible",openai/gpt-oss-120b
+test,1548,muy positivo,0.94,"Elogia rapidez, trato y buena relación calidad‑precio",openai/gpt-oss-120b
+test,960,muy positivo,0.95,"Resalta rapidez, amabilidad y comodidad del local",openai/gpt-oss-120b
+test,209,positivo,0.86,Valora infraestructura adecuada y buena intención,openai/gpt-oss-120b
+test,3584,neutral,0.84,"Comenta precios altos y preferencia personal, sin fuerte polaridad",openai/gpt-oss-120b
+test,4783,muy positivo,0.97,"Recomienda por variedad, calidad y excelente atención",openai/gpt-oss-120b
+test,63,neutral,0.85,"Describe demoras y amabilidad, sin predominio claro",openai/gpt-oss-120b
+test,4401,neutral,0.83,"Queja por promoción confusa, pero termina con comentario positivo",openai/gpt-oss-120b
+test,4548,positivo,0.89,"Elogia ambiente y precios, menciona incomodidad de acceso",openai/gpt-oss-120b
+test,401,neutral,0.8,"Sugiere cambiar proceso, sin expresar fuerte satisfacción o queja",openai/gpt-oss-120b
+test,32,negativo,0.9,Critica penalidades y falta de enfoque al cliente,openai/gpt-oss-120b
+test,1903,muy positivo,0.96,Alaba la calidad y amplitud del metro,openai/gpt-oss-120b
+test,3204,neutral,0.82,Aprecia amplitud pero menciona dificultad para localizar productos,openai/gpt-oss-120b
+test,262,negativo,0.91,Señala lentitud del personal en ventanilla,openai/gpt-oss-120b
+test,4680,positivo,0.88,Indica disponibilidad de productos navideños,openai/gpt-oss-120b
+test,1463,neutral,0.84,Elogia aspecto pero indica falta de productos buscados,openai/gpt-oss-120b
+test,4310,positivo,0.85,Elogia variedad y calidad sin reservas,openai/gpt-oss-120b
+test,2158,muy negativo,0.95,"Queja grave, recomienda no ir",openai/gpt-oss-120b
+test,987,positivo,0.9,"Elogia atención y rapidez, tono satisfecho",openai/gpt-oss-120b
+test,3451,neutral,0.8,"Elogia espacio, pero critica bolsas, tono mixto",openai/gpt-oss-120b
+test,1931,positivo,0.85,"Destaca amplitud y variedad, tono satisfecho",openai/gpt-oss-120b
+test,60,neutral,0.75,"Comentario breve, sin entusiasmo ni queja",openai/gpt-oss-120b
+test,487,positivo,0.85,"Elogia atención, tono satisfecho",openai/gpt-oss-120b
+test,3916,negativo,0.8,"Critica falta de diferencia, tono insatisfecho",openai/gpt-oss-120b
+test,3412,neutral,0.8,"Balance entre ventajas y limitaciones, tono equilibrado",openai/gpt-oss-120b
+test,2848,neutral,0.78,"Elogia lugar, pero critica atención, tono mixto",openai/gpt-oss-120b
+test,474,positivo,0.9,"Elogia atención eficaz, tono satisfecho",openai/gpt-oss-120b
+test,4079,negativo,0.85,"Elogia precios, pero muchas quejas, tono crítico",openai/gpt-oss-120b
+test,3617,muy positivo,0.95,"Entusiasmo fuerte, recomienda ampliamente",openai/gpt-oss-120b
+test,1546,muy positivo,0.96,Expresa amor y elogios sin reservas,openai/gpt-oss-120b
+test,1630,muy negativo,0.98,"Queja severa, tono de enojo extremo",openai/gpt-oss-120b
+test,875,muy positivo,0.88,Elogio entusiasta a la atención,openai/gpt-oss-120b
+test,1070,negativo,0.85,"Queja por larga espera, tono insatisfecho",openai/gpt-oss-120b
+test,2602,positivo,0.85,Destaca comodidad por poca gente,openai/gpt-oss-120b
+test,3155,positivo,0.85,"Elogia presentación y sanitarios, tono satisfecho",openai/gpt-oss-120b
+test,4715,negativo,0.8,"Advierte peligros, tono crítico",openai/gpt-oss-120b
+test,4051,negativo,0.92,"Personal desinformado, queja sobre atención.",openai/gpt-oss-120b
+test,1937,positivo,0.95,"Elogia higiene y servicio, sin peros.",openai/gpt-oss-120b
+test,3254,negativo,0.9,Muchas quejas superan elogios breves.,openai/gpt-oss-120b
+test,321,negativo,0.85,"Cierre y falta de atención, tono negativo.",openai/gpt-oss-120b
+test,1308,positivo,0.93,"Elogia atención, menciona falta menor.",openai/gpt-oss-120b
+test,4299,muy positivo,0.97,"Entusiasmo, recomendación fuerte, experiencia positiva.",openai/gpt-oss-120b
+test,3394,negativo,0.9,"Critica señalización y atención, tono negativo.",openai/gpt-oss-120b
+test,4167,muy positivo,0.96,"Elogio amplio, recomienda sin reservas.",openai/gpt-oss-120b
+test,3452,muy positivo,0.95,"Alto entusiasmo, recomienda fuertemente.",openai/gpt-oss-120b
+test,2459,positivo,0.92,"Queja de cola, pero elogio fuerte al servicio.",openai/gpt-oss-120b
+test,1454,muy negativo,0.96,"Robo sospechoso, queja grave, recomienda evitar.",openai/gpt-oss-120b
+test,1252,muy positivo,0.98,Entusiasmo y recomendación clara.,openai/gpt-oss-120b
+test,4613,positivo,0.9,"Elogia variedad y trato, sin peros.",openai/gpt-oss-120b
+test,973,muy positivo,0.96,"Alto elogio, atención excelente.",openai/gpt-oss-120b
+test,2629,muy positivo,0.9,Entusiasmo y elogio sin reservas.,openai/gpt-oss-120b
+test,4780,positivo,0.9,"Elogio orden y trato, tono positivo.",openai/gpt-oss-120b
+test,2616,positivo,0.9,"Resalta variedad y ofertas, tono positivo.",openai/gpt-oss-120b
+test,2760,muy negativo,0.97,"Denuncia fraude, tono muy negativo.",openai/gpt-oss-120b
+test,1075,neutral,0.85,"Elogia rapidez, critica conocimientos, balanceado.",openai/gpt-oss-120b
+test,2485,muy negativo,0.96,"Queja grave de servicio, tono muy negativo.",openai/gpt-oss-120b
+test,2431,muy negativo,0.0,"Servicio pésimo, tiempo perdido, problema no resuelto.",openai/gpt-oss-120b
+test,4590,muy positivo,0.0,"Buen servicio, calidad, recomendado, variedad.",openai/gpt-oss-120b
+test,1261,positivo,0.0,Ofertas buenas y variedad de productos.,openai/gpt-oss-120b
+test,4798,muy positivo,0.0,"Limpio, ordenado, atención amable, ambiente tranquilo.",openai/gpt-oss-120b
+test,4684,positivo,0.0,"Ordenado y limpio, pero pocas cajas disponibles.",openai/gpt-oss-120b
+test,4424,muy positivo,0.0,"Amplia, fresca, personal atento y paciente.",openai/gpt-oss-120b
+test,2055,muy positivo,0.0,Atención rápida y muy buena para el cliente.,openai/gpt-oss-120b
+test,4594,positivo,0.0,"Ubicación buena, variedad de precios y productos.",openai/gpt-oss-120b
+test,2125,negativo,0.0,"Personal bueno, pero jefes engreídos sin empatía.",openai/gpt-oss-120b
+test,3657,neutral,0.0,"Buenos precios para locales, extranjeros no reciben descuentos.",openai/gpt-oss-120b
+test,792,positivo,0.0,Comentario breve pero positivo.,openai/gpt-oss-120b
+test,4017,positivo,0.0,"Seguridad, limpieza y buena atención; patio con pocas opciones.",openai/gpt-oss-120b
+test,3703,neutral,0.0,Descripción del mall sin valoración clara.,openai/gpt-oss-120b
+test,1080,positivo,0.0,Personal siempre muy amable.,openai/gpt-oss-120b
+test,1769,muy positivo,0.0,"Gran variedad, precios buenos, todo disponible, excelente relación calidad-precio.",openai/gpt-oss-120b
+test,767,negativo,0.0,Largas colas y atención insuficiente.,openai/gpt-oss-120b
+test,2091,positivo,0.0,Atención muy buena y rápida.,openai/gpt-oss-120b
+test,1267,muy positivo,0.0,"Gran tienda, personal amable, precios buenos y ofertas frecuentes.",openai/gpt-oss-120b
+test,4493,muy negativo,0.0,"Cobran por baño, consideran abuso, desaniman turistas.",openai/gpt-oss-120b
+test,1264,positivo,0.0,"Servicio bueno, variado, ordenado y personal amable.",openai/gpt-oss-120b
+test,3323,neutral,0.78,Mezcla elogios y quejas; balance entre positivos y negativos.,openai/gpt-oss-120b
+test,4693,positivo,0.85,"Variedad y atención buenas, comida regular; satisfacción moderada.",openai/gpt-oss-120b
+test,1962,muy positivo,0.95,"Elogio total, sin quejas; entusiasmo máximo.",openai/gpt-oss-120b
+test,3659,negativo,0.8,"Queja por falta de caja preferencial, tono frustrado.",openai/gpt-oss-120b
+test,4685,positivo,0.8,"Breve reseña positiva, destaca variedad y ofertas.",openai/gpt-oss-120b
+test,3294,muy positivo,0.85,"Califica como uno de los mejores locales, elogio fuerte.",openai/gpt-oss-120b
+test,4501,muy negativo,0.9,"Servicio peor, problemas de ticket y protocolos; muy insatisfecho.",openai/gpt-oss-120b
+test,2082,muy positivo,0.9,"Elogio entusiasta, invita a visitar, atención excelente.",openai/gpt-oss-120b
+test,2992,muy positivo,0.9,"Destaca orden, limpieza, precios bajos; sin críticas.",openai/gpt-oss-120b
+test,1646,positivo,0.8,"Información útil, servicio rápido, menciona medidas sanitarias.",openai/gpt-oss-120b
+test,588,negativo,0.75,Critica falta de personal en horas pico.,openai/gpt-oss-120b
+test,2031,negativo,0.78,Funciona pero calor y falta de aire generan molestia.,openai/gpt-oss-120b
+test,4747,muy positivo,0.85,Estacionamiento amplio y atención excelente; muy satisfecho.,openai/gpt-oss-120b
+test,2669,muy positivo,0.9,"Excelente atención, variedad y cajas rápidas; muy positivo.",openai/gpt-oss-120b
+test,4663,positivo,0.8,"Cafetería agradable, sugiere baños para padres; tono positivo.",openai/gpt-oss-120b
+test,3809,muy negativo,0.95,"Quejas extensas, servicio lento, desorganizado; muy negativo.",openai/gpt-oss-120b
+test,1444,muy negativo,0.9,"Demora entrega, respuesta insuficiente; frustración alta.",openai/gpt-oss-120b
+test,1829,muy negativo,0.9,"Pésima atención, experiencia muy mala; muy negativo.",openai/gpt-oss-120b
+test,4400,neutral,0.78,"Orden y atención buenos, precios altos; balanceado.",openai/gpt-oss-120b
+test,3539,neutral,0.78,"Espacioso y variedad, pero vestuarios sucios; mixto.",openai/gpt-oss-120b
+test,4748,positivo,0.9,"Variedad y ambiente tranquilo, tono positivo sin exageración.",openai/gpt-oss-120b
+test,978,muy positivo,0.96,"Elogio entusiasta, recomienda fuertemente, sin reservas.",openai/gpt-oss-120b
+test,3434,positivo,0.85,"Destaca variedad y gusto, menciona falta de seguridad, tono mayormente positivo.",openai/gpt-oss-120b
+test,2441,negativo,0.9,"Critica atención y trato, pese a buena tecnología, tono negativo.",openai/gpt-oss-120b
+test,2666,neutral,0.8,Descripción objetiva sin elogios ni quejas marcadas.,openai/gpt-oss-120b
+test,2065,positivo,0.9,"Atención muy buena, esperanza de continuidad, tono positivo.",openai/gpt-oss-120b
+test,888,muy negativo,0.97,"Queja grave, se siente estafado, tono de enojo intenso.",openai/gpt-oss-120b
+test,4192,negativo,0.88,"Error de venta genera molestia y pérdida de tiempo, tono insatisfecho.",openai/gpt-oss-120b
+test,3177,positivo,0.85,"Resalta opciones y ubicación, menciona tráfico como único inconveniente.",openai/gpt-oss-120b
+test,958,positivo,0.9,"Elogia ambiente y oficinas, señala ascensores como problema menor.",openai/gpt-oss-120b
+test,1421,positivo,0.9,"Describe lugar completo y amable, tono favorable.",openai/gpt-oss-120b
+test,3742,positivo,0.9,"Tranquilo y familiar, tono positivo sin exageración.",openai/gpt-oss-120b
+test,331,negativo,0.9,"Demora excesiva y atención mínima, tono claramente insatisfecho.",openai/gpt-oss-120b
+test,3794,muy positivo,0.95,"Elogio entusiasta, destaca calidad y ofertas, recomendación fuerte.",openai/gpt-oss-120b
+test,3372,negativo,0.88,"Retiro en tienda lento y engorroso, tono insatisfecho.",openai/gpt-oss-120b
+test,2407,muy negativo,0.96,"Experiencia pésima, cobros extra, falta de solución, tono de enojo.",openai/gpt-oss-120b
+test,1824,negativo,0.85,"Robo por falta de seguridad, expresa descontento y preocupación.",openai/gpt-oss-120b
+test,2539,positivo,0.9,"Ambiente limpio y atención buena, sugiere mejora en señalización.",openai/gpt-oss-120b
+test,2135,muy negativo,0.95,"Queja grave sobre gestión de reclamos, tono de frustración y enojo.",openai/gpt-oss-120b
+test,2449,negativo,0.88,"Lenta atención y falta de asientos, tono insatisfecho.",openai/gpt-oss-120b
+test,4307,muy positivo,0.97,"Entusiasmo, elogios sin reservas, recomienda el lugar.",openai/gpt-oss-120b
+test,2406,muy negativo,0.96,"Queja grave, advierte a otros, falta de empatía.",openai/gpt-oss-120b
+test,1365,neutral,0.9,"Comentario informativo, sin valoración positiva ni negativa.",openai/gpt-oss-120b
+test,1885,positivo,0.92,"Satisfecho con ofertas, compra sin exageración.",openai/gpt-oss-120b
+test,538,muy negativo,0.95,"Enojo fuerte, critica actitud del personal.",openai/gpt-oss-120b
+test,2008,negativo,0.88,"Insatisfacción clara, atención deficiente, sin exageración.",openai/gpt-oss-120b
+test,1680,muy negativo,0.96,"Cobro doble, queja grave, recomienda evitar.",openai/gpt-oss-120b
+test,1227,muy positivo,0.97,"Elogio fuerte, recomendación total del servicio.",openai/gpt-oss-120b
+test,783,neutral,0.85,"Comentario sin valoración, simplemente informativo.",openai/gpt-oss-120b
+test,3365,muy negativo,0.98,"Denuncia estafa, queja grave, advierte a clientes.",openai/gpt-oss-120b
+test,3983,positivo,0.9,"Recomendación positiva, sin exageración.",openai/gpt-oss-120b
+test,535,muy negativo,0.95,Queja grave por falta de servicio y reclamo.,openai/gpt-oss-120b
+test,4148,positivo,0.9,"Mayoría elogios, con pequeños inconvenientes.",openai/gpt-oss-120b
+test,1172,positivo,0.92,"Elogio detallado, satisfacción sin exageración.",openai/gpt-oss-120b
+test,1781,positivo,0.88,"Descripción positiva, menciona buen precio y variedad.",openai/gpt-oss-120b
+test,707,positivo,0.9,"Elogio a la atención, satisfacción moderada.",openai/gpt-oss-120b
+test,1721,neutral,0.87,"Elogios y quejas equilibradas, opinión mixta.",openai/gpt-oss-120b
+test,3740,positivo,0.9,"Elogio claro, sin exageración.",openai/gpt-oss-120b
+test,2490,muy negativo,0.96,"Queja grave, advierte no comprar, posible fraude.",openai/gpt-oss-120b
+test,4411,muy positivo,0.95,Entusiasmo y elogio sin reservas.,openai/gpt-oss-120b
+test,3715,positivo,0.92,Comentario positivo sobre horario sin entusiasmo,openai/gpt-oss-120b
+test,3926,neutral,0.88,Elogia atención pero menciona cierre temprano,openai/gpt-oss-120b
+test,672,muy negativo,0.96,"Queja grave por horarios, atención y servicio deficiente",openai/gpt-oss-120b
+test,3828,muy negativo,0.95,Fuerte crítica a incompetencia y rotación de personal,openai/gpt-oss-120b
+test,2556,muy positivo,0.97,Elogio completo y recomendación entusiasta,openai/gpt-oss-120b
+test,1346,muy positivo,0.96,"Alto elogio a atención, ofertas y precios",openai/gpt-oss-120b
+test,3222,muy negativo,0.97,"Denuncia grave de mala atención, instalaciones sucias y desorganización",openai/gpt-oss-120b
+test,4625,positivo,0.9,Menciona buena promoción sin entusiasmo excesivo,openai/gpt-oss-120b
+test,4698,muy positivo,0.96,"Elogio amplio a calidad, limpieza y servicio",openai/gpt-oss-120b
+test,4378,positivo,0.89,"Resalta ubicación y personal agradable, tono moderado",openai/gpt-oss-120b
+test,3665,muy negativo,0.96,Queja extensa sobre falta de capacitación y maltrato,openai/gpt-oss-120b
+test,2384,muy negativo,0.96,Fuerte crítica a prepotencia y largas esperas,openai/gpt-oss-120b
+test,3316,muy positivo,0.95,Entusiasmo por cercanía y buenas promociones,openai/gpt-oss-120b
+test,3436,muy positivo,0.95,Elogio breve pero entusiasta a marcas y atención,openai/gpt-oss-120b
+test,4203,neutral,0.88,Alaba tienda pero critica cobro de cochera,openai/gpt-oss-120b
+test,2299,negativo,0.9,Insatisfacción por lenta atención sin exagerar,openai/gpt-oss-120b
+test,1131,muy negativo,0.96,Denuncia grave de falta de respeto y abandono,openai/gpt-oss-120b
+test,3525,negativo,0.89,Desaprobación de tarjeta por procesos lentos,openai/gpt-oss-120b
+test,1156,negativo,0.9,Queja por ausencia de ofertas y alta concurrencia,openai/gpt-oss-120b
+test,3618,muy positivo,0.95,Entusiasmo por experiencia acogedora con mascota,openai/gpt-oss-120b
+test,1541,muy positivo,0.85,"Entusiasta, invita, destaca novedades y poca aglomeración",openai/gpt-oss-120b
+test,4433,muy positivo,0.9,"Elogia stock, ofertas, limpieza y atención excelente",openai/gpt-oss-120b
+test,4464,positivo,0.8,"Resalta rapidez y variedad, menciona ocasionales faltas de stock",openai/gpt-oss-120b
+test,4735,muy positivo,0.9,Expresa amor y satisfacción por variedad y frescura,openai/gpt-oss-120b
+test,4153,positivo,0.75,"Comentario positivo sobre decoración navideña, sin exageración",openai/gpt-oss-120b
+test,272,neutral,0.9,"Solo describe ubicación, sin valoración",openai/gpt-oss-120b
+test,1219,muy positivo,0.95,"Entusiasmo extremo, ama ambiente, marcas y música",openai/gpt-oss-120b
+test,2961,positivo,0.8,Elogia variedad y calidad sin exageración,openai/gpt-oss-120b
+test,1576,positivo,0.8,"Resalta utilidad y buen servicio, tono neutro‑positivo",openai/gpt-oss-120b
+test,1755,positivo,0.85,"Destaca amabilidad y rapidez, tono favorable",openai/gpt-oss-120b
+test,1,muy negativo,0.95,Queja grave de mala atención y esperas interminables,openai/gpt-oss-120b
+test,1566,positivo,0.8,"Resalta tamaño, ofertas y orden, tono favorable",openai/gpt-oss-120b
+test,3987,muy positivo,0.85,Elogia precios bajos y juegos infantiles fenomenales,openai/gpt-oss-120b
+test,247,positivo,0.75,"Agradece atención personalizada, aunque trámite fue algo confuso",openai/gpt-oss-120b
+test,1835,negativo,0.85,Denuncia ofertas engañosas y precios inconsistentes,openai/gpt-oss-120b
+test,2227,muy negativo,0.95,"Acusa estafa, expresa enojo y falta de solución",openai/gpt-oss-120b
+test,2540,muy positivo,0.9,"Alaba rapidez, protocolos y precios, recomienda fuertemente",openai/gpt-oss-120b
+test,1024,muy negativo,0.95,"Critica atención, cancelación y falta de solución, tono enfadado",openai/gpt-oss-120b
+test,991,negativo,0.8,Elogia atención pero advierte servicio WhatsApp pésimo,openai/gpt-oss-120b
+test,1695,neutral,0.75,Combina elogio de punto de encuentro con queja menor,openai/gpt-oss-120b
+test,4013,positivo,0.95,"Elogio general y recomendación, sin quejas.",openai/gpt-oss-120b
+test,3559,negativo,0.9,Quejas de frío y cobro extra superan elogios.,openai/gpt-oss-120b
+test,2146,muy negativo,0.96,"Enojo fuerte por atención terrible, sugiere evitar.",openai/gpt-oss-120b
+test,3498,positivo,0.93,"Destaca variedad y vendedores amables, sin críticas.",openai/gpt-oss-120b
+test,3377,negativo,0.88,Se queja falta de cajero y largas colas.,openai/gpt-oss-120b
+test,1296,negativo,0.9,Critica promociones engañosas y falta de sinceridad.,openai/gpt-oss-120b
+test,4431,positivo,0.92,"Alaba productos y trato, sin observaciones negativas.",openai/gpt-oss-120b
+test,2743,positivo,0.9,Menciona ofertas y lo recomienda.,openai/gpt-oss-120b
+test,649,muy negativo,0.88,"Califica servicio como pésimo, pide más atención.",openai/gpt-oss-120b
+test,1987,muy negativo,0.95,Denuncia robo total y falta de respuesta.,openai/gpt-oss-120b
+test,1196,positivo,0.93,"Elogia variedad y facilidades, solo queja de estacionamiento.",openai/gpt-oss-120b
+test,866,positivo,0.9,Solo comenta ubicación favorable.,openai/gpt-oss-120b
+test,2258,muy negativo,0.96,"Queja extensa, servicio pésimo, sin solución.",openai/gpt-oss-120b
+test,518,muy negativo,0.94,Expresa enojo por poca y lenta atención.,openai/gpt-oss-120b
+test,1731,neutral,0.85,"Menciona mejoras y problemas, tono equilibrado.",openai/gpt-oss-120b
+test,834,muy negativo,0.93,Critica fuertemente servicio y opciones disponibles.,openai/gpt-oss-120b
+test,4301,positivo,0.9,Elogia amplitud y variedad de productos.,openai/gpt-oss-120b
+test,3845,neutral,0.8,"Solo menciona banco, sin valoración.",openai/gpt-oss-120b
+test,1058,muy negativo,0.97,"Denuncia fraude, mala atención y reclamos ignorados.",openai/gpt-oss-120b
+test,4056,negativo,0.88,Se queja de carritos y limitada variedad de ropa.,openai/gpt-oss-120b
+test,4764,positivo,0.9,Elogio claro sin quejas,openai/gpt-oss-120b
+test,3761,positivo,0.85,"Elogio entusiasta, sin críticas",openai/gpt-oss-120b
+test,2856,positivo,0.9,"Mayoría elogios, una queja menor",openai/gpt-oss-120b
+test,4350,muy negativo,0.95,"Queja grave de maltrato, recomienda no ir",openai/gpt-oss-120b
+test,2541,negativo,0.8,Insatisfacción por cierre y caja limitada,openai/gpt-oss-120b
+test,1350,positivo,0.85,Elogio general sin reservas,openai/gpt-oss-120b
+test,3344,muy positivo,0.9,"Elogio entusiasta, recomienda implícitamente",openai/gpt-oss-120b
+test,3002,muy positivo,0.95,"Entusiasmo máximo, recomendación fuerte",openai/gpt-oss-120b
+test,4275,neutral,0.8,Elogio y queja equilibrados,openai/gpt-oss-120b
+test,398,negativo,0.85,"Queja fuerte de colas, sin prohibir visita",openai/gpt-oss-120b
+test,4705,positivo,0.85,"Elogio con peros sobre precios, recomendación moderada",openai/gpt-oss-120b
+test,1020,muy negativo,0.95,Queja grave de traspapeleo y falta de devolución,openai/gpt-oss-120b
+test,1651,muy negativo,0.95,Desaconseja el lugar por colas interminables,openai/gpt-oss-120b
+test,3236,negativo,0.85,Insatisfacción con personal de cochera y cobros extra,openai/gpt-oss-120b
+test,4524,neutral,0.8,Elogios y queja de seguridad equilibrados,openai/gpt-oss-120b
+test,2025,negativo,0.85,Queja de largas colas y falta de solución,openai/gpt-oss-120b
+test,1348,positivo,0.9,"Elogio con detalle, sin quejas significativas",openai/gpt-oss-120b
+test,924,muy negativo,0.95,Queja grave de fraude y no entrega,openai/gpt-oss-120b
+test,2637,muy negativo,0.9,Queja severa de mala atención y errores,openai/gpt-oss-120b
+test,2907,positivo,0.85,Elogio general con entusiasmo moderado,openai/gpt-oss-120b
+test,4365,positivo,0.92,"Variedad y buena comida, solo sugiere más opciones.",openai/gpt-oss-120b
+test,4107,neutral,0.85,"Buenos precios y parking, pero advierte discrepancia de precios.",openai/gpt-oss-120b
+test,197,muy positivo,0.95,Elogio enfático a organización y protocolos de seguridad.,openai/gpt-oss-120b
+test,1420,muy positivo,0.94,"Destaca opciones y ofertas, tono muy entusiasta.",openai/gpt-oss-120b
+test,3413,negativo,0.9,"Precios y amabilidad, pero graves fallas de entrega y reembolso.",openai/gpt-oss-120b
+test,729,positivo,0.9,"Atención rápida, recomienda ir temprano los domingos.",openai/gpt-oss-120b
+test,4529,positivo,0.88,"Elogio general, menciona falta de un pan específico.",openai/gpt-oss-120b
+test,3370,muy negativo,0.96,"Queja grave de bloqueo de dinero, desaconseja contratar.",openai/gpt-oss-120b
+test,467,muy positivo,0.95,Elogio entusiasta a la atención y opciones del equipo.,openai/gpt-oss-120b
+test,2396,muy negativo,0.96,Queja fuerte sobre atención pésima y trato prepotente.,openai/gpt-oss-120b
+test,4535,positivo,0.88,"Describe variedad y facilidades, tono favorable.",openai/gpt-oss-120b
+test,2953,neutral,0.85,"Elogia variedad y croissants, pero critica empanadas y falta de freidoras.",openai/gpt-oss-120b
+test,1809,neutral,0.9,Menciona ubicación céntrica y tráfico sin valoración.,openai/gpt-oss-120b
+test,2717,muy positivo,0.9,"Elogio amplio de servicios, variedad y facilidades del centro.",openai/gpt-oss-120b
+test,1761,muy positivo,0.93,"Expresa disfrute y agradecimiento, tono entusiasta.",openai/gpt-oss-120b
+test,2063,neutral,0.85,Observa personal para agilizar atención sin valoración clara.,openai/gpt-oss-120b
+test,4014,muy positivo,0.95,"Recomendación entusiasta, destaca tranquilidad y muchas ofertas.",openai/gpt-oss-120b
+test,1492,muy positivo,0.94,"Elogia experiencia fácil, innovación y valores, tono muy positivo.",openai/gpt-oss-120b
+test,4009,neutral,0.84,"Alaba instalaciones, pero señala cobro inoperativo y colas.",openai/gpt-oss-120b
+test,173,positivo,0.9,Elogio al buen trato recibido en recepción.,openai/gpt-oss-120b
+test,2067,negativo,0.78,"Rápida atención, pero rara solución; predominan quejas.",openai/gpt-oss-120b
+test,909,muy negativo,0.85,"Personal grosero, no permite hablar; experiencia muy mala.",openai/gpt-oss-120b
+test,2304,negativo,0.8,"Largas colas y esperas, sin solución alternativa.",openai/gpt-oss-120b
+test,4170,positivo,0.75,Agradece solución justa; tono agradecido y positivo.,openai/gpt-oss-120b
+test,1194,positivo,0.7,"Artículos navideños bellos, comentario positivo sencillo.",openai/gpt-oss-120b
+test,1177,neutral,0.78,Simpático pero mala ventilación; pros y contras equilibrados.,openai/gpt-oss-120b
+test,244,muy positivo,0.9,Entusiasta elogio al banco y personal; recomendación fuerte.,openai/gpt-oss-120b
+test,3063,negativo,0.8,"Precio no respetado, siente engaño; queja clara.",openai/gpt-oss-120b
+test,4039,positivo,0.7,Lugar bonito y ordenado; opinión positiva.,openai/gpt-oss-120b
+test,130,negativo,0.75,Falta de ventanillas y orden; queja negativa.,openai/gpt-oss-120b
+test,2451,neutral,0.73,Rápida atención pero solo ventas; mezcla de opiniones.,openai/gpt-oss-120b
+test,3511,muy negativo,0.88,"Envíos tardíos, web inútil, amenaza cancelar; enojo fuerte.",openai/gpt-oss-120b
+test,1378,positivo,0.78,Amable personal y buen servicio; recomendación moderada.,openai/gpt-oss-120b
+test,233,negativo,0.75,"Buena infraestructura, pero colas enormes; predominio negativo.",openai/gpt-oss-120b
+test,1530,positivo,0.8,"Tienda ordenada, buenas ofertas, experiencia positiva.",openai/gpt-oss-120b
+test,3529,negativo,0.78,"Precios buenos, personal apático y molesto; tono negativo.",openai/gpt-oss-120b
+test,1797,muy positivo,0.85,"Diversidad, precios, comida deliciosa, entusiasmo alto.",openai/gpt-oss-120b
+test,2003,muy negativo,0.84,Mucha espera y pésima atención; queja severa.,openai/gpt-oss-120b
+test,2713,neutral,0.72,"Descuentos buenos, pero calidad de ropa dudosa; mixto.",openai/gpt-oss-120b
+test,3649,muy positivo,0.9,"Entusiasta, pet friendly, decoración; recomendación fuerte.",openai/gpt-oss-120b
+test,1577,neutral,0.92,"Solo describe servicio y horario, sin valoración.",openai/gpt-oss-120b
+test,829,muy positivo,0.88,Expresa entusiasmo y valoración muy positiva.,openai/gpt-oss-120b
+test,3878,muy negativo,0.96,Queja grave sobre incompetencia del personal.,openai/gpt-oss-120b
+test,4278,positivo,0.91,Elogia variedad y espacio del local.,openai/gpt-oss-120b
+test,3393,negativo,0.89,"Expresa insatisfacción clara, predominio de lo malo.",openai/gpt-oss-120b
+test,2287,negativo,0.9,"Queja por horario incorrecto, genera insatisfacción.",openai/gpt-oss-120b
+test,4240,positivo,0.87,"Elogia varios aspectos, sugiere mejora en cajas.",openai/gpt-oss-120b
+test,146,positivo,0.9,Valoración positiva del ambiente y atención.,openai/gpt-oss-120b
+test,418,negativo,0.88,Queja por lentitud en el servicio.,openai/gpt-oss-120b
+test,3770,positivo,0.9,"Satisfacción al encontrar productos, ambiente ordenado.",openai/gpt-oss-120b
+test,4540,positivo,0.9,Elogia ambiente agradable y precios buenos.,openai/gpt-oss-120b
+test,3839,negativo,0.9,Queja recurrente de mala atención.,openai/gpt-oss-120b
+test,843,neutral,0.92,Solo indica que no es centro comercial.,openai/gpt-oss-120b
+test,4477,positivo,0.9,"Elogia atención, educación, orden y limpieza.",openai/gpt-oss-120b
+test,1073,negativo,0.86,"Critica varios aspectos, predominan quejas.",openai/gpt-oss-120b
+test,4270,muy positivo,0.93,"Entusiasmo por rapidez, variedad y seguridad.",openai/gpt-oss-120b
+test,938,positivo,0.85,"Elogia atención actual, aunque con reserva futura.",openai/gpt-oss-120b
+test,3858,negativo,0.9,Queja por larga espera y falta de prioridad.,openai/gpt-oss-120b
+test,1929,muy positivo,0.96,"Entusiasmo amplio, recomienda y elogia múltiples aspectos.",openai/gpt-oss-120b
+test,2740,positivo,0.9,Elogia orden y espacio del lugar.,openai/gpt-oss-120b
+test,936,negativo,0.94,"Queja de lentitud y falta de solución, predominan aspectos negativos.",openai/gpt-oss-120b
+test,488,positivo,0.93,"Elogio a la atención, tono positivo sin exageración.",openai/gpt-oss-120b
+test,1572,muy positivo,0.98,"Entusiasmo alto, recomienda fuertemente, elogios sin reservas.",openai/gpt-oss-120b
+test,633,muy negativo,0.96,"Queja grave de engaño y trato horrible, recomienda no ir.",openai/gpt-oss-120b
+test,1392,muy positivo,0.92,"Elogio amplio y recomendación fuerte, tono muy positivo.",openai/gpt-oss-120b
+test,2614,muy positivo,0.9,"Entusiasmo claro, expresa gran gusto y variedad.",openai/gpt-oss-120b
+test,3130,neutral,0.88,"Queja de cola pero resto positivo, polaridad equilibrada.",openai/gpt-oss-120b
+test,1590,muy negativo,0.97,"Fuerte queja, califica peor y asegura no volver.",openai/gpt-oss-120b
+test,3523,muy negativo,0.96,"Queja grave de engaño, pérdida de tiempo, experiencia desagradable.",openai/gpt-oss-120b
+test,44,positivo,0.85,Comentario breve pero positivo.,openai/gpt-oss-120b
+test,1884,muy positivo,0.93,"Elogio amplio y recomendación alta, tono muy positivo.",openai/gpt-oss-120b
+test,4298,neutral,0.88,"Menciona variedad y desorden, balance entre lo bueno y lo malo.",openai/gpt-oss-120b
+test,3882,negativo,0.9,"Queja de lentitud y falta de personal, predominan aspectos negativos.",openai/gpt-oss-120b
+test,1560,positivo,0.91,"Elogio amplio del local y ambiente tranquilo, tono positivo.",openai/gpt-oss-120b
+test,4374,positivo,0.89,"Elogio y recomendación, muestra satisfacción sin exageración.",openai/gpt-oss-120b
+test,915,muy negativo,0.96,"Quejas múltiples, servicio deficiente, intención de cambiar, tono muy negativo.",openai/gpt-oss-120b
+test,3491,neutral,0.87,"Elogia orden pero critica comportamiento de clientes, balanceado.",openai/gpt-oss-120b
+test,1788,positivo,0.86,"Comentario breve y positivo, sin exageración.",openai/gpt-oss-120b
+test,3793,positivo,0.88,"Elogio de precio y calidad, tono positivo.",openai/gpt-oss-120b
+test,2850,neutral,0.86,"Alaba mercado pero advierte colas, polaridad equilibrada.",openai/gpt-oss-120b
+test,2457,negativo,0.9,"Quejas graves, solo elogio menor al personal",openai/gpt-oss-120b
+test,229,negativo,0.95,"Lento, espera 40 min, insatisfacción clara",openai/gpt-oss-120b
+test,4387,positivo,0.9,"Facilidad y rapidez, expectativa positiva",openai/gpt-oss-120b
+test,2802,negativo,0.9,"Critica calidad de frutas, insatisfacción sin elogios",openai/gpt-oss-120b
+test,1275,muy negativo,0.95,"Problema de acceso, decide cambiar tienda",openai/gpt-oss-120b
+test,831,positivo,0.9,Elogio a rapidez y cocheras,openai/gpt-oss-120b
+test,4046,negativo,0.9,"Error y falta de seguridad, experiencia incómoda",openai/gpt-oss-120b
+test,2554,positivo,0.85,"Mayormente elogios, con pequeñas críticas",openai/gpt-oss-120b
+test,1803,muy positivo,0.95,"Elogio amplio, recomendación fuerte",openai/gpt-oss-120b
+test,4654,muy negativo,0.95,Experiencia caótica y mala atención,openai/gpt-oss-120b
+test,2800,negativo,0.85,"Quejas sobre servicio, algunos beneficios menores",openai/gpt-oss-120b
+test,1634,neutral,0.9,"Solo informa remodelación, sin valoración",openai/gpt-oss-120b
+test,264,neutral,0.85,Descripción informativa sin juicio,openai/gpt-oss-120b
+test,4047,muy negativo,0.95,"Queja fuerte a seguridad, experiencia pésima",openai/gpt-oss-120b
+test,2387,muy negativo,0.95,"Mala atención, sin solución",openai/gpt-oss-120b
+test,815,neutral,0.9,Afirmación sin valoración,openai/gpt-oss-120b
+test,575,neutral,0.85,Balance entre buen servicio y lentitud,openai/gpt-oss-120b
+test,4285,positivo,0.9,"Elogio general, pequeño detalle explicado",openai/gpt-oss-120b
+test,4178,neutral,0.85,"Elogio al vendedor, críticas a precio y estacionamiento",openai/gpt-oss-120b
+test,3430,positivo,0.9,"Buena atención, envío sin problemas",openai/gpt-oss-120b
+test,1896,neutral,0.78,"Mezcla elogio y queja sobre sello, sin dominio claro.",openai/gpt-oss-120b
+test,13,muy positivo,0.96,"Elogio entusiasta, recomienda fuertemente.",openai/gpt-oss-120b
+test,2563,positivo,0.88,"Destaca tranquilidad y buenas ofertas, tono positivo.",openai/gpt-oss-120b
+test,4754,positivo,0.85,"Breve elogio, indica satisfacción.",openai/gpt-oss-120b
+test,324,positivo,0.86,"Elogio a atención y seguridad, tono positivo.",openai/gpt-oss-120b
+test,4532,positivo,0.84,Menciona tamaño pequeño pero recuerdos y agrado predominan.,openai/gpt-oss-120b
+test,1734,positivo,0.85,"Variedad y buena atención, sugiere mejora; sentimiento positivo.",openai/gpt-oss-120b
+test,4172,positivo,0.8,"Calidad muy buena, elogio sin reservas.",openai/gpt-oss-120b
+test,2413,negativo,0.92,Queja por larga espera y servicio telefónico deficiente.,openai/gpt-oss-120b
+test,1344,muy positivo,0.95,"Elogio amplio, pet friendly, stock, tono entusiasta.",openai/gpt-oss-120b
+test,4483,muy positivo,0.9,"Lugar amplio, calidad, personal atento, recomendación fuerte.",openai/gpt-oss-120b
+test,854,positivo,0.8,"Elogio a rapidez, tono positivo.",openai/gpt-oss-120b
+test,1114,positivo,0.8,"Elogio a protocolo y rapidez, tono positivo.",openai/gpt-oss-120b
+test,4666,muy negativo,0.87,"Personal de café con mal carácter, queja fuerte.",openai/gpt-oss-120b
+test,1390,positivo,0.82,"Describe variedad y precios competitivos, tono positivo.",openai/gpt-oss-120b
+test,3941,positivo,0.86,"Buena atención y facilidades, tono positivo.",openai/gpt-oss-120b
+test,592,positivo,0.9,"Afluencia pero atención rápida y amable, positivo.",openai/gpt-oss-120b
+test,464,positivo,0.84,"Centro amplio, buen stock y pagos, tono positivo.",openai/gpt-oss-120b
+test,795,positivo,0.8,"Elogio a instalaciones, tono positivo.",openai/gpt-oss-120b
+test,574,muy negativo,0.96,"Mala atención, largas esperas, críticas severas.",openai/gpt-oss-120b

@@ -1,0 +1,5 @@
+﻿bloque,referencia,n_comparadas,acuerdo_exacto,acuerdo_adyacente
+semilla,sentimiento_final,433,0.5866,0.9792
+semilla,sentimiento_estrella,500,0.5,0.918
+test,sentimiento_final,846,0.5473,0.9598
+test,sentimiento_estrella,960,0.4729,0.9062

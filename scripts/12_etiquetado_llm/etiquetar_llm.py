@@ -31,7 +31,8 @@ Salidas:
 
 import argparse
 import sys
-import time
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import pandas as pd
@@ -60,42 +61,60 @@ def anexar_cache(filas):
               index=False, encoding="utf-8-sig")
 
 
-def etiquetar_bloque(nombre, df, modelo, proveedor, batch, cache, pausa):
-    """Etiqueta las filas de un bloque que no esten en cache. Devuelve el df anotado."""
+_LOCK = threading.Lock()
+
+
+def _procesar_lote(lote, nombre, modelo, proveedor):
+    """Etiqueta un lote (corre en un hilo). Devuelve las filas para el cache."""
+    ids = lote["id_registro"].tolist()
+    resultados = etiquetar_lote(lote["comentario_limpio"].tolist(), modelo=modelo,
+                                proveedor=proveedor, ids=ids)
+    # Reintento individual de los que el LLM omitio o devolvio invalido.
+    for j, (id_reg, res) in enumerate(zip(ids, resultados)):
+        if res is None:
+            reintento = etiquetar_lote([lote["comentario_limpio"].iloc[j]],
+                                       modelo=modelo, proveedor=proveedor, ids=[id_reg])
+            resultados[j] = reintento[0]
+
+    filas_cache = []
+    for id_reg, res in zip(ids, resultados):
+        filas_cache.append({
+            "bloque": nombre,
+            "id_registro": id_reg,
+            "etiqueta_llm": res["etiqueta"] if res else "",
+            "confianza_llm": res["confianza"] if res else 0.0,
+            "justificacion_llm": res["justificacion"] if res else "sin respuesta valida",
+            "modelo": modelo,
+        })
+    return filas_cache
+
+
+def etiquetar_bloque(nombre, df, modelo, proveedor, batch, cache, workers):
+    """Etiqueta en paralelo las filas de un bloque que no esten en cache."""
     pendientes = df[~df["id_registro"].map(lambda i: (nombre, i) in cache)]
     print(f"\n== Bloque {nombre}: {len(df)} filas ({len(pendientes)} pendientes, "
           f"{len(df) - len(pendientes)} en cache)")
 
-    hechos = 0
-    for i in range(0, len(pendientes), batch):
-        lote = pendientes.iloc[i:i + batch]
-        ids = lote["id_registro"].tolist()
-        resultados = etiquetar_lote(lote["comentario_limpio"].tolist(), modelo=modelo,
-                                    proveedor=proveedor, ids=ids)
-        # Reintento individual de los que el LLM omitio o devolvio invalido.
-        for j, (id_reg, res) in enumerate(zip(ids, resultados)):
-            if res is None:
-                reintento = etiquetar_lote([lote["comentario_limpio"].iloc[j]],
-                                           modelo=modelo, proveedor=proveedor, ids=[id_reg])
-                resultados[j] = reintento[0]
-
-        filas_cache = []
-        for id_reg, res in zip(ids, resultados):
-            filas_cache.append({
-                "bloque": nombre,
-                "id_registro": id_reg,
-                "etiqueta_llm": res["etiqueta"] if res else "",
-                "confianza_llm": res["confianza"] if res else 0.0,
-                "justificacion_llm": res["justificacion"] if res else "sin respuesta valida",
-                "modelo": modelo,
-            })
-        anexar_cache(filas_cache)
-        for fila in filas_cache:
-            cache[(nombre, fila["id_registro"])] = pd.Series(fila)
-
-        hechos += len(lote)
-        print(f"   {min(hechos, len(pendientes))}/{len(pendientes)} etiquetadas", flush=True)
-        time.sleep(pausa)
+    lotes = [pendientes.iloc[i:i + batch] for i in range(0, len(pendientes), batch)]
+    hechos, fallidos = 0, 0
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futuros = [executor.submit(_procesar_lote, lote, nombre, modelo, proveedor)
+                   for lote in lotes]
+        for futuro in as_completed(futuros):
+            try:
+                filas_cache = futuro.result()
+            except Exception as exc:  # noqa: BLE001 - un lote fallido no frena el resto
+                fallidos += 1
+                print(f"   LOTE FALLIDO (se reintenta al relanzar): {exc}", flush=True)
+                continue
+            with _LOCK:
+                anexar_cache(filas_cache)
+                for fila in filas_cache:
+                    cache[(nombre, fila["id_registro"])] = pd.Series(fila)
+                hechos += len(filas_cache)
+                print(f"   {hechos}/{len(pendientes)} etiquetadas", flush=True)
+    if fallidos:
+        print(f"   AVISO: {fallidos} lotes fallidos; relanza el script para completarlos.")
 
     anot = pd.DataFrame([{
         "id_registro": id_reg,
@@ -126,7 +145,7 @@ def main():
     parser.add_argument("--modelo", required=True, help="Id del modelo (p. ej. qwen/qwen3.5-122b-a10b)")
     parser.add_argument("--proveedor", default="nvidia", choices=["nvidia", "openrouter"])
     parser.add_argument("--batch", type=int, default=15)
-    parser.add_argument("--pausa", type=float, default=0.5, help="Segundos entre lotes.")
+    parser.add_argument("--workers", type=int, default=4, help="Lotes concurrentes.")
     parser.add_argument("--bloques", nargs="+", default=["semilla", "test"],
                         choices=["semilla", "test"])
     args = parser.parse_args()
@@ -138,7 +157,7 @@ def main():
     for nombre in args.bloques:
         df = pd.read_csv(SPLITS_DIR / f"{nombre}.csv").fillna("")
         bloques[nombre] = etiquetar_bloque(nombre, df, args.modelo, args.proveedor,
-                                           args.batch, cache, args.pausa)
+                                           args.batch, cache, args.workers)
         bloques[nombre].to_csv(SPLITS_DIR / f"{nombre}_etiquetada.csv"
                                if nombre == "semilla" else SPLITS_DIR / f"{nombre}_etiquetado.csv",
                                index=False, encoding="utf-8-sig")
