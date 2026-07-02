@@ -38,5 +38,9 @@ models/mejor_modelo_dl.pt
 models/mejor_modelo_transformer/
 *.safetensors
 
+# Modelos del flujo semisupervisado v2 (se regeneran con la fase 15)
+models/v2_mejor_modelo_dl.pt
+models/v2_mejor_modelo_transformer/
+
 # Cache de modelos descargados de HuggingFace
 .cache/
