@@ -1,0 +1,682 @@
+﻿id_registro,etiqueta_llm,confianza_llm,justificacion_llm
+806,muy negativo,0.99,"Queja grave, pérdida de dinero, recomienda no usar el servicio"
+2969,neutral,0.88,"Elogia instalaciones y ofertas, pero critica largas colas por cajas cerradas"
+3872,positivo,0.9,"Destaca excelente atención, aunque lamenta el servicio general del banco"
+4084,negativo,0.85,"Critica a cajera antipática y lenta, aunque reconoce buen trato general"
+3613,neutral,0.84,"Alaba variedad y descuentos, pero denuncia exclusión de extranjeros para tarjeta"
+4349,positivo,0.9,"Nota mejora y buen apoyo, aunque echa de menos filete de pavo"
+3746,muy positivo,0.97,Expresa entusiasmo y recomienda fuertemente el lugar
+4280,neutral,0.86,"Elogia variedad y cordialidad, pero critica cobro de estacionamiento y falta de producto"
+790,neutral,0.8,Observación neutral sobre la afluencia de clientes
+4713,negativo,0.85,Se queja de ausencia de módulo de teleticket y solicita corrección
+2290,neutral,0.84,"Elogia atención amable, pero critica servicio telefónico deficiente"
+774,negativo,0.88,Expresa insatisfacción breve sin detalles graves
+559,neutral,0.82,"Critica lentitud, pero reconoce mejoras y buenos planes"
+193,positivo,0.8,Destaca aspecto moderno del lugar
+3543,negativo,0.9,"Alaba distribución y cochera, pero critica baños sucios y malolientes"
+4007,muy positivo,0.96,"Recomienda con entusiasmo, destaca variedad, buen precio y calidad"
+181,neutral,0.78,Palabra aislada sin carga emocional clara
+1552,neutral,0.84,"Elogia productos, pero señala desorden en cajas"
+1178,neutral,0.81,"Aprecia novedades atractivas, aunque menciona indecisión y posible exceso de gasto"
+4358,neutral,0.85,"Elogia servicio excelente, pero critica precios excesivos"
+2872,muy positivo,0.96,Entusiasmo y elogio sin reservas
+351,negativo,0.88,"Queja de lentitud, pero menciona buen trato"
+3968,positivo,0.85,"Elogio de rapidez, aunque incluye anécdota preocupante"
+952,neutral,0.92,Texto informativo sin opiniones claras
+3417,negativo,0.9,"Critica personal, pese a buen espacio"
+4341,neutral,0.87,"Elogio del local, pero señala falta de atención"
+50,neutral,0.95,Comentario breve sin valoración
+90,neutral,0.94,Información descriptiva sin juicio
+3245,negativo,0.89,"Quejas de parqueo y colas, pese a limpieza"
+782,positivo,0.93,Expresa solución satisfactoria
+3905,neutral,0.86,"Elogio del patio, advierte sobre productos"
+170,neutral,0.96,Respuesta breve sin emoción
+153,muy negativo,0.94,Queja grave de falta de comunicación
+4651,negativo,0.84,"Critica vigilancia intrusiva, sugiere mejoras"
+3729,neutral,0.95,Observación sin valoración
+4673,positivo,0.88,"Elogio general, con sugerencias de mejora"
+4224,muy positivo,0.97,Entusiasmo y elogios abundantes
+3692,neutral,0.93,Descripción factual sin juicio
+3678,negativo,0.85,Queja de cobro y calidad disminuida
+1044,negativo,0.87,"Elogio del local, pero menciona demora"
+2189,muy positivo,0.92,"Elogia rapidez, buen trato y recomienda cambiar"
+1083,neutral,0.85,"Solo informa búsqueda, sin valoración"
+4020,positivo,0.88,Resalta variedad sin quejas
+585,negativo,0.9,Elogia atención pero critica larga cola y falta de ventanillas
+4215,neutral,0.86,Combina elogios y quejas sin predominio claro
+2392,negativo,0.9,Elogia servicio pero critica falta de solución
+2587,neutral,0.84,Alaba precios pero señala escasez de marcas
+1398,muy positivo,0.95,"Recomienda enfáticamente, lo califica de lujazo"
+1169,neutral,0.88,"Elogia lugar y variedad, pero critica falta de diversificación"
+2869,positivo,0.87,"Destaca seguridad y ambiente, sugiere bajar volumen"
+12,neutral,0.9,"Solo informa horario, sin valoración"
+810,muy negativo,0.93,Desaconseja rotundamente el lugar
+2454,negativo,0.88,Elogia atención pero critica trabas excesivas
+1661,muy negativo,0.94,"Denuncia espera de un año, tono fuertemente negativo"
+3456,muy positivo,0.9,Entusiasmo por variedad y precios bajos
+3971,positivo,0.85,Resalta accesibilidad y variedad
+2455,negativo,0.88,Elogia atención pero queja por falta de solución
+3792,positivo,0.86,Destaca gran variedad de ropa deportiva
+4671,neutral,0.85,"Elogia personal, señala desorganización"
+3021,muy positivo,0.95,Entusiasmo y amplia oferta
+971,positivo,0.9,Buen servicio y resolución de reclamos
+3089,neutral,0.85,"Ambiente agradable, pero problemas en autoservicio y atención"
+1438,negativo,0.9,"Faltaron piezas de pollo, descontento"
+4227,negativo,0.88,"Buena variedad, pero largas esperas y abandono"
+4452,positivo,0.85,"Facilita pagos y compras, cliente satisfecho"
+1333,positivo,0.8,"Variedad buena, precios razonables"
+78,neutral,0.95,Sin contenido de opinión
+3877,negativo,0.9,Atención lenta
+568,positivo,0.9,Atención rápida y personal cordial
+3160,positivo,0.85,Amplio surtido de productos
+2212,positivo,0.9,Personal amable al pagar
+2577,positivo,0.85,Mejores marcas disponibles
+2829,neutral,0.8,"Buenos precios, menciona ausencia de control sanitario"
+1154,muy negativo,0.85,"Privacidad vulnerada, personal invasivo"
+4243,positivo,0.8,"Pequeños problemas de tallas, pero ordenado"
+1762,negativo,0.9,Poca variedad en horario nocturno
+4512,neutral,0.8,"Variedad alta, precios elevados"
+1891,neutral,0.85,"Amplia oferta, pero precios a verificar"
+1302,muy negativo,0.9,"Producto distinto, sensación de engaño"
+4339,positivo,0.85,Variedad y personal muy amable
+1727,muy positivo,0.9,"Entusiasta, recomienda implícitamente, destaca productos únicos"
+1827,negativo,0.85,"Queja por cierre inesperado, insatisfacción clara"
+3831,muy negativo,0.9,"Enojo por falta de contacto, queja grave"
+1989,neutral,0.8,"Comentario informativo, sin valoración positiva ni negativa"
+216,muy positivo,0.85,Elogio breve y entusiasta
+385,negativo,0.88,Insatisfacción por mala atención y falta de información
+2812,neutral,0.8,"Sugerencia sin queja, tono neutral"
+2462,positivo,0.85,Elogio por rapidez y ausencia de fila
+3738,positivo,0.8,"Entusiasmo predominante, con queja menor sobre variedad"
+1489,positivo,0.85,Elogio por rapidez en atención
+2555,neutral,0.8,Mezcla elogio de precios y queja de atención
+481,muy positivo,0.85,Elogio entusiasta sobre rapidez del centro
+695,negativo,0.75,Queja implícita sobre trato incómodo
+1614,positivo,0.8,Elogio por tarifas bajas
+1963,neutral,0.85,Descripción detallada sin valoración clara
+802,muy negativo,0.95,Queja grave y enfadada
+2202,muy negativo,0.9,"Denuncia de burla, grave insatisfacción"
+1359,neutral,0.8,Información descriptiva sin juicio
+3507,muy positivo,0.95,"Entusiasmo extremo, recomienda fuertemente"
+2535,muy positivo,0.9,Elogio entusiasta de horario y rapidez
+4360,negativo,0.9,"Muchos problemas de espacio y servicios, sin aspectos positivos."
+3802,positivo,0.9,"Experiencia satisfactoria, aunque espacio estrecho, entrega sin demoras."
+3621,positivo,0.85,Resalta amplitud y variedad sin quejas.
+3569,neutral,0.8,"Solo describe tamaño y oferta, sin valoración."
+3150,neutral,0.85,"Cumple lo necesario, pero atención poco personalizada."
+435,neutral,0.8,Comentario breve sin clara valoración.
+867,positivo,0.85,Expresión corta de satisfacción.
+2780,negativo,0.9,"Critica desactualización y desorden, pese a punto fuerte en cajas."
+4249,negativo,0.9,"Destaca variedad pero señala calor, precios altos y desorden."
+86,muy positivo,0.95,Comentario breve y entusiasta.
+2448,negativo,0.9,Queja por atención desigual y falta de asesoría.
+3455,negativo,0.85,Elogia centro pero experiencia de tarjeta genera descontento.
+3564,muy positivo,0.95,"Entusiasmo por variedad y buena atención, desea volver."
+1902,positivo,0.85,Resalta oferta completa y estacionamiento gratuito.
+4502,muy negativo,0.95,Denuncia precios engañosos y atención fría.
+4223,negativo,0.9,Critica diseño confuso y falta de servicios básicos.
+341,positivo,0.85,"Experiencia aceptable con buen cajero, aunque sugiere mejor señalización."
+3156,muy positivo,0.95,Elogia servicio rápido y atención amable.
+1301,neutral,0.8,Describe oferta y atención variable sin juicio fuerte.
+2477,positivo,0.85,"Destaca excelente atención de empleado, recomienda replicarlo."
+1814,muy positivo,0.96,"Describe con entusiasmo múltiples servicios, recomendación muy positiva."
+3554,negativo,0.92,"Queja clara sobre baños, sin elogios."
+3293,neutral,0.85,"Combina quejas de cajas con elogios al personal, sin dominio claro."
+4499,muy negativo,0.96,Denuncia precios abusivos y desaconseja la visita.
+3856,neutral,0.8,"Solo menciona el nombre, sin valoración."
+3426,positivo,0.9,"Elogia mejoras y servicio, con pequeña sugerencia."
+162,muy negativo,0.96,Expresa enojo extremo y llama a la empresa basura.
+1988,muy negativo,0.9,"Califica el lugar como el peor, tono muy negativo."
+1171,negativo,0.88,Señala falta de variedad sin mencionar aspectos positivos.
+1481,neutral,0.8,"Menciona rebajas y precios altos, sin clara polaridad."
+1187,negativo,0.88,Elogia al administrador pero critica fuertemente al resto del personal.
+4190,muy negativo,0.96,Denuncia estafa y desaconseja visitar la panadería.
+417,negativo,0.88,"Queja sobre larga espera, tono negativo."
+2468,neutral,0.8,"Experiencia propia positiva, pero menciona problema ajeno."
+3578,neutral,0.8,"Solo enumera productos, sin valoración."
+3884,neutral,0.8,"Comentario sin valoración clara, depende del personal."
+3185,positivo,0.9,Elogia la atención en momentos críticos.
+3280,positivo,0.9,"Destaca bioseguridad y buen servicio, con pequeña queja de ofertas."
+4155,neutral,0.8,"Alaba medidas pero critica a un colaborador, tono mixto."
+2058,muy positivo,0.92,Elogia atención y recomienda el lugar.
+1669,positivo,0.85,"Comentario breve y elogioso, sin quejas."
+1497,positivo,0.9,"Mayoría de comentarios positivos, inconveniente menor mencionado."
+3730,neutral,0.8,"Solo descripción, sin valoración clara."
+3396,neutral,0.75,Quejas y elogios equilibrados.
+1796,positivo,0.85,Elogio entusiasta de nuevas sucursales.
+576,positivo,0.8,Recomendación práctica y sin críticas.
+1701,negativo,0.9,Queja clara sobre música demasiado alta.
+4334,positivo,0.85,Descripción positiva y sugerencia de visita.
+2044,neutral,0.75,Mejora y problema coexistentes.
+4509,muy negativo,0.9,"Recomendación de evitar, queja grave del servicio."
+3551,neutral,0.8,Aspectos positivos y negativos equilibrados.
+4161,muy positivo,0.9,Entusiasmo y garantía de encontrar lo buscado.
+1547,positivo,0.85,Elogio de completitud y buen estacionamiento.
+777,positivo,0.8,Afirmación breve sin quejas.
+3445,neutral,0.75,Elogio y queja sobre personal equilibrados.
+3099,negativo,0.8,"Preferencia por mercados tradicionales, crítica a supermercados."
+3433,negativo,0.85,Queja sobre cobro y mal olor de bolsas.
+432,neutral,0.75,Problema de cola mitigado con cita online.
+3687,positivo,0.85,Promociones y app facilitan la compra.
+1817,positivo,0.85,Entrega rápida y proceso sencillo.
+1866,muy positivo,0.96,"Elogia, recomienda visitar, tono entusiasta"
+3319,positivo,0.88,"Elogia el pollo, menciona inconvenientes, recomendación moderada"
+1218,muy positivo,0.94,"Entusiasta, destaca gran ventaja, tono muy positivo"
+1277,negativo,0.9,"Critica servicio, pese a mencionar grande, tono negativo"
+2579,neutral,0.85,"Elogia centro, pero critica incremento IGV, balanceado"
+2045,negativo,0.8,"Advierte congestión, tono desfavorable"
+3084,neutral,0.84,"Menciona buen surtido, pero atención deficiente, equilibrio"
+3518,muy negativo,0.96,"Queja grave sobre baño, tono muy negativo"
+2181,positivo,0.9,"Elogia medidas y personal, sugiere mejoras, tono positivo"
+3707,negativo,0.88,"Critica precios altos, tono negativo"
+500,muy negativo,0.9,"Queja grave de espera 2h, servicio inadecuado"
+1295,neutral,0.8,"Describe limitaciones sin entusiasmo, tono neutro"
+1457,neutral,0.85,"Elogia variedad y flujo, pero señala riesgos sanitarios"
+1618,muy positivo,0.95,"Elogio fuerte, calificación alta, tono muy positivo"
+1940,neutral,0.8,Enunciado informativo sin valoración
+1069,muy negativo,0.96,"Servicio pésimo, no lo recomienda, tono muy negativo"
+2390,negativo,0.85,"Advierte larga espera, tono algo negativo"
+796,muy negativo,0.97,"Una palabra, tono extremadamente negativo"
+2684,muy positivo,0.94,"Promociona tienda, invita a disfrutar, tono muy positivo"
+608,neutral,0.84,"Menciona lentitud y amabilidad, equilibrio"
+1455,negativo,0.9,Queja sobre falta de accesibilidad para discapacitados.
+3693,positivo,0.85,"Elogia rapidez del seguridad, queja menor de escaleras."
+4719,neutral,0.8,Comentario factual sin emoción clara.
+2955,muy positivo,0.95,"Entusiasmo, recomienda y elogia la comida y ambiente."
+3427,positivo,0.88,"Elogia el lugar, sugiere mejoras sin queja grave."
+3284,neutral,0.8,Descripción objetiva sin valoración clara.
+850,neutral,0.75,Observación neutral sobre colas.
+1745,negativo,0.85,Destaca largas colas y poca atención en cajas.
+591,positivo,0.84,"Elogia atención, señala colas y falta de silla."
+4773,muy positivo,0.93,Entusiasmo y elogio amplio sin reservas.
+733,muy positivo,0.94,Recomendación entusiasta y elogio fuerte.
+1139,neutral,0.8,"Elogia productos pero critica ruido, balanceado."
+3883,negativo,0.85,Queja directa de servicio no funcional.
+4727,positivo,0.86,"Elogia variedad y atención, menciona colas pero ofrece solución."
+940,positivo,0.84,"Elogia servicio, señala falta de estacionamiento exclusivo."
+2613,muy positivo,0.9,Entusiasmo por agilidad y amabilidad del sistema.
+3596,muy positivo,0.93,Expresa satisfacción y entusiasmo con la ropa.
+1311,positivo,0.85,"Elogia tienda y sugiere horarios, sin quejas graves."
+15,neutral,0.75,Observación factual sin valoración.
+3590,positivo,0.86,"Elogia ambiente fresco y organización, sin entusiasmo extremo."
+2005,negativo,0.94,expresa descontento sin exagerar
+717,neutral,0.92,pregunta sin valoración
+4210,negativo,0.86,"mezcla elogios y queja, prefiere competencia"
+2208,neutral,0.9,información neutral sobre atención y protocolos
+2319,negativo,0.85,"amables pero atención lenta, queja moderada"
+2984,negativo,0.8,"positivo comodidad, negativo falta de personal"
+2308,muy negativo,0.96,"fuerte insatisfacción, critica servicio y atención"
+714,positivo,0.9,"recomienda horarios, tono útil y positivo"
+3555,positivo,0.88,gusta pero sugiere mejores ofertas
+1912,positivo,0.9,aprecio servicio app igual que tienda
+1153,positivo,0.85,"ofertas buenas, queja por calzado masculino"
+2965,neutral,0.92,descripción factual sin valoración
+4606,neutral,0.92,"lista productos, sin juicio"
+1575,muy negativo,0.96,"exagera espera, tono extremadamente negativo"
+2651,negativo,0.9,"queja por falta de ofertas, tono negativo"
+2695,muy positivo,0.9,"recomienda fuertemente, precios mejorados"
+1503,muy positivo,0.95,"elogios abundantes, atención excelente, regalos, muy positivo"
+1087,neutral,0.85,"incertidumbre sobre nuevo servicio, neutral"
+4743,neutral,0.8,texto críptico sin sentimiento
+3275,positivo,0.86,"positivo limpieza, leve queja del pan"
+3818,negativo,0.75,Queja clara por altas comisiones.
+1098,positivo,0.9,Elogio por solución rápida y personal competente.
+775,negativo,0.85,Queja de spam percibido como acoso.
+1205,neutral,0.8,"Elogio de marcas, pero queja por política de probador."
+3662,negativo,0.85,Queja de incomodidad por falta de aire acondicionado.
+3102,positivo,0.9,Muchos elogios; único punto en contra es ubicación subterránea.
+56,neutral,0.6,Texto informativo sin valoración.
+3423,positivo,0.85,Elogio general con pequeñas sugerencias de mejora.
+778,neutral,0.6,Comentario informativo sin valoración.
+2498,negativo,0.8,Queja por venta de licuadoras sin marca reconocida.
+2337,positivo,0.8,"Recomendación de horario, tono favorable."
+1599,muy negativo,0.95,Fuerte queja y recomendación de evitar la tienda.
+4302,positivo,0.8,Comentario breve y favorable.
+4351,negativo,0.85,Queja sobre calidad de verduras y disminución de stock.
+2472,positivo,0.85,Menciona demora pero destaca orden y rapidez.
+4159,neutral,0.75,"Seguridad apreciada, pero falta de variedad de ropa."
+3927,negativo,0.8,"Reconoce protocolos, advierte aglomeración y riesgo para niños."
+2704,positivo,0.9,"Elogio de rapidez, con sugerencia de mejora en embalaje."
+4407,neutral,0.8,"Elogia ambiente, critica surtido; balanceado."
+3979,positivo,0.85,"Destaca comodidad, menciona colas como único inconveniente."
+939,neutral,0.78,"Demora e inexperiencia, pero atención amable equilibra"
+1472,positivo,0.85,Elogio y rapidez sin quejas
+4572,muy positivo,0.9,"Elogios extensos, sin reservas"
+3425,positivo,0.84,"Falta de perfume, pero atención buena y rápida"
+1467,negativo,0.88,Sobreprecio y mala calidad superan elogios
+3966,positivo,0.8,"Pequeña crítica de aforo, pero atención amable"
+4517,negativo,0.85,"Limitaciones y falta de bolsas, desaconseja compra"
+4578,positivo,0.78,"Variedad y buenas instalaciones, sin quejas"
+4355,neutral,0.75,"Comentario aceptable, sugiere mejora en higiene"
+1300,neutral,0.8,"Mezcla de calidad variable y variedad, sin polaridad clara"
+1456,positivo,0.82,Variedad y experiencia agradable pese a fallas de atención
+3599,negativo,0.84,"Buen precio, pero falta de asesoramiento"
+3176,muy positivo,0.9,Entusiasta elogio y recomendación
+2502,muy negativo,0.95,"Escaso stock y hostilidad, desaconseja"
+4152,neutral,0.7,Información sin valoración
+781,positivo,0.78,Recomendación breve y favorable
+3829,negativo,0.8,"Cerrado y desactualizado, queja clara"
+3677,negativo,0.78,Falta de descuento en estacionamiento
+3103,positivo,0.8,Elogio de variedad y bajo precio
+594,neutral,0.75,Descripción informativa sin juicio
+1733,positivo,0.93,"Experiencia buena, con sugerencia menor de organización."
+442,positivo,0.88,"Comentario positivo, destaca claridad del centro."
+2090,negativo,0.9,"Buen trato, pero espera excesiva domina percepción."
+4101,muy positivo,0.95,"Entusiasmo alto, recomienda más cajas, pero elogios sin reservas."
+2191,negativo,0.92,"Colas largas una hora, experiencia insatisfactoria."
+3846,muy positivo,0.94,"Servicio rápido, ambiente tranquilo, satisfacción clara."
+3435,neutral,0.89,"Oferta amplia, ambiente poco cálido, percepción equilibrada."
+461,muy positivo,0.93,"Atención rápida y ayuda eficaz, satisfacción total."
+107,muy positivo,0.96,"Entusiasmo claro, recomendación sin reservas."
+2942,negativo,0.9,"Ambiente seguro, pero alimentos malos, desincentiva volver."
+3299,negativo,0.88,"Ordenado pero cajas lentas, personal apático, seguridad invasiva."
+4241,muy positivo,0.94,"Amplio, ventilado, genera confianza, experiencia muy positiva."
+954,positivo,0.91,"Buen trato general, atención rápida, pero información limitada."
+2700,neutral,0.87,Texto informativo sin valoración positiva ni negativa.
+2944,neutral,0.92,"Limpio y barato, pero falta canastas y seguridad excesiva."
+2893,muy positivo,0.89,"Variedad y precios accesibles, entusiasmo evidente."
+2819,positivo,0.9,"Menú barato, pero cobro de cochera molesta."
+2030,negativo,0.88,"Atención lenta, desorden y largas colas, experiencia insatisfactoria."
+1616,neutral,0.85,"Observa colas en cajero, sin valoración clara."
+3159,muy positivo,0.86,"Ambiente tranquilo, casi sin colas, entusiasmo evidente."
+1306,negativo,0.86,"Cierre inesperado, falta de aviso, enojo."
+3609,neutral,0.81,Menciona variedad sin elogio ni queja.
+1580,negativo,0.73,"Comentario sarcástico, insatisfacción implícita con bancos."
+1059,negativo,0.92,"Mala información, bono falso, solicita mejora."
+807,negativo,0.84,"Afirma que no hay Entel bueno, queja."
+1904,positivo,0.78,"Producto ideal para comprar, tono positivo."
+998,muy positivo,0.95,"Entusiasta, recomienda Entel, destaca buen servicio."
+226,negativo,0.88,"Cajero no permite tarjetas, comisión no válida."
+2705,positivo,0.8,"Devolución correcta, atención buena pese demora."
+4353,positivo,0.85,"Tienda bien equipada, buen trato, sugiere más espacio."
+1906,positivo,0.85,"Atención rápida, buenas ofertas, experiencia positiva."
+1460,neutral,0.75,Todo bien pero critica control de personas.
+73,positivo,0.85,"Instalaciones imponentes, personal amable y profesional."
+376,negativo,0.8,"Falta de centro de atención, queja."
+3215,muy negativo,0.9,"Abuso de estacionamiento, pago no aceptado, enojo."
+2745,positivo,0.86,"Renueva lentes, contento con calidad nacional."
+2046,neutral,0.8,"Acceso fácil, pero atención necesita mejora."
+3262,negativo,0.85,"Falta de códigos impide compra, queja."
+3565,positivo,0.8,"Buen lugar, precios, pero largas esperas."
+963,positivo,0.85,"Centro amplio, atención rápida, problema de estacionamiento."
+1404,muy positivo,0.96,Expresa entusiasmo y recomendación implícita
+472,positivo,0.9,"Elogia atención y solución, tono satisfecho"
+3116,neutral,0.85,Combina elogio a ofertas y queja de precios
+3428,neutral,0.8,"Elogia lugar, menciona confusión, sin predominio claro"
+3826,muy negativo,0.92,"Queja grave de cajero, tono enfadado"
+1828,positivo,0.85,"Elogia, solo sugiere mejora, tono satisfecho"
+2322,neutral,0.8,"Alaba personal, critica caja, sin predominio claro"
+1091,positivo,0.9,"Destaca eficiencia superior, tono favorable"
+1983,muy negativo,0.95,"Queja fuerte, califica atención como pésima"
+3951,muy positivo,0.96,"Elogio entusiasta, recomienda para familia"
+799,positivo,0.8,"Indica precio bajo, tono favorable"
+98,positivo,0.85,"Elogia amplitud, tono satisfecho"
+4481,muy positivo,0.96,Entusiasmo y recomendación clara
+4409,positivo,0.85,"Critica espacio interno, pero califica como mejor"
+838,negativo,0.8,Queja breve sobre falta de espacio
+4058,neutral,0.75,"Texto informativo, sin valoración clara"
+1972,muy negativo,0.95,"Denuncia cierre y abandono, tono enfadado"
+2906,neutral,0.7,"Simple declaración, sin valoración"
+761,muy positivo,0.9,"Expresa entusiasmo, califica como lo máximo"
+632,negativo,0.85,"Critica demora y colas, tono insatisfecho"
+1182,neutral,0.85,Describe servicio sin expresar opinión
+3441,negativo,0.9,Mayor parte del texto critica la oferta y recomienda competencia
+412,negativo,0.9,Expresa falta de ayuda y molestia
+2910,negativo,0.9,"Queja sobre precios y desorganización, tono crítico"
+2688,positivo,0.85,"Elogia variedad y ofertas, tono satisfecho"
+383,muy negativo,0.95,"Denuncia robo con arma, advierte peligro"
+1320,negativo,0.85,Reconoce variedad pero critica desorden y dificultad
+636,negativo,0.9,Se queja de colas y falta de personal
+3122,positivo,0.8,Usa adjetivos positivos sin exageración
+4435,positivo,0.85,"Elogia higiene y atención, tono favorable"
+3460,positivo,0.88,"Elogia ofertas y variedad, menciona colas como único problema"
+3679,muy negativo,0.95,Expresa alto descontento y rechazo total
+4295,positivo,0.85,"Destaca medidas de seguridad, tono mayormente positivo"
+1230,positivo,0.85,"Elogia protocolos de seguridad, tono favorable"
+3268,neutral,0.8,"Combina elogios con queja menor, sin predominio"
+2601,positivo,0.9,"Resalta medidas y orden, tono favorable"
+4601,positivo,0.85,Elogia rapidez y satisfacción
+3643,positivo,0.85,"Destaca variedad y comodidad, tono favorable"
+2177,negativo,0.9,"Critica lentitud y calidad, tono desfavorable"
+3546,negativo,0.88,Elogia estética pero denuncia falta de personal y discriminación
+3719,positivo,0.85,"Mayormente positivo, con críticas sobre señalización y ayuda."
+2434,muy negativo,0.9,"Queja grave, recomienda no ir."
+4523,negativo,0.8,Descontento por deterioro del servicio.
+431,neutral,0.7,Comentario descriptivo sin valoración.
+2775,muy negativo,0.92,"Queja grave sobre precios y deshonestidad, desaconseja."
+1672,negativo,0.85,Insatisfacción por colas y precios altos.
+4122,muy positivo,0.93,"Entusiasta, destaca variedad y buen ambiente."
+3076,muy positivo,0.9,Entusiasmo por mejoras y buen servicio.
+2465,neutral,0.75,Equilibrio entre ayuda rápida y falta de orientación.
+3806,neutral,0.7,Descripción informativa sin valoración.
+1327,negativo,0.78,Critica tiempos de caja pese a variedad.
+2514,negativo,0.85,Insatisfacción por atención deficiente pese a buena oferta.
+189,neutral,0.7,Comentario descriptivo sin juicio.
+3113,positivo,0.82,"Satisfecho con precio y ambiente, falta un producto."
+1314,neutral,0.7,Enumeración sin valoración.
+4028,positivo,0.8,Elogio de completitud del supermercado.
+3542,negativo,0.78,Critica falta de tallas y etiquetas pese a variedad.
+2731,positivo,0.8,"Resalta variedad y ofertas, tono favorable."
+2837,muy positivo,0.9,Entusiasmo y recomendación de auto caja.
+602,muy positivo,0.9,Elogio rápido y variedad de ofertas.
+25,muy negativo,0.98,"Empleado despótico, quiere que te vayas, experiencia terrible"
+3714,neutral,0.95,Texto descriptivo sin opiniones positivas ni negativas
+4075,positivo,0.9,"Elogia a colaboradores y ambiente, sin quejas"
+4418,muy positivo,0.96,"Alabanza completa, destaca calidad y atención, tono entusiasta"
+1545,muy positivo,0.92,"Recomendación entusiasta, destaca atención y patio"
+46,negativo,0.9,"Critica atención deficiente y falta de responsable, tono insatisfecho"
+3118,positivo,0.93,"Resalta amplitud, rapidez y buen servicio, tono favorable"
+669,negativo,0.85,"Queja por saturación, sugiere llegar temprano"
+3032,positivo,0.9,"Comentario breve y satisfecho, encontró lo que buscaba"
+2534,neutral,0.88,"Elogia limpieza y orden, menciona falta de variedad, equilibrio"
+3387,muy negativo,0.99,"Queja grave de atención, filas largas, proceso confuso, tono enfadado"
+1728,neutral,0.86,Balance entre tranquilidad y quejas de falta de respeto a la fila
+2914,muy negativo,0.97,"Alerta sobre cobros abusivos, tono de vergüenza, desaconseja"
+1878,positivo,0.9,"Elogia calidad y variedad, menciona aglomeraciones menores"
+4589,neutral,0.9,"Descripción factual, menciona precios altos sin juicio"
+3840,muy negativo,0.98,"Denuncia cobro excesivo y pérdida económica, tono enfadado"
+1452,negativo,0.9,"Critica instalaciones y atención, solo el producto es bueno"
+2042,neutral,0.85,"Reconoce rapidez, pero señala falta de solución, tono equilibrado"
+4797,positivo,0.9,"Elogia variedad y buen servicio, menciona precios altos"
+4664,negativo,0.9,"Señala largas colas y procesos deficientes, sugiere mejoras"
+2985,positivo,0.85,Elogio moderado sin quejas.
+1621,muy positivo,0.9,Elogio entusiasta y sin reservas.
+4519,neutral,0.8,Pros y contras equilibrados.
+3389,muy negativo,0.85,Queja grave y tono enfadado.
+2652,negativo,0.8,Insatisfacción con personal predomina.
+1593,neutral,0.9,Texto informativo sin valoración.
+2567,positivo,0.8,"Elogio de ofertas, sin quejas."
+2334,positivo,0.8,"Mejora y promociones, tono positivo."
+3822,muy negativo,0.9,"Queja grave, recomienda no usar."
+414,neutral,0.8,Mezcla de críticas y elogios.
+2659,negativo,0.85,Crítica a tácticas y escasez de ofertas.
+3106,neutral,0.8,Comentario equilibrado con ligera queja.
+2435,negativo,0.85,Atención amable pero falta de stock.
+3572,positivo,0.8,Elogio general con pequeñas quejas.
+1783,muy positivo,0.9,Elogio entusiasta sin reservas.
+4575,muy positivo,0.9,Entusiasmo y recomendación de productos.
+1155,negativo,0.8,Comodidad contrarrestada por mala atención.
+1555,positivo,0.85,Servicio rápido y conveniente.
+3886,negativo,0.8,"Larga espera en plataforma, queja predominante."
+1700,positivo,0.8,Elogio general con queja menor.
+441,neutral,0.9,Consulta sin valoración positiva ni negativa.
+4150,muy positivo,0.95,"Elogio entusiasta, recomienda fuertemente."
+4641,positivo,0.9,"Elogio moderado, menciona amplitud y ofertas."
+553,muy negativo,0.96,"Queja grave, desaconseja visitar el lugar."
+1956,neutral,0.85,Información descriptiva sin valoración.
+232,negativo,0.9,Insatisfacción clara por falta de respuesta telefónica.
+2021,negativo,0.9,Queja de largas esperas y falta de asistencia.
+3731,neutral,0.85,"Texto mixto, describe ofertas y colas sin fuerte polaridad."
+4560,positivo,0.9,Elogio mayor con críticas menores al estacionamiento.
+4428,muy positivo,0.95,"Entusiasta, recomienda sin reservas."
+269,neutral,0.85,Comentario informativo sin valoración clara.
+711,positivo,0.9,Elogio por atención amable y satisfacción moderada.
+2545,neutral,0.8,Mezcla elogio y crítica a bioseguridad.
+256,muy negativo,0.98,"Acusa estafa grave, desaconseja el servicio."
+2210,neutral,0.85,"Descripción informativa, menciona rapidez moderada."
+3928,muy positivo,0.95,"Elogio entusiasta, indica intención de volver."
+2001,negativo,0.9,Queja de mala atención centrada en renovaciones.
+2442,neutral,0.85,Información sobre colas sin juicio.
+1714,neutral,0.8,"Combina quejas y elogios, sin dominio."
+2685,positivo,0.9,Elogio general con pequeñas sugerencias.
+1446,muy negativo,0.96,"Robo, falta de ayuda, queja grave."
+501,negativo,0.94,"Servicio no realizado, falta de atención."
+3330,muy positivo,0.92,"Elogio amplio, recomienda nivel, sin quejas."
+949,positivo,0.88,"Pequeña demora, atención rápida, satisfacción moderada."
+2439,neutral,0.85,Aspectos positivos y negativos equilibrados.
+2338,positivo,0.9,"Experiencia rápida y satisfactoria, sin quejas."
+1411,muy positivo,0.93,Entusiasmo y recomendación implícita.
+2915,negativo,0.88,Queja por horario de apertura tardío.
+948,muy positivo,0.91,"Elogio a atención rápida y organizada, recomendación."
+3786,muy positivo,0.85,"Elogio entusiasta, sin quejas."
+1077,negativo,0.9,Queja por larga espera.
+3005,muy positivo,0.92,Elogio y recomendación clara para volver.
+891,negativo,0.86,Queja por falta de estacionamiento y autoridades.
+1585,negativo,0.88,"Colas largas y suciedad, queja clara."
+1565,muy positivo,0.94,"Elogio tranquilo, sin colas, emojis positivos."
+2826,positivo,0.87,"Pequeña queja de baños, resto positivo."
+3923,negativo,0.9,Gran espacio pero caos y mala atención los fines de semana.
+1928,muy positivo,0.93,"Elogio completo, sin quejas."
+1540,muy positivo,0.92,"Entusiasmo y buenas ofertas, sin quejas."
+597,positivo,0.86,"Atención rápida, pero falta de publicidad, satisfacción moderada."
+4040,muy negativo,0.95,"Producto defectuoso, corta vida útil, recomienda no comprar"
+4556,positivo,0.9,"Espacio amplio, buena calidad, atención rápida pese a colas"
+4539,negativo,0.85,Precios percibidos como algo elevados
+3355,positivo,0.8,"Buen servicio y aire acondicionado, valoración favorable"
+4585,positivo,0.85,"Buena oferta, cajera amable, solución POS"
+2020,muy negativo,0.95,"Desorganización total, experiencia supliciosa"
+3675,negativo,0.85,"Política restrictiva, decepción por no recibir regalo"
+2902,muy positivo,0.9,"Lugar excelente, ordenado y limpio"
+3264,neutral,0.8,Ordenado pero con cobro de estacionamiento
+713,negativo,0.75,"Muchísima cola, experiencia poco satisfactoria"
+4156,positivo,0.85,"Controles eficientes, recomendación útil, experiencia positiva"
+2098,muy negativo,0.95,"Servicio pésimo, atención deficiente, desaconseja la empresa"
+771,muy negativo,0.9,"Trato malo y precios altos, reseña muy negativa"
+2517,neutral,0.8,Descripción informativa sin valoración
+3957,positivo,0.8,"Variedad y entrega rápida, advierte taxis informales"
+447,negativo,0.75,Colas largas y lentas por pandemia
+2996,muy positivo,0.9,"Remodelación hermosa, ambiente fresco y ordenado"
+1483,muy negativo,0.95,"Mala atención, cobros abusivos, experiencia muy negativa"
+62,muy positivo,0.9,"Valoración muy buena, entusiasmo claro"
+310,muy negativo,0.85,"Inseguridad en cajero, riesgo de datos"
+1785,neutral,0.95,Texto informativo sin valoración positiva ni negativa
+612,positivo,0.94,Pequeña queja pero atención rápida y eficiente
+3965,positivo,0.93,"Elogios predominantes, solo sugerencia menor"
+4012,muy positivo,0.96,Entusiasmo y recomendación clara para ir en familia
+1561,muy positivo,0.95,"Elogio sin reservas, destaca ofertas y comodidad"
+4688,positivo,0.92,"Mayoría elogios, advierte sobre publicista"
+41,muy negativo,0.96,"Quejas graves de servicio y seguridad, desaconseja"
+2847,neutral,0.9,Elogios y quejas equilibradas
+4253,neutral,0.89,"Ventajas y desventajas presentadas, sin predominio"
+721,muy positivo,0.97,Entusiasmo y recomendación clara
+4420,positivo,0.93,"Elogio mayoritario, ligera preocupación"
+4542,muy positivo,0.95,"Elogio sin reservas, ambiente tranquilo"
+811,muy negativo,0.94,Corto pero denota fuerte descontento
+1279,muy negativo,0.96,"Queja grave de atención, recomienda no"
+1719,muy positivo,0.95,Entusiasmo y recomendación implícita
+2512,muy positivo,0.96,"Elogio entusiasta, sin reservas"
+927,muy negativo,0.96,"Fuerte queja sobre personal, tono crítico"
+2729,muy positivo,0.97,"Entusiasmo claro, recomendación implícita"
+2458,negativo,0.94,"Queja clara de lentitud, desaconseja horarios"
+2929,negativo,0.92,"Insatisfacción con frescura, sugiere buscar otro proveedor"
+1995,negativo,0.88,Queja por incomodidad en la atención al público
+1996,negativo,0.9,"Critica la mala atención, tono crítico"
+4608,muy positivo,0.95,"Entusiasmo, recomienda y destaca excelente atención"
+3644,positivo,0.85,"Elogio general, satisfacción sin exageración"
+3083,muy negativo,0.96,Queja grave sobre higiene y comportamiento de usuarios
+3763,positivo,0.87,Elogio general del centro comercial
+2236,muy negativo,0.94,Denuncia graves problemas de servicio y gestión
+3978,positivo,0.86,Elogio general con queja menor sobre el plátano
+4412,muy positivo,0.96,"Entusiasta recomendación, destaca múltiples aspectos positivos"
+3243,negativo,0.9,Se queja de precios inconsistentes y confusión en caja
+404,muy negativo,0.93,Denuncia filtración de datos y falta de seguridad
+3533,neutral,0.84,Elogia variedad pero critica precios excesivos
+3406,positivo,0.88,"Resalta variedad, precios accesibles y limpieza"
+4314,positivo,0.86,"Elogia orden, ofertas y amabilidad del personal"
+4795,muy positivo,0.95,"Entusiasta, destaca mejora y modernización tras años"
+3133,neutral,0.82,Descripción informativa sin fuerte carga positiva ni negativa
+3180,muy positivo,0.9,Entusiasmo por compras recientes
+374,negativo,0.88,Queja por tienda cerrada en horario esperado
+1598,muy negativo,0.96,Expresa enojo por larga espera
+3803,muy positivo,0.95,"Elogia atención, variedad y buen manejo de objetos perdidos"
+821,negativo,0.9,"Queja por falta de cambios, insatisfacción moderada."
+2904,muy positivo,0.95,"Elogio entusiasta, precios buenos, recomienda implícitamente."
+353,muy positivo,0.92,"Descripción positiva, atención muy buena, sin quejas."
+3728,neutral,0.85,"Menciona variedad y precios, pero critica calidad, tono mixto."
+4640,muy positivo,0.96,"Alabanza extrema, compara favorablemente, opción ideal."
+722,positivo,0.88,"Buena atención pero larga espera, satisfacción moderada."
+685,negativo,0.85,"Rápida atención en ventanilla, pero larga espera en ticket, frustración."
+4708,muy positivo,0.95,"Entusiasmo claro, destaca estética y atención excelente."
+2092,positivo,0.9,"Rápida atención y accesibilidad, comentario positivo."
+4645,positivo,0.88,"Espacio pequeño pero gran variedad, valoración positiva."
+3935,neutral,0.8,"Descuentos buenos, pero carritos defectuosos, tono equilibrado."
+2203,muy negativo,0.92,"Larga falta de solución y facturación, queja grave."
+3949,neutral,0.85,"Variedad y horario amplio, pero pocas cajas, tono mixto."
+696,neutral,0.85,"Congestión alta, personal amable, opinión mixta."
+2079,positivo,0.9,"Poco público, atención amable y solución, satisfacción."
+446,positivo,0.9,"Atención rápida y poca gente, comentario positivo."
+480,neutral,0.85,"Ubicación desordenada, pero muchas tiendas, opinión neutral."
+3381,negativo,0.88,"Precio sube pese a descuento, frustración por costo."
+4247,muy positivo,0.93,"Limpio, ordenado, recomienda visitar en días tranquilos."
+748,negativo,0.85,"Precio SIM y recarga considerados caros, queja."
+2196,negativo,0.85,"Quejas sobre desinfección, demoras e información inconsistente"
+1148,muy negativo,0.9,Denuncia estafa y falta de confianza en la tienda
+1609,muy positivo,0.9,Elogio entusiasta a la atención del banco
+580,neutral,0.8,"Elogio a atención, pero queja de larga espera"
+2521,neutral,0.75,Mezcla elogio de precios y crítica de artefactos
+249,negativo,0.85,Queja de molestia por falta de papel en cajero
+81,positivo,0.8,Comentario breve y entusiasta sobre la vista
+3149,positivo,0.85,"Resalta instalaciones y variedad, menciona mayor afluencia nocturna"
+3421,positivo,0.85,"Elogia ofertas y precios, menciona limitada variedad"
+1808,positivo,0.8,Comentario breve y favorable sobre el lugar
+4607,muy positivo,0.9,Alabanza entusiasta a organización y seguridad
+578,negativo,0.85,Queja por actitud molesta y falta de información
+677,negativo,0.8,Critica deficiencia y diagnóstico incorrecto del servicio técnico
+2645,negativo,0.85,Queja sobre actitud cansada y falta de atención del vendedor
+4108,muy positivo,0.9,"Elogio entusiasta a variedad, orden y facilidades"
+1574,negativo,0.8,Señala insuficiente número de ventanillas activas
+1587,negativo,0.85,Queja por lentitud en la atención
+860,neutral,0.7,"Solo menciona nombre, sin valoración"
+3623,positivo,0.8,Comentario favorable sobre ubicación y oferta de ropa
+3374,negativo,0.85,"Critica medidas Covid y ambiente cerrado, sugiere comprar online"
+1239,negativo,0.9,"Queja sobre tráfico lento, tono insatisfecho"
+4071,negativo,0.9,"Elogia aisles, pero destaca desorden y falta de stock"
+3080,positivo,0.92,"Mayormente elogios, con queja menor del estacionamiento"
+1367,neutral,0.85,"Combina elogios y quejas sobre personal, tono equilibrado"
+1622,muy positivo,0.96,"Entusiasta, destaca comodidad y excelente servicio"
+4091,positivo,0.88,"Elogia espacio y ofertas, menciona acceso algo enredado"
+2787,positivo,0.87,"Mayormente positivo, con queja menor de horarios de comida"
+3054,neutral,0.84,"Compara, destaca ventajas de otro, sugiere mejoras para Vea"
+4289,positivo,0.9,"Elogia ofertas y variedad, tono satisfecho"
+1487,neutral,0.83,"Elogia variedad, critica falta de vestidores, tono equilibrado"
+676,negativo,0.92,"Queja clara de larga espera, tono insatisfecho"
+79,neutral,0.95,"Solo información, sin valoración positiva o negativa"
+3087,positivo,0.9,"Elogia seguridad, limpieza y precios, tono satisfecho"
+4461,muy positivo,0.96,"Entusiasmo por limpieza y organización, recomendación implícita"
+2938,negativo,0.88,"Elogia accesibilidad, pero critica personal y falta de productos"
+1000,muy positivo,0.97,Elogio fuerte a amabilidad y eficiencia
+4670,negativo,0.9,Queja extensa sobre remodelaciones y falta de cajas
+141,negativo,0.91,"Advertencia de larga espera, tono insatisfecho"
+2537,positivo,0.88,"Destaca variedad y precios, tono satisfecho"
+1637,positivo,0.9,"Resalta baja espera, tono favorable"
+2140,negativo,0.85,"Queja sobre atención y falta de información, tono frustrado."
+457,neutral,0.9,Describe servicio estándar sin elogios ni quejas.
+3395,negativo,0.88,"Critica olores y falta de aire acondicionado, tono negativo."
+4105,positivo,0.9,"Elogia limpieza, espacio y atención, lo recomienda."
+1310,muy positivo,0.87,"Entusiasmo por ambiente agradable y variedad, recomendación implícita."
+702,positivo,0.9,"Destaca buena atención, menciona limitaciones post‑pandemia."
+1894,muy negativo,0.9,Se queja del consumo mínimo y no volverá.
+4320,muy positivo,0.9,"Alaba despacho online y visita, sin críticas."
+1101,positivo,0.85,"Resalta rapidez y solución de problemas, tono positivo."
+1241,muy positivo,0.9,"Elogio entusiasta de amplitud, calidad y organización."
+451,neutral,0.85,"Comentario informativo, sin valoración clara."
+4242,neutral,0.8,Mezcla limpieza con precios faltantes y colas desordenadas.
+1189,positivo,0.85,"Aprecia menor concurrencia, mejora la experiencia."
+3556,negativo,0.88,Queja por demora en carta de no adeudo.
+1756,neutral,0.8,"Colas largas, pero limpieza y atención buenas."
+1782,muy positivo,0.9,"Entusiasmo por comodidad, precios bajos y servicios."
+598,negativo,0.88,"Critica lentitud, máquinas defectuosas y servicio variable."
+2789,muy positivo,0.85,"Califica como uno de los mejores, destaca vinos."
+1711,negativo,0.9,Denuncia baño caótico y productos faltantes.
+4379,muy positivo,0.9,"Alaba espacio, aire acondicionado y helados recomendados."
+4717,muy positivo,0.96,"Elogia organización, ubicación y facilidades sin mencionar problemas."
+630,muy negativo,0.97,Queja grave de largas esperas y servicio inoperante.
+3239,negativo,0.9,"Ofertas buenas, pero quejas de largas colas predominan."
+1569,muy positivo,0.96,"Alaba orden, limpieza, variedad y posición destacada."
+4586,muy positivo,0.96,"Destaca ventilación, amabilidad y accesibilidad sin críticas."
+2076,positivo,0.92,"Elogia rapidez y mejora, sin exagerar entusiasmo."
+3726,neutral,0.88,"Ofrece buenas zapatillas, pero critica lentitud del banco."
+3422,negativo,0.9,"Menciona buenas ofertas pero personal deficiente y largas colas, desaconseja fin de semana."
+45,positivo,0.92,Comentario breve y positivo sin exageración.
+150,positivo,0.92,Comentario breve y positivo sin exageración.
+4591,neutral,0.88,"Variedad y limpieza, pero precios regulares sin gran ventaja."
+2986,muy positivo,0.96,"Resalta orden, limpieza y amplia variedad sin críticas."
+2900,muy positivo,0.96,"Destaca amplitud, múltiples cajas y excelentes ofertas."
+4487,muy positivo,0.96,"Elogia atención, seguridad y recepción de forma entusiasta."
+1405,muy positivo,0.96,"Califica lugar hermoso y precios económicos, sin quejas."
+1568,muy positivo,0.96,Elogia lugar y gran variedad sin observaciones negativas.
+2546,neutral,0.88,"Ofrece buenas ofertas pero carece de variedad, especialmente en bicicletas."
+1256,muy positivo,0.96,"Resalta tamaño, variedad, tecnología y buenas ofertas sin críticas."
+744,muy positivo,0.96,"Entusiasta elogio a atención, exhibición y amplitud del local."
+1488,neutral,0.88,Menciona buenas ofertas pero precios altos en calzado.
+1120,positivo,0.9,Rapidez y amabilidad indican satisfacción moderada
+2967,neutral,0.85,"Elogios y quejas equilibrados, sin predominio claro"
+1079,positivo,0.9,Servicio rápido y amable favorece al cliente
+3765,muy positivo,0.9,Elogios intensos y sin quejas muestra entusiasmo
+43,negativo,0.9,Queja clara sobre trámites excesivos
+3337,muy positivo,0.95,"Recomendación entusiasta, destaca limpieza y ambiente"
+4403,neutral,0.85,Elogios y queja fuerte sobre precios equilibran reseña
+4328,positivo,0.9,"Buen espacio, comida y ofertas generan satisfacción"
+2916,muy negativo,0.95,"Queja grave de atención, recomienda no ir"
+3799,muy positivo,0.9,"Elogio entusiasta, recomienda actividades"
+1571,muy positivo,0.9,"Entusiasmo y recomendación clara, destaca vista"
+2667,positivo,0.85,Breve elogio indica satisfacción moderada
+1742,negativo,0.85,Insatisfacción inicial supera los aspectos positivos
+3875,muy negativo,0.95,"Queja grave de servicio, desaconseja acudir"
+2499,neutral,0.85,"Ofertas buenas y atención pésima, balance neutral"
+4113,positivo,0.9,Satisfacción por ofertas y liquidaciones
+4570,muy positivo,0.9,"Elogio amplio, precios justos y variedad"
+103,muy positivo,0.9,Elogio entusiasta de orden y modernidad
+478,muy positivo,0.95,Entusiasmo fuerte elogia atención
+2552,neutral,0.85,Aspectos positivos y quejas de personal equilibran reseña
+3751,positivo,0.85,"Destaca espacio y buenas ofertas, aunque requiere tiempo."
+706,positivo,0.9,Reconoce cola larga pero destaca rapidez y amabilidad.
+4410,neutral,0.8,"Alaba atención, pero critica lentitud en cajas."
+4262,positivo,0.85,Enfatiza buenas promociones con tarjeta.
+4273,muy positivo,0.95,Elogia calidad y lo califica como el mejor.
+4244,positivo,0.8,Destaca variedad del lugar.
+3939,muy positivo,0.95,"Resalta amplitud, amabilidad y precios razonables."
+4762,muy positivo,0.95,"Elogia atención, calidad y novedades."
+2470,negativo,0.9,Critica asesoría y atención pese a ofertas.
+3723,muy positivo,0.9,"Elogia lugar y tiendas, muestra entusiasmo."
+372,muy negativo,0.98,Expresa enojo y rechazo total.
+1501,negativo,0.85,"Ofertas buenas, pero personal poco colaborativo."
+765,muy negativo,0.95,Falta total de buena atención.
+2791,positivo,0.85,Destaca utilidad y novedad del lugar.
+2979,positivo,0.85,Elogia como buen sitio de compras.
+3862,muy negativo,0.96,Denuncia mal servicio y larga espera.
+1329,negativo,0.88,"Ofertas buenas, pero colas largas y lentas."
+4740,muy positivo,0.96,Elogia limpieza y atención excepcional.
+3579,neutral,0.8,Combina ofertas buenas con problemas de aforo y cumplimiento.
+3752,positivo,0.85,Elogia calidad y amplio espacio.
+1947,positivo,0.95,"Enfasis en limpieza, orden y seguridad, tono positivo."
+4422,positivo,0.96,"Resalta variedad, calidad, precios y servicio continuo, tono favorable."
+1498,positivo,0.94,"Destaca buenas ofertas y recomendación, sentimiento positivo."
+4390,positivo,0.93,"Elogia productos, atención y limpieza, pese a precios altos."
+1852,negativo,0.96,"Critica lentitud y mala gestión, muestra insatisfacción clara."
+2849,positivo,0.95,"Enfatiza surtido, precios accesibles y facilidades, tono favorable."
+759,positivo,0.92,"Aprecia rapidez y calidad del servicio, sentimiento positivo."
+1374,positivo,0.94,"Resalta ambiente, amabilidad y atención, tono positivo."
+476,muy positivo,0.9,Elogia distribución y modernidad con entusiasmo.
+3353,muy positivo,0.93,"Invita a visitar, destaca limpieza y precios justos, tono entusiasta."
+3273,positivo,0.94,"Enfatiza orden, limpieza y variedad, sentimiento positivo."
+3048,muy positivo,0.92,"Alaba limpieza, organización y atención excelente, tono muy entusiasta."
+4454,positivo,0.9,"Menciona buenas opciones, actitud positiva."
+2736,positivo,0.9,"Resalta ofertas y facilidad de pago, tono positivo."
+4204,negativo,0.94,"Combina elogios con críticas graves a baños y estacionamiento, predominan lo negativo."
+275,neutral,0.91,"Elogia atención pero menciona colas largas, balanceado sin polaridad clara."
+3996,muy positivo,0.96,"Entusiasta recomendación, destaca variedad y precios cómodos, tono extremadamente positivo."
+380,muy negativo,0.95,"Queja grave de mala atención y demoras, recomienda no ir."
+4443,positivo,0.92,"Destaca eficiencia y amabilidad, tono positivo."
+3946,positivo,0.94,"Resalta orden, ofertas y amabilidad, sentimiento claramente positivo."
+1792,muy positivo,0.95,"Elogia ubicación, variedad, seguridad y transporte, tono entusiasta"
+1351,positivo,0.9,Comentario breve pero positivo sobre la variedad
+951,muy positivo,0.93,Alaba atención excelente y ambiente poco concurrido
+171,positivo,0.9,"Destaca calidad y ubicación inmediata, tono positivo"
+4466,muy positivo,0.94,"Resalta orden, limpieza, variedad y opciones de pago, muy entusiasta"
+1339,positivo,0.88,"Elogia ofertas y productos, tono favorable"
+2756,positivo,0.9,Destaca ofertas y excelente atención al público
+4264,positivo,0.88,"Elogia atención y precios cómodos, actitud positiva"
+4078,positivo,0.85,"Menciona buenas ofertas en abarrotes, tono favorable"
+3183,muy positivo,0.96,"Entusiasta sobre descuentos, tiendas y ambiente agradable"
+913,negativo,0.94,"Critica atención pésima, demoras y falta de estacionamiento"
+4382,muy positivo,0.95,"Elogia belleza, novedad y ambiente ideal para compartir"
+493,muy negativo,0.97,"Denuncia colas excesivas y demoras, tono muy crítico"
+4627,muy positivo,0.94,"Alaba limpieza, orden, surtido y calidad, tono entusiasta"
+977,neutral,0.8,Comentario breve sin valoración clara
+4699,muy positivo,0.96,"Destaca limpieza, seguridad, calidad y ambiente acogedor"
+1898,muy positivo,0.94,"Elogia limpieza, orden y excelente atención, tono agradecido"
+2859,muy positivo,0.95,"Expresa fidelidad, buen lugar y precios cómodos, muy entusiasta"
+2570,positivo,0.88,"Resalta atención y buen lugar, tono favorable"
+4438,muy positivo,0.95,"Alaba organización, limpieza y personal muy atento, tono entusiasta"
+1258,muy positivo,0.96,"Elogio entusiasta, recomienda y destaca excelente atención y amabilidad"
