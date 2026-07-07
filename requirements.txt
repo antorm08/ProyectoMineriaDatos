@@ -17,3 +17,9 @@ torch
 transformers
 datasets
 accelerate
+
+# --- Interfaz de demostracion ---
+streamlit
+starlette>=0.40.0,<2.0.0
+python-multipart>=0.0.10
+plotly
