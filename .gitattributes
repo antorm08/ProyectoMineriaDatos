@@ -1,0 +1,2 @@
+modelo_entrenado/**/*.safetensors filter=lfs diff=lfs merge=lfs -text
+modelo_entrenado/**/*.bin filter=lfs diff=lfs merge=lfs -text

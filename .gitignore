@@ -48,3 +48,8 @@ models/v2_mejor_modelo_transformer/
 # Informe: dependencias de Node y artefactos temporales
 informe/node_modules/
 informe/package-lock.json
+
+# Excepcion: el modelo entrenado (BETO) se versiona con Git LFS en su carpeta
+# dedicada para que todo el equipo pueda acceder a el. Anula *.safetensors de arriba.
+!modelo_entrenado/
+!modelo_entrenado/**
