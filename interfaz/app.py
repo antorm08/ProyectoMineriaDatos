@@ -306,6 +306,51 @@ textarea::placeholder, input::placeholder {
   padding: 1rem;
   box-shadow: 0 8px 24px rgba(110, 74, 55, 0.04);
 }
+.class-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 .45rem;
+  font-size: .84rem;
+}
+.class-table th {
+  color: var(--muted);
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  text-align: left;
+  padding: .15rem .55rem;
+}
+.class-table td {
+  padding: .2rem .55rem;
+}
+.score-pill {
+  display: inline-block;
+  min-width: 48px;
+  text-align: center;
+  padding: .22rem .45rem;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: 800;
+}
+.score-high { background: #a04f3b; }
+.score-mid { background: #c99484; }
+.score-low { background: #ead0c5; color: var(--ink); }
+.support-cell {
+  color: #5f514b;
+  font-variant-numeric: tabular-nums;
+}
+.table-note {
+  margin-top: .7rem;
+  padding: .75rem .85rem;
+  border-radius: 12px;
+  background: #fff4ee;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+.table-note strong {
+  color: var(--accent);
+}
 .model-note {
   background: #ffffff;
   border: 1px solid var(--line);
@@ -653,19 +698,47 @@ elif "Metricas del modelo" in seccion:
     col_tabla, col_modelo = st.columns([1.55, .9], gap="large")
     with col_tabla:
         with st.container(border=True):
-            st.markdown("**Comparacion de modelos en validacion**")
-            comparacion = pd.DataFrame(
-                [
-                    ["BETO", 0.7955],
-                    ["XLM-RoBERTa", 0.7331],
-                    ["LSTM", 0.6015],
-                    ["SVM", 0.5972],
-                    ["CNN", 0.5828],
-                    ["Naive Bayes", 0.5801],
-                ],
-                columns=["Modelo", "F1-macro valid"],
+            st.markdown("**Performance por Clase**")
+            filas_clase = [
+                ("Muy Negativo", 0.86, 0.88, 0.87, 186),
+                ("Negativo", 0.73, 0.67, 0.70, 165),
+                ("Neutral", 0.58, 0.43, 0.49, 139),
+                ("Positivo", 0.68, 0.58, 0.62, 290),
+                ("Muy Positivo", 0.55, 0.82, 0.66, 180),
+            ]
+
+            def score_class(valor):
+                if valor >= 0.75:
+                    return "score-high"
+                if valor >= 0.60:
+                    return "score-mid"
+                return "score-low"
+
+            filas_html = "".join(
+                f"<tr>"
+                f"<td>{clase}</td>"
+                f"<td><span class='score-pill {score_class(precision)}'>{precision:.2f}</span></td>"
+                f"<td><span class='score-pill {score_class(recall)}'>{recall:.2f}</span></td>"
+                f"<td><span class='score-pill {score_class(f1)}'>{f1:.2f}</span></td>"
+                f"<td class='support-cell'>{support:,}</td>"
+                f"</tr>"
+                for clase, precision, recall, f1, support in filas_clase
             )
-            st.dataframe(comparacion, hide_index=True, use_container_width=True)
+            st.markdown(
+                "<table class='class-table'>"
+                "<thead><tr><th>Clase</th><th>Precision</th><th>Recall</th><th>F1-score</th><th>Support</th></tr></thead>"
+                f"<tbody>{filas_html}</tbody>"
+                "</table>",
+                unsafe_allow_html=True,
+            )
+            st.markdown(
+                "<div class='table-note'>"
+                "<strong>Ejemplo:</strong> en test habia 180 resenas realmente <strong>muy positivo</strong>. "
+                "El modelo recupero el 82% de ellas (recall), pero no todo lo que predijo como muy positivo era correcto, "
+                "por eso su precision es 55%. <strong>Support</strong> es solo la cantidad real de ejemplos de esa clase."
+                "</div>",
+                unsafe_allow_html=True,
+            )
 
     with col_modelo:
         st.markdown(
