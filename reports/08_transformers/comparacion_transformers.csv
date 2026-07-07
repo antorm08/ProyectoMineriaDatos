@@ -1,0 +1,5 @@
+﻿familia,modelo,estrategia,split,f1_macro,balanced_accuracy,f1_weighted,accuracy
+transformer,xlm_roberta,class_weight,valid,0.6033,0.5999,0.6623,0.663
+transformer,xlm_roberta,class_weight,test,0.6039,0.5991,0.6625,0.6615
+transformer,beto,class_weight,valid,0.6089,0.612,0.6628,0.665
+transformer,beto,class_weight,test,0.6258,0.6272,0.6754,0.6722

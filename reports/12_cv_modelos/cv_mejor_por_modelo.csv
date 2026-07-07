@@ -1,0 +1,7 @@
+﻿familia,modelo,config,f1_macro_medio,f1_macro_std,f1_macro_oof,balanced_accuracy_oof,f1_weighted_oof,accuracy_oof,segundos
+transformer,beto,"{""lr"": 3e-05}",0.636,0.0506,0.6362,0.6453,0.6511,0.65,1432.3
+deep_learning,lstm,"{""hidden"": 256, ""lr"": 0.0005}",0.4693,0.0392,0.4736,0.4765,0.5131,0.506,10.7
+clasico,svm,"{""C"": 0.5}",0.4564,0.0303,0.4575,0.4613,0.4903,0.502,0.3
+transformer,xlm_roberta,"{""lr"": 3e-05}",0.455,0.0421,0.468,0.5,0.4793,0.5,130.7
+deep_learning,cnn,"{""lr"": 0.0005, ""num_filtros"": 150}",0.4513,0.0477,0.4558,0.4678,0.4979,0.518,6.3
+clasico,naive_bayes,"{""alpha"": 1.0, ""usar_smote"": true}",0.4495,0.035,0.4496,0.4571,0.4714,0.476,0.3

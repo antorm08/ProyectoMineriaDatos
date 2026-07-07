@@ -30,7 +30,8 @@ def guardar_distribucion(df, output_file):
     return distribucion
 
 
-def preparar_split(input_file, train_file, valid_file, test_file, report_file, random_state):
+def preparar_split(input_file, train_file, valid_file, test_file, report_file, random_state,
+                   test_size, valid_size):
     if not input_file.exists():
         raise FileNotFoundError(f"No existe el dataset final: {input_file}")
 
@@ -45,17 +46,17 @@ def preparar_split(input_file, train_file, valid_file, test_file, report_file, r
     df_modelo = df[df["sentimiento_final"].astype(str).str.strip() != ""].copy()
     df_modelo = df_modelo[df_modelo["texto_modelo"].astype(str).str.strip() != ""].copy()
 
-    train_df, temp_df = train_test_split(
+    train_valid_df, test_df = train_test_split(
         df_modelo,
-        test_size=0.30,
+        test_size=test_size,
         random_state=random_state,
         stratify=df_modelo["sentimiento_final"],
     )
-    valid_df, test_df = train_test_split(
-        temp_df,
-        test_size=0.50,
+    train_df, valid_df = train_test_split(
+        train_valid_df,
+        test_size=valid_size,
         random_state=random_state,
-        stratify=temp_df["sentimiento_final"],
+        stratify=train_valid_df["sentimiento_final"],
     )
 
     train_df.to_csv(train_file, index=False, encoding="utf-8-sig")
@@ -77,6 +78,8 @@ def preparar_split(input_file, train_file, valid_file, test_file, report_file, r
             ("proporcion_train", round(len(train_df) / len(df_modelo), 4)),
             ("proporcion_valid", round(len(valid_df) / len(df_modelo), 4)),
             ("proporcion_test", round(len(test_df) / len(df_modelo), 4)),
+            ("test_size_sobre_total", test_size),
+            ("valid_size_sobre_desarrollo", valid_size),
             ("random_state", random_state),
         ],
         columns=["metrica", "valor"],
@@ -107,12 +110,19 @@ def obtener_argumentos():
     parser.add_argument("--test", type=Path, default=TEST_FILE)
     parser.add_argument("--reporte", type=Path, default=REPORT_FILE)
     parser.add_argument("--random-state", type=int, default=42)
+    parser.add_argument("--test-size", type=float, default=0.20,
+                        help="Proporcion reservada para prueba final. Por defecto: 0.20.")
+    parser.add_argument("--valid-size", type=float, default=0.30,
+                        help="Proporcion de validacion dentro del 80%% de desarrollo. Por defecto: 0.30.")
     return parser.parse_args()
 
 
 def main():
     args = obtener_argumentos()
-    preparar_split(args.input, args.train, args.valid, args.test, args.reporte, args.random_state)
+    preparar_split(
+        args.input, args.train, args.valid, args.test, args.reporte, args.random_state,
+        args.test_size, args.valid_size,
+    )
 
 
 if __name__ == "__main__":

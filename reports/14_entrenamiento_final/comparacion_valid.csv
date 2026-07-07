@@ -1,0 +1,7 @@
+﻿familia,modelo,estrategia,split,f1_macro,balanced_accuracy,f1_weighted,accuracy
+clasico,svm,final,valid,0.5972,0.5977,0.6233,0.6319
+clasico,naive_bayes,final,valid,0.5801,0.5847,0.6052,0.6163
+deep_learning,cnn,final,valid,0.5828,0.5874,0.6119,0.6155
+deep_learning,lstm,final,valid,0.6015,0.6066,0.6253,0.6233
+transformer,beto,final,valid,0.7955,0.7934,0.8093,0.8099
+transformer,xlm_roberta,final,valid,0.7331,0.7309,0.7504,0.7535

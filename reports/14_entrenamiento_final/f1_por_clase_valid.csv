@@ -1,0 +1,31 @@
+﻿familia,modelo,estrategia,split,clase,f1
+clasico,svm,final,valid,muy negativo,0.7786
+clasico,svm,final,valid,negativo,0.4865
+clasico,svm,final,valid,neutral,0.4286
+clasico,svm,final,valid,positivo,0.5952
+clasico,svm,final,valid,muy positivo,0.6973
+clasico,naive_bayes,final,valid,muy negativo,0.7574
+clasico,naive_bayes,final,valid,negativo,0.4921
+clasico,naive_bayes,final,valid,neutral,0.4032
+clasico,naive_bayes,final,valid,positivo,0.5587
+clasico,naive_bayes,final,valid,muy positivo,0.6891
+deep_learning,cnn,final,valid,muy negativo,0.7606
+deep_learning,cnn,final,valid,negativo,0.4345
+deep_learning,cnn,final,valid,neutral,0.4207
+deep_learning,cnn,final,valid,positivo,0.5967
+deep_learning,cnn,final,valid,muy positivo,0.7015
+deep_learning,lstm,final,valid,muy negativo,0.7679
+deep_learning,lstm,final,valid,negativo,0.5053
+deep_learning,lstm,final,valid,neutral,0.4437
+deep_learning,lstm,final,valid,positivo,0.5756
+deep_learning,lstm,final,valid,muy positivo,0.7148
+transformer,beto,final,valid,muy negativo,0.9095
+transformer,beto,final,valid,negativo,0.7836
+transformer,beto,final,valid,neutral,0.6667
+transformer,beto,final,valid,positivo,0.7734
+transformer,beto,final,valid,muy positivo,0.8442
+transformer,xlm_roberta,final,valid,muy negativo,0.883
+transformer,xlm_roberta,final,valid,negativo,0.7086
+transformer,xlm_roberta,final,valid,neutral,0.5759
+transformer,xlm_roberta,final,valid,positivo,0.6887
+transformer,xlm_roberta,final,valid,muy positivo,0.8094

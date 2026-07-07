@@ -1,0 +1,66 @@
+{
+  "mejor_global": {
+    "modelo": "beto",
+    "familia": "transformer",
+    "config": {
+      "lr": 3e-05
+    },
+    "f1_macro_medio": 0.636
+  },
+  "por_modelo": {
+    "beto": {
+      "familia": "transformer",
+      "config": {
+        "lr": 3e-05
+      },
+      "f1_macro_medio": 0.636,
+      "f1_macro_std": 0.0506
+    },
+    "lstm": {
+      "familia": "deep_learning",
+      "config": {
+        "hidden": 256,
+        "lr": 0.0005
+      },
+      "f1_macro_medio": 0.4693,
+      "f1_macro_std": 0.0392
+    },
+    "svm": {
+      "familia": "clasico",
+      "config": {
+        "C": 0.5
+      },
+      "f1_macro_medio": 0.4564,
+      "f1_macro_std": 0.0303
+    },
+    "xlm_roberta": {
+      "familia": "transformer",
+      "config": {
+        "lr": 3e-05
+      },
+      "f1_macro_medio": 0.455,
+      "f1_macro_std": 0.0421
+    },
+    "cnn": {
+      "familia": "deep_learning",
+      "config": {
+        "lr": 0.0005,
+        "num_filtros": 150
+      },
+      "f1_macro_medio": 0.4513,
+      "f1_macro_std": 0.0477
+    },
+    "naive_bayes": {
+      "familia": "clasico",
+      "config": {
+        "alpha": 1.0,
+        "usar_smote": true
+      },
+      "f1_macro_medio": 0.4495,
+      "f1_macro_std": 0.035
+    }
+  },
+  "folds": 5,
+  "n_semilla": 500,
+  "random_state": 42
+}

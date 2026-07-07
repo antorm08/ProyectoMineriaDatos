@@ -1,0 +1,9 @@
+﻿familia,modelo,estrategia,split,f1_macro,balanced_accuracy,f1_weighted,accuracy
+deep_learning,cnn,base,valid,0.4684,0.4707,0.5468,0.5733
+deep_learning,cnn,base,test,0.4649,0.4707,0.5483,0.5778
+deep_learning,cnn,class_weight,valid,0.4831,0.4858,0.5506,0.5523
+deep_learning,cnn,class_weight,test,0.5099,0.5185,0.5719,0.5766
+deep_learning,lstm,base,valid,0.4938,0.4993,0.5633,0.5693
+deep_learning,lstm,base,test,0.456,0.4597,0.5256,0.5335
+deep_learning,lstm,class_weight,valid,0.4791,0.4818,0.5445,0.5444
+deep_learning,lstm,class_weight,test,0.4535,0.4542,0.5297,0.5311

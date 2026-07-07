@@ -1,0 +1,10 @@
+﻿metrica,valor
+filas_base_utilizable,4797
+filas_test,960
+filas_semilla,500
+filas_dev_resto,3337
+proporcion_test,0.2001
+test_size,0.2
+semilla_n,500
+estratificacion,estrellas x tercil_longitud
+random_state,42

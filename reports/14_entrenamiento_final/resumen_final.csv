@@ -1,0 +1,13 @@
+﻿metrica,valor
+mejor_modelo,beto
+familia,transformer
+config,"{""lr"": 3e-05}"
+f1_macro_valid,0.7955
+f1_macro_test,0.6688
+balanced_accuracy_test,0.6756
+f1_weighted_test,0.6719
+accuracy_test,0.676
+n_train,2685
+n_valid,1152
+n_test,960
+modelo_guardado,C:\Users\SERGIO\Desktop\Clones\Proyecto_MineriaDatos\models\v2_mejor_modelo_transformer
