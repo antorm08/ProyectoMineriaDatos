@@ -1,4 +1,4 @@
-"""Fase 14: self-training del mejor modelo + verificacion por clustering + arbitraje.
+"""Fase 14: self-training del mejor modelo + verificacion por clustering + revision.
 
 Pasos 8-12 del flujo del docente:
 
@@ -6,9 +6,9 @@ Pasos 8-12 del flujo del docente:
     9.  Usarlo para etiquetar automaticamente el resto del 80% (dev_resto).
     10. Aplicar clustering (TF-IDF + SVD + K-Means) sobre esos textos y comparar la
         etiqueta asignada con la etiqueta mayoritaria de cada cluster.
-    11. Revisar los casos dudosos: baja confianza del modelo o discrepancia con un
-        cluster suficientemente puro. El arbitraje lo hace el LLM anotador (mismo
-        protocolo de la fase 12), que actua como revisor de segunda opinion.
+    11. Exportar los casos dudosos para revision: baja confianza del modelo o
+        discrepancia con un cluster suficientemente puro. Si existe un archivo de
+        revision con correcciones, se integran antes de consolidar el dataset.
     12. Consolidar el dataset de entrenamiento completo etiquetado.
 
 El reentrenamiento del paso 8 reserva internamente un 15% de la semilla para el
@@ -23,7 +23,8 @@ Salidas:
     data/splits_v2/dev_etiquetado_completo.csv     (80% etiquetado, con origen)
     reports/13_self_training/resumen_self_training.csv
     reports/13_self_training/pureza_clusters.csv
-    reports/13_self_training/cambios_arbitraje.csv
+    reports/13_self_training/casos_dudosos_revision.csv
+    reports/13_self_training/cambios_revision.csv
     reports/13_self_training/distribucion_final_dev.csv
 """
 
@@ -44,20 +45,19 @@ from _comun.entrenadores import (  # noqa: E402
     COLUMNA_TEXTO, construir_vectorizador, dispositivo, entrenar_modelo, predecir_modelo,
 )
 from _comun.evaluacion import CLASES  # noqa: E402
-from _comun.llm import etiquetar_lote  # noqa: E402
 
 SPLITS_DIR = PROJECT_ROOT / "data" / "splits_v2"
 REPORT_DIR = PROJECT_ROOT / "reports" / "13_self_training"
 CV_JSON = PROJECT_ROOT / "reports" / "12_cv_modelos" / "mejores_hiperparametros.json"
-REVISION_FILE = PROJECT_ROOT / "reports" / "11_etiquetado_llm" / "revision_equipo_semilla.csv"
-CACHE_ARBITRAJE = SPLITS_DIR / "cache_arbitraje_llm.csv"
+REVISION_SEMILLA_FILE = PROJECT_ROOT / "reports" / "11_etiquetado_manual" / "revision_semilla_500.csv"
+REVISION_DUDOSOS_FILE = REPORT_DIR / "casos_dudosos_revision.csv"
 
 
 def cargar_semilla(aplicar_correcciones):
     df = pd.read_csv(SPLITS_DIR / "semilla_etiquetada.csv").fillna("")
-    origen = pd.Series("llm_semilla", index=df.index)
-    if aplicar_correcciones and REVISION_FILE.exists():
-        rev = pd.read_csv(REVISION_FILE).fillna("")
+    origen = pd.Series("manual_semilla_500", index=df.index)
+    if aplicar_correcciones and REVISION_SEMILLA_FILE.exists():
+        rev = pd.read_csv(REVISION_SEMILLA_FILE).fillna("")
         rev = rev[rev["etiqueta_corregida"].isin(CLASES)][["id_registro", "etiqueta_corregida"]]
         if len(rev):
             df = df.merge(rev, on="id_registro", how="left").fillna("")
@@ -93,66 +93,54 @@ def clustering_coherencia(dev, umbral_pureza, k, random_state):
     return dev, pd.DataFrame(filas_pureza).sort_values("pureza"), discrepantes
 
 
-def arbitrar_con_llm(dev, indices, modelo_llm, proveedor, batch):
-    """Pide al LLM segunda opinion para las filas dudosas. Cachea el avance."""
-    cache = {}
-    if CACHE_ARBITRAJE.exists():
-        for fila in pd.read_csv(CACHE_ARBITRAJE).itertuples():
-            cache[fila.id_registro] = fila
+def exportar_y_aplicar_revision(dev, dudosos):
+    """Exporta dudosos y aplica correcciones manuales si el CSV ya las contiene."""
+    columnas = [
+        "id_registro", "empresa", "rubro", "estrellas", "comentario_limpio",
+        "etiqueta_modelo", "confianza_modelo", "cluster", "sentimiento_final",
+    ]
+    revision = dudosos[[c for c in columnas if c in dudosos.columns]].copy()
+    if "etiqueta_revisada" not in revision.columns:
+        revision["etiqueta_revisada"] = ""
+    if "observacion_revision" not in revision.columns:
+        revision["observacion_revision"] = ""
 
-    pendientes = [i for i in indices if dev.loc[i, "id_registro"] not in cache]
-    print(f"Arbitraje LLM: {len(indices)} dudosos ({len(pendientes)} pendientes de consulta)")
+    if REVISION_DUDOSOS_FILE.exists():
+        existente = pd.read_csv(REVISION_DUDOSOS_FILE).fillna("")
+        if "etiqueta_revisada" in existente.columns:
+            correcciones = existente[existente["etiqueta_revisada"].isin(CLASES)][
+                ["id_registro", "etiqueta_revisada"]
+            ]
+            if len(correcciones):
+                revision = revision.drop(columns=["etiqueta_revisada"], errors="ignore")
+                revision = revision.merge(correcciones, on="id_registro", how="left").fillna("")
 
-    for i in range(0, len(pendientes), batch):
-        lote_idx = pendientes[i:i + batch]
-        ids = dev.loc[lote_idx, "id_registro"].tolist()
-        textos = dev.loc[lote_idx, "comentario_limpio"].tolist()
-        resultados = etiquetar_lote(textos, modelo=modelo_llm, proveedor=proveedor, ids=ids)
-        filas = []
-        for id_reg, res in zip(ids, resultados):
-            filas.append({
-                "id_registro": id_reg,
-                "etiqueta_llm": res["etiqueta"] if res else "",
-                "confianza_llm": res["confianza"] if res else 0.0,
-                "justificacion_llm": res["justificacion"] if res else "sin respuesta valida",
-            })
-        pd.DataFrame(filas).to_csv(CACHE_ARBITRAJE, mode="a",
-                                   header=not CACHE_ARBITRAJE.exists(),
-                                   index=False, encoding="utf-8-sig")
-        for fila in filas:
-            cache[fila["id_registro"]] = pd.Series(fila)
-        print(f"   {min(i + batch, len(pendientes))}/{len(pendientes)} arbitradas", flush=True)
+    revision.to_csv(REVISION_DUDOSOS_FILE, index=False, encoding="utf-8-sig")
 
     cambios = []
-    for i in indices:
-        id_reg = dev.loc[i, "id_registro"]
-        if id_reg not in cache:
-            continue
-        registro = cache[id_reg]
-        etiqueta_llm = getattr(registro, "etiqueta_llm", None) or registro["etiqueta_llm"]
-        if etiqueta_llm in CLASES:
-            if etiqueta_llm != dev.loc[i, "etiqueta_modelo"]:
+    for fila in revision[revision["etiqueta_revisada"].isin(CLASES)].itertuples():
+        idx = dev.index[dev["id_registro"] == fila.id_registro]
+        if len(idx):
+            i = idx[0]
+            if fila.etiqueta_revisada != dev.loc[i, "etiqueta_modelo"]:
                 cambios.append({
-                    "id_registro": id_reg,
+                    "id_registro": fila.id_registro,
                     "etiqueta_modelo": dev.loc[i, "etiqueta_modelo"],
-                    "etiqueta_arbitraje": etiqueta_llm,
+                    "etiqueta_revisada": fila.etiqueta_revisada,
                     "confianza_modelo": dev.loc[i, "confianza_modelo"],
                 })
-            dev.loc[i, "sentimiento_v2"] = etiqueta_llm
-            dev.loc[i, "origen_etiqueta_v2"] = "llm_arbitraje"
+            dev.loc[i, "sentimiento_v2"] = fila.etiqueta_revisada
+            dev.loc[i, "origen_etiqueta_v2"] = "revision_manual"
     return dev, pd.DataFrame(cambios)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Self-training + clustering + arbitraje (fase 14).")
-    parser.add_argument("--modelo-etiquetador", required=True, help="Id del LLM arbitro.")
-    parser.add_argument("--proveedor", default="nvidia", choices=["nvidia", "openrouter"])
+    parser = argparse.ArgumentParser(description="Self-training + clustering + revision manual (fase 14).")
     parser.add_argument("--umbral-confianza", type=float, default=0.50)
     parser.add_argument("--umbral-pureza", type=float, default=0.60)
     parser.add_argument("--clusters", type=int, default=25)
-    parser.add_argument("--batch", type=int, default=15)
-    parser.add_argument("--max-arbitraje", type=int, default=900,
-                        help="Tope de casos enviados al LLM (los de menor confianza primero).")
+    parser.add_argument("--max-revision", type=int, default=900,
+                        help="Tope de casos exportados para revision (menor confianza primero).")
     parser.add_argument("--aplicar-correcciones", action="store_true")
     parser.add_argument("--random-state", type=int, default=42)
     parser.add_argument("--cpu", action="store_true")
@@ -194,14 +182,13 @@ def main():
                                                       args.clusters, args.random_state)
     baja_confianza = dev["confianza_modelo"] < args.umbral_confianza
     dudosos = dev[baja_confianza | discrepantes].sort_values("confianza_modelo")
-    if len(dudosos) > args.max_arbitraje:
-        dudosos = dudosos.head(args.max_arbitraje)
+    if len(dudosos) > args.max_revision:
+        dudosos = dudosos.head(args.max_revision)
     print(f"Dudosos: {int(baja_confianza.sum())} por confianza, {int(discrepantes.sum())} "
-          f"por clustering -> {len(dudosos)} a arbitraje (tope {args.max_arbitraje})")
+          f"por clustering -> {len(dudosos)} a revision (tope {args.max_revision})")
 
-    # Paso 11: arbitraje con el LLM.
-    dev, cambios = arbitrar_con_llm(dev, dudosos.index.tolist(),
-                                    args.modelo_etiquetador, args.proveedor, args.batch)
+    # Paso 11: exportar dudosos y aplicar correcciones manuales si existen.
+    dev, cambios = exportar_y_aplicar_revision(dev, dudosos)
 
     # Paso 12: consolidar el 80% etiquetado.
     columnas_extra = ["etiqueta_modelo", "confianza_modelo", "cluster"]
@@ -212,7 +199,7 @@ def main():
     completo.to_csv(SPLITS_DIR / "dev_etiquetado_completo.csv", index=False, encoding="utf-8-sig")
 
     pureza.to_csv(REPORT_DIR / "pureza_clusters.csv", index=False, encoding="utf-8-sig")
-    cambios.to_csv(REPORT_DIR / "cambios_arbitraje.csv", index=False, encoding="utf-8-sig")
+    cambios.to_csv(REPORT_DIR / "cambios_revision.csv", index=False, encoding="utf-8-sig")
     dist = completo["sentimiento_v2"].value_counts().rename_axis("clase").reset_index(name="cantidad")
     dist.to_csv(REPORT_DIR / "distribucion_final_dev.csv", index=False, encoding="utf-8-sig")
 
@@ -223,8 +210,8 @@ def main():
         ("filas_dev_resto", len(dev)),
         ("dudosos_confianza", int(baja_confianza.sum())),
         ("dudosos_clustering", int(discrepantes.sum())),
-        ("enviados_arbitraje", len(dudosos)),
-        ("cambiados_por_arbitraje", len(cambios)),
+        ("enviados_revision", len(dudosos)),
+        ("cambiados_por_revision", len(cambios)),
         ("umbral_confianza", args.umbral_confianza),
         ("umbral_pureza", args.umbral_pureza),
         ("clusters", args.clusters),

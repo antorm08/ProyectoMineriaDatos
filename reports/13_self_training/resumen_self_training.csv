@@ -5,8 +5,8 @@ filas_semilla,500
 filas_dev_resto,3337
 dudosos_confianza,581
 dudosos_clustering,122
-enviados_arbitraje,681
-cambiados_por_arbitraje,381
+enviados_revision,681
+cambiados_por_revision,381
 umbral_confianza,0.5
 umbral_pureza,0.6
 clusters,25

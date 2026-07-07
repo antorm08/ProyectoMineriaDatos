@@ -16,7 +16,7 @@ estandar) y las metricas agregadas (pooled) sobre las predicciones out-of-fold. 
 mejor configuracion por modelo y el mejor modelo global (por F1-macro promedio) se
 guardan en mejores_hiperparametros.json, que consumen las fases 14 y 15.
 
-Si el equipo corrigio etiquetas en reports/11_etiquetado_llm/revision_equipo_semilla.csv
+Si el equipo corrigio etiquetas en reports/11_etiquetado_manual/revision_semilla_500.csv
 (columna etiqueta_corregida), correr con --aplicar-correcciones para usarlas.
 
 Entrada:
@@ -54,7 +54,7 @@ from _comun.evaluacion import CLASES, metricas_basicas  # noqa: E402
 
 SPLITS_DIR = PROJECT_ROOT / "data" / "splits_v2"
 REPORT_DIR = PROJECT_ROOT / "reports" / "12_cv_modelos"
-REVISION_FILE = PROJECT_ROOT / "reports" / "11_etiquetado_llm" / "revision_equipo_semilla.csv"
+REVISION_FILE = PROJECT_ROOT / "reports" / "11_etiquetado_manual" / "revision_semilla_500.csv"
 
 # Mallas de hiperparametros por modelo (acotadas para que la CV sea tratable).
 GRIDS = {

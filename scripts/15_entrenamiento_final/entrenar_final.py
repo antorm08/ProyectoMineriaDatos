@@ -9,7 +9,7 @@ Pasos 13-16 del flujo del docente:
     14. Comparar los 6 modelos finales sobre validacion.
     15. Elegir el mejor modelo final por F1-macro en validacion.
     16. Evaluar UNA SOLA VEZ ese mejor modelo en el 20% de prueba reservado en la
-        fase 11 (etiquetas de referencia: protocolo LLM de la fase 12).
+        fase 11 (etiquetas de referencia revisadas del flujo final).
 
 Solo el modelo ganador toca el conjunto de prueba: asi la estimacion final no sufre
 sesgo de seleccion sobre el test. Ademas se grafican las curvas de entrenamiento

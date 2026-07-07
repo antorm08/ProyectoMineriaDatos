@@ -1,4 +1,4 @@
-﻿id_registro,etiqueta_modelo,etiqueta_arbitraje,confianza_modelo
+﻿id_registro,etiqueta_modelo,etiqueta_revisada,confianza_modelo
 2969,negativo,neutral,0.2762
 4084,muy positivo,negativo,0.292
 4349,muy positivo,positivo,0.31
