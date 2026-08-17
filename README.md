@@ -1,6 +1,56 @@
-# Analisis De Sentimiento Multiclase Sobre Resenas De Empresas Peruanas
+# Sentimix Peru
 
-Proyecto final para construir un clasificador multiclase de sentimiento sobre resenas de consumidores peruanos. El flujo oficial parte del scraping, prepara el dataset, usa una semilla manual de 500 registros, compara seis modelos, amplia el etiquetado del conjunto de desarrollo y evalua el mejor modelo en un 20% de prueba reservado.
+Analisis de sentimiento multiclase sobre resenas de empresas peruanas mediante
+mineria de datos, aprendizaje semisupervisado y procesamiento de lenguaje natural.
+
+El proyecto recopila y procesa resenas de Google Maps, compara seis modelos de
+clasificacion y utiliza self-training para ampliar una semilla etiquetada
+manualmente. El modelo final, basado en BETO, clasifica cada resena en cinco
+niveles de sentimiento y puede utilizarse desde una interfaz web creada con
+Streamlit.
+
+## Caracteristicas
+
+- Pipeline reproducible desde el scraping hasta la evaluacion final.
+- Clasificacion en cinco clases: `muy negativo`, `negativo`, `neutral`,
+  `positivo` y `muy positivo`.
+- Comparacion de SVM, Naive Bayes, CNN, LSTM, BETO y XLM-RoBERTa.
+- Etiquetado semisupervisado con self-training y revision asistida por clustering.
+- Modelo BETO entrenado y versionado con Git LFS.
+- Interfaz Streamlit para analizar textos individuales o archivos CSV.
+- Resultados, matrices de confusion y curvas de entrenamiento reproducibles.
+
+## Resultado Destacado
+
+BETO obtuvo el mejor rendimiento de los modelos evaluados, con un
+`F1-macro de 0.6688` y una `accuracy de 0.6760` sobre el conjunto de prueba
+reservado. La evaluacion considera cinco clases y utiliza F1-macro como metrica
+principal para reducir el efecto del desbalance entre clases.
+
+## Inicio Rapido
+
+Clona el repositorio, instala las dependencias y descarga el modelo almacenado
+con Git LFS:
+
+```bash
+git clone https://github.com/antorm08/ProyectoMineriaDatos.git
+cd ProyectoMineriaDatos
+git lfs install
+git lfs pull
+pip install -r requirements.txt
+```
+
+Inicia la aplicacion web:
+
+```bash
+streamlit run interfaz/app.py
+```
+
+Para consultar las etapas disponibles del pipeline:
+
+```bash
+python run_pipeline.py --listar
+```
 
 ## Flujo Final Oficial
 
